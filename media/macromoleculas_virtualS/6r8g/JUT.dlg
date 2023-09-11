@@ -1,0 +1,1171 @@
+AutoDock-GPU version: v1.5-release
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               JUT.pdbqt
+Grid fld file:                             6r8g_a.maps.fld
+
+Random seed:                               1692977893, 11306
+Number of runs:                            20
+Number of energy evaluations:              1132076
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/eduardo/AutoDock-GPU-develop/bin/autodock_gpu_128wi --ffile 6r8g_a.maps.fld --lfile JUT.pdbqt 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             6r8g_a
+Number of grid points (x, y, z):           27, 33, 41
+Grid center (x, y, z):                     -1.185000, 55.352000, -24.911000A
+Grid size (x, y, z):                       9.750000, 12.000000, 15.000000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               JUT
+Number of atoms:                           14
+Number of rotatable bonds:                 1
+Number of atom types:                      5
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 20
+DPF> fld 6r8g_a.maps.fld
+DPF> move JUT.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    340372
+Number of generations used:                25
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  1 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  CAN JUT D 401      -1.682  54.806 -23.969  1.00 39.48     0.034 A 
+INPUT-LIGAND-PDBQT: HETATM    2  CAL JUT D 401      -1.508  54.972 -22.591  1.00 42.05     0.168 A 
+INPUT-LIGAND-PDBQT: HETATM    3  FAM JUT D 401      -1.944  54.091 -21.527  1.00 47.28    -0.202 F 
+INPUT-LIGAND-PDBQT: HETATM    4  CAJ JUT D 401      -0.883  56.104 -22.067  1.00 42.07     0.167 A 
+INPUT-LIGAND-PDBQT: HETATM    5  FAK JUT D 401      -0.692  56.359 -20.794  1.00 42.12    -0.202 F 
+INPUT-LIGAND-PDBQT: HETATM    6  CAI JUT D 401      -0.404  57.072 -22.874  1.00 43.31     0.032 A 
+INPUT-LIGAND-PDBQT: HETATM    7  CAH JUT D 401      -0.546  56.933 -24.200  1.00 42.37     0.004 A 
+INPUT-LIGAND-PDBQT: HETATM    8  CAG JUT D 401      -1.196  55.882 -24.771  1.00 42.96     0.021 A 
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   8   9
+INPUT-LIGAND-PDBQT: HETATM    9  CAD JUT D 401      -1.163  56.060 -26.116  1.00 47.29     0.090 A 
+INPUT-LIGAND-PDBQT: HETATM   10  NAC JUT D 401      -0.766  57.259 -26.768  1.00 46.00    -0.219 NA
+INPUT-LIGAND-PDBQT: HETATM   11  CAB JUT D 401      -0.788  57.154 -28.122  1.00 44.77     0.215 A 
+INPUT-LIGAND-PDBQT: HETATM   12  SAF JUT D 401      -1.292  55.585 -28.527  1.00 57.80    -0.045 SA
+INPUT-LIGAND-PDBQT: HETATM   13  NAA JUT D 401      -0.500  57.982 -29.064  1.00 41.40    -0.120 N 
+INPUT-LIGAND-PDBQT: HETATM   14  CAE JUT D 401      -1.487  55.027 -26.940  1.00 50.65     0.058 A 
+INPUT-LIGAND-PDBQT: ENDBRANCH   8   9
+INPUT-LIGAND-PDBQT: TORSDOF 1
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.233  55.412 -25.725 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.909  56.053 -26.926 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.074  55.551 -28.275 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.319  57.317 -26.940 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.039  57.988 -28.010 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.057  57.977 -25.794 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.369  57.392 -24.629 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.893  56.138 -24.545 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.076  55.857 -23.230 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.492  56.580 -22.155 -0.50 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.871  56.112 -20.937 -0.47 -0.00    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.931  54.808 -21.175 -0.77 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.587  56.478 -19.737 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.905  54.841 -22.868 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.191  55.392 -25.734 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.878  56.034 -26.937 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.036  55.525 -28.284 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.308  57.307 -26.955 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.038  57.981 -28.027 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.057  57.975 -25.811 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.359  57.388 -24.644 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.862  56.127 -24.556 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.040  55.847 -23.240 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.463  56.580 -22.167 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.836  56.110 -20.949 -0.47 -0.01    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.880  54.792 -21.181 -0.76 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.555  56.482 -19.749 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.856  54.821 -22.874 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.235  55.415 -25.727 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.910  56.056 -26.927 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.075  55.556 -28.276 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.318  57.320 -26.940 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.041  57.991 -28.009 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.056  57.979 -25.793 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.369  57.393 -24.628 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.894  56.140 -24.545 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.078  55.858 -23.231 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.495  56.581 -22.155 -0.50 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.875  56.112 -20.938 -0.47 -0.00    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.934  54.807 -21.177 -0.77 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.592  56.477 -19.737 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.907  54.841 -22.870 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.231  55.407 -25.720 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.911  56.046 -26.923 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.078  55.541 -28.270 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.323  57.311 -26.942 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.031  57.981 -28.013 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.060  57.975 -25.798 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.368  57.391 -24.630 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.890  56.137 -24.542 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.069  55.858 -23.226 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.477  56.580 -22.154 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.854  56.115 -20.935 -0.47 -0.00    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.922  54.816 -21.166 -0.77 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.564  56.481 -19.736 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.902  54.847 -22.859 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.224  55.413 -25.722 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.907  56.055 -26.923 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.073  55.552 -28.272 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.322  57.322 -26.940 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.029  57.994 -28.010 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.061  57.983 -25.795 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.366  57.397 -24.628 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.884  56.141 -24.542 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.061  55.859 -23.227 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.471  56.580 -22.154 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.846  56.112 -20.935 -0.47 -0.01    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.908  54.809 -21.168 -0.76 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.557  56.477 -19.735 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.890  54.843 -22.861 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.221  55.410 -25.735 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.901  56.052 -26.936 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.063  55.549 -28.284 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.317  57.319 -26.951 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.037  57.992 -28.020 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.060  57.981 -25.805 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.368  57.395 -24.639 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.885  56.139 -24.554 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.066  55.857 -23.239 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.480  56.580 -22.165 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.858  56.111 -20.947 -0.47 -0.00    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.919  54.807 -21.183 -0.77 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.573  56.477 -19.747 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.895  54.841 -22.876 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.211  55.394 -25.739 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.895  56.034 -26.943 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.058  55.525 -28.289 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.316  57.303 -26.963 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.033  57.974 -28.035 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.060  57.970 -25.819 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.364  57.386 -24.652 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.876  56.128 -24.562 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.054  55.850 -23.246 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.468  56.577 -22.174 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.843  56.111 -20.955 -0.47 -0.01    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.901  54.804 -21.185 -0.77 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.556  56.481 -19.756 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.880  54.833 -22.878 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.205  55.392 -25.726 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.895  56.035 -26.929 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.062  55.530 -28.276 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.321  57.307 -26.948 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.023  57.981 -28.020 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.061  57.972 -25.804 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.359  57.384 -24.637 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.867  56.124 -24.548 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.039  55.842 -23.231 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.461  56.577 -22.160 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.827  56.105 -20.941 -0.47 -0.01    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.867  54.783 -21.170 -0.76 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.544  56.478 -19.742 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.849  54.813 -22.863 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.224  55.405 -25.716 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.903  56.045 -26.917 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.067  55.540 -28.265 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.317  57.311 -26.935 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.037  57.982 -28.006 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.058  57.974 -25.790 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.366  57.390 -24.623 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.886  56.134 -24.536 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.066  55.855 -23.221 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.476  56.576 -22.148 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.855  56.110 -20.929 -0.47 -0.01    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.921  54.811 -21.163 -0.76 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.566  56.476 -19.730 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.899  54.842 -22.856 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.195  55.397 -25.749 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.882  56.042 -26.950 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.040  55.537 -28.299 -0.13 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.310  57.315 -26.966 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.036  57.991 -28.036 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.058  57.979 -25.820 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.360  57.390 -24.654 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.865  56.129 -24.569 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.042  55.845 -23.254 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.468  56.578 -22.179 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.839  56.104 -20.962 -0.47 -0.01    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.880  54.784 -21.197 -0.77 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.560  56.475 -19.762 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.856  54.817 -22.890 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   11 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        11
+DOCKED: USER    Run = 11
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.200  55.392 -25.738 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.887  56.035 -26.941 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.046  55.528 -28.288 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.314  57.307 -26.959 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.033  57.981 -28.030 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.060  57.974 -25.815 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.362  57.387 -24.648 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.868  56.126 -24.560 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.046  55.845 -23.244 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.470  56.579 -22.171 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.841  56.108 -20.952 -0.47 -0.01    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.883  54.789 -21.185 -0.77 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.560  56.480 -19.753 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.860  54.819 -22.878 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   12 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        12
+DOCKED: USER    Run = 12
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.214  55.404 -25.723 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.900  56.046 -26.926 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.066  55.542 -28.273 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.320  57.315 -26.944 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.028  57.988 -28.015 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.060  57.979 -25.799 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.362  57.392 -24.632 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.875  56.134 -24.545 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.050  55.853 -23.229 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.468  56.582 -22.157 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.839  56.112 -20.938 -0.47 -0.01    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.887  54.798 -21.169 -0.76 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.554  56.482 -19.738 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.868  54.829 -22.862 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   13 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        13
+DOCKED: USER    Run = 13
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.231  55.406 -25.736 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.909  56.047 -26.937 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.073  55.545 -28.286 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.321  57.313 -26.952 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.034  57.984 -28.022 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.061  57.974 -25.806 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.370  57.388 -24.641 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.892  56.133 -24.556 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.073  55.851 -23.241 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.492  56.578 -22.166 -0.50 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.870  56.109 -20.949 -0.47 -0.00    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.923  54.799 -21.185 -0.77 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.588  56.476 -19.748 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.897  54.832 -22.878 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   14 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        14
+DOCKED: USER    Run = 14
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.218  55.411 -25.737 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.904  56.055 -26.938 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.073  55.553 -28.286 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.322  57.322 -26.954 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.026  57.997 -28.025 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.059  57.983 -25.809 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.360  57.395 -24.643 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.876  56.138 -24.557 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.050  55.854 -23.241 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.465  56.580 -22.168 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.835  56.108 -20.950 -0.47 -0.01    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.888  54.797 -21.183 -0.77 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.548  56.475 -19.750 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.871  54.832 -22.876 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   15 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        15
+DOCKED: USER    Run = 15
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.196  55.399 -25.738 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.885  56.042 -26.941 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.046  55.535 -28.288 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.314  57.315 -26.959 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.031  57.989 -28.030 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.060  57.981 -25.815 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.359  57.393 -24.648 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.864  56.132 -24.560 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.040  55.850 -23.244 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.459  56.581 -22.172 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.830  56.110 -20.953 -0.47 -0.01    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.876  54.794 -21.184 -0.76 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.545  56.480 -19.753 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.856  54.826 -22.878 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   16 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        16
+DOCKED: USER    Run = 16
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.187  55.393 -25.719 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.874  56.036 -26.921 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.029  55.528 -28.269 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.306  57.310 -26.939 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.041  57.985 -28.010 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.056  57.978 -25.794 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.358  57.390 -24.628 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.860  56.128 -24.540 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.038  55.846 -23.225 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.455  56.573 -22.152 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.829  56.104 -20.933 -0.47 -0.01    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.883  54.795 -21.167 -0.76 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.544  56.472 -19.733 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.862  54.827 -22.860 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   17 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        17
+DOCKED: USER    Run = 17
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.213  55.404 -25.725 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.897  56.046 -26.927 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.061  55.540 -28.275 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.318  57.315 -26.946 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.032  57.987 -28.017 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.059  57.979 -25.801 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.363  57.393 -24.634 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.876  56.135 -24.546 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.053  55.855 -23.230 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.470  56.583 -22.158 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.843  56.114 -20.939 -0.47 -0.01    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.896  54.804 -21.171 -0.76 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.557  56.483 -19.740 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.875  54.834 -22.864 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   18 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        18
+DOCKED: USER    Run = 18
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.84 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.84 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.205  55.397 -25.724 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.896  56.040 -26.926 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.065  55.536 -28.274 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.320  57.311 -26.945 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.024  57.985 -28.017 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.058  57.974 -25.801 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.355  57.386 -24.634 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.865  56.127 -24.545 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.036  55.844 -23.229 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.459  56.578 -22.158 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.823  56.105 -20.938 -0.47 -0.01    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.862  54.783 -21.168 -0.76 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.539  56.477 -19.740 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.845  54.814 -22.861 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   19 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        19
+DOCKED: USER    Run = 19
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.210  55.402 -25.720 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.894  56.046 -26.921 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.056  55.543 -28.270 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.317  57.316 -26.936 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.033  57.991 -28.006 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.060  57.979 -25.790 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.364  57.390 -24.625 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.875  56.131 -24.540 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.053  55.848 -23.224 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.479  56.580 -22.150 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.851  56.107 -20.932 -0.47 -0.01    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.892  54.787 -21.168 -0.76 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.572  56.477 -19.732 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.867  54.820 -22.861 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   20 / 20
+Time taken for this run:   0.019s
+
+DOCKED: MODEL        20
+DOCKED: USER    Run = 20
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -6.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -6.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.25 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.25 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAD_5062  and  CAG_5061 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  CAN JUT D 401      -1.205  55.401 -25.719 -0.53 +0.01    +0.034 A  
+DOCKED: HETATM    2  CAL JUT D 401      -0.894  56.045 -26.922 -0.40 +0.05    +0.168 A  
+DOCKED: HETATM    3  FAM JUT D 401      -1.059  55.540 -28.269 -0.14 -0.07    -0.202 F  
+DOCKED: HETATM    4  CAJ JUT D 401      -0.318  57.315 -26.940 -0.39 +0.06    +0.167 A  
+DOCKED: HETATM    5  FAK JUT D 401       0.027  57.990 -28.011 -0.14 -0.13    -0.202 F  
+DOCKED: HETATM    6  CAI JUT D 401      -0.059  57.979 -25.795 -0.56 +0.01    +0.032 A  
+DOCKED: HETATM    7  CAH JUT D 401      -0.359  57.391 -24.628 -0.63 +0.00    +0.004 A  
+DOCKED: HETATM    8  CAG JUT D 401      -0.868  56.132 -24.541 -0.55 +0.00    +0.021 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CAD JUT D 401      -1.042  55.849 -23.225 -0.55 +0.01    +0.090 A  
+DOCKED: HETATM   10  NAC JUT D 401      -0.464  56.582 -22.153 -0.51 +0.00    -0.219 NA 
+DOCKED: HETATM   11  CAB JUT D 401      -0.832  56.110 -20.933 -0.47 -0.01    +0.215 A  
+DOCKED: HETATM   12  SAF JUT D 401      -1.874  54.790 -21.165 -0.76 +0.00    -0.045 SA 
+DOCKED: HETATM   13  NAA JUT D 401      -0.548  56.481 -19.734 -0.57 +0.01    -0.120 N  
+DOCKED: HETATM   14  CAE JUT D 401      -1.855  54.822 -22.858 -0.60 +0.00    +0.058 A  
+DOCKED: ENDBRANCH   8   9
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -6.55 |  19 |     -6.55 |  20 |####################
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1     19       -6.55      0.00      4.47           RANKING
+   1      2      5       -6.55      0.02      4.47           RANKING
+   1      3     20       -6.55      0.01      4.47           RANKING
+   1      4     12       -6.55      0.01      4.47           RANKING
+   1      5      9       -6.55      0.02      4.47           RANKING
+   1      6     15       -6.55      0.03      4.47           RANKING
+   1      7      4       -6.55      0.02      4.47           RANKING
+   1      8      6       -6.55      0.02      4.47           RANKING
+   1      9     17       -6.55      0.01      4.47           RANKING
+   1     10     18       -6.55      0.02      4.47           RANKING
+   1     11      8       -6.55      0.02      4.47           RANKING
+   1     12     16       -6.55      0.02      4.48           RANKING
+   1     13     11       -6.55      0.02      4.47           RANKING
+   1     14      1       -6.55      0.02      4.47           RANKING
+   1     15     14       -6.55      0.02      4.47           RANKING
+   1     16     13       -6.55      0.02      4.47           RANKING
+   1     17      2       -6.55      0.02      4.47           RANKING
+   1     18      7       -6.55      0.03      4.47           RANKING
+   1     19     10       -6.55      0.03      4.47           RANKING
+   1     20      3       -6.55      0.03      4.47           RANKING
+
+Run time 0.390 sec
+Idle time 0.272 sec

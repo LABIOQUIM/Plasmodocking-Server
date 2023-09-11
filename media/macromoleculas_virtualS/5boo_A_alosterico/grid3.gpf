@@ -1,0 +1,22 @@
+parameter_file /home/cebio/x86_64Linux2/AD4_parameters.dat
+npts 45 45 45                        # num.grid points in xyz
+gridfld 5boo_A_alosterico.maps.fld   # grid_data_file
+spacing 0.375                        # spacing(A)
+receptor_types A C HD N NA OA P SA   # receptor atom types
+ligand_types I Mg MG Mn MN Zn ZN He Li Be # ligand atom types
+receptor 5boo_A_alosterico.pdbqt     # macromolecule
+gridcenter -28.385 -6.630 -13.310    # xyz-coordinates or auto
+smooth 0.5                           # store minimum energy w/in rad(A)
+map 5boo_A_alosterico.I.map          # atom-specific affinity map
+map 5boo_A_alosterico.Mg.map         # atom-specific affinity map
+map 5boo_A_alosterico.MG.map         # atom-specific affinity map
+map 5boo_A_alosterico.Mn.map         # atom-specific affinity map
+map 5boo_A_alosterico.MN.map         # atom-specific affinity map
+map 5boo_A_alosterico.Zn.map         # atom-specific affinity map
+map 5boo_A_alosterico.ZN.map         # atom-specific affinity map
+map 5boo_A_alosterico.He.map         # atom-specific affinity map
+map 5boo_A_alosterico.Li.map         # atom-specific affinity map
+map 5boo_A_alosterico.Be.map         # atom-specific affinity map
+elecmap 5boo_A_alosterico.e.map      # electrostatic potential map
+dsolvmap 5boo_A_alosterico.d.map              # desolvation potential map
+dielectric -0.1465                   # <0, AD4 distance-dep.diel;>0, constant

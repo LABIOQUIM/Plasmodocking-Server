@@ -1,0 +1,255 @@
+# AVS field file
+#
+# AutoDock Atomic Affinity and Electrostatic Grids
+#
+# Created by /home/eduardo/x86_64Linux2/autogrid4.
+#
+#SPACING 0.375
+#NELEMENTS 42 30 34
+#CENTER -46.774 35.197 -9.363
+#MACROMOLECULE 4pg3_a.pdbqt
+#GRID_PARAMETER_FILE grid11.gpf
+#
+ndim=3			# number of dimensions in the field
+dim1=43			# number of x-elements
+dim2=31			# number of y-elements
+dim3=35			# number of z-elements
+nspace=3		# number of physical coordinates per point
+veclen=12		# number of affinity values at each point
+data=float		# data type (byte, integer, float, double)
+field=uniform		# field type (uniform, rectilinear, irregular)
+coord 1 file=4pg3_a.maps.xyz filetype=ascii offset=0
+coord 2 file=4pg3_a.maps.xyz filetype=ascii offset=2
+coord 3 file=4pg3_a.maps.xyz filetype=ascii offset=4
+label=C-affinity	# component label for variable 1
+label=A-affinity	# component label for variable 2
+label=N-affinity	# component label for variable 3
+label=NA-affinity	# component label for variable 4
+label=NS-affinity	# component label for variable 5
+label=OA-affinity	# component label for variable 6
+label=OS-affinity	# component label for variable 7
+label=SA-affinity	# component label for variable 8
+label=S-affinity	# component label for variable 9
+label=H-affinity	# component label for variable 10
+label=HD-affinity	# component label for variable 11
+label=HS-affinity	# component label for variable 1
+label=P-affinity	# component label for variable 2
+label=Br-affinity	# component label for variable 3
+label=BR-affinity	# component label for variable 4
+label=Ca-affinity	# component label for variable 5
+label=CA-affinity	# component label for variable 6
+label=Cl-affinity	# component label for variable 7
+label=CL-affinity	# component label for variable 8
+label=F-affinity	# component label for variable 9
+label=Fe-affinity	# component label for variable 10
+label=FE-affinity	# component label for variable 11
+label=I-affinity	# component label for variable 1
+label=Mg-affinity	# component label for variable 2
+label=MG-affinity	# component label for variable 3
+label=Mn-affinity	# component label for variable 4
+label=MN-affinity	# component label for variable 5
+label=Zn-affinity	# component label for variable 6
+label=ZN-affinity	# component label for variable 7
+label=He-affinity	# component label for variable 8
+label=Li-affinity	# component label for variable 9
+label=Be-affinity	# component label for variable 10
+label=B-affinity	# component label for variable 1
+label=Ne-affinity	# component label for variable 2
+label=Na-affinity	# component label for variable 3
+label=Al-affinity	# component label for variable 4
+label=Si-affinity	# component label for variable 5
+label=K-affinity	# component label for variable 6
+label=Sc-affinity	# component label for variable 7
+label=Ti-affinity	# component label for variable 8
+label=V-affinity	# component label for variable 9
+label=Co-affinity	# component label for variable 10
+label=Ni-affinity	# component label for variable 1
+label=Cu-affinity	# component label for variable 2
+label=Ga-affinity	# component label for variable 3
+label=Ge-affinity	# component label for variable 4
+label=As-affinity	# component label for variable 5
+label=Se-affinity	# component label for variable 6
+label=Kr-affinity	# component label for variable 7
+label=Rb-affinity	# component label for variable 8
+label=Sr-affinity	# component label for variable 9
+label=Y-affinity	# component label for variable 10
+label=Zr-affinity	# component label for variable 1
+label=Nb-affinity	# component label for variable 2
+label=Cr-affinity	# component label for variable 3
+label=Tc-affinity	# component label for variable 4
+label=Ru-affinity	# component label for variable 5
+label=Rh-affinity	# component label for variable 6
+label=Pd-affinity	# component label for variable 7
+label=Ag-affinity	# component label for variable 8
+label=Cd-affinity	# component label for variable 9
+label=In-affinity	# component label for variable 10
+label=Sn-affinity	# component label for variable 1
+label=Sb-affinity	# component label for variable 2
+label=Te-affinity	# component label for variable 3
+label=Xe-affinity	# component label for variable 4
+label=Cs-affinity	# component label for variable 5
+label=Ba-affinity	# component label for variable 6
+label=La-affinity	# component label for variable 7
+label=Ce-affinity	# component label for variable 8
+label=Pr-affinity	# component label for variable 9
+label=Nd-affinity	# component label for variable 10
+label=Pm-affinity	# component label for variable 1
+label=Sm-affinity	# component label for variable 2
+label=Eu-affinity	# component label for variable 3
+label=Gd-affinity	# component label for variable 4
+label=Tb-affinity	# component label for variable 5
+label=Dy-affinity	# component label for variable 6
+label=Ho-affinity	# component label for variable 7
+label=Er-affinity	# component label for variable 8
+label=Tm-affinity	# component label for variable 9
+label=Yb-affinity	# component label for variable 10
+label=Lu-affinity	# component label for variable 1
+label=Hf-affinity	# component label for variable 2
+label=Ta-affinity	# component label for variable 3
+label=W-affinity	# component label for variable 4
+label=Re-affinity	# component label for variable 5
+label=Os-affinity	# component label for variable 6
+label=Ir-affinity	# component label for variable 7
+label=Pt-affinity	# component label for variable 8
+label=Au-affinity	# component label for variable 9
+label=Hg-affinity	# component label for variable 10
+label=Tl-affinity	# component label for variable 1
+label=Pb-affinity	# component label for variable 2
+label=Bi-affinity	# component label for variable 3
+label=Po-affinity	# component label for variable 4
+label=At-affinity	# component label for variable 5
+label=Rn-affinity	# component label for variable 6
+label=Fr-affinity	# component label for variable 7
+label=Ra-affinity	# component label for variable 8
+label=Ac-affinity	# component label for variable 9
+label=Th-affinity	# component label for variable 10
+label=Pa-affinity	# component label for variable 1
+label=U-affinity	# component label for variable 2
+label=Np-affinity	# component label for variable 3
+label=Pu-affinity	# component label for variable 4
+label=Am-affinity	# component label for variable 5
+label=Cm-affinity	# component label for variable 6
+label=Bk-affinity	# component label for variable 7
+label=Cf-affinity	# component label for variable 8
+label=E-affinity	# component label for variable 9
+label=Fm-affinity	# component label for variable 10
+label=Electrostatics	# component label for variable 11
+label=Desolvation	# component label for variable 12
+#
+# location of affinity grid files and how to read them
+#
+variable 1 file=4pg3_a.C.map filetype=ascii skip=6
+variable 2 file=4pg3_a.A.map filetype=ascii skip=6
+variable 3 file=4pg3_a.N.map filetype=ascii skip=6
+variable 4 file=4pg3_a.NA.map filetype=ascii skip=6
+variable 5 file=4pg3_a.NS.map filetype=ascii skip=6
+variable 6 file=4pg3_a.OA.map filetype=ascii skip=6
+variable 7 file=4pg3_a.OS.map filetype=ascii skip=6
+variable 8 file=4pg3_a.SA.map filetype=ascii skip=6
+variable 9 file=4pg3_a.S.map filetype=ascii skip=6
+variable 10 file=4pg3_a.H.map filetype=ascii skip=6
+variable 11 file=4pg3_a.HD.map filetype=ascii skip=6
+variable 12 file=4pg3_a.HS.map filetype=ascii skip=6
+variable 13 file=4pg3_a.P.map filetype=ascii skip=6
+variable 14 file=4pg3_a.Br.map filetype=ascii skip=6
+variable 15 file=4pg3_a.BR.map filetype=ascii skip=6
+variable 16 file=4pg3_a.Ca.map filetype=ascii skip=6
+variable 17 file=4pg3_a.CA.map filetype=ascii skip=6
+variable 18 file=4pg3_a.Cl.map filetype=ascii skip=6
+variable 19 file=4pg3_a.CL.map filetype=ascii skip=6
+variable 20 file=4pg3_a.F.map filetype=ascii skip=6
+variable 21 file=4pg3_a.Fe.map filetype=ascii skip=6
+variable 22 file=4pg3_a.FE.map filetype=ascii skip=6
+variable 23 file=4pg3_a.I.map filetype=ascii skip=6
+variable 24 file=4pg3_a.Mg.map filetype=ascii skip=6
+variable 25 file=4pg3_a.MG.map filetype=ascii skip=6
+variable 26 file=4pg3_a.Mn.map filetype=ascii skip=6
+variable 27 file=4pg3_a.MN.map filetype=ascii skip=6
+variable 28 file=4pg3_a.Zn.map filetype=ascii skip=6
+variable 29 file=4pg3_a.ZN.map filetype=ascii skip=6
+variable 30 file=4pg3_a.He.map filetype=ascii skip=6
+variable 31 file=4pg3_a.Li.map filetype=ascii skip=6
+variable 32 file=4pg3_a.Be.map filetype=ascii skip=6
+variable 33 file=4pg3_a.B.map filetype=ascii skip=6
+variable 34 file=4pg3_a.Ne.map filetype=ascii skip=6
+variable 35 file=4pg3_a.Na.map filetype=ascii skip=6
+variable 36 file=4pg3_a.Al.map filetype=ascii skip=6
+variable 37 file=4pg3_a.Si.map filetype=ascii skip=6
+variable 38 file=4pg3_a.K.map filetype=ascii skip=6
+variable 39 file=4pg3_a.Sc.map filetype=ascii skip=6
+variable 40 file=4pg3_a.Ti.map filetype=ascii skip=6
+variable 41 file=4pg3_a.V.map filetype=ascii skip=6
+variable 42 file=4pg3_a.Co.map filetype=ascii skip=6
+variable 43 file=4pg3_a.Ni.map filetype=ascii skip=6
+variable 44 file=4pg3_a.Cu.map filetype=ascii skip=6
+variable 45 file=4pg3_a.Ga.map filetype=ascii skip=6
+variable 46 file=4pg3_a.Ge.map filetype=ascii skip=6
+variable 47 file=4pg3_a.As.map filetype=ascii skip=6
+variable 48 file=4pg3_a.Se.map filetype=ascii skip=6
+variable 49 file=4pg3_a.Kr.map filetype=ascii skip=6
+variable 50 file=4pg3_a.Rb.map filetype=ascii skip=6
+variable 51 file=4pg3_a.Sr.map filetype=ascii skip=6
+variable 52 file=4pg3_a.Y.map filetype=ascii skip=6
+variable 53 file=4pg3_a.Zr.map filetype=ascii skip=6
+variable 54 file=4pg3_a.Nb.map filetype=ascii skip=6
+variable 55 file=4pg3_a.Cr.map filetype=ascii skip=6
+variable 56 file=4pg3_a.Tc.map filetype=ascii skip=6
+variable 57 file=4pg3_a.Ru.map filetype=ascii skip=6
+variable 58 file=4pg3_a.Rh.map filetype=ascii skip=6
+variable 59 file=4pg3_a.Pd.map filetype=ascii skip=6
+variable 60 file=4pg3_a.Ag.map filetype=ascii skip=6
+variable 61 file=4pg3_a.Cd.map filetype=ascii skip=6
+variable 62 file=4pg3_a.In.map filetype=ascii skip=6
+variable 63 file=4pg3_a.Sn.map filetype=ascii skip=6
+variable 64 file=4pg3_a.Sb.map filetype=ascii skip=6
+variable 65 file=4pg3_a.Te.map filetype=ascii skip=6
+variable 66 file=4pg3_a.Xe.map filetype=ascii skip=6
+variable 67 file=4pg3_a.Cs.map filetype=ascii skip=6
+variable 68 file=4pg3_a.Ba.map filetype=ascii skip=6
+variable 69 file=4pg3_a.La.map filetype=ascii skip=6
+variable 70 file=4pg3_a.Ce.map filetype=ascii skip=6
+variable 71 file=4pg3_a.Pr.map filetype=ascii skip=6
+variable 72 file=4pg3_a.Nd.map filetype=ascii skip=6
+variable 73 file=4pg3_a.Pm.map filetype=ascii skip=6
+variable 74 file=4pg3_a.Sm.map filetype=ascii skip=6
+variable 75 file=4pg3_a.Eu.map filetype=ascii skip=6
+variable 76 file=4pg3_a.Gd.map filetype=ascii skip=6
+variable 77 file=4pg3_a.Tb.map filetype=ascii skip=6
+variable 78 file=4pg3_a.Dy.map filetype=ascii skip=6
+variable 79 file=4pg3_a.Ho.map filetype=ascii skip=6
+variable 80 file=4pg3_a.Er.map filetype=ascii skip=6
+variable 81 file=4pg3_a.Tm.map filetype=ascii skip=6
+variable 82 file=4pg3_a.Yb.map filetype=ascii skip=6
+variable 83 file=4pg3_a.Lu.map filetype=ascii skip=6
+variable 84 file=4pg3_a.Hf.map filetype=ascii skip=6
+variable 85 file=4pg3_a.Ta.map filetype=ascii skip=6
+variable 86 file=4pg3_a.W.map filetype=ascii skip=6
+variable 87 file=4pg3_a.Re.map filetype=ascii skip=6
+variable 88 file=4pg3_a.Os.map filetype=ascii skip=6
+variable 89 file=4pg3_a.Ir.map filetype=ascii skip=6
+variable 90 file=4pg3_a.Pt.map filetype=ascii skip=6
+variable 91 file=4pg3_a.Au.map filetype=ascii skip=6
+variable 92 file=4pg3_a.Hg.map filetype=ascii skip=6
+variable 93 file=4pg3_a.Tl.map filetype=ascii skip=6
+variable 94 file=4pg3_a.Pb.map filetype=ascii skip=6
+variable 95 file=4pg3_a.Bi.map filetype=ascii skip=6
+variable 96 file=4pg3_a.Po.map filetype=ascii skip=6
+variable 97 file=4pg3_a.At.map filetype=ascii skip=6
+variable 98 file=4pg3_a.Rn.map filetype=ascii skip=6
+variable 99 file=4pg3_a.Fr.map filetype=ascii skip=6
+variable 100 file=4pg3_a.Ra.map filetype=ascii skip=6
+variable 101 file=4pg3_a.Ac.map filetype=ascii skip=6
+variable 102 file=4pg3_a.Th.map filetype=ascii skip=6
+variable 103 file=4pg3_a.Pa.map filetype=ascii skip=6
+variable 104 file=4pg3_a.U.map filetype=ascii skip=6
+variable 105 file=4pg3_a.Np.map filetype=ascii skip=6
+variable 106 file=4pg3_a.Pu.map filetype=ascii skip=6
+variable 107 file=4pg3_a.Am.map filetype=ascii skip=6
+variable 108 file=4pg3_a.Cm.map filetype=ascii skip=6
+variable 109 file=4pg3_a.Bk.map filetype=ascii skip=6
+variable 110 file=4pg3_a.Cf.map filetype=ascii skip=6
+variable 111 file=4pg3_a.E.map filetype=ascii skip=6
+variable 112 file=4pg3_a.Fm.map filetype=ascii skip=6
+variable 113 file=4pg3_a.e.map filetype=ascii skip=6
+variable 114 file=4pg3_a.d.map filetype=ascii skip=6
+

@@ -1,0 +1,2095 @@
+AutoDock-GPU version: v1.5-release
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               CDC.pdbqt
+Grid fld file:                             4zcs_a.maps.fld
+
+Random seed:                               1692074830, 21025
+Number of runs:                            20
+Number of energy evaluations:              2542121
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/eduardo/AutoDock-GPU-develop/bin/autodock_gpu_128wi --ffile 4zcs_a.maps.fld --lfile CDC.pdbqt 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             4zcs_a
+Number of grid points (x, y, z):           35, 41, 53
+Grid center (x, y, z):                     12.825000, 39.857000, 72.148000A
+Grid size (x, y, z):                       12.750000, 15.000000, 19.500000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               CDC
+Number of atoms:                           31
+Number of rotatable bonds:                 10
+Number of atom types:                      6
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 20
+DPF> fld 4zcs_a.maps.fld
+DPF> move CDC.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    426834
+Number of generations used:                60
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  10 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+INPUT-LIGAND-PDBQT: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+INPUT-LIGAND-PDBQT: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+INPUT-LIGAND-PDBQT: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+INPUT-LIGAND-PDBQT: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+INPUT-LIGAND-PDBQT: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+INPUT-LIGAND-PDBQT: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+INPUT-LIGAND-PDBQT: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  C5' CDC B 801      14.774  38.789  72.353  1.00 31.02     0.187 C 
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   1   2
+INPUT-LIGAND-PDBQT: HETATM    2  C4' CDC B 801      15.217  40.094  71.671  1.00 31.65     0.181 C 
+INPUT-LIGAND-PDBQT: HETATM    3  C3' CDC B 801      14.640  41.358  72.324  1.00 32.30     0.216 C 
+INPUT-LIGAND-PDBQT: HETATM    4  C2' CDC B 801      13.498  41.749  71.419  1.00 33.22     0.234 C 
+INPUT-LIGAND-PDBQT: HETATM    5  O3' CDC B 801      15.589  42.398  72.298  1.00 29.81    -0.218 OA
+INPUT-LIGAND-PDBQT: HETATM    6  C1' CDC B 801      14.027  41.214  70.070  1.00 31.82     0.242 C 
+INPUT-LIGAND-PDBQT: HETATM    7  O2' CDC B 801      13.417  43.187  71.322  1.00 33.50    -0.216 OA
+INPUT-LIGAND-PDBQT: HETATM    8  O4' CDC B 801      14.488  39.953  70.474  1.00 32.60    -0.331 OA
+INPUT-LIGAND-PDBQT: BRANCH   6   9
+INPUT-LIGAND-PDBQT: HETATM    9  N1  CDC B 801      12.948  41.152  69.079  1.00 28.47    -0.254 N 
+INPUT-LIGAND-PDBQT: HETATM   10  C2  CDC B 801      12.810  42.036  68.099  1.00 29.94     0.353 A 
+INPUT-LIGAND-PDBQT: HETATM   11  N3  CDC B 801      11.769  41.908  67.183  1.00 31.06    -0.171 NA
+INPUT-LIGAND-PDBQT: HETATM   12  O2  CDC B 801      13.602  42.954  67.926  1.00 33.03    -0.244 OA
+INPUT-LIGAND-PDBQT: HETATM   13  C4  CDC B 801      10.844  40.912  67.339  1.00 31.94     0.190 A 
+INPUT-LIGAND-PDBQT: HETATM   14  C5  CDC B 801      10.966  40.029  68.379  1.00 31.20     0.060 A 
+INPUT-LIGAND-PDBQT: HETATM   15  N4  CDC B 801       9.839  40.789  66.536  1.00 32.07    -0.127 N 
+INPUT-LIGAND-PDBQT: HETATM   16  C6  CDC B 801      12.033  40.146  69.238  1.00 28.64     0.085 A 
+INPUT-LIGAND-PDBQT: ENDBRANCH   6   9
+INPUT-LIGAND-PDBQT: ENDBRANCH   1   2
+INPUT-LIGAND-PDBQT: BRANCH   1  17
+INPUT-LIGAND-PDBQT: HETATM   17  O5' CDC B 801      13.361  38.793  72.471  1.00 28.49    -0.268 OA
+INPUT-LIGAND-PDBQT: BRANCH  17  18
+INPUT-LIGAND-PDBQT: HETATM   18  PA  CDC B 801      12.677  37.519  73.128  1.00 29.45     0.418 P 
+INPUT-LIGAND-PDBQT: HETATM   19  O1A CDC B 801      13.368  36.213  72.869  1.00 28.89    -0.624 OA
+INPUT-LIGAND-PDBQT: HETATM   20  O2A CDC B 801      11.235  37.617  72.851  1.00 29.31    -0.624 OA
+INPUT-LIGAND-PDBQT: BRANCH  18  21
+INPUT-LIGAND-PDBQT: HETATM   21  O3A CDC B 801      12.876  37.623  74.640  1.00 37.80    -0.180 OA
+INPUT-LIGAND-PDBQT: BRANCH  21  22
+INPUT-LIGAND-PDBQT: HETATM   22  PB  CDC B 801      12.328  38.700  75.681  1.00 35.70     0.418 P 
+INPUT-LIGAND-PDBQT: HETATM   23  O2B CDC B 801      11.294  37.801  76.453  1.00 32.49    -0.624 OA
+INPUT-LIGAND-PDBQT: HETATM   24  O3B CDC B 801      11.932  40.071  75.100  1.00 39.30    -0.624 OA
+INPUT-LIGAND-PDBQT: BRANCH  22  25
+INPUT-LIGAND-PDBQT: HETATM   25  O1B CDC B 801      13.618  39.009  76.489  1.00 44.39    -0.269 OA
+INPUT-LIGAND-PDBQT: BRANCH  25  26
+INPUT-LIGAND-PDBQT: HETATM   26  C14 CDC B 801      13.764  38.174  77.495  1.00 44.39     0.187 C 
+INPUT-LIGAND-PDBQT: BRANCH  26  27
+INPUT-LIGAND-PDBQT: HETATM   27  C15 CDC B 801      14.968  38.704  78.223  1.00 42.48     0.250 C 
+INPUT-LIGAND-PDBQT: BRANCH  27  28
+INPUT-LIGAND-PDBQT: HETATM   28  N11 CDC B 801      14.821  38.157  79.597  1.00 42.84     0.002 N 
+INPUT-LIGAND-PDBQT: HETATM   29  C16 CDC B 801      16.131  37.850  80.170  1.00 42.34     0.250 C 
+INPUT-LIGAND-PDBQT: HETATM   30  C17 CDC B 801      14.048  36.867  79.715  1.00 42.15     0.250 C 
+INPUT-LIGAND-PDBQT: HETATM   31  C18 CDC B 801      14.140  39.169  80.418  1.00 42.54     0.250 C 
+INPUT-LIGAND-PDBQT: ENDBRANCH  27  28
+INPUT-LIGAND-PDBQT: ENDBRANCH  26  27
+INPUT-LIGAND-PDBQT: ENDBRANCH  25  26
+INPUT-LIGAND-PDBQT: ENDBRANCH  22  25
+INPUT-LIGAND-PDBQT: ENDBRANCH  21  22
+INPUT-LIGAND-PDBQT: ENDBRANCH  18  21
+INPUT-LIGAND-PDBQT: ENDBRANCH  17  18
+INPUT-LIGAND-PDBQT: ENDBRANCH   1  17
+INPUT-LIGAND-PDBQT: TORSDOF 10
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.33 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -12.31 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.70 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.61 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -12.31 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.95 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.95 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      14.740  37.912  72.477 -0.46 -0.01    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      15.532  39.181  72.123 -0.40 -0.04    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      15.188  40.389  73.006 -0.38 -0.09    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      14.262  41.217  72.149 -0.32 -0.08    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      16.344  41.154  73.259 -0.51 +0.13    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.795  40.853  70.746 -0.31 -0.03    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      14.516  42.622  72.366 -0.48 +0.12    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      14.918  39.464  70.887 -0.30 +0.03    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      13.837  41.253  69.710 -0.24 +0.00    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      13.665  42.512  69.327 -0.23 -0.01    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      12.748  42.819  68.325 -0.39 -0.02    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      14.325  43.435  69.787 -0.42 +0.03    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      11.970  41.830  67.788 -0.40 +0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      12.120  40.538  68.220 -0.44 +0.01    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      11.076  42.083  66.890 -0.48 -0.02    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      13.070  40.255  69.172 -0.36 +0.01    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      13.355  38.210  72.427 -0.22 -0.00    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      12.417  37.514  73.504 -0.24 +0.10    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      12.142  36.058  73.273 -0.11 -0.22    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      11.276  38.417  73.725 +0.03 -0.27    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      13.209  37.425  74.809 -0.34 -0.02    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.752  37.695  76.313 -0.33 +0.05    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      13.592  36.580  77.036 -0.07 -0.01    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      11.237  37.847  76.550 -0.09 -0.38    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.297  39.133  76.531 -0.33 +0.09    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      13.541  39.365  77.803 -0.46 -0.09    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      15.010  39.078  77.940 -0.43 -0.23    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      15.133  38.498  79.303 -0.59 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      13.875  37.873  79.709 -0.50 -0.11    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      15.442  39.474  80.410 -0.42 -0.33    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      16.206  37.493  79.273 -0.47 -0.24    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.33 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -12.31 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.75 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.56 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -12.31 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.77 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.77 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      14.352  39.803  73.323 -0.33 -0.06    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      15.218  40.660  72.385 -0.43 -0.06    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      14.985  42.169  72.538 -0.41 -0.09    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      14.092  42.522  71.374 -0.41 -0.10    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      16.197  42.869  72.381 -0.51 +0.06    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.554  41.464  70.348 -0.25 -0.02    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      14.447  43.822  70.857 -0.52 +0.08    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      14.586  40.328  71.170 -0.22 +0.05    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      13.594  41.360  69.244 -0.26 -0.01    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      13.497  42.265  68.279 -0.27 +0.01    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      12.572  42.095  67.252 -0.45 -0.02    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      14.233  43.242  68.218 -0.46 +0.01    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      11.712  41.032  67.280 -0.40 +0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      11.787  40.125  68.303 -0.42 +0.01    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      10.810  40.866  66.369 -0.44 -0.01    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      12.744  40.287  69.276 -0.35 +0.01    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      14.298  38.481  72.814 -0.29 +0.03    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      13.098  37.558  73.296 -0.28 +0.04    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      13.146  36.138  72.815 -0.17 -0.05    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      11.860  38.327  73.092 +0.04 -0.14    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      13.272  37.331  74.797 -0.33 -0.02    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.404  37.856  76.028 -0.31 +0.09    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      12.781  36.759  77.089 -0.10 -0.08    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      10.937  38.216  75.723 -0.05 -0.50    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.068  39.236  76.287 -0.30 +0.08    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      14.210  39.104  76.928 -0.45 -0.10    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      13.941  39.740  78.263 -0.43 -0.17    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      14.596  38.822  79.231 -0.58 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      13.644  37.824  79.717 -0.48 -0.10    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      15.140  39.463  80.484 -0.48 -0.28    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      15.711  38.157  78.542 -0.40 -0.24    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.02 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -12.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.52 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.48 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -12.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.29 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.29 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      15.074  38.157  72.690 -0.42 -0.02    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      15.812  39.434  72.254 -0.42 -0.06    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      15.452  40.670  73.090 -0.37 -0.10    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      14.474  41.426  72.224 -0.35 -0.09    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      16.587  41.483  73.274 -0.54 +0.12    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.979  41.013  70.824 -0.29 -0.03    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      14.685  42.846  72.368 -0.52 +0.12    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      15.153  39.637  71.025 -0.31 +0.04    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      13.980  41.332  69.799 -0.24 +0.01    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      13.730  42.569  69.388 -0.23 -0.01    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      12.777  42.798  68.399 -0.40 -0.02    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      14.347  43.539  69.810 -0.43 +0.04    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      12.044  41.753  67.905 -0.39 +0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      12.275  40.484  68.365 -0.43 +0.01    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      11.120  41.933  67.020 -0.48 -0.02    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      13.259  40.279  69.304 -0.36 +0.01    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      13.735  38.224  72.228 -0.26 +0.01    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      12.583  38.227  73.321 -0.18 +0.05    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      11.565  37.134  73.186 -0.01 -0.30    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      12.109  39.616  73.439 +0.03 +0.03    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      13.216  37.829  74.654 -0.31 -0.01    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.642  37.924  76.139 -0.32 +0.05    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      13.569  36.863  76.837 -0.07 -0.01    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      11.109  37.878  76.282 -0.07 -0.48    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      12.993  39.395  76.495 -0.32 +0.08    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      14.152  39.474  77.113 -0.44 -0.12    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      13.776  39.835  78.523 -0.41 -0.16    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      14.547  38.873  79.353 -0.59 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      13.692  37.768  79.785 -0.48 -0.10    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      15.127  39.421  80.633 -0.49 -0.27    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      15.658  38.359  78.538 -0.41 -0.25    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -8.98 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.96 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.11 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.85 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.96 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.83 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.83 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      14.294  37.183  72.489 -0.49 +0.00    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      15.047  38.511  72.303 -0.44 -0.02    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      14.539  39.641  73.210 -0.33 -0.07    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      13.669  40.475  72.303 -0.24 -0.06    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      15.613  40.444  73.639 -0.36 +0.13    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.375  40.229  70.951 -0.31 -0.03    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      13.816  41.873  72.629 -0.36 +0.13    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      14.560  38.841  71.024 -0.26 +0.01    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      13.518  40.647  69.836 -0.22 -0.01    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      12.389  40.028  69.516 -0.15 +0.05    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      11.616  40.488  68.453 -0.32 -0.05    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      11.956  39.078  70.157 -0.20 -0.03    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      12.060  41.534  67.692 -0.40 +0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      13.249  42.141  67.999 -0.52 +0.00    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      11.393  41.960  66.670 -0.48 -0.01    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      13.967  41.701  69.086 -0.41 +0.00    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      12.910  37.412  72.285 -0.25 -0.02    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      11.891  36.608  73.202 -0.26 +0.17    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      11.876  35.122  72.997 -0.12 -0.21    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      10.613  37.335  73.161 +0.03 -0.51    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      12.423  36.667  74.634 -0.35 -0.08    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.163  37.738  75.787 -0.30 +0.14    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      11.327  36.846  76.776 -0.10 -0.51    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      11.667  39.124  75.333 -0.04 -0.09    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.615  38.013  76.265 -0.30 +0.02    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      13.768  37.704  77.534 -0.45 -0.04    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      14.578  38.847  78.081 -0.47 -0.18    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      14.965  38.388  79.441 -0.59 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      13.923  37.535  80.011 -0.49 -0.11    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      15.170  39.471  80.470 -0.47 -0.29    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      16.222  37.632  79.324 -0.46 -0.26    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -8.65 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.63 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.79 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.85 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.63 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.23 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.23 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      14.137  37.074  72.636 -0.47 +0.00    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      14.934  38.367  72.395 -0.44 -0.02    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      14.467  39.549  73.256 -0.33 -0.06    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      13.623  40.375  72.318 -0.24 -0.06    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      15.570  40.331  73.651 -0.37 +0.13    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.316  40.051  70.976 -0.31 -0.02    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      13.819  41.780  72.587 -0.35 +0.12    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      14.454  38.662  71.104 -0.23 +0.00    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      13.471  40.453  69.847 -0.22 -0.01    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      12.311  39.873  69.566 -0.14 +0.06    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      11.551  40.316  68.485 -0.32 -0.05    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      11.839  38.978  70.256 -0.20 -0.03    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      12.038  41.300  67.669 -0.40 +0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      13.257  41.864  67.938 -0.49 +0.00    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      11.383  41.705  66.632 -0.49 -0.01    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      13.962  41.446  69.042 -0.42 +0.00    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      12.771  37.321  72.347 -0.25 -0.02    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      11.702  36.894  73.442 -0.21 +0.22    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      11.109  35.528  73.263 -0.07 -0.45    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      10.792  38.037  73.620 +0.03 -0.44    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      12.455  36.680  74.755 -0.35 -0.07    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.473  37.556  76.088 -0.32 +0.10    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      11.043  37.206  76.640 -0.02 -0.62    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      12.948  39.015  75.940 -0.06 +0.11    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.631  36.877  76.869 -0.33 -0.00    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      13.326  36.724  78.140 -0.51 -0.02    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      13.227  38.134  78.652 -0.38 -0.08    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      14.620  38.464  79.054 -0.57 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      15.339  37.255  79.451 -0.49 -0.16    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      14.764  39.392  80.235 -0.50 -0.24    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      15.288  39.090  77.904 -0.36 -0.27    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.23 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -12.21 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.77 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.44 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -12.21 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.86 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.86 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      15.038  38.358  72.902 -0.42 -0.02    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      15.844  39.513  72.285 -0.43 -0.07    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      15.650  40.854  73.005 -0.39 -0.11    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      14.678  41.604  72.128 -0.38 -0.09    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      16.859  41.577  73.027 -0.55 +0.12    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      15.042  41.008  70.751 -0.27 -0.03    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      15.016  43.007  72.106 -0.54 +0.10    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      15.117  39.649  71.087 -0.31 +0.04    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      14.001  41.310  69.764 -0.24 +0.00    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      13.735  42.539  69.341 -0.23 -0.01    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      12.740  42.752  68.390 -0.39 -0.02    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      14.372  43.516  69.718 -0.42 +0.03    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      11.985  41.701  67.948 -0.39 +0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      12.234  40.440  68.422 -0.43 +0.01    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      11.024  41.866  67.101 -0.48 -0.02    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      13.257  40.249  69.320 -0.36 +0.01    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      13.659  38.685  72.848 -0.21 +0.02    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      12.619  37.534  73.189 -0.25 +0.07    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      12.895  36.207  72.545 -0.16 -0.05    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      11.275  38.116  73.048 +0.04 -0.24    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      12.820  37.157  74.656 -0.34 -0.04    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.466  37.963  75.986 -0.31 +0.07    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      11.358  37.012  76.570 -0.09 -0.53    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      12.229  39.477  75.824 -0.06 +0.08    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.820  37.888  76.744 -0.31 +0.04    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      14.312  39.088  76.964 -0.45 -0.11    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      13.732  39.468  78.298 -0.44 -0.14    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      14.520  38.666  79.269 -0.58 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      15.840  38.352  78.724 -0.38 -0.28    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      13.939  37.324  79.643 -0.48 -0.09    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      14.663  39.456  80.501 -0.52 -0.22    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -8.59 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.57 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.01 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.56 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.57 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.23 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.23 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      11.454  37.953  72.411 -0.18 +0.05    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      12.864  37.837  71.810 -0.26 +0.01    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      13.990  38.026  72.838 -0.37 -0.01    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      14.453  39.444  72.617 -0.33 -0.05    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      15.067  37.167  72.545 -0.54 -0.01    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.147  39.597  71.110 -0.29 -0.02    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      15.884  39.527  72.787 -0.45 +0.10    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      12.865  39.032  71.065 -0.14 -0.01    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      14.179  41.009  70.717 -0.21 +0.03    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      14.051  41.416  69.460 -0.18 +0.00    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      14.075  42.775  69.159 -0.36 +0.00    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      13.857  40.638  68.534 -0.40 -0.02    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      14.307  43.688  70.151 -0.44 -0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      14.483  43.259  71.440 -0.55 -0.03    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      14.382  44.954  69.903 -0.62 +0.04    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      14.401  41.915  71.718 -0.43 -0.03    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      11.528  37.692  73.803 -0.16 -0.14    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      11.036  38.835  74.790 -0.16 +0.19    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      10.134  38.382  75.899 +0.09 -0.73    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      10.606  39.967  73.953 -0.01 -0.09    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      12.248  39.284  75.607 -0.29 +0.01    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      13.405  38.427  76.292 -0.32 -0.06    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      14.654  39.105  75.618 -0.03 +0.31    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      13.216  36.898  76.288 -0.06 -0.08    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.210  38.811  77.784 -0.36 +0.09    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      14.198  39.566  78.216 -0.47 -0.14    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      15.339  38.600  78.371 -0.44 -0.24    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      15.302  38.235  79.812 -0.61 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      14.173  37.348  80.087 -0.48 -0.11    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      15.126  39.379  80.778 -0.49 -0.27    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      16.564  37.555  80.140 -0.47 -0.30    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.49 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -12.47 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.91 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.56 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -12.47 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.77 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.77 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      15.072  38.152  72.553 -0.44 -0.02    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      15.810  39.440  72.153 -0.41 -0.06    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      15.431  40.659  73.005 -0.39 -0.10    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      14.464  41.426  72.137 -0.35 -0.08    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      16.559  41.474  73.221 -0.54 +0.12    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.993  41.042  70.738 -0.27 -0.03    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      14.666  42.845  72.310 -0.52 +0.12    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      15.171  39.663  70.917 -0.32 +0.04    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      14.010  41.375  69.703 -0.24 +0.00    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      13.760  42.618  69.311 -0.23 -0.01    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      12.822  42.860  68.311 -0.40 -0.02    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      14.365  43.582  69.761 -0.44 +0.04    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      12.103  41.822  67.785 -0.40 +0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      12.333  40.545  68.226 -0.44 +0.01    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      11.192  42.013  66.889 -0.49 -0.02    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      13.302  40.327  69.176 -0.38 +0.01    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      13.675  38.394  72.507 -0.23 +0.01    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      12.756  37.574  73.510 -0.25 +0.07    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      12.713  36.093  73.276 -0.14 -0.12    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      11.483  38.304  73.618 +0.03 -0.24    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      13.436  37.602  74.879 -0.32 -0.02    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.805  37.686  76.341 -0.34 +0.04    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      13.592  36.507  77.023 -0.07 -0.02    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      11.270  37.785  76.419 -0.09 -0.41    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.281  39.097  76.784 -0.34 +0.09    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      13.577  39.121  78.066 -0.47 -0.09    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      15.044  38.794  78.097 -0.45 -0.22    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      15.259  38.259  79.467 -0.60 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      15.446  39.352  80.421 -0.44 -0.32    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      16.476  37.387  79.652 -0.46 -0.26    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      14.076  37.468  79.836 -0.49 -0.11    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.31 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -12.29 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.62 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.68 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -12.29 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.59 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.59 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      14.691  37.781  72.369 -0.47 -0.00    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      15.449  39.090  72.094 -0.42 -0.04    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      15.044  40.244  73.021 -0.38 -0.09    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      14.113  41.081  72.179 -0.30 -0.08    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      16.167  41.032  73.340 -0.47 +0.13    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.692  40.800  70.775 -0.32 -0.03    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      14.315  42.482  72.466 -0.46 +0.13    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      14.857  39.410  70.856 -0.30 +0.02    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      13.749  41.217  69.733 -0.23 +0.00    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      13.589  42.481  69.362 -0.23 -0.01    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      12.684  42.804  68.354 -0.39 -0.02    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      14.250  43.394  69.839 -0.42 +0.04    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      11.906  41.826  67.798 -0.40 +0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      12.044  40.529  68.217 -0.44 +0.01    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      11.024  42.094  66.893 -0.48 -0.02    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      12.982  40.229  69.176 -0.36 +0.01    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      13.310  37.995  72.129 -0.23 -0.00    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      12.292  37.553  73.265 -0.22 +0.10    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      11.940  36.095  73.281 -0.10 -0.26    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      11.199  38.539  73.268 +0.04 -0.23    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      13.026  37.657  74.602 -0.31 -0.03    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.478  38.024  76.054 -0.32 +0.06    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      11.416  36.876  76.220 -0.03 -0.61    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      12.115  39.502  76.294 -0.05 +0.08    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.759  37.823  76.910 -0.33 +0.04    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      14.081  38.923  77.555 -0.49 -0.10    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      15.372  38.568  78.239 -0.42 -0.23    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      14.969  38.307  79.645 -0.60 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      13.916  37.294  79.698 -0.47 -0.09    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      14.397  39.482  80.397 -0.53 -0.20    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      16.154  37.835  80.377 -0.49 -0.29    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.09 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -12.07 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.56 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.51 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -12.07 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.74 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.74 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      14.748  37.701  72.365 -0.46 -0.00    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      15.433  39.038  72.036 -0.39 -0.04    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      14.960  40.206  72.913 -0.37 -0.08    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      13.987  40.953  72.035 -0.28 -0.07    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      16.035  41.068  73.200 -0.47 +0.12    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.586  40.645  70.645 -0.32 -0.02    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      14.108  42.373  72.263 -0.43 +0.12    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      14.828  39.272  70.785 -0.30 +0.01    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      13.625  40.965  69.585 -0.24 -0.01    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      12.517  40.265  69.374 -0.17 +0.05    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      11.640  40.633  68.357 -0.33 -0.05    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      12.195  39.317  70.079 -0.21 -0.03    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      11.959  41.673  67.527 -0.41 +0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      13.126  42.364  67.721 -0.53 +0.00    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      11.193  42.015  66.544 -0.46 -0.01    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      13.948  42.013  68.766 -0.43 +0.00    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      14.202  37.778  73.671 -0.28 -0.00    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      12.701  37.297  73.867 -0.26 +0.09    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      12.364  35.972  73.251 -0.13 -0.18    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      11.839  38.451  73.564 +0.04 -0.15    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      12.522  36.950  75.345 -0.36 -0.07    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.132  37.877  76.583 -0.31 +0.09    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      10.586  38.005  76.324 +0.02 -0.65    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      13.018  39.116  76.814 -0.10 +0.17    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      12.495  36.946  77.772 -0.39 -0.01    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      13.794  36.914  77.975 -0.50 -0.03    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      13.927  37.156  79.453 -0.47 -0.09    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      14.980  38.200  79.549 -0.60 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      14.493  39.352  80.307 -0.52 -0.21    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      15.451  38.784  78.240 -0.40 -0.27    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      16.144  37.610  80.226 -0.52 -0.27    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   11 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        11
+DOCKED: USER    Run = 11
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.13 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -12.11 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.84 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.27 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -12.11 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.77 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.77 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      14.761  39.855  73.268 -0.37 -0.07    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      15.460  40.805  72.281 -0.45 -0.07    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      15.082  42.280  72.472 -0.44 -0.09    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      14.073  42.544  71.382 -0.41 -0.10    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      16.199  43.105  72.237 -0.49 +0.06    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.566  41.547  70.310 -0.23 -0.02    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      14.250  43.878  70.859 -0.52 +0.09    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      14.778  40.416  71.111 -0.24 +0.05    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      13.543  41.349  69.278 -0.26 -0.01    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      13.326  42.214  68.295 -0.27 +0.02    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      12.347  41.955  67.339 -0.44 -0.02    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      13.994  43.231  68.156 -0.47 +0.01    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      11.558  40.843  67.457 -0.39 +0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      11.757  39.977  68.499 -0.40 +0.01    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      10.610  40.593  66.615 -0.43 -0.01    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      12.766  40.229  69.399 -0.34 +0.01    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      13.651  39.258  72.619 -0.18 +0.03    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      13.546  37.674  72.656 -0.33 +0.01    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      14.759  36.937  72.170 -0.22 -0.02    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      12.235  37.319  72.089 -0.01 -0.08    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      13.556  37.250  74.125 -0.34 -0.02    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.812  37.882  75.386 -0.29 +0.06    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      11.323  37.590  74.972 -0.00 -0.56    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      13.270  39.289  75.815 -0.05 +0.19    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.338  36.967  76.525 -0.32 -0.02    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      13.159  37.521  77.705 -0.46 -0.02    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      14.222  36.888  78.559 -0.47 -0.07    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      14.935  38.047  79.155 -0.59 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      16.201  37.620  79.752 -0.50 -0.27    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      14.216  38.761  80.273 -0.54 -0.17    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      15.190  39.023  78.085 -0.40 -0.25    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   12 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        12
+DOCKED: USER    Run = 12
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -7.79 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -10.77 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.71 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -10.77 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.64 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.64 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      11.497  38.204  72.808 -0.17 +0.05    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      12.745  38.018  71.929 -0.25 +0.01    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      14.065  38.089  72.709 -0.38 -0.01    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      14.578  39.481  72.434 -0.34 -0.05    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      14.995  37.173  72.180 -0.51 -0.01    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      13.986  39.714  71.026 -0.27 -0.01    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      16.016  39.460  72.311 -0.45 +0.09    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      12.683  39.239  71.230 -0.13 -0.01    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      14.042  41.135  70.670 -0.21 +0.03    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      13.937  41.576  69.423 -0.19 +0.00    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      13.984  42.943  69.159 -0.39 +0.01    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      13.747  40.826  68.475 -0.39 -0.02    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      14.213  43.826  70.178 -0.47 -0.05    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      14.366  43.361  71.458 -0.54 -0.03    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      14.309  45.097  69.965 -0.61 +0.04    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      14.262  42.012  71.699 -0.43 -0.03    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      11.507  39.518  73.340 -0.12 -0.02    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      11.793  39.677  74.894 -0.18 -0.02    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      11.033  40.774  75.579 -0.02 +0.15    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      13.253  39.620  75.069 +0.02 +0.22    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      11.185  38.463  75.597 -0.27 -0.10    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      11.878  37.140  76.156 -0.18 +0.24    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      12.090  36.373  74.800 -0.03 -0.39    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      11.197  36.471  77.366 -0.07 -0.43    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.185  37.727  76.757 -0.33 +0.01    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      13.616  37.001  77.766 -0.49 -0.02    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      13.208  37.799  78.974 -0.41 -0.07    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      14.165  38.936  78.988 -0.58 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      13.575  40.112  78.351 -0.38 -0.15    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      15.461  38.717  78.247 -0.41 -0.26    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      14.492  39.237  80.390 -0.53 -0.20    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   13 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        13
+DOCKED: USER    Run = 13
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.23 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -12.21 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.88 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.33 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -12.21 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.87 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.87 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      14.820  39.506  73.098 -0.39 -0.06    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      15.518  40.552  72.214 -0.45 -0.06    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      15.110  41.998  72.530 -0.42 -0.09    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      14.115  42.343  71.449 -0.40 -0.09    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      16.216  42.859  72.391 -0.51 +0.06    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.645  41.455  70.302 -0.23 -0.02    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      14.278  43.721  71.052 -0.51 +0.10    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      14.863  40.260  71.001 -0.26 +0.05    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      13.644  41.334  69.237 -0.26 -0.01    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      13.473  42.252  68.294 -0.27 +0.01    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      12.512  42.065  67.303 -0.44 -0.02    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      14.169  43.257  68.221 -0.46 +0.01    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      11.694  40.970  67.346 -0.40 +0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      11.846  40.048  68.348 -0.42 +0.01    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      10.761  40.786  66.470 -0.44 -0.01    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      12.837  40.229  69.283 -0.35 +0.01    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      13.639  39.071  72.445 -0.19 +0.03    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      13.270  37.530  72.549 -0.31 +0.02    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      14.354  36.579  72.135 -0.24 -0.01    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      11.932  37.369  71.956 +0.00 -0.09    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      13.173  37.183  74.034 -0.35 -0.03    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.597  38.030  75.256 -0.27 +0.07    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      11.725  36.917  75.946 -0.09 -0.48    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      12.015  39.415  74.912 -0.02 +0.02    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.905  38.368  76.022 -0.30 +0.05    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      13.651  38.997  77.149 -0.45 -0.08    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      15.000  39.106  77.805 -0.43 -0.23    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      14.849  38.321  79.057 -0.58 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      13.856  37.262  78.883 -0.48 -0.08    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      14.372  39.088  80.265 -0.54 -0.19    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      16.157  37.732  79.383 -0.45 -0.27    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   14 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        14
+DOCKED: USER    Run = 14
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -8.92 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.90 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.58 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.32 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.90 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.97 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.97 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      15.418  39.054  72.827 -0.44 -0.05    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      15.857  40.361  72.145 -0.45 -0.07    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      15.216  41.618  72.749 -0.33 -0.09    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      14.107  41.963  71.786 -0.37 -0.09    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      16.136  42.684  72.750 -0.50 +0.07    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.713  41.422  70.472 -0.24 -0.02    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      13.992  43.396  71.661 -0.48 +0.15    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      15.189  40.181  70.918 -0.30 +0.05    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      13.684  41.315  69.433 -0.25 -0.00    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      13.487  42.244  68.507 -0.26 +0.01    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      12.500  42.070  67.540 -0.43 -0.02    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      14.181  43.250  68.427 -0.44 +0.01    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      11.683  40.974  67.591 -0.39 +0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      11.861  40.040  68.577 -0.40 +0.01    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      10.727  40.801  66.739 -0.43 -0.01    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      12.878  40.209  69.487 -0.33 +0.01    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      14.005  39.054  72.945 -0.23 +0.04    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      13.251  37.676  72.711 -0.29 +0.02    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      14.138  36.484  72.508 -0.23 -0.01    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      12.185  37.933  71.728 +0.02 -0.06    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      12.591  37.286  74.033 -0.31 -0.05    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.179  38.185  75.285 -0.26 +0.11    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      11.397  37.108  76.122 -0.04 -0.59    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      11.565  39.561  74.964 -0.03 -0.02    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.576  38.539  75.864 -0.30 +0.05    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      13.764  37.977  77.038 -0.40 -0.04    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      14.644  38.957  77.763 -0.46 -0.18    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      14.804  38.358  79.114 -0.58 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      16.112  37.717  79.239 -0.45 -0.25    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      13.818  37.275  79.477 -0.47 -0.09    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      14.677  39.436  80.106 -0.50 -0.23    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   15 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        15
+DOCKED: USER    Run = 15
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -8.77 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.76 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.74 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.02 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.76 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      11.602  38.675  72.839 -0.16 +0.04    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      12.953  38.514  72.122 -0.24 +0.00    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      14.167  38.719  73.039 -0.34 -0.03    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      14.628  40.121  72.727 -0.33 -0.07    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      15.202  37.833  72.685 -0.48 +0.01    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.194  40.226  71.249 -0.28 -0.03    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      16.070  40.186  72.769 -0.47 +0.11    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      12.904  39.682  71.336 -0.13 +0.00    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      14.210  41.623  70.802 -0.22 +0.04    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      13.886  41.996  69.571 -0.19 -0.01    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      13.909  43.343  69.219 -0.43 +0.01    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      13.509  41.199  68.721 -0.35 -0.02    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      14.339  44.275  70.123 -0.51 -0.05    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      14.716  43.879  71.379 -0.48 -0.03    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      14.418  45.529  69.819 -0.43 +0.04    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      14.633  42.549  71.718 -0.50 -0.03    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      10.994  37.400  72.957 -0.13 -0.15    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      11.878  36.217  73.542 -0.24 +0.21    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      13.060  35.824  72.705 -0.14 -0.04    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      10.948  35.165  73.982 +0.09 -0.69    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      12.601  36.756  74.776 -0.34 -0.06    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.060  37.649  75.981 -0.30 +0.16    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      12.349  36.665  77.174 -0.09 -0.15    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      10.675  38.295  75.784 -0.01 -0.57    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.035  38.856  75.912 -0.28 +0.04    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      14.027  38.718  76.764 -0.41 -0.07    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      13.506  39.357  78.022 -0.40 -0.12    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      14.307  38.723  79.101 -0.57 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      13.633  37.527  79.606 -0.46 -0.09    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      14.546  39.566  80.328 -0.50 -0.22    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      15.617  38.360  78.539 -0.42 -0.25    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   16 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        16
+DOCKED: USER    Run = 16
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.28 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -12.26 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.69 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.57 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -12.26 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.73 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.73 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      14.640  37.834  72.397 -0.46 -0.00    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      15.446  39.105  72.082 -0.42 -0.04    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      15.080  40.304  72.969 -0.38 -0.09    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      14.183  41.145  72.095 -0.31 -0.08    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      16.229  41.061  73.266 -0.50 +0.13    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.756  40.796  70.704 -0.32 -0.03    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      14.434  42.546  72.336 -0.47 +0.12    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      14.870  39.404  70.832 -0.30 +0.02    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      13.832  41.211  69.644 -0.24 -0.00    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      13.686  42.473  69.261 -0.23 -0.01    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      12.799  42.795  68.237 -0.40 -0.02    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      14.345  43.386  69.742 -0.41 +0.03    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      12.023  41.818  67.676 -0.41 +0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      12.146  40.523  68.106 -0.45 +0.01    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      11.157  42.085  66.755 -0.47 -0.01    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      13.067  40.224  69.082 -0.37 +0.01    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      13.284  38.194  72.601 -0.21 -0.00    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      12.300  37.068  73.138 -0.27 +0.11    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      12.586  35.679  72.649 -0.16 -0.08    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      10.933  37.593  73.000 +0.03 -0.36    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      12.588  36.883  74.628 -0.35 -0.06    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.226  37.813  75.872 -0.30 +0.12    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      11.343  36.803  76.693 -0.09 -0.54    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      11.733  39.234  75.540 -0.05 -0.05    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.635  38.052  76.479 -0.32 +0.03    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      13.582  38.876  77.503 -0.46 -0.07    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      13.511  37.958  78.692 -0.44 -0.08    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      14.702  38.331  79.499 -0.59 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      15.083  37.234  80.389 -0.52 -0.15    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      14.534  39.517  80.415 -0.51 -0.21    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      15.804  38.628  78.572 -0.32 -0.31    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   17 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        17
+DOCKED: USER    Run = 17
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.44 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -12.42 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.88 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.54 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -12.42 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.97 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.97 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      15.051  38.531  72.669 -0.44 -0.03    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      15.720  39.797  72.108 -0.45 -0.06    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      15.276  41.091  72.806 -0.38 -0.09    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      14.270  41.692  71.856 -0.36 -0.08    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      16.359  41.984  72.913 -0.53 +0.09    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.819  41.167  70.512 -0.24 -0.02    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      14.395  43.130  71.852 -0.51 +0.12    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      15.070  39.831  70.859 -0.31 +0.04    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      13.819  41.317  69.450 -0.25 -0.00    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      13.631  42.449  68.784 -0.25 +0.00    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      12.672  42.516  67.776 -0.42 -0.02    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      14.311  43.448  68.982 -0.44 +0.01    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      11.872  41.436  67.525 -0.41 +0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      12.040  40.284  68.247 -0.44 +0.01    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      10.941  41.476  66.629 -0.47 -0.01    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      13.029  40.227  69.200 -0.36 +0.01    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      13.858  38.904  73.338 -0.23 +0.04    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      12.824  37.751  73.690 -0.24 +0.06    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      12.966  36.493  72.885 -0.14 -0.07    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      11.497  38.380  73.782 +0.03 -0.23    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      13.191  37.216  75.074 -0.34 -0.03    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.577  37.555  76.507 -0.34 +0.07    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      13.423  36.562  77.385 -0.11 +0.00    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      11.040  37.605  76.596 -0.06 -0.51    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      12.996  39.043  76.661 -0.32 +0.06    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      14.198  39.150  77.186 -0.47 -0.11    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      13.936  39.712  78.556 -0.44 -0.17    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      14.663  38.788  79.464 -0.59 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      13.745  37.807  80.041 -0.49 -0.11    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      15.331  39.424  80.657 -0.46 -0.30    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      15.700  38.102  78.678 -0.42 -0.24    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   18 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        18
+DOCKED: USER    Run = 18
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.14 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -12.12 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.76 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.36 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -12.12 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.83 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.83 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      14.227  40.134  73.357 -0.29 -0.07    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      15.062  40.936  72.345 -0.42 -0.06    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      14.800  42.448  72.389 -0.44 -0.10    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      13.884  42.695  71.215 -0.41 -0.10    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      15.994  43.158  72.163 -0.53 +0.06    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.356  41.572  70.264 -0.28 -0.02    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      14.205  43.960  70.598 -0.53 +0.08    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      14.422  40.502  71.168 -0.20 +0.05    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      13.384  41.367  69.185 -0.26 -0.01    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      13.247  42.202  68.163 -0.27 +0.02    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      12.314  41.937  67.164 -0.44 -0.02    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      13.953  43.193  68.024 -0.48 +0.01    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      11.485  40.854  67.276 -0.40 +0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      11.601  40.020  68.357 -0.41 +0.01    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      10.577  40.601  66.393 -0.43 -0.01    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      12.567  40.275  69.302 -0.34 +0.01    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      13.375  39.251  72.647 -0.17 +0.03    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      13.684  37.696  72.749 -0.34 +0.01    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      15.137  37.332  72.822 -0.16 -0.02    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      12.842  37.026  71.744 -0.05 -0.01    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      13.230  37.230  74.132 -0.35 -0.02    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.504  38.032  75.304 -0.27 +0.08    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      11.715  36.846  75.970 -0.09 -0.49    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      11.803  39.344  74.901 -0.02 -0.03    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.727  38.515  76.130 -0.32 +0.06    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      13.379  38.836  77.357 -0.44 -0.06    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      14.665  39.308  77.978 -0.41 -0.22    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      14.891  38.354  79.095 -0.58 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      14.933  39.062  80.374 -0.52 -0.24    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      16.185  37.580  79.051 -0.45 -0.24    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      13.785  37.385  79.095 -0.47 -0.08    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   19 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        19
+DOCKED: USER    Run = 19
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.68 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -12.67 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.93 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.74 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -12.67 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.45 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.45 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      14.708  38.073  72.487 -0.46 -0.01    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      15.486  39.348  72.121 -0.43 -0.05    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      15.073  40.579  72.939 -0.37 -0.09    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      14.170  41.351  72.009 -0.32 -0.08    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      16.197  41.381  73.216 -0.48 +0.12    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      14.777  40.947  70.647 -0.30 -0.03    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      14.380  42.769  72.182 -0.49 +0.12    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      14.925  39.567  70.848 -0.30 +0.03    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      13.861  41.284  69.552 -0.25 -0.00    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      13.684  42.521  69.108 -0.24 -0.00    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      12.808  42.767  68.053 -0.40 -0.02    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      14.306  43.476  69.557 -0.43 +0.03    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      12.074  41.741  67.526 -0.41 +0.04    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      12.227  40.472  68.019 -0.45 +0.01    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      11.218  41.938  66.577 -0.47 -0.01    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      13.138  40.248  69.024 -0.37 +0.01    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      13.392  38.437  72.871 -0.20 +0.01    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      12.484  37.313  73.532 -0.26 +0.10    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801      12.706  35.922  73.016 -0.15 -0.10    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      11.110  37.838  73.565 +0.03 -0.39    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      12.958  37.134  74.974 -0.34 -0.04    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.475  37.850  76.315 -0.33 +0.07    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      11.328  36.858  76.731 -0.10 -0.52    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      12.238  39.370  76.229 -0.07 +0.08    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.754  37.732  77.187 -0.35 +0.04    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      13.948  38.820  77.902 -0.50 -0.09    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      15.379  38.701  78.346 -0.43 -0.25    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      15.276  38.374  79.792 -0.61 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      13.976  37.774  80.091 -0.51 -0.12    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      15.377  39.542  80.742 -0.45 -0.31    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      16.352  37.428  80.122 -0.50 -0.27    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   20 / 20
+Time taken for this run:   0.045s
+
+DOCKED: MODEL        20
+DOCKED: USER    Run = 20
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -8.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.64 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.98 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.67 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.64 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.02 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.98 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.02 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  10 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C1'_1142  and  N1_1134 
+DOCKED: REMARK    2  A    between atoms: C4'_1146  and  C5'_1149 
+DOCKED: REMARK    3  A    between atoms: C5'_1149  and  O5'_1150 
+DOCKED: REMARK    4  A    between atoms: O5'_1150  and  PA_1151 
+DOCKED: REMARK    5  A    between atoms: O3A_1154  and  PA_1151 
+DOCKED: REMARK    6  A    between atoms: O3A_1154  and  PB_1155 
+DOCKED: REMARK    7  A    between atoms: O1B_1156  and  PB_1155 
+DOCKED: REMARK    8  A    between atoms: C14_1159  and  O1B_1156 
+DOCKED: REMARK    9  A    between atoms: C14_1159  and  C15_1160 
+DOCKED: REMARK   10  A    between atoms: C15_1160  and  N11_1161 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C5' CDC B 801      11.263  38.421  72.759 -0.16 +0.06    +0.187 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   2
+DOCKED: HETATM    2  C4' CDC B 801      12.606  38.189  72.046 -0.23 +0.01    +0.181 C  
+DOCKED: HETATM    3  C3' CDC B 801      13.824  38.300  72.973 -0.33 -0.01    +0.216 C  
+DOCKED: HETATM    4  C2' CDC B 801      14.375  39.676  72.691 -0.31 -0.06    +0.234 C  
+DOCKED: HETATM    5  O3' CDC B 801      14.804  37.358  72.607 -0.51 -0.00    -0.218 OA 
+DOCKED: HETATM    6  C1' CDC B 801      13.957  39.837  71.213 -0.26 -0.02    +0.242 C  
+DOCKED: HETATM    7  O2' CDC B 801      15.817  39.649  72.741 -0.45 +0.09    -0.216 OA 
+DOCKED: HETATM    8  O4' CDC B 801      12.635  39.373  71.283 -0.13 -0.01    -0.331 OA 
+DOCKED: BRANCH   6   9
+DOCKED: HETATM    9  N1  CDC B 801      14.063  41.238  70.794 -0.21 +0.04    -0.254 N  
+DOCKED: HETATM   10  C2  CDC B 801      13.990  41.625  69.527 -0.18 -0.00    +0.353 A  
+DOCKED: HETATM   11  N3  CDC B 801      14.084  42.975  69.201 -0.38 +0.01    -0.171 NA 
+DOCKED: HETATM   12  O2  CDC B 801      13.788  40.838  68.610 -0.39 -0.02    -0.244 OA 
+DOCKED: HETATM   13  C4  CDC B 801      14.328  43.896  70.183 -0.47 -0.05    +0.190 A  
+DOCKED: HETATM   14  C5  CDC B 801      14.448  43.486  71.484 -0.53 -0.03    +0.060 A  
+DOCKED: HETATM   15  N4  CDC B 801      14.467  45.153  69.914 -0.59 +0.04    -0.127 N  
+DOCKED: HETATM   16  C6  CDC B 801      14.297  42.153  71.785 -0.45 -0.03    +0.085 A  
+DOCKED: ENDBRANCH   6   9
+DOCKED: ENDBRANCH   1   2
+DOCKED: BRANCH   1  17
+DOCKED: HETATM   17  O5' CDC B 801      11.329  37.845  74.053 -0.15 -0.17    -0.268 OA 
+DOCKED: BRANCH  17  18
+DOCKED: HETATM   18  PA  CDC B 801      10.916  38.760  75.284 -0.16 +0.23    +0.418 P  
+DOCKED: HETATM   19  O1A CDC B 801       9.457  38.750  75.631 +0.02 -0.72    -0.624 OA 
+DOCKED: HETATM   20  O2A CDC B 801      11.583  40.059  75.094 -0.04 +0.08    -0.624 OA 
+DOCKED: BRANCH  18  21
+DOCKED: HETATM   21  O3A CDC B 801      11.488  38.114  76.545 -0.33 -0.07    -0.180 OA 
+DOCKED: BRANCH  21  22
+DOCKED: HETATM   22  PB  CDC B 801      12.812  37.249  76.752 -0.34 +0.05    +0.418 P  
+DOCKED: HETATM   23  O2B CDC B 801      12.827  36.480  75.380 +0.09 -0.18    -0.624 OA 
+DOCKED: HETATM   24  O3B CDC B 801      12.940  36.507  78.096 -0.15 +0.02    -0.624 OA 
+DOCKED: BRANCH  22  25
+DOCKED: HETATM   25  O1B CDC B 801      13.882  38.370  76.855 -0.35 +0.07    -0.269 OA 
+DOCKED: BRANCH  25  26
+DOCKED: HETATM   26  C14 CDC B 801      13.876  38.928  78.046 -0.50 -0.10    +0.187 C  
+DOCKED: BRANCH  26  27
+DOCKED: HETATM   27  C15 CDC B 801      15.265  38.674  78.563 -0.45 -0.24    +0.250 C  
+DOCKED: BRANCH  27  28
+DOCKED: HETATM   28  N11 CDC B 801      15.061  38.399  80.009 -0.62 -0.00    +0.002 N  
+DOCKED: HETATM   29  C16 CDC B 801      15.858  37.247  80.429 -0.52 -0.21    +0.250 C  
+DOCKED: HETATM   30  C17 CDC B 801      13.652  38.052  80.422 -0.48 -0.11    +0.250 C  
+DOCKED: HETATM   31  C18 CDC B 801      15.472  39.593  80.761 -0.42 -0.32    +0.250 C  
+DOCKED: ENDBRANCH  27  28
+DOCKED: ENDBRANCH  26  27
+DOCKED: ENDBRANCH  25  26
+DOCKED: ENDBRANCH  22  25
+DOCKED: ENDBRANCH  21  22
+DOCKED: ENDBRANCH  18  21
+DOCKED: ENDBRANCH  17  18
+DOCKED: ENDBRANCH   1  17
+DOCKED: TORSDOF 10
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -9.68 |  19 |     -9.05 |  20 |####################
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1     19       -9.68      0.00      1.09           RANKING
+   1      2      8       -9.49      0.51      1.17           RANKING
+   1      3     17       -9.44      0.61      1.09           RANKING
+   1      4      1       -9.33      0.51      1.19           RANKING
+   1      5      2       -9.33      0.98      0.97           RANKING
+   1      6      9       -9.31      0.46      1.09           RANKING
+   1      7     16       -9.28      0.53      1.10           RANKING
+   1      8      6       -9.23      0.55      1.09           RANKING
+   1      9     13       -9.23      1.13      0.84           RANKING
+   1     10     18       -9.14      1.18      0.94           RANKING
+   1     11     11       -9.13      1.21      0.98           RANKING
+   1     12     10       -9.09      1.03      1.18           RANKING
+   1     13      3       -9.02      0.70      1.22           RANKING
+   1     14      4       -8.98      1.12      1.31           RANKING
+   1     15     14       -8.92      1.03      0.80           RANKING
+   1     16     15       -8.77      1.74      2.14           RANKING
+   1     17     20       -8.66      1.81      2.17           RANKING
+   1     18      5       -8.65      1.27      1.45           RANKING
+   1     19      7       -8.59      1.81      2.08           RANKING
+   1     20     12       -7.79      1.86      2.13           RANKING
+
+Run time 0.917 sec
+Idle time 0.434 sec

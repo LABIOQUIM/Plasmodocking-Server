@@ -20,7 +20,7 @@ class VS_ViewSet(viewsets.ModelViewSet):
     
     def get_queryset(self):
         username = self.request.query_params.get('username')
-        user = UserCustom.objects.get(username=username)
+        user = UserCustom.objects.get(name=username)
         queryset = Arquivos_virtaulS.objects.filter(user=user)
         return queryset
     
@@ -29,6 +29,15 @@ def api_delete(request, idItem):
         try:
             arq = Arquivos_virtaulS.objects.get(id=idItem)
             arq.delete()
+
+            dir_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{arq.user.username}", arq.nome)
+            if os.path.exists(dir_path):
+                try:
+                    shutil.rmtree(dir_path)
+                    #subprocess.run(["rm", "-rf", dir_path], check=True)
+                except subprocess.CalledProcessError as e:
+                    return JsonResponse(f"Ocorreu um erro ao excluir o diretório: {e.stderr}")
+
             return JsonResponse({'message': 'Arquivo apagado com sucesso!'})
         except Arquivos_virtaulS.DoesNotExist:
             return JsonResponse({'message': 'Item não encontrado'}, status=404)
@@ -63,21 +72,21 @@ def api_cadastro(request):
     if request.method == 'POST':
         data = json.loads(request.body)
 
-        username=data['nome_usuario']
+        name=data['nome_usuario']
         email=data['email']
         password=data['password']
-        name=data['nome']
+        firstname=data['nome']
 
-        user_exists = User.objects.filter(username=username).exists()
+        user_exists = UserCustom.objects.filter(name=name).exists()
         if(user_exists):
            return JsonResponse({'message': 'Ja tem um usuario com esse Username.'}, status=400) 
         
-        user_exists = User.objects.filter(email=email).exists()
+        user_exists = UserCustom.objects.filter(email=email).exists()
         if(user_exists):
            return JsonResponse({'message': 'Ja tem um usuario com esse email.'}, status=400) 
 
 
-        newuser = UserCustom(name=name, email=email, username=username, password=password)
+        newuser = UserCustom(name=name, email=email, firstname=firstname, password=password)
         newuser.save()
         
         
@@ -110,7 +119,7 @@ def upload_view(request):
         username = request.POST.get('username')
 
         try:
-            user = UserCustom.objects.get(username=username)
+            user = UserCustom.objects.get(name=username)
         except UserCustom.DoesNotExist:
             return JsonResponse({'message': 'Usuário não encontrado'}, status=404)
         

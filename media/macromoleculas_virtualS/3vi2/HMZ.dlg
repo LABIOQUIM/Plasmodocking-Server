@@ -1,0 +1,1466 @@
+AutoDock-GPU version: v1.5-release
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               HMZ.pdbqt
+Grid fld file:                             3vi2_a.maps.fld
+
+Random seed:                               1692977854, 11240
+Number of runs:                            20
+Number of energy evaluations:              1132076
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/eduardo/AutoDock-GPU-develop/bin/autodock_gpu_128wi --ffile 3vi2_a.maps.fld --lfile HMZ.pdbqt 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             3vi2_a
+Number of grid points (x, y, z):           33, 35, 31
+Grid center (x, y, z):                     20.517000, 33.990000, 13.690000A
+Grid size (x, y, z):                       12.000000, 12.750000, 11.250000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               HMZ
+Number of atoms:                           16
+Number of rotatable bonds:                 5
+Number of atom types:                      3
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 20
+DPF> fld 3vi2_a.maps.fld
+DPF> move HMZ.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    645954
+Number of generations used:                40
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  5 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+INPUT-LIGAND-PDBQT: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+INPUT-LIGAND-PDBQT: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  OAE HMZ A 500      20.283  36.462  14.609  1.00 77.17    -0.190 OA
+INPUT-LIGAND-PDBQT: HETATM    2  CAF HMZ A 500      19.835  32.902  12.483  1.00 73.70     0.024 A 
+INPUT-LIGAND-PDBQT: HETATM    3  CAG HMZ A 500      20.815  33.027  13.441  1.00 79.49     0.007 A 
+INPUT-LIGAND-PDBQT: HETATM    4  CAH HMZ A 500      19.174  35.113  12.952  1.00 67.49     0.052 A 
+INPUT-LIGAND-PDBQT: HETATM    5  CAN HMZ A 500      19.009  33.957  12.214  1.00 69.70     0.096 A 
+INPUT-LIGAND-PDBQT: HETATM    6  CAO HMZ A 500      20.145  35.271  13.911  1.00 75.26     0.136 A 
+INPUT-LIGAND-PDBQT: HETATM    7  CAP HMZ A 500      20.983  34.200  14.180  1.00 77.89     0.060 A 
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   7   8
+INPUT-LIGAND-PDBQT: HETATM    8  CAM HMZ A 500      22.126  34.190  15.247  1.00 79.03     0.176 C 
+INPUT-LIGAND-PDBQT: HETATM    9  OAC HMZ A 500      22.188  33.269  16.068  1.00 75.09    -0.291 OA
+INPUT-LIGAND-PDBQT: BRANCH   8  10
+INPUT-LIGAND-PDBQT: HETATM   10  CAJ HMZ A 500      23.244  35.252  15.228  1.00 81.01     0.081 C 
+INPUT-LIGAND-PDBQT: BRANCH  10  11
+INPUT-LIGAND-PDBQT: HETATM   11  CAI HMZ A 500      23.556  35.777  13.811  1.00 80.72     0.106 C 
+INPUT-LIGAND-PDBQT: BRANCH  11  12
+INPUT-LIGAND-PDBQT: HETATM   12  CAL HMZ A 500      24.948  36.425  13.753  1.00 82.98     0.186 C 
+INPUT-LIGAND-PDBQT: HETATM   13  OAB HMZ A 500      25.222  37.035  12.710  1.00 84.51    -0.647 OA
+INPUT-LIGAND-PDBQT: HETATM   14  OAD HMZ A 500      25.719  36.293  14.727  1.00 85.67    -0.647 OA
+INPUT-LIGAND-PDBQT: ENDBRANCH  11  12
+INPUT-LIGAND-PDBQT: ENDBRANCH  10  11
+INPUT-LIGAND-PDBQT: ENDBRANCH   8  10
+INPUT-LIGAND-PDBQT: ENDBRANCH   7   8
+INPUT-LIGAND-PDBQT: BRANCH   5  15
+INPUT-LIGAND-PDBQT: HETATM   15  OAK HMZ A 500      17.999  33.790  11.201  1.00 67.03    -0.328 OA
+INPUT-LIGAND-PDBQT: HETATM   16  CAA HMZ A 500      18.418  33.858   9.876  1.00 60.92     0.181 C 
+INPUT-LIGAND-PDBQT: ENDBRANCH   5  15
+INPUT-LIGAND-PDBQT: TORSDOF 5
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.59 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.30 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.08 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.62 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.62 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      21.135  37.378  14.815 -0.55 -0.01    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      23.602  36.230  11.654 -0.37 +0.00    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      22.239  36.323  11.482 -0.34 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      23.306  36.899  13.893 -0.40 +0.01    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      24.152  36.503  12.875 -0.35 +0.01    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      21.943  36.996  13.754 -0.35 +0.03    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.387  36.717  12.515 -0.34 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      19.865  36.794  12.167 -0.47 +0.01    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      19.373  37.870  11.809 -0.51 +0.01    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      18.983  35.529  12.158 -0.42 +0.01    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      19.568  34.378  13.003 -0.37 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      19.591  34.742  14.496 -0.39 +0.06    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      20.587  34.369  15.132 -0.03 -0.34    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      18.624  35.364  14.984 -0.19 -0.12    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      25.581  36.390  13.018 -0.27 -0.02    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      26.153  37.004  14.128 -0.42 +0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.64 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.13 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.31 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.83 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.13 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.61 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.61 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      19.905  37.556  11.112 -0.46 -0.02    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      20.449  35.605  14.758 -0.45 +0.01    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      21.512  35.812  13.909 -0.39 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      19.062  36.689  13.194 -0.56 -0.00    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      19.200  36.029  14.400 -0.54 +0.01    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      20.101  36.907  12.323 -0.43 +0.01    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.366  36.474  12.688 -0.35 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      22.666  36.652  11.837 -0.32 +0.03    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      23.537  37.445  12.210 -0.30 -0.07    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      22.932  35.778  10.595 -0.33 +0.01    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      21.963  34.583  10.477 -0.25 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      20.891  34.841   9.407 -0.21 +0.09    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      21.255  35.492   8.417 +0.02 -0.61    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      19.734  34.407   9.591 +0.02 -0.27    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      18.111  35.790  15.312 -0.51 -0.03    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      16.993  36.609  15.188 -0.27 -0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.58 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.07 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.77 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.30 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.07 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.62 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.62 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      21.117  37.402  14.819 -0.54 -0.01    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      23.581  36.255  11.656 -0.37 +0.00    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      22.220  36.364  11.480 -0.34 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      23.285  36.908  13.899 -0.40 +0.01    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      24.130  36.511  12.881 -0.35 +0.01    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      21.924  37.021  13.757 -0.34 +0.03    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.369  36.759  12.514 -0.33 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      19.848  36.856  12.163 -0.48 +0.01    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      19.380  37.927  11.763 -0.51 +0.02    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      18.940  35.611  12.201 -0.42 +0.01    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      19.551  34.440  12.998 -0.37 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      19.600  34.757  14.501 -0.39 +0.06    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      20.609  34.369  15.107 -0.04 -0.34    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      18.638  35.357  15.025 -0.20 -0.12    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      25.557  36.381  13.028 -0.27 -0.02    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      26.142  37.038  14.106 -0.42 +0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.59 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.30 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.08 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.62 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.62 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      21.110  37.394  14.819 -0.55 -0.01    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      23.622  36.198  11.712 -0.37 +0.00    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      22.261  36.277  11.521 -0.34 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      23.295  36.912  13.932 -0.40 +0.01    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      24.156  36.500  12.933 -0.35 +0.01    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      21.933  36.996  13.775 -0.35 +0.03    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.394  36.687  12.536 -0.35 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      19.875  36.746  12.169 -0.47 +0.01    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      19.370  37.821  11.829 -0.51 +0.01    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      19.017  35.466  12.117 -0.43 +0.01    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      19.582  34.323  12.986 -0.36 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      19.613  34.717  14.471 -0.38 +0.06    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      20.616  34.364  15.107 -0.04 -0.34    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      18.645  35.341  14.953 -0.19 -0.12    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      25.583  36.400  13.096 -0.27 -0.02    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      26.135  37.019  14.214 -0.41 +0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.51 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.01 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.64 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.36 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.01 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.62 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.62 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      21.156  36.248  10.480 -0.30 -0.05    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      23.213  36.987  14.032 -0.41 +0.01    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      21.854  37.195  13.953 -0.39 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      23.180  36.295  11.782 -0.34 +0.01    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      23.898  36.549  12.935 -0.35 +0.02    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      21.826  36.497  11.669 -0.27 +0.02    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.134  36.944  12.784 -0.36 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      19.594  37.208  12.848 -0.53 +0.00    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      19.113  38.172  12.243 -0.53 +0.05    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      18.645  36.225  13.564 -0.56 +0.00    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      19.247  35.637  14.857 -0.54 +0.02    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      20.146  34.429  14.552 -0.29 +0.07    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      19.730  33.645  13.687 -0.03 -0.16    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      21.214  34.292  15.186 -0.06 -0.35    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      25.319  36.349  13.054 -0.26 -0.02    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      25.961  37.000  14.103 -0.42 +0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.62 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.11 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.30 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.81 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.11 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.63 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.63 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      19.862  37.692  11.173 -0.47 -0.02    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      20.417  35.593  14.734 -0.45 +0.01    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      21.467  35.790  13.866 -0.38 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      19.037  36.784  13.244 -0.56 -0.00    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      19.178  36.077  14.422 -0.54 +0.01    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      20.063  36.993  12.354 -0.44 +0.01    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.318  36.499  12.672 -0.36 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      22.603  36.658  11.795 -0.31 +0.03    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      23.524  37.384  12.185 -0.31 -0.06    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      22.791  35.841  10.501 -0.32 +0.01    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      21.869  34.606  10.425 -0.25 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      20.681  34.857   9.484 -0.20 +0.09    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      20.905  35.582   8.504 +0.07 -0.68    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      19.574  34.346   9.755 +0.01 -0.19    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      18.103  35.847  15.353 -0.51 -0.03    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      16.954  36.615  15.191 -0.27 -0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.59 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.29 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.08 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.62 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.62 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      21.107  37.398  14.809 -0.55 -0.01    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      23.576  36.172  11.680 -0.36 +0.00    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      22.213  36.245  11.508 -0.34 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      23.281  36.911  13.896 -0.40 +0.01    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      24.127  36.490  12.889 -0.35 +0.01    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      21.916  36.990  13.758 -0.35 +0.03    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.359  36.664  12.531 -0.35 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      19.835  36.715  12.186 -0.47 +0.01    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      19.310  37.795  11.893 -0.52 +0.01    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      18.994  35.426  12.097 -0.42 +0.01    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      19.525  34.294  13.002 -0.37 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      19.566  34.733  14.474 -0.39 +0.05    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      20.564  34.381  15.119 -0.03 -0.34    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      18.610  35.389  14.938 -0.19 -0.11    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      25.558  36.396  13.031 -0.27 -0.02    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      26.120  36.997  14.153 -0.42 +0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.62 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.11 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.74 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.37 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.11 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.61 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.61 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      20.939  37.539  14.832 -0.56 -0.01    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      23.525  36.223  11.837 -0.36 +0.00    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      22.190  36.422  11.571 -0.35 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      23.126  36.898  14.058 -0.39 +0.01    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      24.008  36.443  13.097 -0.35 +0.02    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      21.787  37.102  13.825 -0.31 +0.03    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.300  36.875  12.548 -0.32 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      19.816  37.074  12.096 -0.49 +0.01    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      19.569  37.741  11.086 -0.44 -0.02    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      18.658  36.363  12.825 -0.49 +0.00    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      19.027  34.944  13.306 -0.43 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      19.371  34.937  14.803 -0.39 +0.06    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      18.554  35.491  15.552 -0.18 -0.13    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      20.436  34.402  15.178 -0.02 -0.35    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      25.410  36.218  13.338 -0.26 -0.03    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      26.080  37.173  14.095 -0.41 +0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.58 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.07 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.76 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.31 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.07 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.62 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.62 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      21.086  37.428  14.825 -0.55 -0.01    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      23.641  36.177  11.775 -0.36 +0.00    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      22.283  36.255  11.563 -0.34 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      23.284  36.927  13.978 -0.39 +0.01    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      24.158  36.498  12.998 -0.36 +0.01    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      21.924  37.012  13.800 -0.35 +0.03    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.402  36.683  12.559 -0.35 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      19.889  36.739  12.168 -0.46 +0.01    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      19.390  37.810  11.807 -0.51 +0.01    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      19.030  35.460  12.122 -0.43 +0.01    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      19.586  34.325  13.007 -0.37 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      19.612  34.737  14.487 -0.39 +0.06    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      20.603  34.375  15.136 -0.03 -0.34    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      18.649  35.383  14.953 -0.20 -0.12    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      25.583  36.398  13.183 -0.28 -0.02    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      26.141  37.162  14.204 -0.41 +0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.68 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.17 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.79 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.37 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.17 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.56 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.56 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      20.978  37.388  14.854 -0.55 -0.01    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      23.584  36.322  11.777 -0.37 +0.00    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      22.247  36.525  11.524 -0.35 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      23.174  36.831  14.040 -0.39 +0.01    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      24.062  36.457  13.050 -0.35 +0.02    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      21.833  37.036  13.820 -0.34 +0.03    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.350  36.896  12.528 -0.31 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      19.865  37.109  12.088 -0.48 +0.01    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      19.617  37.742  11.057 -0.43 -0.02    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      18.703  36.451  12.859 -0.52 -0.00    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      19.015  35.008  13.309 -0.43 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      19.330  34.951  14.812 -0.39 +0.06    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      18.498  35.478  15.563 -0.18 -0.13    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      20.388  34.405  15.189 -0.02 -0.35    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      25.467  36.232  13.278 -0.26 -0.03    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      26.104  37.081  14.177 -0.41 +0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   11 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        11
+DOCKED: USER    Run = 11
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.51 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.00 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.19 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.81 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.00 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.68 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.68 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      19.959  37.611  11.066 -0.44 -0.02    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      20.845  35.428  14.507 -0.42 +0.01    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      21.818  35.680  13.567 -0.34 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      19.321  36.620  13.165 -0.55 +0.00    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      19.572  35.884  14.306 -0.50 +0.01    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      20.269  36.885  12.206 -0.40 +0.01    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.559  36.419  12.411 -0.33 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      22.767  36.641  11.444 -0.32 +0.03    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      23.521  37.603  11.619 -0.30 -0.06    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      23.100  35.620  10.337 -0.33 +0.01    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      22.103  34.444  10.278 -0.25 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      20.842  34.824   9.487 -0.22 +0.09    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      19.767  34.406   9.940 +0.01 -0.14    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      20.962  35.503   8.445 +0.08 -0.70    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      18.580  35.595  15.309 -0.46 -0.05    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      17.353  36.240  15.185 -0.43 -0.01    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   12 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        12
+DOCKED: USER    Run = 12
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.57 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.06 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.73 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.33 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.06 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.64 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.64 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      20.849  37.503  14.887 -0.56 -0.01    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      23.444  36.428  11.804 -0.38 +0.00    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      22.100  36.596  11.561 -0.35 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      23.047  36.976  14.060 -0.40 +0.01    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      23.933  36.600  13.068 -0.36 +0.02    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      21.700  37.147  13.851 -0.30 +0.03    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.206  36.969  12.568 -0.33 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      19.712  37.140  12.141 -0.51 +0.01    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      19.391  38.078  11.404 -0.48 +0.01    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      18.646  36.098  12.533 -0.40 +0.00    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      19.252  34.750  12.978 -0.39 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      19.533  34.740  14.489 -0.39 +0.05    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      18.627  35.173  15.215 -0.17 -0.16    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      20.637  34.322  14.897 -0.04 -0.31    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      25.344  36.410  13.284 -0.27 -0.03    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      25.986  37.333  14.105 -0.41 +0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   13 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        13
+DOCKED: USER    Run = 13
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.58 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.07 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.73 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.34 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.07 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.62 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.62 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      21.066  37.374  14.818 -0.55 -0.01    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      23.631  36.228  11.735 -0.37 +0.00    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      22.272  36.289  11.529 -0.34 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      23.268  36.927  13.955 -0.40 +0.01    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      24.146  36.532  12.964 -0.36 +0.01    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      21.907  36.993  13.782 -0.36 +0.03    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.387  36.682  12.536 -0.35 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      19.872  36.722  12.151 -0.46 +0.01    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      19.390  37.752  11.669 -0.51 +0.01    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      18.988  35.463  12.259 -0.42 +0.01    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      19.646  34.330  13.074 -0.36 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      19.675  34.668  14.573 -0.35 +0.06    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      20.715  34.370  15.178 -0.04 -0.35    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      18.671  35.195  15.094 -0.18 -0.15    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      25.573  36.451  13.143 -0.28 -0.02    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      26.096  37.016  14.302 -0.41 +0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   14 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        14
+DOCKED: USER    Run = 14
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.53 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.02 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.70 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.32 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.02 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.65 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.65 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      21.067  37.687  14.972 -0.48 -0.00    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      23.388  36.262  11.813 -0.36 +0.00    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      22.039  36.482  11.648 -0.34 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      23.176  36.990  14.043 -0.39 +0.01    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      23.972  36.499  13.026 -0.35 +0.02    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      21.827  37.214  13.912 -0.28 +0.03    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.237  36.971  12.681 -0.34 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      19.726  37.188  12.342 -0.52 +0.01    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      19.396  38.097  11.574 -0.50 +0.02    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      18.644  36.220  12.864 -0.45 +0.00    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      18.872  35.791  14.328 -0.59 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      19.761  34.540  14.408 -0.35 +0.06    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      19.420  33.583  13.700 -0.02 -0.15    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      20.747  34.545  15.176 -0.05 -0.32    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      25.384  36.253  13.161 -0.26 -0.03    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      26.061  36.984  14.132 -0.42 +0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   15 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        15
+DOCKED: USER    Run = 15
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.15 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.37 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.15 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.58 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.58 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      20.965  37.441  14.848 -0.55 -0.01    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      23.559  36.303  11.788 -0.37 +0.00    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      22.222  36.505  11.533 -0.35 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      23.157  36.861  14.040 -0.39 +0.01    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      24.042  36.464  13.056 -0.35 +0.02    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      21.816  37.065  13.820 -0.33 +0.03    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.329  36.899  12.532 -0.31 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      19.843  37.107  12.092 -0.49 +0.01    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      19.594  37.752  11.068 -0.43 -0.02    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      18.684  36.431  12.852 -0.51 -0.00    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      19.017  34.996  13.311 -0.43 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      19.348  34.956  14.811 -0.39 +0.06    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      18.525  35.491  15.565 -0.18 -0.13    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      20.412  34.415  15.182 -0.02 -0.34    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      25.446  36.239  13.285 -0.26 -0.03    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      26.057  37.014  14.265 -0.41 +0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   16 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        16
+DOCKED: USER    Run = 16
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.64 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.13 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.35 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.13 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.61 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.61 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      19.400  37.926  11.227 -0.55 -0.00    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      20.179  35.114  14.207 -0.43 +0.01    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      21.009  35.225  13.115 -0.30 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      18.866  36.854  13.315 -0.54 -0.00    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      19.081  35.921  14.311 -0.53 +0.01    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      19.673  36.987  12.211 -0.48 +0.01    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      20.784  36.165  12.107 -0.35 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      21.821  36.188  10.936 -0.27 +0.04    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      21.521  35.697   9.843 -0.21 -0.10    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      23.176  36.910  11.086 -0.38 +0.02    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      24.003  36.402  12.285 -0.38 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      23.901  37.365  13.478 -0.39 +0.05    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      24.894  38.073  13.694 -0.15 -0.18    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      22.855  37.374  14.161 -0.09 -0.17    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      18.233  35.771  15.466 -0.49 -0.04    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      17.117  36.598  15.539 -0.24 -0.01    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   17 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        17
+DOCKED: USER    Run = 17
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.59 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.75 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.33 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.08 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.62 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.62 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      21.033  37.383  14.815 -0.56 -0.01    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      23.637  36.243  11.763 -0.37 +0.00    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      22.279  36.294  11.543 -0.34 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      23.247  36.947  13.976 -0.39 +0.01    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      24.137  36.555  12.995 -0.36 +0.01    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      21.887  37.003  13.789 -0.35 +0.03    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.381  36.684  12.539 -0.35 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      19.870  36.712  12.138 -0.46 +0.01    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      19.375  37.752  11.692 -0.51 +0.01    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      19.008  35.434  12.188 -0.42 +0.01    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      19.643  34.309  13.031 -0.36 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      19.655  34.672  14.524 -0.36 +0.06    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      20.679  34.366  15.151 -0.04 -0.34    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      18.653  35.227  15.021 -0.18 -0.14    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      25.563  36.485  13.189 -0.28 -0.02    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      26.063  37.003  14.379 -0.41 +0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   18 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        18
+DOCKED: USER    Run = 18
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.62 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.11 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.73 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.38 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.11 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      20.977  37.382  14.838 -0.56 -0.01    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      23.567  36.332  11.743 -0.37 +0.00    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      22.228  36.533  11.498 -0.35 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      23.169  36.831  14.010 -0.39 +0.01    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      24.053  36.463  13.014 -0.35 +0.02    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      21.827  37.034  13.798 -0.34 +0.03    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.337  36.898  12.509 -0.31 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      19.848  37.110  12.078 -0.49 +0.01    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      19.592  37.780  11.072 -0.43 -0.02    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      18.695  36.409  12.824 -0.50 -0.00    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      19.016  34.947  13.196 -0.42 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      19.433  34.827  14.670 -0.38 +0.06    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      20.549  34.334  14.882 -0.04 -0.31    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      18.639  35.208  15.557 -0.11 -0.18    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      25.458  36.239  13.232 -0.26 -0.03    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      26.098  37.082  14.136 -0.41 +0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   19 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        19
+DOCKED: USER    Run = 19
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.66 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.15 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.79 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.36 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.15 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.57 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.57 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      20.914  37.420  14.844 -0.56 -0.01    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      23.528  36.333  11.782 -0.37 +0.00    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      22.193  36.540  11.522 -0.35 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      23.111  36.850  14.041 -0.39 +0.01    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      24.002  36.470  13.056 -0.35 +0.02    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      21.772  37.060  13.815 -0.33 +0.03    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.294  36.918  12.521 -0.31 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      19.811  37.136  12.074 -0.49 +0.01    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      19.569  37.804  11.064 -0.42 -0.02    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      18.647  36.442  12.809 -0.50 -0.00    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      18.992  35.013  13.277 -0.42 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      19.251  34.972  14.791 -0.40 +0.05    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      20.294  34.407  15.151 -0.01 -0.34    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      18.412  35.480  15.564 -0.19 -0.13    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      25.404  36.239  13.290 -0.26 -0.03    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      26.076  37.178  14.067 -0.41 +0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   20 / 20
+Time taken for this run:   0.036s
+
+DOCKED: MODEL        20
+DOCKED: USER    Run = 20
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -4.64 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -6.13 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -5.77 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.36 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -6.13 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.59 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +1.49 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.59 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  5 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: CAI_5570  and  CAJ_5571 
+DOCKED: REMARK    2  A    between atoms: CAI_5570  and  CAL_5573 
+DOCKED: REMARK    3  A    between atoms: CAJ_5571  and  CAM_5574 
+DOCKED: REMARK    4  A    between atoms: CAN_5575  and  OAK_5572 
+DOCKED: REMARK    5  A    between atoms: CAM_5574  and  CAP_5577 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  OAE HMZ A 500      20.941  37.476  14.829 -0.56 -0.01    -0.190 OA 
+DOCKED: HETATM    2  CAF HMZ A 500      23.516  36.254  11.784 -0.37 +0.00    +0.024 A  
+DOCKED: HETATM    3  CAG HMZ A 500      22.179  36.457  11.531 -0.35 +0.00    +0.007 A  
+DOCKED: HETATM    4  CAH HMZ A 500      23.126  36.864  14.025 -0.40 +0.01    +0.052 A  
+DOCKED: HETATM    5  CAN HMZ A 500      24.005  36.440  13.046 -0.35 +0.02    +0.096 A  
+DOCKED: HETATM    6  CAO HMZ A 500      21.786  37.071  13.805 -0.33 +0.03    +0.136 A  
+DOCKED: HETATM    7  CAP HMZ A 500      21.293  36.879  12.524 -0.32 +0.01    +0.060 A  
+DOCKED: ENDROOT
+DOCKED: BRANCH   7   8
+DOCKED: HETATM    8  CAM HMZ A 500      19.806  37.086  12.085 -0.50 +0.01    +0.176 C  
+DOCKED: HETATM    9  OAC HMZ A 500      19.553  37.748  11.074 -0.43 -0.02    -0.291 OA 
+DOCKED: BRANCH   8  10
+DOCKED: HETATM   10  CAJ HMZ A 500      18.650  36.388  12.830 -0.49 -0.00    +0.081 C  
+DOCKED: BRANCH  10  11
+DOCKED: HETATM   11  CAI HMZ A 500      19.009  34.964  13.306 -0.42 +0.01    +0.106 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CAL HMZ A 500      19.341  34.947  14.806 -0.39 +0.06    +0.186 C  
+DOCKED: HETATM   13  OAB HMZ A 500      18.514  35.488  15.553 -0.18 -0.13    -0.647 OA 
+DOCKED: HETATM   14  OAD HMZ A 500      20.407  34.418  15.185 -0.02 -0.34    -0.647 OA 
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH  10  11
+DOCKED: ENDBRANCH   8  10
+DOCKED: ENDBRANCH   7   8
+DOCKED: BRANCH   5  15
+DOCKED: HETATM   15  OAK HMZ A 500      25.408  36.212  13.274 -0.26 -0.03    -0.328 OA 
+DOCKED: HETATM   16  CAA HMZ A 500      26.027  37.004  14.236 -0.41 +0.02    +0.181 C  
+DOCKED: ENDBRANCH   5  15
+DOCKED: TORSDOF 5
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -4.68 |  10 |     -4.60 |  16 |################
+   2 |     -4.64 |   2 |     -4.60 |   4 |####
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1     10       -4.68      0.00      3.08           RANKING
+   1      2     19       -4.66      0.08      3.07           RANKING
+   1      3     15       -4.66      0.04      3.07           RANKING
+   1      4     20       -4.64      0.07      3.05           RANKING
+   1      5      8       -4.62      0.09      3.04           RANKING
+   1      6     18       -4.62      0.14      3.07           RANKING
+   1      7      1       -4.59      0.50      2.92           RANKING
+   1      8      4       -4.59      0.52      2.90           RANKING
+   1      9     17       -4.59      0.50      2.90           RANKING
+   1     10      7       -4.59      0.53      2.89           RANKING
+   1     11      3       -4.58      0.46      2.93           RANKING
+   1     12     13       -4.58      0.49      2.90           RANKING
+   1     13      9       -4.58      0.51      2.90           RANKING
+   1     14     12       -4.57      0.33      2.98           RANKING
+   1     15     14       -4.53      0.64      3.06           RANKING
+   1     16      5       -4.51      0.94      3.13           RANKING
+   2      1      2       -4.64      0.00      2.91           RANKING
+   2      2     16       -4.64      1.21      2.73           RANKING
+   2      3      6       -4.62      0.15      2.87           RANKING
+   2      4     11       -4.51      0.38      2.87           RANKING
+
+Run time 0.741 sec
+Idle time 0.289 sec

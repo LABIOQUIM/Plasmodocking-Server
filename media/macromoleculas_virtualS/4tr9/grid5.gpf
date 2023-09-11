@@ -1,0 +1,22 @@
+parameter_file /home/cebio/x86_64Linux2/AD4_parameters.dat
+npts 41 30 30                        # num.grid points in xyz
+gridfld 4tr9_a.maps.fld              # grid_data_file
+spacing 0.375                        # spacing(A)
+receptor_types A C N NA OA SA        # receptor atom types
+ligand_types Ni Cu Ga Ge As Se Kr Rb Sr Y # ligand atom types
+receptor 4tr9_a.pdbqt                # macromolecule
+gridcenter -8.496 -14.834 26.615     # xyz-coordinates or auto
+smooth 0.5                           # store minimum energy w/in rad(A)
+map 4tr9_a.Ni.map                    # atom-specific affinity map
+map 4tr9_a.Cu.map                    # atom-specific affinity map
+map 4tr9_a.Ga.map                    # atom-specific affinity map
+map 4tr9_a.Ge.map                    # atom-specific affinity map
+map 4tr9_a.As.map                    # atom-specific affinity map
+map 4tr9_a.Se.map                    # atom-specific affinity map
+map 4tr9_a.Kr.map                    # atom-specific affinity map
+map 4tr9_a.Rb.map                    # atom-specific affinity map
+map 4tr9_a.Sr.map                    # atom-specific affinity map
+map 4tr9_a.Y.map                     # atom-specific affinity map
+elecmap 4tr9_a.e.map                 # electrostatic potential map
+dsolvmap 4tr9_a.d.map              # desolvation potential map
+dielectric -0.1465                   # <0, AD4 distance-dep.diel;>0, constant

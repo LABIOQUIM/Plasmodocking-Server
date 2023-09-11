@@ -1,0 +1,22 @@
+parameter_file /home/eduardo/x86_64Linux2/AD4_parameters.dat
+npts 38 37 39                        # num.grid points in xyz
+gridfld 6jw9_a.maps.fld              # grid_data_file
+spacing 0.375                        # spacing(A)
+receptor_types A C NA OA N SA        # receptor atom types
+ligand_types Lu Hf Ta W Re Os Ir Pt Au Hg # ligand atom types
+receptor 6jw9_a.pdbqt                # macromolecule
+gridcenter -10.737 14.556 -39.487    # xyz-coordinates or auto
+smooth 0.5                           # store minimum energy w/in rad(A)
+map 6jw9_a.Lu.map                    # atom-specific affinity map
+map 6jw9_a.Hf.map                    # atom-specific affinity map
+map 6jw9_a.Ta.map                    # atom-specific affinity map
+map 6jw9_a.W.map                     # atom-specific affinity map
+map 6jw9_a.Re.map                    # atom-specific affinity map
+map 6jw9_a.Os.map                    # atom-specific affinity map
+map 6jw9_a.Ir.map                    # atom-specific affinity map
+map 6jw9_a.Pt.map                    # atom-specific affinity map
+map 6jw9_a.Au.map                    # atom-specific affinity map
+map 6jw9_a.Hg.map                    # atom-specific affinity map
+elecmap 6jw9_a.e.map                 # electrostatic potential map
+dsolvmap 6jw9_a.d.map              # desolvation potential map
+dielectric -0.1465                   # <0, AD4 distance-dep.diel;>0, constant
