@@ -1,0 +1,55 @@
+REMARK  8 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C3_3341  and  C4_3337 
+REMARK       I    between atoms: C4_3337  and  N9_3338 
+REMARK    2  A    between atoms: C2_3342  and  C3_3341 
+REMARK    3  A    between atoms: C1_3343  and  C2_3342 
+REMARK    4  A    between atoms: C13_3348  and  C2_3342 
+REMARK    5  A    between atoms: C1_3343  and  P5_3344 
+REMARK    6  A    between atoms: C13_3348  and  C14_3349 
+REMARK    7  A    between atoms: C14_3349  and  C15_3350 
+REMARK    8  A    between atoms: C15_3350  and  C16_3351 
+ROOT
+HETATM    1  C13 LC5 A 501       0.300  13.757  19.145  1.00 11.14     0.002 C 
+ENDROOT
+BRANCH   1   2
+HETATM    2  C2  LC5 A 501       0.863  14.383  20.473  1.00 10.89     0.024 C 
+BRANCH   2   3
+HETATM    3  C1  LC5 A 501      -0.223  14.511  21.548  1.00 10.98     0.130 C 
+BRANCH   3   4
+HETATM    4  P5  LC5 A 501      -0.905  16.202  21.558  1.00 10.69     0.272 P 
+HETATM    5  O6  LC5 A 501      -2.281  16.140  22.193  1.00 11.29    -0.639 OA
+HETATM    6  O7  LC5 A 501      -0.015  17.113  22.382  1.00 11.45    -0.639 OA
+HETATM    7  O8  LC5 A 501      -1.022  16.713  20.150  1.00 12.34    -0.639 OA
+ENDBRANCH   3   4
+ENDBRANCH   2   3
+BRANCH   2   8
+HETATM    8  C3  LC5 A 501       2.081  13.589  21.011  1.00 10.47     0.091 C 
+BRANCH   8   9
+HETATM    9  C4  LC5 A 501       3.332  14.152  20.383  1.00 10.27     0.259 C 
+HETATM   10  O12 LC5 A 501       3.764  15.196  20.821  1.00  9.42    -0.270 OA
+HETATM   11  N9  LC5 A 501       3.902  13.568  19.295  1.00 10.03    -0.173 N 
+HETATM   12  C11 LC5 A 501       3.407  12.305  18.738  1.00 10.16     0.166 C 
+HETATM   13  O10 LC5 A 501       4.993  14.183  18.687  1.00  9.92    -0.082 OA
+ENDBRANCH   8   9
+ENDBRANCH   2   8
+ENDBRANCH   1   2
+BRANCH   1  14
+HETATM   14  C14 LC5 A 501      -0.283  12.327  19.351  1.00 11.37     0.005 C 
+BRANCH  14  15
+HETATM   15  C15 LC5 A 501      -0.694  11.705  17.985  1.00 11.41     0.026 C 
+BRANCH  15  16
+HETATM   16  C16 LC5 A 501       0.533  11.212  17.201  1.00 11.62    -0.022 A 
+HETATM   17  C17 LC5 A 501       1.221  10.031  17.576  1.00 11.83    -0.004 A 
+HETATM   18  C23 LC5 A 501       0.819   9.282  18.700  1.00 12.21    -0.000 A 
+HETATM   19  C19 LC5 A 501       2.327   9.618  16.834  1.00 12.06    -0.000 A 
+HETATM   20  C25 LC5 A 501       1.509   8.130  19.044  1.00 12.85    -0.000 A 
+HETATM   21  C24 LC5 A 501       2.610   7.738  18.309  1.00 12.54    -0.000 A 
+HETATM   22  C22 LC5 A 501       3.014   8.476  17.197  1.00 12.67    -0.000 A 
+HETATM   23  C21 LC5 A 501       2.754  10.364  15.731  1.00 12.14    -0.000 A 
+HETATM   24  C20 LC5 A 501       2.071  11.503  15.355  1.00 11.75    -0.000 A 
+HETATM   25  C18 LC5 A 501       0.955  11.924  16.077  1.00 11.77    -0.004 A 
+ENDBRANCH  15  16
+ENDBRANCH  14  15
+ENDBRANCH   1  14
+TORSDOF 8

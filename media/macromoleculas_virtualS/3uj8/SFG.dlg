@@ -1,0 +1,1825 @@
+AutoDock-GPU version: v1.5-release
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               SFG.pdbqt
+Grid fld file:                             3uj8_A.maps.fld
+
+Random seed:                               1691729211, 8987
+Number of runs:                            20
+Number of energy evaluations:              1259779
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/eduardo/AutoDock-GPU-develop/bin/autodock_gpu_128wi --ffile 3uj8_A.maps.fld --lfile SFG.pdbqt 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             3uj8_A
+Number of grid points (x, y, z):           53, 41, 39
+Grid center (x, y, z):                     24.721000, 18.064000, 17.545000A
+Grid size (x, y, z):                       19.500000, 15.000000, 14.250000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               SFG
+Number of atoms:                           27
+Number of rotatable bonds:                 7
+Number of atom types:                      5
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 20
+DPF> fld 3uj8_A.maps.fld
+DPF> move SFG.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    620363
+Number of generations used:                50
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  7 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+INPUT-LIGAND-PDBQT: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+INPUT-LIGAND-PDBQT: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+INPUT-LIGAND-PDBQT: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+INPUT-LIGAND-PDBQT: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  C4' SFG A 300      23.728  17.613  17.434  1.00  8.67     0.153 C 
+INPUT-LIGAND-PDBQT: HETATM    2  O4' SFG A 300      24.741  17.777  18.480  1.00  9.91    -0.334 OA
+INPUT-LIGAND-PDBQT: HETATM    3  C3' SFG A 300      24.157  16.420  16.643  1.00  8.67     0.214 C 
+INPUT-LIGAND-PDBQT: HETATM    4  O3' SFG A 300      24.221  16.766  15.297  1.00 11.14    -0.218 OA
+INPUT-LIGAND-PDBQT: HETATM    5  C2' SFG A 300      25.457  15.995  17.249  1.00  9.95     0.234 C 
+INPUT-LIGAND-PDBQT: HETATM    6  O2' SFG A 300      26.395  15.504  16.353  1.00 11.46    -0.216 OA
+INPUT-LIGAND-PDBQT: HETATM    7  C1' SFG A 300      25.923  17.226  17.993  1.00  9.58     0.241 C 
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   1   8
+INPUT-LIGAND-PDBQT: HETATM    8  C5' SFG A 300      22.442  17.528  18.088  1.00 10.72     0.071 C 
+INPUT-LIGAND-PDBQT: BRANCH   8   9
+INPUT-LIGAND-PDBQT: HETATM    9  CD  SFG A 300      21.144  17.337  17.321  1.00 10.69     0.304 C 
+INPUT-LIGAND-PDBQT: HETATM   10  NE  SFG A 300      20.175  16.625  18.154  1.00 10.97     0.616 N 
+INPUT-LIGAND-PDBQT: BRANCH   9  11
+INPUT-LIGAND-PDBQT: HETATM   11  CG  SFG A 300      20.534  18.636  16.887  1.00 10.49     0.042 C 
+INPUT-LIGAND-PDBQT: BRANCH  11  12
+INPUT-LIGAND-PDBQT: HETATM   12  CB  SFG A 300      21.285  19.420  15.753  1.00 10.23     0.053 C 
+INPUT-LIGAND-PDBQT: BRANCH  12  13
+INPUT-LIGAND-PDBQT: HETATM   13  CA  SFG A 300      20.767  20.861  15.424  1.00  9.47     0.387 C 
+INPUT-LIGAND-PDBQT: HETATM   14  N   SFG A 300      20.983  21.701  16.528  1.00 11.07     0.628 N 
+INPUT-LIGAND-PDBQT: BRANCH  13  15
+INPUT-LIGAND-PDBQT: HETATM   15  C   SFG A 300      19.287  20.897  15.080  1.00 11.79     0.224 C 
+INPUT-LIGAND-PDBQT: HETATM   16  O   SFG A 300      18.486  21.524  15.820  1.00 14.63    -0.646 OA
+INPUT-LIGAND-PDBQT: HETATM   17  OXT SFG A 300      18.845  20.341  14.007  1.00 11.51    -0.646 OA
+INPUT-LIGAND-PDBQT: ENDBRANCH  13  15
+INPUT-LIGAND-PDBQT: ENDBRANCH  12  13
+INPUT-LIGAND-PDBQT: ENDBRANCH  11  12
+INPUT-LIGAND-PDBQT: ENDBRANCH   9  11
+INPUT-LIGAND-PDBQT: ENDBRANCH   8   9
+INPUT-LIGAND-PDBQT: ENDBRANCH   1   8
+INPUT-LIGAND-PDBQT: BRANCH   7  18
+INPUT-LIGAND-PDBQT: HETATM   18  N9  SFG A 300      26.858  16.968  19.103  1.00  9.43    -0.270 N 
+INPUT-LIGAND-PDBQT: HETATM   19  C4  SFG A 300      27.977  17.686  19.254  1.00  9.49     0.170 A 
+INPUT-LIGAND-PDBQT: HETATM   20  C5  SFG A 300      28.598  17.194  20.409  1.00  9.39     0.155 A 
+INPUT-LIGAND-PDBQT: HETATM   21  N3  SFG A 300      28.561  18.687  18.561  1.00  9.36    -0.205 NA
+INPUT-LIGAND-PDBQT: HETATM   22  C6  SFG A 300      29.821  17.737  20.826  1.00  8.99     0.206 A 
+INPUT-LIGAND-PDBQT: HETATM   23  N7  SFG A 300      27.817  16.203  20.888  1.00 10.32    -0.219 NA
+INPUT-LIGAND-PDBQT: HETATM   24  N6  SFG A 300      30.478  17.256  21.919  1.00 10.74    -0.125 N 
+INPUT-LIGAND-PDBQT: HETATM   25  N1  SFG A 300      30.348  18.740  20.101  1.00  9.42    -0.202 NA
+INPUT-LIGAND-PDBQT: HETATM   26  C2  SFG A 300      29.725  19.192  18.996  1.00 10.08     0.202 A 
+INPUT-LIGAND-PDBQT: HETATM   27  C8  SFG A 300      26.753  16.074  20.092  1.00  9.75     0.182 A 
+INPUT-LIGAND-PDBQT: ENDBRANCH   7  18
+INPUT-LIGAND-PDBQT: TORSDOF 7
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.08 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.17 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -8.89 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.28 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.17 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.15 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.15 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      20.673  20.378  15.845 -0.44 -0.16    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      21.817  19.645  16.396 -0.14 +0.43    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      19.474  19.542  16.155 -0.36 -0.19    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      18.766  19.310  14.980 -0.32 +0.16    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      20.013  18.316  16.821 -0.41 -0.24    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      19.342  17.138  16.525 -0.42 +0.24    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      21.468  18.298  16.412 -0.36 -0.26    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      20.700  21.707  16.411 -0.49 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      20.721  22.962  15.554 -0.37 -0.36    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      21.989  23.668  15.737 +0.12 -1.31    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      20.549  22.666  14.094 -0.56 -0.04    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      19.082  22.407  13.598 -0.61 -0.04    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      17.977  22.265  14.698 -0.24 -0.26    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      16.871  21.582  14.167 +0.09 -0.41    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      17.497  23.603  15.236 -0.45 -0.09    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      18.049  24.667  14.854 -0.10 +0.26    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      16.493  23.671  16.037 -0.12 +0.01    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      22.362  17.553  17.318 -0.29 +0.30    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      23.404  16.856  16.851 -0.40 -0.20    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      24.037  16.310  17.975 -0.39 -0.16    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      23.899  16.601  15.621 -0.42 +0.30    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      25.167  15.497  17.811 -0.38 -0.20    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      23.336  16.708  19.058 -0.34 +0.21    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      25.784  14.912  18.876 -0.44 +0.09    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      25.620  15.289  16.562 -0.45 +0.26    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      24.990  15.830  15.502 -0.27 -0.33    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      22.319  17.472  18.652 -0.33 -0.20    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.04 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.13 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.24 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.89 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.13 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.15 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.15 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      23.479  17.957  16.816 -0.44 -0.21    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      24.510  18.241  17.817 -0.27 +0.40    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      23.705  16.540  16.398 -0.44 -0.26    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      23.817  16.487  15.012 -0.48 +0.30    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      24.921  16.099  17.148 -0.43 -0.29    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      25.763  15.239  16.458 -0.51 +0.29    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      25.585  17.398  17.546 -0.35 -0.35    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      22.199  18.259  17.416 -0.51 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      21.249  19.296  16.841 -0.32 -0.36    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      21.718  19.723  15.523 +0.01 -0.71    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      19.848  18.781  16.703 -0.55 -0.04    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      19.296  17.920  17.894 -0.49 -0.07    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      18.709  16.512  17.539 -0.31 -0.58    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      18.724  15.695  18.681 -0.02 -1.27    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      19.483  15.805  16.438 -0.32 -0.28    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      20.644  16.187  16.143 +0.05 +0.64    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      18.988  14.780  15.837 -0.09 +0.82    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      26.471  17.312  18.721 -0.26 +0.26    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      27.564  18.076  18.829 -0.38 -0.15    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      28.140  17.755  20.064 -0.32 -0.11    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      28.156  18.998  18.039 -0.43 +0.20    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      29.328  18.383  20.462 -0.36 -0.15    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      27.361  16.810  20.631 -0.27 +0.14    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      29.943  18.065  21.636 -0.42 +0.12    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      29.865  19.301  19.638 -0.48 +0.15    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      29.285  19.589  18.458 -0.49 -0.16    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      26.340  16.548  19.811 -0.34 -0.13    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -8.77 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -10.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -8.87 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.98 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -10.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.27 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.27 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      20.804  19.587  14.882 -0.40 -0.13    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      22.089  19.054  15.342 -0.30 +0.38    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      19.877  19.465  16.048 -0.42 -0.20    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      18.734  18.778  15.651 -0.19 +0.16    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      20.680  18.792  17.116 -0.39 -0.26    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      19.973  17.907  17.918 -0.40 +0.27    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      21.812  18.140  16.355 -0.36 -0.26    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      21.044  20.922  14.383 -0.42 -0.07    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      20.392  21.452  13.116 -0.41 -0.26    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      19.087  20.820  12.927 -0.12 -0.42    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      20.200  22.939  13.145 -0.67 -0.04    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      21.150  23.750  14.095 -0.53 -0.07    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      20.503  24.385  15.372 -0.28 -0.51    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      21.296  24.096  16.494 -0.06 -1.13    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      19.095  23.878  15.640 -0.36 -0.14    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      18.899  22.653  15.850 +0.01 +0.47    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      18.102  24.694  15.713 -0.08 +0.18    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      23.027  17.878  17.148 -0.29 +0.32    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      23.922  16.957  16.769 -0.41 -0.22    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      24.944  16.997  17.726 -0.39 -0.19    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      24.004  16.081  15.745 -0.42 +0.26    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      26.033  16.121  17.616 -0.39 -0.25    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      24.605  17.940  18.630 -0.30 +0.20    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      27.025  16.099  18.550 -0.33 +0.11    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      26.064  15.279  16.568 -0.46 +0.28    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      25.066  15.267  15.664 -0.33 -0.27    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      23.439  18.479  18.269 -0.18 -0.19    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.29 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.38 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.66 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.71 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.38 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.75 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.75 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      23.579  17.534  17.045 -0.46 -0.19    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      24.662  17.879  17.970 -0.28 +0.38    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      23.927  16.184  16.507 -0.43 -0.25    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      23.912  16.231  15.116 -0.48 +0.29    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      25.253  15.850  17.114 -0.45 -0.29    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      26.119  15.143  16.292 -0.53 +0.31    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      25.796  17.193  17.546 -0.37 -0.35    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      22.337  17.639  17.775 -0.53 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      21.011  17.157  17.210 -0.33 -0.34    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      20.173  16.633  18.288 +0.02 -0.89    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      20.255  18.243  16.505 -0.52 -0.04    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      20.791  19.707  16.693 -0.50 -0.06    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      20.979  20.566  15.396 -0.25 -0.41    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      20.981  21.929  15.732 -0.00 -0.74    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      19.888  20.331  14.365 -0.45 -0.18    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      20.176  20.310  13.140 -0.17 +0.47    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      18.676  20.095  14.727 -0.10 +0.48    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      26.794  17.143  18.630 -0.26 +0.26    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      27.773  18.051  18.718 -0.39 -0.16    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      28.505  17.717  19.865 -0.33 -0.11    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      28.152  19.112  17.974 -0.41 +0.20    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      29.626  18.481  20.221 -0.41 -0.16    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      27.925  16.624  20.402 -0.25 +0.14    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      30.389  18.162  21.304 -0.47 +0.13    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      29.946  19.533  19.447 -0.52 +0.15    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      29.221  19.828  18.352 -0.48 -0.17    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      26.877  16.281  19.649 -0.32 -0.13    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.32 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.41 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.63 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.78 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.41 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.88 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.88 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      23.584  17.444  17.494 -0.47 -0.18    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      24.721  17.785  18.354 -0.27 +0.34    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      23.967  16.173  16.808 -0.42 -0.24    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      23.825  16.338  15.434 -0.48 +0.29    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      25.360  15.883  17.269 -0.45 -0.28    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      26.191  15.312  16.317 -0.52 +0.33    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      25.854  17.219  17.776 -0.37 -0.32    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      22.408  17.399  18.332 -0.53 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      21.086  18.027  17.923 -0.28 -0.37    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      21.309  19.003  16.856 -0.03 -0.70    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      20.091  17.015  17.441 -0.57 -0.05    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      18.609  17.202  17.925 -0.55 -0.07    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      17.984  16.036  18.765 -0.06 -0.84    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      16.630  16.311  19.014 +0.03 -1.52    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      18.681  15.825  20.099 -0.43 -0.43    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      19.865  15.401  20.128 -0.15 +1.10    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      18.096  16.128  21.204 -0.20 +1.06    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      26.946  17.147  18.763 -0.26 +0.25    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      27.903  18.081  18.814 -0.39 -0.15    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      28.744  17.715  19.872 -0.34 -0.11    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      28.183  19.191  18.097 -0.42 +0.19    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      29.870  18.495  20.169 -0.43 -0.17    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      28.245  16.576  20.399 -0.24 +0.15    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      30.736  18.148  21.162 -0.48 +0.15    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      30.090  19.595  19.427 -0.52 +0.15    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      29.261  19.922  18.416 -0.50 -0.16    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      27.144  16.239  19.724 -0.30 -0.13    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.28 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.37 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.65 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.72 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.37 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.76 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.76 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      23.518  17.524  17.069 -0.46 -0.19    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      24.602  17.860  17.996 -0.28 +0.38    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      23.876  16.191  16.497 -0.43 -0.25    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      23.853  16.271  15.109 -0.48 +0.29    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      25.209  15.856  17.089 -0.45 -0.29    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      26.077  15.178  16.247 -0.52 +0.32    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      25.741  17.195  17.550 -0.37 -0.35    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      22.278  17.600  17.808 -0.52 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      20.948  17.156  17.224 -0.33 -0.34    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      20.111  16.579  18.276 +0.01 -0.90    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      20.195  18.283  16.583 -0.53 -0.04    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      20.801  19.721  16.757 -0.49 -0.06    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      20.986  20.575  15.457 -0.24 -0.41    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      20.975  21.940  15.787 -0.01 -0.75    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      19.902  20.326  14.422 -0.45 -0.18    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      20.206  20.234  13.205 -0.16 +0.47    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      18.678  20.150  14.778 -0.10 +0.49    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      26.746  17.130  18.626 -0.26 +0.26    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      27.741  18.021  18.706 -0.39 -0.16    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      28.475  17.678  19.849 -0.33 -0.11    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      28.132  19.075  17.957 -0.42 +0.21    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      29.610  18.423  20.195 -0.40 -0.16    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      27.880  16.595  20.392 -0.25 +0.14    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      30.376  18.094  21.274 -0.47 +0.13    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      29.943  19.468  19.417 -0.52 +0.15    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      29.216  19.773  18.326 -0.47 -0.17    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      26.821  16.269  19.647 -0.32 -0.13    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.29 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.38 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.66 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.72 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.38 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.75 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.75 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      23.568  17.548  17.045 -0.46 -0.19    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      24.652  17.882  17.973 -0.28 +0.38    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      23.897  16.190  16.515 -0.43 -0.25    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      23.888  16.230  15.124 -0.48 +0.29    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      25.215  15.839  17.129 -0.45 -0.29    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      26.073  15.115  16.315 -0.53 +0.30    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      25.777  17.176  17.557 -0.37 -0.35    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      22.324  17.677  17.769 -0.53 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      20.997  17.186  17.214 -0.33 -0.34    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      20.211  16.566  18.280 +0.01 -0.89    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      20.185  18.288  16.603 -0.53 -0.04    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      20.747  19.745  16.760 -0.49 -0.06    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      20.967  20.566  15.445 -0.25 -0.41    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      20.976  21.938  15.744 -0.01 -0.74    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      19.895  20.313  14.398 -0.45 -0.18    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      20.204  20.271  13.180 -0.16 +0.47    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      18.677  20.083  14.744 -0.10 +0.48    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      26.770  17.116  18.644 -0.26 +0.26    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      27.752  18.020  18.743 -0.39 -0.16    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      28.477  17.678  19.891 -0.33 -0.11    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      28.137  19.084  18.006 -0.42 +0.20    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      29.598  18.435  20.256 -0.40 -0.16    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      27.891  16.583  20.419 -0.25 +0.14    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      30.356  18.108  21.341 -0.47 +0.13    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      29.926  19.491  19.490 -0.51 +0.15    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      29.207  19.795  18.393 -0.49 -0.16    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      26.845  16.249  19.659 -0.32 -0.13    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.10 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.19 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -8.87 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.32 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.19 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.14 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.14 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      20.640  20.467  15.845 -0.44 -0.16    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      21.781  19.741  16.411 -0.11 +0.44    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      19.447  19.606  16.106 -0.34 -0.19    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      18.774  19.387  14.909 -0.34 +0.16    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      19.988  18.375  16.762 -0.41 -0.24    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      19.344  17.194  16.425 -0.41 +0.24    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      21.453  18.388  16.392 -0.36 -0.26    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      20.630  21.785  16.438 -0.49 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      20.723  23.056  15.610 -0.37 -0.36    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      22.031  23.681  15.805 +0.14 -1.35    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      20.530  22.805  14.144 -0.57 -0.04    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      19.047  22.680  13.643 -0.60 -0.04    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      17.952  22.409  14.729 -0.24 -0.25    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      16.919  21.639  14.172 +0.10 -0.41    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      17.346  23.683  15.293 -0.46 -0.08    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      16.238  23.641  15.887 -0.13 +0.04    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      17.977  24.802  15.222 -0.13 +0.22    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      22.335  17.640  17.306 -0.29 +0.30    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      23.365  16.919  16.847 -0.40 -0.20    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      23.989  16.376  17.977 -0.40 -0.16    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      23.855  16.641  15.620 -0.41 +0.29    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      25.106  15.543  17.822 -0.38 -0.20    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      23.296  16.799  19.055 -0.35 +0.21    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      25.714  14.960  18.894 -0.44 +0.09    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      25.554  15.311  16.575 -0.45 +0.26    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      24.932  15.850  15.509 -0.28 -0.33    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      22.293  17.576  18.641 -0.31 -0.20    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.28 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.37 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.08 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -2.29 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.37 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      22.522  17.639  16.763 -0.45 -0.17    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      22.467  19.030  16.305 -0.21 +0.44    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      21.101  17.232  16.980 -0.39 -0.23    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      20.964  16.726  18.269 -0.37 +0.29    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      20.293  18.458  16.693 -0.40 -0.24    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      19.173  18.628  17.492 -0.41 +0.23    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      21.297  19.582  16.817 -0.34 -0.29    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      23.267  16.889  15.778 -0.56 -0.09    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      24.258  15.800  16.155 -0.36 -0.37    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      25.450  15.900  15.313 +0.13 -1.28    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      24.682  15.878  17.591 -0.55 -0.04    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      26.180  16.261  17.860 -0.55 -0.06    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      26.477  17.757  18.219 -0.26 -0.44    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      27.711  18.136  17.669 -0.04 -0.84    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      26.524  18.011  19.717 -0.36 -0.16    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      26.444  17.046  20.520 -0.04 +0.42    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      26.704  19.198  20.180 -0.03 +0.41    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      20.951  20.812  16.081 -0.27 +0.32    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      20.634  20.781  14.782 -0.38 -0.16    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      20.340  22.103  14.425 -0.38 -0.15    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      20.564  19.810  13.846 -0.30 +0.15    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      19.987  22.405  13.103 -0.47 -0.17    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      20.500  22.858  15.533 -0.34 +0.24    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      19.737  23.685  12.707 -0.41 +0.10    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      19.923  21.393  12.218 -0.57 +0.16    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      20.210  20.132  12.593 -0.42 -0.14    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      20.865  22.064  16.542 -0.33 -0.23    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -8.97 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.06 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.54 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.52 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.06 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.21 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.21 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      23.917  17.738  16.854 -0.43 -0.22    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      24.955  18.042  17.843 -0.28 +0.41    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      24.160  16.323  16.440 -0.45 -0.28    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      24.258  16.266  15.053 -0.46 +0.33    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      25.391  15.904  17.179 -0.45 -0.29    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      26.238  15.054  16.483 -0.53 +0.29    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      26.039  17.215  17.564 -0.36 -0.36    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      22.640  18.023  17.468 -0.51 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      21.709  16.931  17.968 -0.31 -0.36    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      22.047  16.585  19.349 +0.02 -0.76    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      20.266  17.335  17.919 -0.48 -0.05    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      19.234  16.208  17.561 -0.59 -0.08    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      18.155  15.864  18.643 -0.00 -0.85    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      17.163  16.857  18.649 -0.06 -1.14    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      18.732  15.759  20.045 -0.45 -0.43    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      19.902  15.328  20.211 -0.16 +1.09    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      18.060  16.158  21.068 -0.20 +1.09    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      26.939  17.147  18.729 -0.26 +0.26    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      27.930  18.031  18.898 -0.38 -0.15    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      28.552  17.687  20.105 -0.33 -0.11    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      28.396  19.078  18.185 -0.45 +0.19    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      29.656  18.425  20.553 -0.39 -0.16    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      27.901  16.611  20.594 -0.26 +0.14    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      30.316  18.095  21.699 -0.45 +0.14    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      30.068  19.464  19.805 -0.46 +0.15    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      29.447  19.771  18.650 -0.56 -0.16    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      26.913  16.290  19.755 -0.32 -0.13    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   11 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        11
+DOCKED: USER    Run = 11
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.51 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.60 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.97 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.63 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.60 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.74 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.74 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      23.653  17.373  17.286 -0.47 -0.18    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      24.729  17.768  18.199 -0.27 +0.36    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      24.092  16.077  16.685 -0.41 -0.25    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      24.036  16.178  15.298 -0.50 +0.30    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      25.455  15.826  17.247 -0.45 -0.28    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      26.352  15.224  16.377 -0.52 +0.32    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      25.902  17.191  17.721 -0.37 -0.33    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      22.426  17.351  18.049 -0.53 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      21.157  18.042  17.579 -0.34 -0.35    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      21.394  18.693  16.291 -0.02 -0.66    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      20.006  17.094  17.428 -0.57 -0.05    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      18.725  17.403  18.281 -0.48 -0.07    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      17.984  16.178  18.918 -0.25 -0.80    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      16.617  16.471  19.044 -0.05 -1.44    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      18.521  15.806  20.290 -0.49 -0.43    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      19.602  15.171  20.390 -0.20 +1.10    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      17.913  16.181  21.360 -0.20 +1.04    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      26.930  17.179  18.778 -0.25 +0.25    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      27.913  18.086  18.806 -0.39 -0.15    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      28.675  17.794  19.944 -0.34 -0.11    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      28.273  19.118  18.012 -0.42 +0.20    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      29.806  18.566  20.240 -0.42 -0.17    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      28.108  16.722  20.537 -0.25 +0.14    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      30.599  18.287  21.313 -0.46 +0.15    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      30.108  19.588  19.419 -0.52 +0.15    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      29.353  19.844  18.333 -0.49 -0.16    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      27.039  16.355  19.826 -0.31 -0.13    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   12 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        12
+DOCKED: USER    Run = 12
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.47 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.56 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.03 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.53 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.56 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.49 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.49 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      23.681  17.576  17.030 -0.46 -0.20    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      24.775  17.916  17.943 -0.28 +0.39    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      23.980  16.196  16.541 -0.44 -0.25    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      23.966  16.194  15.150 -0.48 +0.29    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      25.293  15.837  17.161 -0.45 -0.29    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      26.132  15.071  16.366 -0.53 +0.29    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      25.884  17.175  17.545 -0.37 -0.36    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      22.443  17.752  17.756 -0.53 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      21.128  18.076  17.065 -0.34 -0.33    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      20.009  17.646  17.903 -0.03 -0.78    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      20.972  19.539  16.778 -0.52 -0.05    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      19.958  19.927  15.644 -0.54 -0.05    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      20.551  20.616  14.368 -0.30 -0.33    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      20.962  21.920  14.686 +0.02 -0.67    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      19.558  20.696  13.220 -0.55 -0.16    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      19.891  20.299  12.074 -0.26 +0.46    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      18.356  21.112  13.415 -0.14 +0.41    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      26.880  17.129  18.630 -0.26 +0.26    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      27.846  18.049  18.730 -0.39 -0.16    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      28.580  17.716  19.875 -0.33 -0.11    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      28.210  19.124  17.998 -0.41 +0.20    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      29.688  18.491  20.242 -0.41 -0.16    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      28.015  16.608  20.400 -0.25 +0.15    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      30.454  18.174  21.324 -0.47 +0.14    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      29.996  19.556  19.479 -0.51 +0.15    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      29.268  19.852  18.385 -0.49 -0.16    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      26.974  16.258  19.641 -0.31 -0.13    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   13 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        13
+DOCKED: USER    Run = 13
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.29 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.37 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.65 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.73 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.37 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.74 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.74 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      23.609  17.600  16.995 -0.46 -0.20    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      24.690  17.931  17.927 -0.28 +0.39    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      23.908  16.221  16.505 -0.43 -0.25    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      23.917  16.224  15.114 -0.48 +0.29    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      25.209  15.852  17.145 -0.45 -0.28    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      26.057  15.084  16.360 -0.53 +0.29    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      25.801  17.184  17.544 -0.37 -0.35    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      22.360  17.781  17.701 -0.52 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      21.041  17.228  17.186 -0.33 -0.34    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      20.289  16.630  18.288 +0.03 -0.88    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      20.188  18.280  16.543 -0.52 -0.04    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      20.691  19.762  16.662 -0.49 -0.06    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      20.986  20.521  15.325 -0.25 -0.40    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      21.094  21.897  15.580 +0.01 -0.75    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      19.909  20.314  14.273 -0.45 -0.18    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      20.222  20.265  13.055 -0.17 +0.47    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      18.681  20.130  14.612 -0.11 +0.48    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      26.779  17.128  18.645 -0.26 +0.26    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      27.772  18.020  18.743 -0.39 -0.16    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      28.478  17.686  19.905 -0.33 -0.11    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      28.180  19.069  17.996 -0.42 +0.20    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      29.604  18.434  20.274 -0.40 -0.16    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      27.871  16.606  20.442 -0.25 +0.14    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      30.344  18.113  21.374 -0.47 +0.13    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      29.956  19.474  19.497 -0.51 +0.15    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      29.255  19.771  18.386 -0.49 -0.16    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      26.831  16.275  19.673 -0.32 -0.13    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   14 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        14
+DOCKED: USER    Run = 14
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.28 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.37 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.66 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.71 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.37 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.75 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.75 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      23.493  17.534  17.065 -0.46 -0.19    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      24.573  17.868  17.998 -0.28 +0.38    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      23.861  16.208  16.484 -0.43 -0.25    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      23.841  16.298  15.096 -0.48 +0.29    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      25.194  15.876  17.077 -0.45 -0.29    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      26.068  15.210  16.231 -0.52 +0.32    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      25.716  17.214  17.549 -0.37 -0.35    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      22.251  17.597  17.802 -0.52 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      20.926  17.144  17.212 -0.33 -0.34    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      20.073  16.599  18.269 +0.01 -0.90    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      20.187  18.256  16.531 -0.52 -0.04    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      20.771  19.702  16.714 -0.50 -0.06    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      20.979  20.552  15.415 -0.25 -0.41    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      20.991  21.917  15.745 -0.00 -0.75    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      19.895  20.324  14.375 -0.45 -0.18    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      18.695  20.208  14.734 -0.10 +0.49    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      20.178  20.302  13.120 -0.17 +0.47    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      26.719  17.147  18.628 -0.26 +0.26    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      27.717  18.034  18.709 -0.39 -0.16    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      28.448  17.689  19.854 -0.33 -0.11    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      28.113  19.085  17.960 -0.41 +0.20    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      29.585  18.430  20.202 -0.40 -0.16    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      27.848  16.609  20.397 -0.25 +0.14    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      30.347  18.099  21.282 -0.47 +0.13    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      29.924  19.473  19.423 -0.52 +0.15    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      29.199  19.780  18.330 -0.47 -0.17    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      26.789  16.286  19.650 -0.32 -0.13    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   15 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        15
+DOCKED: USER    Run = 15
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.29 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.38 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.65 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.72 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.38 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.75 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.75 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      23.560  17.544  17.053 -0.46 -0.19    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      24.645  17.891  17.974 -0.28 +0.38    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      23.898  16.187  16.526 -0.43 -0.25    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      23.883  16.223  15.135 -0.48 +0.29    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      25.223  15.850  17.135 -0.45 -0.29    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      26.083  15.131  16.319 -0.53 +0.30    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      25.775  17.193  17.555 -0.37 -0.35    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      22.319  17.664  17.784 -0.53 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      20.989  17.187  17.223 -0.33 -0.34    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      20.183  16.595  18.291 +0.01 -0.89    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      20.200  18.293  16.590 -0.53 -0.04    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      20.778  19.745  16.743 -0.49 -0.06    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      20.976  20.572  15.429 -0.25 -0.41    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      20.971  21.943  15.732 -0.01 -0.74    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      19.896  20.309  14.392 -0.45 -0.18    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      20.201  20.236  13.174 -0.16 +0.47    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      18.676  20.103  14.747 -0.10 +0.48    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      26.774  17.147  18.638 -0.26 +0.26    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      27.760  18.047  18.716 -0.39 -0.16    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      28.491  17.720  19.866 -0.33 -0.11    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      28.146  19.098  17.961 -0.41 +0.20    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      29.617  18.478  20.213 -0.41 -0.16    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      27.902  16.636  20.415 -0.25 +0.14    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      30.379  18.165  21.299 -0.47 +0.13    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      29.946  19.520  19.428 -0.52 +0.15    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      29.222  19.809  18.330 -0.48 -0.17    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      26.851  16.295  19.666 -0.32 -0.13    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   16 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        16
+DOCKED: USER    Run = 16
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.50 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.59 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.95 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.65 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.59 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.75 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.75 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      23.601  17.479  17.290 -0.46 -0.18    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      24.706  17.827  18.187 -0.28 +0.36    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      23.981  16.173  16.672 -0.43 -0.25    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      23.906  16.285  15.288 -0.49 +0.29    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      25.343  15.867  17.209 -0.45 -0.29    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      26.202  15.239  16.320 -0.52 +0.32    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      25.848  17.211  17.685 -0.37 -0.34    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      22.387  17.496  18.073 -0.53 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      21.107  18.156  17.587 -0.34 -0.35    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      21.348  18.824  16.308 -0.02 -0.66    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      19.985  17.177  17.408 -0.57 -0.05    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      18.687  17.435  18.252 -0.46 -0.07    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      17.989  16.182  18.880 -0.25 -0.80    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      16.617  16.437  19.034 -0.03 -1.46    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      18.558  15.802  20.237 -0.48 -0.43    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      19.663  15.204  20.309 -0.19 +1.11    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      17.954  16.134  21.323 -0.21 +1.05    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      26.892  17.153  18.724 -0.26 +0.26    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      27.872  18.063  18.780 -0.39 -0.15    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      28.653  17.720  19.891 -0.34 -0.11    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      28.214  19.134  18.033 -0.42 +0.20    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      29.785  18.483  20.207 -0.42 -0.17    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      28.100  16.618  20.440 -0.25 +0.15    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      30.596  18.156  21.253 -0.47 +0.15    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      30.069  19.545  19.432 -0.52 +0.15    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      29.297  19.849  18.372 -0.49 -0.16    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      27.022  16.280  19.729 -0.31 -0.13    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   17 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        17
+DOCKED: USER    Run = 17
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.07 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.16 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.22 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.94 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.16 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -1.31 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -1.31 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      20.429  19.875  14.940 -0.45 -0.13    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      21.414  18.813  14.722 -0.20 +0.29    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      20.534  20.228  16.389 -0.39 -0.24    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      19.272  20.149  16.969 -0.27 +0.24    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      21.549  19.283  16.950 -0.33 -0.28    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      21.303  18.852  18.245 -0.40 +0.27    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      21.587  18.160  15.939 -0.32 -0.25    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      20.713  20.930  13.994 -0.51 -0.06    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      19.658  21.500  13.062 -0.49 -0.23    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      18.327  21.293  13.632 -0.08 -0.40    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      19.843  22.966  12.809 -0.70 -0.03    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      20.956  23.688  13.649 -0.58 -0.06    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      20.495  24.426  14.951 -0.27 -0.51    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      21.343  24.076  16.014 -0.01 -1.18    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      19.067  24.092  15.350 -0.42 -0.14    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      18.764  22.914  15.670 +0.00 +0.43    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      18.169  25.011  15.422 -0.12 +0.21    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      22.836  17.377  15.922 -0.31 +0.32    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      23.500  17.098  17.050 -0.40 -0.20    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      24.604  16.327  16.667 -0.42 -0.21    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      23.322  17.403  18.354 -0.36 +0.21    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      25.518  15.891  17.637 -0.40 -0.23    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      24.545  16.187  15.326 -0.40 +0.36    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      26.628  15.176  17.299 -0.49 +0.14    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      25.282  16.216  18.920 -0.33 +0.17    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      24.209  16.957  19.256 -0.24 -0.17    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      23.460  16.823  14.877 -0.32 -0.24    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   18 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        18
+DOCKED: USER    Run = 18
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.51 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.59 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.93 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.67 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.59 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.79 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.79 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      23.611  17.536  17.427 -0.46 -0.18    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      24.756  17.857  18.283 -0.27 +0.35    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      23.947  16.233  16.778 -0.43 -0.25    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      23.817  16.365  15.399 -0.48 +0.29    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      25.326  15.902  17.255 -0.45 -0.28    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      26.139  15.274  16.323 -0.52 +0.32    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      25.869  17.232  17.727 -0.37 -0.33    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      22.430  17.559  18.259 -0.53 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      21.122  18.189  17.809 -0.31 -0.36    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      21.342  18.978  16.597 -0.03 -0.69    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      20.059  17.170  17.526 -0.57 -0.05    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      18.657  17.416  18.189 -0.47 -0.07    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      17.959  16.180  18.852 -0.24 -0.80    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      16.595  16.455  19.037 -0.04 -1.45    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      18.558  15.811  20.199 -0.47 -0.43    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      19.666  15.216  20.251 -0.18 +1.12    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      17.976  16.149  21.295 -0.22 +1.05    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      26.953  17.146  18.721 -0.26 +0.26    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      27.916  18.072  18.785 -0.39 -0.15    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      28.747  17.693  19.848 -0.34 -0.12    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      28.209  19.185  18.078 -0.42 +0.19    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      29.875  18.464  20.157 -0.43 -0.17    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      28.236  16.555  20.363 -0.24 +0.15    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      30.732  18.104  21.155 -0.48 +0.15    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      30.109  19.567  19.424 -0.52 +0.16    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      29.290  19.906  18.410 -0.50 -0.16    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      27.138  16.229  19.677 -0.30 -0.13    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   19 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        19
+DOCKED: USER    Run = 19
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.52 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.61 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = -10.04 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.57 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.61 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.71 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.71 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      23.643  17.558  17.253 -0.46 -0.19    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      24.753  17.907  18.144 -0.28 +0.36    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      23.975  16.208  16.707 -0.43 -0.25    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      23.918  16.252  15.318 -0.49 +0.29    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      25.319  15.875  17.275 -0.45 -0.28    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      26.160  15.168  16.429 -0.53 +0.30    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      25.874  17.220  17.687 -0.37 -0.34    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      22.423  17.665  18.021 -0.53 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      21.097  18.073  17.399 -0.35 -0.34    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      21.289  18.391  15.984 -0.01 -0.62    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      20.055  17.000  17.508 -0.57 -0.05    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      18.746  17.371  18.290 -0.48 -0.07    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      17.947  16.189  18.937 -0.25 -0.80    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      16.597  16.553  19.072 -0.09 -1.40    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      18.473  15.795  20.307 -0.50 -0.43    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      19.530  15.119  20.403 -0.20 +1.11    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      17.883  16.191  21.380 -0.20 +1.04    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      26.905  17.173  18.740 -0.26 +0.25    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      27.890  18.077  18.793 -0.39 -0.15    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      28.655  17.748  19.919 -0.34 -0.11    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      28.250  19.131  18.030 -0.42 +0.20    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      29.789  18.509  20.235 -0.42 -0.17    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      28.087  16.660  20.481 -0.25 +0.15    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      30.584  18.194  21.297 -0.47 +0.15    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      30.090  19.554  19.444 -0.52 +0.16    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      29.333  19.845  18.369 -0.49 -0.16    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      27.015  16.318  19.762 -0.31 -0.13    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   20 / 20
+Time taken for this run:   0.046s
+
+DOCKED: MODEL        20
+DOCKED: USER    Run = 20
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  -9.45 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = -11.53 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  -9.97 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -1.56 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = -11.53 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.73 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.73 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C_2167  and  CA_2166 
+DOCKED: REMARK    2  A    between atoms: CA_2166  and  CB_2170 
+DOCKED: REMARK    3  A    between atoms: CB_2170  and  CG_2171 
+DOCKED: REMARK    4  A    between atoms: CD_2172  and  CG_2171 
+DOCKED: REMARK    5  A    between atoms: C5'_2174  and  CD_2172 
+DOCKED: REMARK    6  A    between atoms: C4'_2175  and  C5'_2174 
+DOCKED: REMARK    7  A    between atoms: C1'_2181  and  N9_2182 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  C4' SFG A 300      23.702  17.714  17.388 -0.45 -0.19    +0.153 C  
+DOCKED: HETATM    2  O4' SFG A 300      24.822  18.027  18.281 -0.28 +0.35    -0.334 OA 
+DOCKED: HETATM    3  C3' SFG A 300      24.032  16.389  16.781 -0.44 -0.26    +0.214 C  
+DOCKED: HETATM    4  O3' SFG A 300      23.958  16.493  15.395 -0.48 +0.32    -0.218 OA 
+DOCKED: HETATM    5  C2' SFG A 300      25.383  16.037  17.317 -0.44 -0.29    +0.234 C  
+DOCKED: HETATM    6  O2' SFG A 300      26.216  15.369  16.432 -0.52 +0.33    -0.216 OA 
+DOCKED: HETATM    7  C1' SFG A 300      25.939  17.364  17.781 -0.37 -0.33    +0.241 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   1   8
+DOCKED: HETATM    8  C5' SFG A 300      22.491  17.783  18.174 -0.52 -0.08    +0.071 C  
+DOCKED: BRANCH   8   9
+DOCKED: HETATM    9  CD  SFG A 300      21.123  18.005  17.552 -0.35 -0.35    +0.304 C  
+DOCKED: HETATM   10  NE  SFG A 300      21.254  18.151  16.102 -0.01 -0.62    +0.616 N  
+DOCKED: BRANCH   9  11
+DOCKED: HETATM   11  CG  SFG A 300      20.172  16.881  17.832 -0.53 -0.06    +0.042 C  
+DOCKED: BRANCH  11  12
+DOCKED: HETATM   12  CB  SFG A 300      18.727  17.283  18.296 -0.52 -0.07    +0.053 C  
+DOCKED: BRANCH  12  13
+DOCKED: HETATM   13  CA  SFG A 300      17.890  16.188  19.040 -0.23 -0.82    +0.387 C  
+DOCKED: HETATM   14  N   SFG A 300      16.580  16.651  19.238 -0.08 -1.37    +0.628 N  
+DOCKED: BRANCH  13  15
+DOCKED: HETATM   15  C   SFG A 300      18.473  15.812  20.393 -0.51 -0.42    +0.224 C  
+DOCKED: HETATM   16  O   SFG A 300      19.563  15.187  20.455 -0.20 +1.10    -0.646 OA 
+DOCKED: HETATM   17  OXT SFG A 300      17.894  16.174  21.484 -0.18 +1.02    -0.646 OA 
+DOCKED: ENDBRANCH  13  15
+DOCKED: ENDBRANCH  12  13
+DOCKED: ENDBRANCH  11  12
+DOCKED: ENDBRANCH   9  11
+DOCKED: ENDBRANCH   8   9
+DOCKED: ENDBRANCH   1   8
+DOCKED: BRANCH   7  18
+DOCKED: HETATM   18  N9  SFG A 300      26.983  17.275  18.819 -0.25 +0.25    -0.270 N  
+DOCKED: HETATM   19  C4  SFG A 300      27.997  18.146  18.865 -0.39 -0.15    +0.170 A  
+DOCKED: HETATM   20  C5  SFG A 300      28.767  17.783  19.977 -0.34 -0.11    +0.155 A  
+DOCKED: HETATM   21  N3  SFG A 300      28.380  19.195  18.105 -0.43 +0.19    -0.205 NA 
+DOCKED: HETATM   22  C6  SFG A 300      29.929  18.504  20.283 -0.43 -0.17    +0.206 A  
+DOCKED: HETATM   23  N7  SFG A 300      28.172  16.710  20.539 -0.25 +0.15    -0.219 NA 
+DOCKED: HETATM   24  N6  SFG A 300      30.728  18.155  21.331 -0.47 +0.16    -0.125 N  
+DOCKED: HETATM   25  N1  SFG A 300      30.253  19.546  19.497 -0.51 +0.16    -0.202 NA 
+DOCKED: HETATM   26  C2  SFG A 300      29.491  19.871  18.435 -0.52 -0.16    +0.202 A  
+DOCKED: HETATM   27  C8  SFG A 300      27.080  16.408  19.833 -0.31 -0.13    +0.182 A  
+DOCKED: ENDBRANCH   7  18
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     -9.52 |  19 |     -9.35 |   8 |########
+   2 |     -9.47 |  12 |     -9.31 |   7 |#######
+   3 |     -9.28 |   9 |     -9.28 |   1 |#
+   4 |     -9.10 |   8 |     -9.00 |   4 |####
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1     19       -9.52      0.00      2.49           RANKING
+   1      2     11       -9.51      0.15      2.48           RANKING
+   1      3     18       -9.51      0.23      2.44           RANKING
+   1      4     16       -9.50      0.15      2.45           RANKING
+   1      5     20       -9.45      0.18      2.49           RANKING
+   1      6      5       -9.32      0.32      2.39           RANKING
+   1      7      2       -9.04      1.42      1.74           RANKING
+   1      8     10       -8.97      0.89      2.30           RANKING
+   2      1     12       -9.47      0.00      1.00           RANKING
+   2      2      7       -9.29      0.63      0.75           RANKING
+   2      3      4       -9.29      0.62      0.76           RANKING
+   2      4     15       -9.29      0.63      0.76           RANKING
+   2      5     13       -9.29      0.59      0.76           RANKING
+   2      6     14       -9.28      0.63      0.76           RANKING
+   2      7      6       -9.28      0.64      0.75           RANKING
+   3      1      9       -9.28      0.00      5.79           RANKING
+   4      1      8       -9.10      0.00      3.36           RANKING
+   4      2      1       -9.08      0.15      3.34           RANKING
+   4      3     17       -9.07      1.45      3.34           RANKING
+   4      4      3       -8.77      1.35      3.26           RANKING
+
+Run time 0.930 sec
+Idle time 0.466 sec

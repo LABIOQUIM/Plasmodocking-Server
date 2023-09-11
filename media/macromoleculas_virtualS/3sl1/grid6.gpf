@@ -1,0 +1,22 @@
+parameter_file /home/eduardo/x86_64Linux2/AD4_parameters.dat
+npts 35 31 30                        # num.grid points in xyz
+gridfld 3sl1_A.maps.fld              # grid_data_file
+spacing 0.375                        # spacing(A)
+receptor_types A C NA Mn OA N SA     # receptor atom types
+ligand_types Zr Nb Cr Tc Ru Rh Pd Ag Cd In # ligand atom types
+receptor 3sl1_A.pdbqt                # macromolecule
+gridcenter 38.572 -16.931 24.030     # xyz-coordinates or auto
+smooth 0.5                           # store minimum energy w/in rad(A)
+map 3sl1_A.Zr.map                    # atom-specific affinity map
+map 3sl1_A.Nb.map                    # atom-specific affinity map
+map 3sl1_A.Cr.map                    # atom-specific affinity map
+map 3sl1_A.Tc.map                    # atom-specific affinity map
+map 3sl1_A.Ru.map                    # atom-specific affinity map
+map 3sl1_A.Rh.map                    # atom-specific affinity map
+map 3sl1_A.Pd.map                    # atom-specific affinity map
+map 3sl1_A.Ag.map                    # atom-specific affinity map
+map 3sl1_A.Cd.map                    # atom-specific affinity map
+map 3sl1_A.In.map                    # atom-specific affinity map
+elecmap 3sl1_A.e.map                 # electrostatic potential map
+dsolvmap 3sl1_A.d.map              # desolvation potential map
+dielectric -0.1465                   # <0, AD4 distance-dep.diel;>0, constant

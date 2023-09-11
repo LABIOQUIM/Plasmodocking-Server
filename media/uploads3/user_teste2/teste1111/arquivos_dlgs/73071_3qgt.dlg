@@ -1,0 +1,2229 @@
+AutoDock-GPU version: v1.5-release
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               /home/eduardo/plasmodocking/backendPlasmodocking/media/uploads3/user_teste2/teste1111/ligantes_pdbqt/73071.pdbqt
+Grid fld file:                             /home/eduardo/plasmodocking/backendPlasmodocking/media/macromoleculas_virtualS/3qgt/3qgt_A.maps.fld
+
+Random seed:                               1694400941, 26179
+Number of runs:                            20
+Number of energy evaluations:              1259779
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/eduardo/plasmodocking/backendPlasmodocking/../../AutoDock-GPU-develop/bin/autodock_gpu_128wi --ffile /home/eduardo/plasmodocking/backendPlasmodocking/media/macromoleculas_virtualS/3qgt/3qgt_A.maps.fld --lfile /home/eduardo/plasmodocking/backendPlasmodocking/media/uploads3/user_teste2/teste1111/ligantes_pdbqt/73071.pdbqt --gbest 1 --resnam /home/eduardo/plasmodocking/backendPlasmodocking/media/uploads3/user_teste2/teste1111/arquivos_dlgs/73071_3qgt 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             3qgt_A
+Number of grid points (x, y, z):           31, 31, 35
+Grid center (x, y, z):                     28.409000, 5.895000, 58.672000A
+Grid size (x, y, z):                       11.250000, 11.250000, 12.750000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               /home/eduardo/plasmodocking/backendPlasmodocking/media/uploads3/user_teste2/teste1111/ligantes_pdbqt/73071
+Number of atoms:                           46
+Number of rotatable bonds:                 7
+Number of atom types:                      4
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 20
+DPF> fld /home/eduardo/plasmodocking/backendPlasmodocking/media/macromoleculas_virtualS/3qgt/3qgt_A.maps.fld
+DPF> move /home/eduardo/plasmodocking/backendPlasmodocking/media/uploads3/user_teste2/teste1111/ligantes_pdbqt/73071.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    1260640
+Number of generations used:                269
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  7 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: O_1  and  C_23 
+INPUT-LIGAND-PDBQT: REMARK    2  A    between atoms: O_2  and  C_24 
+INPUT-LIGAND-PDBQT: REMARK    3  A    between atoms: O_3  and  C_27 
+INPUT-LIGAND-PDBQT: REMARK    4  A    between atoms: O_4  and  C_28 
+INPUT-LIGAND-PDBQT: REMARK    5  A    between atoms: O_9  and  C_33 
+INPUT-LIGAND-PDBQT: REMARK    6  A    between atoms: O_10  and  C_34 
+INPUT-LIGAND-PDBQT: REMARK    7  A    between atoms: C_11  and  C_12 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  O   UNL     1      -0.868   0.152  -1.675  1.00  0.00    -0.287 OA
+INPUT-LIGAND-PDBQT: HETATM    2  O   UNL     1      -4.823  -0.115   1.907  1.00  0.00    -0.286 OA
+INPUT-LIGAND-PDBQT: HETATM    3  C   UNL     1      -0.563  -1.694   0.461  1.00  0.00     0.026 A 
+INPUT-LIGAND-PDBQT: HETATM    4  C   UNL     1      -1.683  -0.868   0.310  1.00  0.00     0.046 A 
+INPUT-LIGAND-PDBQT: HETATM    5  C   UNL     1      -2.724  -0.929   1.238  1.00  0.00     0.063 A 
+INPUT-LIGAND-PDBQT: HETATM    6  C   UNL     1      -2.940   0.931  -0.981  1.00  0.00     0.032 A 
+INPUT-LIGAND-PDBQT: HETATM    7  C   UNL     1      -1.754   0.063  -0.835  1.00  0.00     0.195 A 
+INPUT-LIGAND-PDBQT: HETATM    8  C   UNL     1      -3.981   0.870  -0.052  1.00  0.00     0.062 A 
+INPUT-LIGAND-PDBQT: HETATM    9  C   UNL     1      -0.488  -2.578   1.538  1.00  0.00     0.080 A 
+INPUT-LIGAND-PDBQT: HETATM   10  C   UNL     1      -3.911  -0.062   1.092  1.00  0.00     0.199 A 
+INPUT-LIGAND-PDBQT: HETATM   11  C   UNL     1      -2.645  -1.817   2.318  1.00  0.00     0.083 A 
+INPUT-LIGAND-PDBQT: HETATM   12  C   UNL     1      -1.528  -2.639   2.465  1.00  0.00     0.075 A 
+INPUT-LIGAND-PDBQT: HETATM   13  C   UNL     1      -3.019   1.819  -2.060  1.00  0.00     0.023 A 
+INPUT-LIGAND-PDBQT: HETATM   14  C   UNL     1      -5.101   1.697  -0.203  1.00  0.00     0.081 A 
+INPUT-LIGAND-PDBQT: HETATM   15  C   UNL     1      -4.136   2.642  -2.206  1.00  0.00    -0.058 A 
+INPUT-LIGAND-PDBQT: HETATM   16  C   UNL     1      -5.175   2.581  -1.279  1.00  0.00     0.044 A 
+INPUT-LIGAND-PDBQT: HETATM   17  C   UNL     1      -4.219   3.588  -3.356  1.00  0.00     0.048 C 
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   3  18
+INPUT-LIGAND-PDBQT: HETATM   18  C   UNL     1       0.563  -1.695  -0.461  1.00  0.00     0.026 A 
+INPUT-LIGAND-PDBQT: HETATM   19  C   UNL     1       1.683  -0.868  -0.310  1.00  0.00     0.046 A 
+INPUT-LIGAND-PDBQT: HETATM   20  C   UNL     1       2.724  -0.929  -1.238  1.00  0.00     0.063 A 
+INPUT-LIGAND-PDBQT: HETATM   21  C   UNL     1       1.754   0.063   0.835  1.00  0.00     0.195 A 
+INPUT-LIGAND-PDBQT: HETATM   22  C   UNL     1       3.911  -0.062  -1.092  1.00  0.00     0.199 A 
+INPUT-LIGAND-PDBQT: HETATM   23  C   UNL     1       2.645  -1.817  -2.318  1.00  0.00     0.083 A 
+INPUT-LIGAND-PDBQT: HETATM   24  O   UNL     1       4.823  -0.115  -1.907  1.00  0.00    -0.286 OA
+INPUT-LIGAND-PDBQT: HETATM   25  C   UNL     1       3.981   0.870   0.052  1.00  0.00     0.062 A 
+INPUT-LIGAND-PDBQT: HETATM   26  C   UNL     1       2.940   0.931   0.981  1.00  0.00     0.032 A 
+INPUT-LIGAND-PDBQT: HETATM   27  C   UNL     1       5.101   1.697   0.203  1.00  0.00     0.081 A 
+INPUT-LIGAND-PDBQT: HETATM   28  C   UNL     1       3.019   1.819   2.060  1.00  0.00     0.023 A 
+INPUT-LIGAND-PDBQT: HETATM   29  C   UNL     1       4.136   2.642   2.206  1.00  0.00    -0.058 A 
+INPUT-LIGAND-PDBQT: HETATM   30  C   UNL     1       5.175   2.581   1.279  1.00  0.00     0.044 A 
+INPUT-LIGAND-PDBQT: HETATM   31  C   UNL     1       4.219   3.588   3.356  1.00  0.00     0.048 C 
+INPUT-LIGAND-PDBQT: HETATM   32  C   UNL     1       1.528  -2.639  -2.465  1.00  0.00     0.075 A 
+INPUT-LIGAND-PDBQT: HETATM   33  C   UNL     1       0.488  -2.578  -1.538  1.00  0.00     0.080 A 
+INPUT-LIGAND-PDBQT: HETATM   34  O   UNL     1       0.868   0.152   1.675  1.00  0.00    -0.287 OA
+INPUT-LIGAND-PDBQT: BRANCH  27  35
+INPUT-LIGAND-PDBQT: HETATM   35  O   UNL     1       6.153   1.688  -0.664  1.00  0.00    -0.360 OA
+INPUT-LIGAND-PDBQT: HETATM   36  H   UNL     1       6.011   1.041  -1.372  1.00  0.00     0.217 HD
+INPUT-LIGAND-PDBQT: ENDBRANCH  27  35
+INPUT-LIGAND-PDBQT: BRANCH  23  37
+INPUT-LIGAND-PDBQT: HETATM   37  O   UNL     1       3.624  -1.929  -3.261  1.00  0.00    -0.360 OA
+INPUT-LIGAND-PDBQT: HETATM   38  H   UNL     1       3.370  -2.600  -3.918  1.00  0.00     0.217 HD
+INPUT-LIGAND-PDBQT: ENDBRANCH  23  37
+INPUT-LIGAND-PDBQT: BRANCH  33  39
+INPUT-LIGAND-PDBQT: HETATM   39  O   UNL     1      -0.587  -3.398  -1.720  1.00  0.00    -0.360 OA
+INPUT-LIGAND-PDBQT: HETATM   40  H   UNL     1      -1.269  -3.262  -1.045  1.00  0.00     0.217 HD
+INPUT-LIGAND-PDBQT: ENDBRANCH  33  39
+INPUT-LIGAND-PDBQT: ENDBRANCH   3  18
+INPUT-LIGAND-PDBQT: BRANCH   9  41
+INPUT-LIGAND-PDBQT: HETATM   41  O   UNL     1       0.587  -3.398   1.720  1.00  0.00    -0.360 OA
+INPUT-LIGAND-PDBQT: HETATM   42  H   UNL     1       1.269  -3.262   1.045  1.00  0.00     0.217 HD
+INPUT-LIGAND-PDBQT: ENDBRANCH   9  41
+INPUT-LIGAND-PDBQT: BRANCH  11  43
+INPUT-LIGAND-PDBQT: HETATM   43  O   UNL     1      -3.624  -1.929   3.261  1.00  0.00    -0.360 OA
+INPUT-LIGAND-PDBQT: HETATM   44  H   UNL     1      -3.370  -2.600   3.918  1.00  0.00     0.217 HD
+INPUT-LIGAND-PDBQT: ENDBRANCH  11  43
+INPUT-LIGAND-PDBQT: BRANCH  14  45
+INPUT-LIGAND-PDBQT: HETATM   45  O   UNL     1      -6.153   1.688   0.664  1.00  0.00    -0.360 OA
+INPUT-LIGAND-PDBQT: HETATM   46  H   UNL     1      -6.011   1.041   1.372  1.00  0.00     0.217 HD
+INPUT-LIGAND-PDBQT: ENDBRANCH  14  45
+INPUT-LIGAND-PDBQT: TORSDOF 7
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = +39.36 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = +37.27 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = +37.35 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.08 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = +37.27 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     = +21.55 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         = +21.55 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      27.709   7.739  59.871 -0.23 +0.04    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      29.402   3.459  57.158 -0.47 +0.07    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      27.603   5.232  61.201 -0.42 -0.00    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      28.071   5.391  59.891 -0.43 -0.01    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      28.518   4.281  59.172 -0.52 -0.01    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      28.582   6.889  57.897 -0.47 -0.02    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      28.089   6.736  59.281 -0.29 -0.04    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      29.028   5.778  57.177 -0.53 -0.04    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      27.585   3.966  61.787 -0.44 -0.00    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      29.012   4.433  57.789 -0.45 -0.06    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      28.497   3.012  59.763 +0.63 -0.02    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      28.031   2.858  61.069 +2.06 -0.01    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      28.602   8.157  57.306 -0.49 -0.02    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      29.495   5.937  55.867 -0.44 -0.08    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      29.067   8.311  55.999 +5.38 +0.10    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      29.513   7.202  55.281+11.52 -0.08    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      29.088   9.663  55.370 +2.00 -0.06    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      27.123   6.335  62.020 -0.38 -0.00    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      26.269   7.336  61.540 -0.27 -0.00    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      25.851   8.362  62.390 -0.32 -0.00    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      25.816   7.297  60.135 -0.14 -0.01    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      24.952   9.425  61.897 -0.19 +0.00    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      26.287   8.387  63.721 +0.80 -0.02    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      24.587  10.325  62.643 -0.20 -0.00    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      24.500   9.386  60.491 -0.17 +0.00    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      24.917   8.360  59.641 -0.20 -0.00    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      23.646  10.387  60.011 -0.23 +0.00    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      24.482   8.336  58.311 -0.28 -0.00    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      23.633   9.336  57.836 +0.15 +0.00    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      23.216  10.360  58.685 -0.25 +0.00    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      23.169   9.309  56.419+15.68 -0.00    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      27.137   7.388  64.195 +1.87 -0.03    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      27.555   6.364  63.346 -0.48 -0.01    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      26.153   6.418  59.352 -0.14 +0.02    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      23.199  11.416  60.786 -0.12 -0.03    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      23.744  11.511  61.582 +0.10 +0.01    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      25.919   9.358  64.605 +4.11 +0.13    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      26.631  10.016  64.684 -0.27 -0.05    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      28.388   5.408  63.850 -0.24 +0.01    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      28.955   5.752  64.556 -0.03 +0.00    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      27.135   3.771  63.061 -0.30 -0.01    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      27.680   3.133  63.547 +0.16 +0.01    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      28.918   1.885  59.120 +2.66 -0.00    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      29.777   2.053  58.694 -0.08 -0.06    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      29.947   4.898  55.109 -0.43 +0.27    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      30.261   4.172  55.670 +0.14 -0.08    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = +85.32 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = +83.23 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = +83.45 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.23 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = +83.23 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +9.38 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +9.38 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      25.120   7.047  58.002 -0.19 +0.04    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      29.580   8.830  55.662 +4.34 +0.37    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      27.442   5.427  58.228 -0.40 -0.01    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      27.417   6.648  57.543 -0.39 -0.02    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      28.576   7.126  56.929 -0.39 -0.06    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      26.148   8.708  56.751 -0.40 -0.02    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      26.161   7.423  57.479 -0.26 -0.08    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      27.307   9.186  56.136 +3.47 -0.10    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      28.624   4.689  58.296 -0.50 -0.02    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      28.564   8.412  56.202 +7.29 -0.36    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      29.760   6.382  56.999 -0.12 -0.06    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      29.781   5.167  57.682 -0.26 -0.04    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      24.964   9.451  56.681 -0.50 -0.01    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      27.282  10.407  55.451 -0.21 -0.08    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      24.942  10.667  55.996 -0.49 +0.01    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      26.100  11.143  55.382 -0.10 -0.02    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      23.680  11.458  55.921 +2.88 +0.00    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      26.281   4.859  58.897 -0.23 -0.00    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      26.329   4.296  60.178 -0.33 +0.00    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      25.170   3.772  60.753 -0.22 +0.01    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      27.610   4.263  60.913 -0.37 -0.01    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      25.206   3.173  62.103 -0.10 +0.03    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      23.962   3.810  60.046 +1.28 +0.02    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      24.189   2.713  62.605 +0.04 -0.07    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      26.488   3.139  62.837 +1.92 +0.00    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      27.647   3.664  62.263 -0.42 -0.00    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      26.536   2.576  64.118 +1.70 +0.00    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      28.855   3.625  62.969 -0.09 -0.00    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      28.899   3.061  64.245 +0.49 -0.00    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      27.741   2.538  64.818 +2.84 +0.00    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      30.186   3.020  64.997 +8.68 -0.02    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      23.917   4.372  58.770 +5.68 +0.02    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      25.075   4.896  58.196 +2.84 +0.00    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      28.652   4.711  60.453 -0.35 +0.06    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      25.443   2.048  64.739+36.34 +0.04    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      24.725   1.897  64.105 +0.11 +0.02    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      22.792   3.317  60.546 +0.43 -0.14    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      22.824   3.323  61.518 +0.27 +0.07    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      24.989   5.435  56.946 +0.22 +0.03    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      24.254   6.062  56.868 +0.10 -0.00    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      28.688   3.495  58.952 -0.34 +0.07    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      29.382   3.486  59.628 -0.27 -0.10    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      30.928   6.789  56.423 +9.02 +0.26    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      31.474   7.250  57.082 -0.19 -0.21    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      28.376  10.933  54.831 +0.51 +0.31    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      29.181  10.463  55.094 +0.13 -0.18    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = +42.84 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = +40.75 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = +41.11 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.36 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = +40.75 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -3.45 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -3.45 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      25.587   6.769  59.119 -0.13 +0.02    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      29.904   4.056  57.522 -0.54 +0.10    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      27.339   8.069  57.301 -0.35 -0.02    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      27.554   6.774  57.786 -0.38 -0.02    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      28.677   6.054  57.376 -0.48 -0.03    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      26.827   4.812  59.237 -0.36 -0.00    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      26.586   6.178  58.731 -0.23 -0.03    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      27.951   4.092  58.827 -0.17 -0.01    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      28.246   8.639  56.407 +2.23 -0.12    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      28.918   4.687  57.881 -0.44 -0.06    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      29.586   6.630  56.479 -0.11 -0.07    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      29.368   7.920  55.997 +6.12 -0.11    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      25.919   4.237  60.134 -0.21 +0.00    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      28.167   2.797  59.313 +4.09 -0.01    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      26.139   2.946  60.617 +1.56 -0.01    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      27.260   2.228  60.207 +7.26 +0.01    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      25.171   2.334  61.573 +3.09 +0.01    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      26.194   8.886  57.676 -0.08 -0.01    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      25.927   9.280  58.993 +9.85 -0.01    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      24.807  10.066  59.271 +1.22 -0.00    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      26.837   8.861  60.079 +5.65 -0.02    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      24.513  10.488  60.656 -0.02 +0.00    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      23.954  10.458  58.233 -0.33 +0.00    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      23.530  11.176  60.900 -0.15 -0.02    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      25.422  10.068  61.742 -0.16 -0.00    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      26.542   9.282  61.464 +0.62 -0.00    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      25.155  10.462  63.059 -0.37 -0.00    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      27.395   8.891  62.502 -0.40 -0.00    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      27.125   9.284  63.813 -0.16 +0.02    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      26.006  10.068  64.091 -0.22 -0.01    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      28.034   8.866  64.919 +5.10 -0.02    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      24.223  10.063  56.922 -0.41 -0.01    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      25.341   9.278  56.644 -0.46 -0.03    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      27.831   8.174  59.885 -0.11 +0.04    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      24.081  11.230  63.401 -0.17 -0.00    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      23.534  11.423  62.625 +0.10 +0.02    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      22.843  11.224  58.432 -0.22 -0.05    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      22.793  11.490  59.367 +0.08 +0.03    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      25.567   8.913  55.349 -0.30 +0.36    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      26.088   8.099  55.284 -0.32 -0.42    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      28.071   9.899  55.913 -0.11 +0.45    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      27.357   9.940  55.259 -0.30 -0.34    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      30.703   5.984  56.036 +1.84 +0.24    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      31.192   5.621  56.794 -0.26 -0.14    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      29.240   2.038  58.953 +0.42 +0.04    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      30.002   2.597  58.738 -0.14 -0.10    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =+156.51 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =+154.42 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =+154.51 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.09 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =+154.42 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -2.45 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -2.45 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      26.532   4.540  57.241 +3.51 +0.04    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      29.912   8.291  55.494+58.57 +0.35    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      26.809   6.879  58.827 -0.30 -0.00    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      27.507   6.672  57.631 -0.39 -0.02    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      28.391   7.644  57.163 -0.41 -0.05    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      28.042   5.214  55.613 -0.45 -0.03    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      27.298   5.421  56.872 -0.16 -0.09    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      28.928   6.187  55.145 +1.28 -0.12    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      26.998   8.057  59.550 -0.02 -0.01    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      29.135   7.438  55.903 +4.19 -0.35    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      28.579   8.826  57.891 -0.18 -0.04    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      27.882   9.029  59.082+23.46 -0.01    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      27.855   4.033  54.885 +5.10 -0.01    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      29.625   5.979  53.949+11.31 -0.19    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      28.553   3.829  53.695 -0.55 +0.04    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      29.437   4.801  53.228 +0.24 -0.07    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      28.354   2.571  52.920+11.74 -0.00    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      25.868   5.918  59.383 -0.29 -0.00    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      26.170   5.083  60.466 -0.32 +0.00    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      25.211   4.187  60.943 -0.37 +0.01    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      27.503   5.158  61.097 -0.31 -0.01    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      25.515   3.299  62.083 -0.12 +0.03    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      23.950   4.127  60.337 -0.15 +0.02    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      24.674   2.513  62.500 -0.17 -0.06    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      26.849   3.373  62.713 +0.31 +0.00    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      27.809   4.269  62.236 -0.51 -0.00    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      27.151   2.538  63.795 +3.80 +0.01    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      29.069   4.329  62.842 +2.47 -0.00    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      29.366   3.494  63.919 +0.27 +0.01    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      28.408   2.600  64.395 +1.16 +0.00    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      30.709   3.558  64.564+15.11 -0.02    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      23.653   4.961  59.259 -0.15 +0.01    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      24.611   5.855  58.782 -0.27 +0.00    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      28.376   5.927  60.716 -0.29 +0.03    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      26.262   1.642  64.312 +7.70 -0.00    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      25.508   2.099  64.717 +1.32 -0.02    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      22.966   3.277  60.750 +0.72 -0.14    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      22.799   3.408  61.700 +0.27 +0.07    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      24.280   6.652  57.725 -0.22 +0.01    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      24.814   6.457  56.940 +0.11 -0.03    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      26.338   8.296  60.720 -0.11 +0.02    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      26.788   7.898  61.480 +0.11 -0.01    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      29.427   9.817  57.493 +1.63 +0.14    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      30.047  10.025  58.212 +0.20 -0.05    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      30.503   6.887  53.434 +5.29 +0.69    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      31.377   6.488  53.306 +0.33 -0.20    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = +73.61 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = +71.52 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = +71.83 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.31 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = +71.52 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +1.09 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +1.09 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      26.303   7.299  59.961 -0.14 +0.02    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      29.784   4.166  57.389 -0.52 +0.10    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      26.708   4.685  60.995 -0.40 +0.00    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      27.368   5.178  59.863 -0.40 -0.00    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      28.281   4.370  59.183 -0.50 -0.01    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      27.795   7.058  58.201 -0.39 -0.01    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      27.093   6.553  59.398 -0.22 -0.03    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      28.708   6.250  57.520 -0.47 -0.03    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      26.963   3.389  61.443 -0.01 +0.00    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      28.984   4.875  57.986 -0.44 -0.07    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      28.534   3.069  59.635 +0.47 -0.02    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      27.875   2.582  60.763 +4.27 -0.00    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      27.542   8.359  57.748 -0.29 -0.01    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      29.368   6.742  56.387 -0.12 -0.08    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      28.201   8.845  56.618 +0.45 +0.07    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      29.112   8.038  55.939 +6.84 -0.08    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      27.930  10.230  56.137 +0.03 -0.05    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      25.745   5.461  61.762 -0.31 +0.00    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      26.008   6.745  62.255 -0.31 -0.00    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      25.030   7.426  62.982 -0.35 -0.00    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      27.321   7.371  61.997 -0.31 -0.02    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      25.293   8.781  63.509 -0.26 -0.02    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      23.788   6.822  63.218 +3.30 +0.01    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      24.436   9.376  64.148 -0.17 +0.04    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      26.607   9.406  63.253 -0.43 -0.01    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      27.586   8.725  62.525 -0.42 -0.00    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      26.870  10.690  63.746 -0.51 -0.01    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      28.827   9.329  62.290+10.86 -0.01    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      29.085  10.608  62.784+24.46 +0.03    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      28.108  11.287  63.510 +9.23 -0.01    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      30.407  11.250  62.533+12.75 -0.02    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      23.530   5.543  62.725 +2.69 +0.01    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      24.507   4.863  61.999 -0.27 +0.01    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      28.209   6.816  61.364 -0.31 +0.02    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      25.961  11.411  64.461 -0.35 +0.01    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      25.380  10.825  64.971 -0.09 -0.02    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      22.788   7.428  63.919 +2.43 -0.15    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      23.068   8.323  64.180 +0.02 +0.06    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      24.214   3.613  61.537 -0.26 -0.08    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      24.673   2.922  62.037 +0.12 +0.05    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      26.339   2.873  62.541 +1.92 -0.04    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      25.741   3.513  62.956 +0.14 +0.02    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      29.412   2.226  59.020 +0.01 +0.07    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      30.268   2.674  58.903 -0.28 -0.12    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      30.271   6.009  55.677 +0.23 +0.30    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      29.827   5.470  55.005 +0.15 -0.23    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = +92.19 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = +90.10 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = +90.30 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.20 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = +90.10 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +2.76 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +2.76 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      27.125   6.981  56.839 -0.26 +0.26    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      29.567   4.750  61.035 +4.51 +0.09    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      26.380   7.907  59.418 -0.17 -0.00    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      27.341   6.911  59.204 -0.32 -0.01    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      27.987   6.321  60.291 -0.37 -0.01    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      28.677   5.440  57.612 -0.52 -0.01    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      27.663   6.493  57.824 -0.30 -0.08    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      29.323   4.849  58.701 -0.53 -0.02    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      26.071   8.310  60.717 -0.14 -0.00    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      29.001   5.268  60.080 +0.26 -0.04    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      27.673   6.728  61.594 -0.37 -0.01    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      26.717   7.721  61.804 -0.31 -0.00    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      28.990   5.033  56.310 -0.63 -0.01    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      30.283   3.853  58.486 -0.56 -0.04    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      29.946   4.039  56.101 -0.49 +0.02    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      30.591   3.450  57.187 +4.10 -0.02    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      30.280   3.606  54.713 +1.35 -0.02    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      25.663   8.574  58.342 -0.15 -0.00    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      26.296   9.142  57.230 -0.20 -0.02    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      25.537   9.764  56.237 -0.56 -0.03    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      27.768   9.076  57.115 -0.13 -0.15    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      26.191  10.368  55.059 -0.33 -0.15    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      24.142   9.819  56.358 -0.25 -0.01    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      25.524  10.915  54.190 +8.04 +0.13    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      27.663  10.303  54.946 +1.74 -0.08    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      28.423   9.681  55.938 +0.96 -0.04    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      28.296  10.871  53.833 +0.23 -0.05    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      29.817   9.627  55.818+12.17 -0.02    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      30.444  10.195  54.709+13.48 +0.03    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      29.685  10.816  53.718+10.04 -0.02    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      31.929  10.137  54.582+21.66 -0.00    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      23.515   9.252  57.467 +1.14 -0.00    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      24.274   8.630  58.458 -0.24 -0.00    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      28.477   8.540  57.957 -0.33 +0.13    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      27.616  11.492  52.828+12.07 -0.06    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      26.982  10.886  52.415 +0.23 +0.01    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      23.339  10.410  55.427 +1.69 +0.02    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      23.882  10.931  54.811 -0.09 -0.09    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      23.621   8.090  59.527 -0.09 -0.02    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      23.735   8.619  60.331 +0.09 +0.02    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      25.140   9.276  60.967 -0.10 +0.00    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      24.869   9.739  60.160 +0.10 -0.00    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      28.265   6.195  62.702 -0.25 +0.03    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      28.652   5.330  62.482 +0.15 -0.02    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      30.953   3.237  59.501 +4.25 +0.33    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      31.305   3.888  60.127 -0.26 -0.19    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =+164.96 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =+162.88 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =+162.68 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.20 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =+162.88 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +6.90 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +6.90 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      25.625   6.059  58.725 -0.19 +0.02    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      29.786   2.884  59.797+18.87 +0.22    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      27.771   6.058  56.865 -0.46 -0.02    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      27.758   5.278  58.027 -0.41 -0.01    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      28.838   4.443  58.318 -0.55 -0.02    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      26.596   4.517  60.161 -0.39 +0.00    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      26.596   5.344  58.937 -0.25 -0.02    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      27.677   3.683  60.452 -0.47 -0.00    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      28.863   6.001  55.998 -0.45 -0.09    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      28.838   3.615  59.541 -0.07 -0.06    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      29.932   4.388  57.446 -0.60 -0.03    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      29.942   5.167  56.289 -0.47 -0.04    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      25.502   4.572  61.033 -0.37 +0.00    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      27.663   2.902  61.615 +2.48 -0.00    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      25.493   3.794  62.191 -0.39 -0.01    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      26.572   2.961  62.481 +5.53 +0.00    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      24.327   3.854  63.119+21.91 +0.01    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      26.687   6.952  56.487 -0.21 -0.03    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      26.098   7.866  57.369 -0.35 -0.02    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      25.062   8.691  56.929 -0.41 -0.02    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      26.582   7.951  58.763 -0.10 -0.04    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      24.430   9.659  57.849 -0.24 -0.02    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      24.613   8.601  55.606 +2.09 -0.03    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      23.520  10.381  57.463 -0.26 -0.00    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      24.914   9.742  59.243 +0.88 -0.00    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      25.951   8.917  59.684 +2.30 -0.00    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      24.325  10.656  60.126 -0.08 +0.00    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      26.399   9.007  61.007 +0.80 -0.00    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      25.809   9.917  61.883 -0.08 +0.00    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      24.774  10.741  61.443 -0.21 -0.00    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      26.287  10.011  63.293 -0.53 -0.01    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      25.202   7.690  54.729+29.96 -0.07    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      26.237   6.866  55.169 +6.04 -0.14    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      27.488   7.250  59.195 -0.21 +0.05    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      23.311  11.492  59.762 -0.18 -0.02    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      22.943  11.234  58.903 +0.08 +0.02    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      23.606   9.376  55.109+18.78 +0.04    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      23.700  10.286  55.438 -0.15 -0.03    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      26.784   5.988  54.280 +1.48 +0.70    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      27.653   6.279  53.966 +0.26 -0.79    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      28.914   6.747  54.857 +8.89 +1.08    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      29.756   7.218  54.766 +0.18 -0.45    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      31.020   3.595  57.668 +1.72 +0.19    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      30.819   2.954  58.371 -0.31 -0.18    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      28.682   2.065  61.959+40.63 +0.04    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      29.191   1.800  61.177 +8.15 -0.03    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = +42.57 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = +40.48 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = +40.63 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.14 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = +40.48 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     = +23.00 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         = +23.00 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      28.060   7.715  59.601 -0.27 +0.04    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      29.480   3.359  56.853 -0.48 +0.07    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      27.988   5.231  60.976 -0.44 -0.00    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      28.372   5.360  59.636 -0.45 -0.01    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      28.747   4.230  58.907 -0.55 -0.01    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      28.784   6.816  57.589 -0.49 -0.02    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      28.379   6.695  59.004 -0.31 -0.05    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      29.158   5.686  56.860 -0.55 -0.04    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      27.980   3.975  61.582 -0.42 -0.01    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      29.153   4.351  57.492 -0.47 -0.06    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      28.737   2.970  59.519 +0.65 -0.02    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      28.355   2.846  60.854 +5.25 -0.02    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      28.792   8.075  56.977 -0.41 -0.02    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      29.542   5.814  55.519 -0.43 -0.09    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      29.174   8.199  55.641+14.34 +0.12    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      29.548   7.070  54.913+12.92 -0.10    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      29.183   9.541  54.990 +4.85 -0.08    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      27.586   6.357  61.807 -0.40 -0.00    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      26.729   7.373  61.365 -0.29 -0.00    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      26.389   8.419  62.224 -0.32 -0.00    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      26.188   7.326  59.991 -0.16 -0.01    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      25.487   9.498  61.772 -0.16 -0.00    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      26.907   8.451  63.525 -0.23 -0.02    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      25.191  10.417  62.525 -0.22 +0.01    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      24.948   9.452  60.397 +0.05 -0.00    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      25.287   8.405  59.538 -0.16 -0.00    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      24.091  10.468  59.956 -0.18 +0.00    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      24.770   8.374  58.238 -0.28 -0.00    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      23.917   9.388  57.801 -0.21 +0.00    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      23.579  10.433  58.659 -0.31 +0.00    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      23.367   9.354  56.416 +8.44 -0.00    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      27.760   7.438  63.961 -0.33 -0.02    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      28.099   6.392  63.103 -0.40 -0.01    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      26.455   6.429  59.202 -0.15 +0.03    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      23.717  11.517  60.741 -0.14 -0.01    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      24.036  11.400  61.649 +0.10 +0.01    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      26.618   9.442  64.416 +1.90 +0.12    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      27.092  10.254  64.167 +0.03 -0.05    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      28.938   5.422  63.569 +0.94 +0.02    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      28.505   4.842  64.212 +0.13 +0.02    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      27.611   3.809  62.885 -0.33 +0.01    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      27.484   4.655  63.340 +0.16 -0.00    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      29.091   1.825  58.868 +1.18 +0.01    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      29.542   2.049  58.035 -0.05 -0.04    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      29.921   4.754  54.750 -0.47 +0.30    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      30.819   4.880  54.408 -0.24 -0.20    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =+159.96 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =+157.87 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =+157.69 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.18 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =+157.87 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     = +49.05 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         = +49.05 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      27.019   7.546  59.662 -0.17 +0.04    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      28.831   2.889  61.553+19.66 +0.15    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      25.780   6.526  62.004 -0.29 +0.00    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      26.824   5.874  61.338 -0.31 -0.00    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      27.308   4.657  61.822 -0.43 -0.00    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      28.507   5.782  59.429 -0.44 -0.01    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      27.408   6.482  60.124 -0.25 -0.02    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      28.990   4.564  59.914 -0.29 -0.02    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      25.225   5.960  63.152 +0.24 +0.00    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      28.408   3.957  61.128 +0.07 -0.05    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      26.747   4.092  62.974 -0.46 +0.00    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      25.708   4.745  63.636 +0.68 +0.00    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      29.067   6.346  58.277 -0.39 -0.01    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      30.034   3.912  59.246 +0.29 -0.04    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      30.106   5.692  57.614 +4.11 +0.04    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      30.588   4.477  58.098 +0.72 -0.02    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      30.702   6.293  56.387 +6.66 -0.03    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      25.220   7.796  61.568 -0.25 +0.00    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      24.985   8.114  60.225 -0.19 +0.00    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      24.444   9.355  59.887 -0.16 +0.00    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      25.312   7.128  59.174 -0.16 -0.01    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      24.191   9.704  58.474 -0.20 -0.01    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      24.137  10.280  60.893 -0.20 +0.00    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      23.718  10.794  58.178 -0.28 -0.01    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      24.520   8.719  57.423 -0.32 -0.01    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      25.061   7.477  57.761 -0.33 -0.01    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      24.285   9.037  56.079 +0.30 -0.02    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      25.368   6.553  56.755 -0.47 -0.01    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      25.134   6.874  55.417 +2.78 +0.03    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      24.593   8.114  55.081+40.17 -0.01    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      25.461   5.889  54.347+31.98 -0.05    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      24.372   9.960  62.230 -0.27 +0.00    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      24.914   8.720  62.567 -0.32 -0.00    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      25.787   6.027  59.420 -0.16 +0.01    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      23.757  10.229  55.679 -0.10 +0.04    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      23.507  10.198  54.743 -0.30 -0.08    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      23.606  11.510  60.635 -0.14 -0.01    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      22.952  11.440  59.919 +0.09 +0.02    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      25.130   8.448  63.887 -0.24 +0.06    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      26.074   8.403  64.101 -0.33 -0.09    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      24.206   6.565  63.829+16.97 -0.03    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      23.533   6.925  63.232 +0.12 +0.04    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      27.170   2.908  63.503 +0.09 -0.02    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      27.153   2.219  62.816 +3.30 +0.02    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      30.555   2.723  59.665+37.02 +0.34    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      29.898   2.014  59.591 -0.09 -0.06    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = +48.94 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = +46.85 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = +46.86 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.01 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = +46.85 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     = +13.96 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         = +13.96 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      27.796   7.741  59.715 -0.24 +0.04    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      29.403   3.349  57.132 -0.45 +0.07    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      27.603   5.273  61.105 -0.41 -0.00    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      28.092   5.385  59.798 -0.44 -0.01    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      28.516   4.245  59.113 -0.52 -0.01    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      28.670   6.817  57.774 -0.48 -0.02    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      28.155   6.713  59.155 -0.30 -0.04    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      29.094   5.677  57.089 -0.54 -0.04    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      27.541   4.023  61.722 -0.45 -0.00    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      29.032   4.349  57.733 -0.45 -0.06    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      28.452   2.992  59.735 +0.53 -0.01    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      27.966   2.884  61.038 +1.51 -0.01    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      28.734   8.069  57.152 -0.48 -0.02    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      29.582   5.789  55.781 -0.45 -0.08    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      29.219   8.177  55.848 +8.41 +0.10    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      29.643   7.039  55.164+15.81 -0.08    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      29.286   9.511  55.186 +4.11 -0.07    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      27.144   6.409  61.890 -0.37 -0.00    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      26.298   7.403  61.383 -0.26 -0.00    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      25.900   8.463  62.201 -0.30 -0.00    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      25.831   7.321  59.984 -0.15 -0.01    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      25.009   9.519  61.680 -0.17 +0.00    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      26.349   8.528  63.526 -0.14 -0.02    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      24.662  10.449  62.397 -0.19 -0.00    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      24.544   9.438  60.280 -0.15 +0.00    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      24.941   8.378  59.462 -0.20 -0.00    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      23.698  10.432  59.774 -0.24 +0.00    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      24.493   8.314  58.138 -0.29 -0.00    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      23.651   9.307  57.636 +0.33 +0.00    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      23.255  10.365  58.453 -0.22 +0.00    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      23.175   9.237  56.225+19.42 -0.00    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      27.191   7.535  64.027 +1.03 -0.02    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      27.588   6.477  63.210 -0.47 -0.01    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      26.151   6.412  59.229 -0.15 +0.02    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      23.270  11.492  60.516 -0.13 -0.03    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      23.590  11.426  61.429 +0.10 +0.01    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      26.000   9.533  64.380 +0.87 +0.10    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      25.355   9.202  65.029 -0.30 -0.08    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      28.414   5.529  63.739 -0.27 +0.01    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      28.020   5.089  64.508 +0.18 +0.03    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      27.071   3.872  62.994 -0.29 -0.01    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      27.767   3.991  63.658 +0.17 +0.00    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      28.850   1.839  59.125 +3.21 -0.01    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      28.104   1.215  59.088 +0.94 +0.05    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      30.014   4.719  55.055 -0.40 +0.25    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      29.937   3.900  55.568 +0.16 -0.08    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   11 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        11
+DOCKED: USER    Run = 11
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = +51.91 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = +49.83 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = +49.82 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.01 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = +49.83 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     = +18.01 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         = +18.01 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      27.855   7.742  59.700 -0.25 +0.04    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      29.432   3.571  56.757 -0.47 +0.07    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      27.747   5.179  60.918 -0.43 -0.00    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      28.187   5.391  59.606 -0.44 -0.01    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      28.603   4.310  58.827 -0.52 -0.01    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      28.673   6.972  57.670 -0.48 -0.02    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      28.209   6.762  59.057 -0.30 -0.04    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      29.088   5.890  56.891 -0.54 -0.04    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      27.725   3.887  61.446 -0.43 -0.01    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      29.068   4.519  57.441 -0.45 -0.07    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      28.579   3.015  59.360 +0.40 -0.01    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      28.140   2.807  60.667 +2.99 -0.01    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      28.697   8.266  57.137 -0.48 -0.02    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      29.528   6.103  55.578 -0.18 -0.10    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      29.134   8.474  55.828 +7.71 +0.11    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      29.549   7.394  55.051+23.25 -0.10    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      29.159   9.853  55.261 +1.94 -0.06    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      27.299   6.249  61.797 -0.38 -0.00    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      26.437   7.273  61.386 -0.27 -0.00    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      26.053   8.265  62.291 -0.31 -0.00    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      25.940   7.295  59.995 -0.15 -0.01    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      25.145   9.352  61.871 -0.19 -0.00    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      26.531   8.232  63.607 +0.21 -0.02    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      24.810  10.222  62.665 -0.21 +0.00    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      24.649   9.374  60.480 -0.16 +0.00    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      25.033   8.383  59.575 -0.20 -0.00    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      23.787  10.399  60.069 -0.23 +0.00    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      24.556   8.416  58.259 -0.28 -0.00    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      23.698   9.439  57.854 +0.02 +0.00    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      23.315  10.429  58.757 -0.28 +0.00    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      23.191   9.474  56.452+12.49 -0.00    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      27.389   7.210  64.012 -0.03 -0.02    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      27.773   6.220  63.108 -0.46 -0.01    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      26.247   6.448  59.166 -0.15 +0.03    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      23.371  11.396  60.900 -0.12 -0.03    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      23.353  11.094  61.821 +0.10 +0.02    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      26.197   9.166  64.542 +8.93 +0.16    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      26.970   9.721  64.741 -0.30 -0.07    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      28.615   5.239  63.545 -0.14 +0.02    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      28.925   5.400  64.449 +0.03 +0.01    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      27.302   3.640  62.719 -0.29 -0.00    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      27.987   3.215  63.256 +0.14 -0.00    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      28.971   1.915  58.656 +1.25 +0.01    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      29.456   2.191  57.860 -0.01 -0.04    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      29.949   5.095  54.764 -0.43 +0.34    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      30.702   4.626  55.156 -0.10 -0.11    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   12 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        12
+DOCKED: USER    Run = 12
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = +52.74 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = +50.65 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = +50.78 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.12 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = +50.65 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.88 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.88 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      27.858   8.066  59.878 -0.17 +0.04    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      23.644  11.007  61.339 -0.14 -0.02    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      26.149   9.003  57.812 +0.32 -0.01    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      25.938   9.274  59.169+10.52 -0.01    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      24.842  10.042  59.564 +1.34 -0.00    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      26.646   9.033  61.603 +0.08 -0.00    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      26.882   8.743  60.175 +3.60 -0.02    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      25.549   9.802  61.998 -0.25 -0.00    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      25.265   9.502  56.856 -0.45 -0.03    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      24.606  10.334  60.993 -0.10 +0.00    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      23.956  10.541  58.601 -0.30 +0.00    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      24.170  10.270  57.250 -0.40 -0.00    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      27.531   8.535  62.566 -0.47 -0.00    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      25.338  10.072  63.356 -0.39 -0.01    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      27.317   8.805  63.918 +0.17 +0.02    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      26.222   9.572  64.312 +2.41 -0.01    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      28.260   8.273  64.943 +3.91 -0.01    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      27.267   8.214  57.316 -0.35 -0.02    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      27.552   6.917  57.761 -0.38 -0.02    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      28.643   6.224  57.235 -0.48 -0.04    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      26.690   6.291  58.785 -0.23 -0.03    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      28.956   4.856  57.695 -0.44 -0.07    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      29.451   6.828  56.263 +0.32 -0.09    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      29.914   4.249  57.234 -0.52 +0.10    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      28.096   4.231  58.720 -0.31 -0.01    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      27.003   4.923  59.247 -0.38 -0.00    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      28.380   2.934  59.165 +1.78 -0.01    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      26.197   4.319  60.218 -0.33 +0.00    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      26.484   3.028  60.659 +0.78 -0.01    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      27.574   2.336  60.134 +6.01 +0.00    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      25.624   2.385  61.695+13.06 +0.01    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      29.164   8.120  55.823 +8.30 -0.14    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      28.074   8.812  56.349 +3.93 -0.13    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      25.722   6.857  59.276 -0.13 +0.02    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      29.428   2.200  58.693 -0.29 +0.07    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      29.915   2.691  58.014 -0.19 -0.08    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      30.531   6.210  55.706 +2.33 +0.28    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      30.898   5.564  56.334 +0.02 -0.11    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      27.830  10.074  55.891 -0.26 +0.41    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      27.786  10.111  54.924 -0.27 -0.34    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      25.436   9.259  55.524 -0.41 +0.27    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      25.004   9.929  54.972 -0.23 -0.13    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      22.866  11.297  58.916 -0.20 -0.04    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      22.882  11.517  59.864 +0.09 +0.02    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      24.290  10.815  63.811 -0.21 +0.02    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      23.517  10.711  63.235 +0.08 +0.01    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   13 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        13
+DOCKED: USER    Run = 13
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = +64.04 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = +61.95 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = +62.01 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.06 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = +61.95 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.37 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.37 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      27.553   7.485  60.620 -0.24 +0.02    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      29.345   3.220  57.947 -0.49 +0.07    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      26.604   4.940  61.449 -0.37 +0.00    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      27.504   5.120  60.391 -0.41 -0.00    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      27.981   4.014  59.686 -0.48 -0.01    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      28.889   6.661  58.911 -0.35 -0.01    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      27.942   6.484  60.031 -0.29 -0.02    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      29.365   5.554  58.205 -0.30 -0.03    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      26.186   3.655  61.798 -0.33 +0.01    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      28.928   4.190  58.566 -0.46 -0.05    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      27.558   2.727  60.038 +2.32 +0.00    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      26.663   2.550  61.093 +7.58 +0.01    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      29.311   7.948  58.558 -0.01 -0.01    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      30.264   5.735  57.147 +1.47 -0.05    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      30.206   8.124  57.502 +1.19 +0.03    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      30.681   7.019  56.798 +8.32 -0.03    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      30.654   9.496  57.127+20.59 -0.02    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      26.061   6.037  62.236 -0.32 -0.00    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      25.402   7.137  61.673 -0.25 +0.00    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      24.908   8.150  62.497 -0.32 +0.00    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      25.233   7.215  60.207 -0.13 +0.00    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      24.212   9.316  61.916 -0.19 +0.01    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      25.074   8.063  63.884 -0.07 -0.01    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      23.780  10.204  62.640 -0.19 -0.02    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      24.044   9.394  60.451 -0.20 +0.00    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      24.538   8.381  59.626 -0.21 +0.00    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      23.385  10.494  59.888 -0.23 +0.01    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      24.373   8.468  58.239 -0.28 -0.00    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      23.716   9.566  57.682 +0.06 +0.00    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      23.224  10.577  58.505 -0.27 +0.00    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      23.541   9.658  56.204 +2.38 -0.00    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      25.731   6.966  64.442 +3.00 -0.03    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      26.224   5.955  63.618 -0.39 -0.01    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      25.647   6.352  59.444 -0.14 +0.01    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      22.877  11.516  60.633 -0.11 -0.04    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      22.970  11.333  61.580 +0.09 +0.03    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      24.617   9.015  64.748 +1.97 +0.08    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      24.189   9.731  64.248 -0.31 -0.04    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      26.862   4.900  64.204 -0.33 +0.00    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      27.591   4.566  63.660 +0.17 +0.00    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      25.310   3.439  62.821 -0.20 -0.04    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      25.713   3.600  63.687 +0.14 +0.01    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      27.983   1.602  59.393+15.18 -0.06    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      27.239   0.986  59.286 +3.23 +0.06    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      30.771   4.701  56.418 +2.03 +0.10    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      31.078   3.987  56.998 +0.17 -0.05    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   14 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        14
+DOCKED: USER    Run = 14
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =+107.19 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =+105.10 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =+105.37 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.26 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =+105.10 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -3.74 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -3.74 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      25.060   7.585  58.106 -0.17 +0.04    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      29.427   9.492  55.689 +0.63 +0.31    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      27.528   6.307  58.686 -0.38 -0.01    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      27.409   7.393  57.812 -0.36 -0.02    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      28.543   7.902  57.175 -0.44 -0.05    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      25.970   9.139  56.644 -0.45 -0.02    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      26.082   7.995  57.571 -0.24 -0.08    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      27.105   9.647  56.006 +0.50 -0.08    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      28.778   5.733  58.921 -0.43 -0.02    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      28.432   9.047  56.248 +2.50 -0.30    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      29.796   7.323  57.413 +0.25 -0.05    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      29.910   6.241  58.285 +6.28 -0.04    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      24.718   9.717  56.405 -0.54 -0.01    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      26.986  10.734  55.131 -0.28 -0.06    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      24.604  10.799  55.531 +0.82 +0.02    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      25.736  11.306  54.895 +6.46 -0.01    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      23.269  11.414  55.277 +8.58 +0.00    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      26.399   5.718  59.391 -0.32 -0.00    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      25.770   6.328  60.483 -0.23 +0.00    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      24.691   5.699  61.106 -0.26 +0.01    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      26.254   7.637  60.967 -0.17 -0.01    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      24.018   6.330  62.260 -0.12 +0.03    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      24.240   4.459  60.637 -0.32 +0.02    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      23.073   5.777  62.807 +0.54 -0.07    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      24.504   7.638  62.745 -0.34 +0.00    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      25.583   8.269  62.121 -0.30 -0.00    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      23.875   8.249  63.837 -0.02 +0.01    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      26.033   9.508  62.591 -0.38 -0.00    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      25.405  10.112  63.680 -0.41 +0.01    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      24.328   9.483  64.302 +1.60 -0.01    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      25.886  11.432  64.180 -0.52 -0.00    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      24.869   3.854  59.549+11.09 +0.01    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      25.947   4.483  58.927 +0.70 +0.00    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      27.195   8.229  60.454 -0.14 +0.03    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      22.816   7.691  64.490+41.20 -0.21    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      22.853   6.724  64.444 +8.93 +0.12    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      23.193   3.788  61.197 -0.07 -0.11    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      23.320   2.830  61.086 +0.15 +0.08    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      26.535   3.856  57.867+10.85 +0.01    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      27.499   3.816  57.954 +0.21 -0.02    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      28.934   4.673  59.765 -0.33 +0.09    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      28.454   3.888  59.459 +0.10 -0.04    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      30.943   7.769  56.826+10.56 +0.21    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      31.028   8.729  56.959 +0.26 -0.10    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      28.050  11.281  54.478 +0.32 +0.23    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      28.881  11.056  54.924 +0.05 -0.16    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   15 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        15
+DOCKED: USER    Run = 15
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =+133.17 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =+131.08 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =+131.27 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.19 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =+131.08 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -3.28 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -3.28 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      25.011   6.981  59.395 -0.11 +0.00    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      28.412   4.039  56.510 +0.35 +0.08    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      26.460   4.957  60.762 -0.36 +0.00    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      26.596   5.211  59.392 -0.34 -0.00    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      27.483   4.451  58.628 -0.19 -0.01    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      25.951   6.542  57.320 -0.40 -0.01    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      25.799   6.287  58.767 -0.21 -0.02    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      26.837   5.781  56.555 -0.28 -0.04    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      27.210   3.945  61.362 -0.43 -0.00    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      27.635   4.707  57.181 +0.88 -0.06    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      28.233   3.436  59.233 +0.25 -0.01    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      28.096   3.186  60.598 +0.38 -0.01    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      25.200   7.556  56.714 -0.44 -0.01    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      26.973   6.035  55.185 +1.66 -0.13    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      25.337   7.805  55.348 +1.60 +0.05    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      26.222   7.046  54.585+29.82 -0.10    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      24.537   8.886  54.704+22.12 -0.03    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      25.562   5.704  61.631 -0.29 +0.00    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      25.883   6.950  62.182 -0.30 -0.00    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      24.966   7.604  63.007 -0.36 -0.00    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      27.194   7.565  61.884 -0.29 -0.02    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      25.292   8.919  63.596 -0.21 -0.03    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      23.727   7.012  63.280 +2.37 +0.01    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      24.487   9.492  64.320 +0.05 +0.05    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      26.602   9.532  63.299 -0.44 -0.01    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      27.520   8.879  62.474 -0.37 -0.00    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      26.924  10.779  63.851 -0.51 -0.01    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      28.759   9.471  62.202+21.34 -0.00    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      29.075  10.712  62.754+23.68 +0.03    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      28.159  11.365  63.577+13.09 -0.01    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      30.395  11.342  62.463+13.22 -0.02    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      23.411   5.770  62.729 +2.16 +0.02    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      24.327   5.117  61.906 -0.27 +0.01    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      28.030   7.031  61.167 -0.30 +0.02    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      26.076  11.473  64.662 -0.36 +0.00    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      25.280  10.953  64.855 -0.08 -0.02    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      22.785   7.594  64.076 +5.71 -0.16    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      22.851   8.562  64.007 +0.01 +0.06    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      23.978   3.903  61.389 -0.25 -0.08    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      24.586   3.200  61.664 +0.11 +0.05    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      27.104   3.667  62.694 -0.27 -0.01    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      27.912   3.894  63.180 +0.15 -0.01    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      29.117   2.655  58.548 -0.18 +0.07    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      29.912   2.508  59.089 -0.27 -0.09    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      27.820   5.332  54.380 -0.20 +0.58    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      28.738   5.431  54.675 +0.02 -0.34    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   16 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        16
+DOCKED: USER    Run = 16
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = +37.32 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = +35.23 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = +34.65 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.58 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = +35.23 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +7.78 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +7.78 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      24.829   6.333  59.267 -0.14 -0.01    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      25.562   6.547  64.555 +0.46 +0.09    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      24.977   8.908  60.454 -0.17 -0.00    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      25.086   7.717  61.181 -0.22 +0.00    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      25.279   7.759  62.563 -0.32 -0.00    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      25.110   5.172  61.256 -0.32 +0.00    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      24.996   6.421  60.477 -0.15 +0.01    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      25.303   5.214  62.638 -0.20 +0.00    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      25.062  10.136  61.111 +0.07 -0.00    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      25.394   6.509  63.343 -0.00 -0.01    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      25.364   8.993  63.219 -0.36 -0.01    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      25.255  10.178  62.491 -0.32 -0.00    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      25.025   3.937  60.601 -0.24 +0.00    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      25.411   4.022  63.365 +1.39 +0.01    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      25.132   2.752  61.329 +0.19 -0.01    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      25.325   2.795  62.709 +0.95 +0.01    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      25.041   1.438  60.631+12.25 +0.02    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      24.777   8.953  59.013 -0.18 -0.00    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      25.531   8.196  58.107 -0.27 -0.01    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      25.278   8.295  56.738 -0.42 -0.03    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      26.589   7.297  58.611 -0.20 -0.04    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      26.065   7.503  55.771 +1.64 -0.27    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      24.270   9.150  56.274 -0.01 -0.02    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      25.843   7.591  54.570 +4.93 +0.51    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      27.124   6.605  56.274 +0.15 -0.07    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      27.378   6.506  57.644 -0.39 -0.01    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      27.878   5.849  55.368 +0.26 -0.12    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      28.385   5.651  58.107 -0.48 -0.01    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      29.134   4.900  57.201 -0.58 +0.02    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      28.881   4.999  55.834 -0.62 -0.03    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      30.207   3.990  57.696 -0.61 -0.02    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      23.522   9.902  57.180 +0.65 -0.00    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      23.775   9.804  58.548 -0.24 -0.00    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      26.848   7.175  59.801 -0.16 +0.03    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      27.683   5.895  54.020 +3.89 +0.97    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      26.765   5.678  53.796 -0.30 -0.41    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      23.969   9.295  54.952 +6.13 +0.10    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      24.333   8.546  54.450 +1.10 -0.10    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      23.021  10.558  59.399 -0.14 -0.03    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      23.291  10.446  60.323 +0.09 +0.02    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      24.960  11.318  60.438 +0.29 +0.03    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      24.576  11.205  59.555 +0.07 -0.01    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      25.552   9.109  64.565 +3.83 +0.13    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      25.140   8.353  65.018 -0.10 -0.11    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      25.602   3.990  64.715 +3.68 -0.00    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      25.890   4.856  65.043 -0.20 -0.03    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   17 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        17
+DOCKED: USER    Run = 17
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = +33.38 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = +31.29 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = +31.30 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.00 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = +31.29 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     = +35.49 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         = +35.49 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      27.337   7.793  59.877 -0.20 +0.03    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      29.409   3.686  57.161 -0.49 +0.08    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      27.213   5.233  61.099 -0.39 -0.00    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      27.782   5.460  59.841 -0.41 -0.01    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      28.328   4.395  59.121 -0.50 -0.01    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      28.403   7.053  57.955 -0.45 -0.02    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      27.802   6.828  59.285 -0.27 -0.04    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      28.949   5.988  57.235 -0.51 -0.04    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      27.191   3.944  61.634 -0.42 -0.00    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      28.931   4.620  57.792 -0.44 -0.06    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      28.305   3.103  59.661 +0.29 -0.01    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      27.737   2.881  60.915 +0.94 -0.00    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      28.427   8.344  57.415 -0.47 -0.02    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      29.518   6.215  55.976 -0.28 -0.08    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      28.994   8.566  56.160 +2.48 +0.09    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      29.538   7.503  55.441+16.67 -0.08    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      29.017   9.942  55.585 +2.80 -0.05    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      26.625   6.285  61.915 -0.33 -0.00    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      25.815   7.302  61.394 -0.24 -0.00    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      25.287   8.276  62.243 -0.29 -0.00    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      25.524   7.334  59.946 -0.14 -0.01    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      24.433   9.355  61.708 -0.18 +0.01    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      25.570   8.234  63.614 -0.07 -0.01    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      23.971  10.210  62.453 -0.17 -0.01    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      24.143   9.388  60.260 -0.19 +0.00    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      24.670   8.413  59.409 -0.21 -0.00    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      23.333  10.405  59.739 -0.23 +0.01    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      24.388   8.456  58.039 -0.29 -0.00    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      23.582   9.472  57.524 +0.48 +0.00    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      23.056  10.444  58.372 -0.10 +0.00    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      23.283   9.517  56.064+11.79 -0.00    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      26.376   7.220  64.129 +2.22 -0.03    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      26.904   6.247  63.281 -0.44 -0.01    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      25.962   6.502  59.162 -0.14 +0.02    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      22.784  11.386  60.510 -0.11 -0.04    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      23.061  11.293  61.435 +0.09 +0.02    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      25.088   9.152  64.501 +0.56 +0.09    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      24.684   9.893  64.017 -0.04 -0.03    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      27.689   5.273  63.825 -0.32 +0.00    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      27.167   4.545  64.193 +0.15 +0.01    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      26.644   3.683  62.856 -0.26 -0.02    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      25.688   3.840  62.870 +0.14 +0.02    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      28.819   2.018  59.014 +1.32 +0.01    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      29.030   2.256  58.094 +0.16 -0.02    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      30.070   5.223  55.220 -0.33 +0.29    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      30.404   4.507  55.782 +0.12 -0.09    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   18 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        18
+DOCKED: USER    Run = 18
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = +45.11 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = +43.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = +43.50 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.48 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = +43.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +0.54 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +0.54 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      25.618   6.925  59.367 -0.12 +0.02    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      29.687   4.075  57.401 -0.51 +0.10    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      27.197   8.141  57.345 -0.35 -0.02    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      27.435   6.853  57.838 -0.37 -0.02    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      28.494   6.097  57.332 -0.47 -0.04    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      26.822   4.943  59.406 -0.37 -0.00    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      26.559   6.302  58.893 -0.22 -0.03    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      27.882   4.187  58.900 -0.24 -0.01    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      28.018   8.669  56.347 +5.57 -0.13    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      28.757   4.737  57.844 -0.42 -0.06    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      29.316   6.630  56.331 -0.21 -0.09    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      29.076   7.914  55.841+11.34 -0.15    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      26.001   4.410  60.407 -0.36 +0.00    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      28.120   2.899  59.394 +2.08 -0.01    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      26.242   3.127  60.898 +0.22 -0.01    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      27.300   2.373  60.392 +4.81 +0.00    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      25.367   2.560  61.964 +2.60 +0.01    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      26.115   8.993  57.815 +0.26 -0.01    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      25.896   9.283  59.167+10.03 -0.01    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      24.835  10.112  59.538 +1.55 -0.00    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      26.792   8.710  60.192 +2.83 -0.02    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      24.590  10.425  60.961 -0.09 +0.00    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      23.993  10.650  58.557 -0.30 +0.00    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      23.659  11.151  61.286 -0.15 -0.02    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      25.486   9.851  61.986 -0.25 -0.00    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      26.548   9.022  61.615 -0.03 -0.00    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      25.266  10.141  63.338 -0.39 -0.01    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      27.388   8.484  62.596 -0.47 -0.00    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      27.165   8.775  63.942 +0.70 +0.02    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      26.106   9.601  64.312 +1.98 -0.01    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      28.061   8.200  64.987 +6.85 -0.02    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      24.216  10.359  57.211 -0.43 -0.00    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      25.275   9.531  56.841 -0.45 -0.03    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      27.735   7.980  59.916 -0.19 +0.04    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      24.252  10.942  63.770 -0.21 +0.02    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      23.587  11.062  63.075 +0.09 +0.01    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      22.940  11.466  58.848 -0.22 -0.05    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      22.822  11.517  59.812 +0.09 +0.02    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      25.456   9.271  55.514 -0.41 +0.28    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      26.365   9.000  55.315 -0.31 -0.41    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      27.820   9.920  55.842 -0.06 +0.46    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      27.572   9.901  54.905 -0.30 -0.42    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      30.367   5.948  55.791 +0.34 +0.27    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      30.860   5.495  56.497 -0.05 -0.11    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      29.134   2.106  58.945 +0.29 +0.04    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      29.962   2.607  58.885 -0.19 -0.10    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   19 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        19
+DOCKED: USER    Run = 19
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =+118.55 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =+116.46 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =+116.66 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.20 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =+116.46 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -3.19 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -3.19 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      25.216   7.358  58.612 -0.14 +0.03    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      29.541   8.296  55.619 +5.88 +0.45    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      27.452   5.648  58.989 -0.40 -0.00    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      27.435   6.705  58.071 -0.36 -0.02    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      28.559   6.962  57.284 -0.45 -0.05    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      26.220   8.653  56.970 -0.38 -0.02    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      26.225   7.543  57.944 -0.22 -0.06    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      27.345   8.909  56.182 +6.44 -0.11    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      28.591   4.853  59.117 -0.49 -0.02    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      28.555   8.072  56.310 +5.30 -0.34    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      29.701   6.161  57.415 +0.25 -0.05    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      29.714   5.109  58.331 -0.10 -0.03    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      25.079   9.453  56.838 -0.49 -0.01    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      27.328   9.966  55.263 +4.09 -0.12    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      25.066  10.504  55.921 -0.54 +0.02    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      26.188  10.760  55.135 -0.34 -0.02    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      23.850  11.356  55.781 +3.87 -0.00    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      26.325   5.315  59.848 -0.33 -0.00    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      25.908   6.117  60.917 -0.24 +0.00    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      24.816   5.728  61.695 -0.27 +0.01    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      26.628   7.373  61.212 -0.20 -0.01    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      24.365   6.564  62.827 +0.30 +0.02    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      24.141   4.536  61.404 -0.34 +0.02    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      23.409   6.222  63.509+19.88 -0.07    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      25.087   7.819  63.122 -0.38 -0.00    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      26.179   8.209  62.344 -0.34 -0.00    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      24.669   8.621  64.191 +0.27 -0.01    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      26.853   9.400  62.635 -0.37 -0.00    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      26.435  10.196  63.702 -0.48 +0.01    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      25.345   9.807  64.478 +1.16 -0.01    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      27.155  11.465  64.011 +0.73 -0.00    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      24.560   3.740  60.339 +0.57 +0.02    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      25.651   4.128  59.561 +1.38 +0.01    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      27.589   7.757  60.558 -0.24 +0.03    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      23.611   8.303  64.990+14.79 -0.04    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      23.000   7.707  64.531 +1.04 +0.11    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      23.068   4.096  62.122 +0.01 -0.09    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      23.370   3.733  62.972 +0.51 +0.05    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      26.028   3.319  58.530+53.19 -0.03    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      25.835   3.714  57.666 +2.46 +0.01    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      28.645   3.814  59.999 -0.29 +0.10    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      29.491   3.343  59.958 -0.31 -0.14    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      30.833   6.355  56.679 +2.46 +0.28    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      31.180   7.248  56.843 -0.16 -0.17    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      28.389  10.273  54.465 +0.28 +0.47    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      29.103   9.626  54.576 -0.31 -0.37    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   20 / 20
+Time taken for this run:   0.126s
+
+DOCKED: MODEL        20
+DOCKED: USER    Run = 20
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    = +53.86 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     = +51.77 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     = +51.52 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  +0.25 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    = +51.77 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  +5.49 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +2.09 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  +5.49 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  7 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: O_1  and  C_23 
+DOCKED: REMARK    2  A    between atoms: O_2  and  C_24 
+DOCKED: REMARK    3  A    between atoms: O_3  and  C_27 
+DOCKED: REMARK    4  A    between atoms: O_4  and  C_28 
+DOCKED: REMARK    5  A    between atoms: O_9  and  C_33 
+DOCKED: REMARK    6  A    between atoms: O_10  and  C_34 
+DOCKED: REMARK    7  A    between atoms: C_11  and  C_12 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  O   UNL     1      24.815   6.401  59.240 -0.14 -0.01    -0.287 OA 
+DOCKED: HETATM    2  O   UNL     1      25.481   6.784  64.527 +0.41 +0.09    -0.286 OA 
+DOCKED: HETATM    3  C   UNL     1      24.917   9.012  60.350 -0.14 -0.00    +0.026 A  
+DOCKED: HETATM    4  C   UNL     1      25.032   7.845  61.114 -0.21 +0.00    +0.046 A  
+DOCKED: HETATM    5  C   UNL     1      25.207   7.931  62.496 -0.32 -0.00    +0.063 A  
+DOCKED: HETATM    6  C   UNL     1      25.087   5.304  61.266 -0.31 +0.00    +0.032 A  
+DOCKED: HETATM    7  C   UNL     1      24.967   6.528  60.448 -0.15 +0.01    +0.195 A  
+DOCKED: HETATM    8  C   UNL     1      25.262   5.390  62.649 -0.19 +0.00    +0.062 A  
+DOCKED: HETATM    9  C   UNL     1      24.979  10.261  60.970 +0.13 -0.00    +0.080 A  
+DOCKED: HETATM   10  C   UNL     1      25.328   6.707  63.315 -0.05 -0.01    +0.199 A  
+DOCKED: HETATM   11  C   UNL     1      25.268   9.186  63.115 -0.37 -0.01    +0.083 A  
+DOCKED: HETATM   12  C   UNL     1      25.154  10.347  62.351 -0.31 -0.00    +0.075 A  
+DOCKED: HETATM   13  C   UNL     1      25.025   4.049  60.648 -0.31 +0.00    +0.023 A  
+DOCKED: HETATM   14  C   UNL     1      25.376   4.222  63.413 +2.16 +0.01    +0.081 A  
+DOCKED: HETATM   15  C   UNL     1      25.138   2.888  61.413 -0.09 -0.01    -0.058 A  
+DOCKED: HETATM   16  C   UNL     1      25.313   2.975  62.793 +0.21 +0.01    +0.044 A  
+DOCKED: HETATM   17  C   UNL     1      25.072   1.552  60.753+10.26 +0.02    +0.048 C  
+DOCKED: ENDROOT
+DOCKED: BRANCH   3  18
+DOCKED: HETATM   18  C   UNL     1      24.734   9.011  58.906 -0.19 -0.00    +0.026 A  
+DOCKED: HETATM   19  C   UNL     1      25.527   8.259  58.030 -0.28 -0.01    +0.046 A  
+DOCKED: HETATM   20  C   UNL     1      25.288   8.311  56.656 -0.42 -0.03    +0.063 A  
+DOCKED: HETATM   21  C   UNL     1      26.610   7.412  58.571 -0.19 -0.05    +0.195 A  
+DOCKED: HETATM   22  C   UNL     1      26.116   7.523  55.720 +2.25 -0.29    +0.199 A  
+DOCKED: HETATM   23  C   UNL     1      24.256   9.116  56.157 +0.22 -0.02    +0.083 A  
+DOCKED: HETATM   24  O   UNL     1      25.907   7.570  54.515 +7.74 +0.56    -0.286 OA 
+DOCKED: HETATM   25  C   UNL     1      27.200   6.678  56.260 +0.46 -0.08    +0.062 A  
+DOCKED: HETATM   26  C   UNL     1      27.439   6.625  57.635 -0.39 -0.02    +0.032 A  
+DOCKED: HETATM   27  C   UNL     1      27.992   5.925  55.384 +0.59 -0.13    +0.081 A  
+DOCKED: HETATM   28  C   UNL     1      28.470   5.820  58.134 -0.48 -0.01    +0.023 A  
+DOCKED: HETATM   29  C   UNL     1      29.258   5.073  57.257 -0.58 +0.03    -0.058 A  
+DOCKED: HETATM   30  C   UNL     1      29.019   5.126  55.885 -0.63 -0.03    +0.044 A  
+DOCKED: HETATM   31  C   UNL     1      30.357   4.216  57.790 -0.43 -0.02    +0.048 C  
+DOCKED: HETATM   32  C   UNL     1      23.470   9.864  57.033 +1.60 -0.00    +0.075 A  
+DOCKED: HETATM   33  C   UNL     1      23.708   9.812  58.405 -0.23 -0.00    +0.080 A  
+DOCKED: HETATM   34  O   UNL     1      26.857   7.332  59.767 -0.16 +0.03    -0.287 OA 
+DOCKED: BRANCH  27  35
+DOCKED: HETATM   35  O   UNL     1      27.813   5.928  54.033 +6.57 +1.03    -0.360 OA 
+DOCKED: HETATM   36  H   UNL     1      27.008   6.411  53.793 +0.44 -0.65    +0.217 HD 
+DOCKED: ENDBRANCH  27  35
+DOCKED: BRANCH  23  37
+DOCKED: HETATM   37  O   UNL     1      23.967   9.215  54.828+10.92 +0.10    -0.360 OA 
+DOCKED: HETATM   38  H   UNL     1      24.693   9.671  54.368 -0.32 -0.19    +0.217 HD 
+DOCKED: ENDBRANCH  23  37
+DOCKED: BRANCH  33  39
+DOCKED: HETATM   39  O   UNL     1      22.917  10.561  59.227 -0.15 -0.03    -0.360 OA 
+DOCKED: HETATM   40  H   UNL     1      23.074  11.511  59.120 +0.08 +0.02    +0.217 HD 
+DOCKED: ENDBRANCH  33  39
+DOCKED: ENDBRANCH   3  18
+DOCKED: BRANCH   9  41
+DOCKED: HETATM   41  O   UNL     1      24.870  11.421  60.260 +0.28 +0.03    -0.360 OA 
+DOCKED: HETATM   42  H   UNL     1      24.442  11.285  59.401 +0.06 -0.01    +0.217 HD 
+DOCKED: ENDBRANCH   9  41
+DOCKED: BRANCH  11  43
+DOCKED: HETATM   43  O   UNL     1      25.438   9.344  64.459 +0.75 +0.09    -0.360 OA 
+DOCKED: HETATM   44  H   UNL     1      25.862   8.551  64.831 +8.92 -0.19    +0.217 HD 
+DOCKED: ENDBRANCH  11  43
+DOCKED: BRANCH  14  45
+DOCKED: HETATM   45  O   UNL     1      25.551   4.233  64.765 +4.44 +0.01    -0.360 OA 
+DOCKED: HETATM   46  H   UNL     1      26.115   3.497  65.046 +0.09 +0.00    +0.217 HD 
+DOCKED: ENDBRANCH  14  45
+DOCKED: TORSDOF 7
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |    +33.38 |  17 |    +46.70 |   6 |######
+   2 |    +37.32 |  16 |    +45.59 |   2 |##
+   3 |    +42.84 |   3 |    +76.41 |   4 |####
+   4 |    +73.61 |   5 |   +103.39 |   2 |##
+   5 |    +85.32 |   2 |    +85.32 |   1 |#
+   6 |    +92.19 |   6 |    +92.19 |   1 |#
+   7 |   +107.19 |  14 |   +112.87 |   2 |##
+   8 |   +156.51 |   4 |   +156.51 |   1 |#
+   9 |   +159.96 |   9 |   +159.96 |   1 |#
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1     17      +33.38      0.00     62.84           RANKING
+   1      2      1      +39.36      0.68     63.13           RANKING
+   1      3      8      +42.57      0.93     63.02           RANKING
+   1      4     10      +48.94      0.62     62.99           RANKING
+   1      5     11      +51.91      0.78     62.99           RANKING
+   1      6     13      +64.04      0.99     63.23           RANKING
+   2      1     16      +37.32      0.00     62.23           RANKING
+   2      2     20      +53.86      0.43     62.19           RANKING
+   3      1      3      +42.84      0.00     62.31           RANKING
+   3      2     18      +45.11      0.37     62.41           RANKING
+   3      3     12      +52.74      0.51     62.37           RANKING
+   3      4      7     +164.96      1.71     61.65           RANKING
+   4      1      5      +73.61      0.00     63.82           RANKING
+   4      2     15     +133.17      1.41     63.32           RANKING
+   5      1      2      +85.32      0.00     62.20           RANKING
+   6      1      6      +92.19      0.00     61.22           RANKING
+   7      1     14     +107.19      0.00     62.18           RANKING
+   7      2     19     +118.55      0.98     62.51           RANKING
+   8      1      4     +156.51      0.00     62.23           RANKING
+   9      1      9     +159.96      0.00     62.67           RANKING
+
+Run time 2.535 sec
+Idle time 0.214 sec

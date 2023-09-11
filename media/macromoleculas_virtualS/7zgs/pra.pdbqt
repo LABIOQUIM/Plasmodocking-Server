@@ -1,0 +1,29 @@
+REMARK  4 active torsions:
+REMARK  status: ('A' for Active; 'I' for Inactive)
+REMARK    1  A    between atoms: C1_1  and  C2_2 
+REMARK    2  A    between atoms: C1_1  and  N_10 
+REMARK    3  A    between atoms: C2_2  and  C3_3 
+REMARK    4  A    between atoms: C1'_4  and  C3_3 
+ROOT
+HETATM    1  C1' PRA A 401      23.504  -0.903   5.654  1.00 69.49    -0.058 A 
+HETATM    2  C2' PRA A 401      23.040   0.165   4.893  1.00 70.70     0.007 A 
+HETATM    3  C3' PRA A 401      23.012   1.452   5.407  1.00 65.35     0.001 A 
+HETATM    4  C4' PRA A 401      23.433   1.672   6.691  1.00 66.18     0.000 A 
+HETATM    5  C5' PRA A 401      23.894   0.627   7.459  1.00 63.91     0.001 A 
+HETATM    6  C6' PRA A 401      23.951  -0.652   6.936  1.00 65.10     0.007 A 
+ENDROOT
+BRANCH   1   7
+HETATM    7  C3  PRA A 401      23.536  -2.303   5.094  1.00 72.77     0.040 C 
+BRANCH   7   8
+HETATM    8  C2  PRA A 401      23.012  -3.344   6.078  1.00 76.43     0.034 C 
+BRANCH   8   9
+HETATM    9  C1  PRA A 401      22.100  -4.357   5.412  1.00 84.70     0.267 C 
+BRANCH   9  10
+HETATM   10  N   PRA A 401      21.967  -5.556   6.241  1.00 90.09     0.078 N 
+HETATM   11  HN1 PRA A 401      21.644  -5.341   7.052  1.00 87.96     0.312 HD
+HETATM   12  HN2 PRA A 401      21.386  -6.119   5.860  1.00 90.12     0.312 HD
+ENDBRANCH   9  10
+ENDBRANCH   8   9
+ENDBRANCH   7   8
+ENDBRANCH   1   7
+TORSDOF 4

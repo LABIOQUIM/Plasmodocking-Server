@@ -1,0 +1,23 @@
+parameter_file /home/eduardo/x86_64Linux2/AD4_parameters.dat
+npts 33 38 36                        # num.grid points in xyz
+gridfld 5jaz_A.maps.fld              # grid_data_file
+spacing 0.375                        # spacing(A)
+receptor_types A C NA Mn OA N SA     # receptor atom types
+ligand_types C A N NA NS OA OS SA S H HD # ligand atom types
+receptor 5jaz_A.pdbqt                # macromolecule
+gridcenter 1.088 13.459 18.841       # xyz-coordinates or auto
+smooth 0.5                           # store minimum energy w/in rad(A)
+map 5jaz_A.C.map                     # atom-specific affinity map
+map 5jaz_A.A.map                     # atom-specific affinity map
+map 5jaz_A.N.map                     # atom-specific affinity map
+map 5jaz_A.NA.map                    # atom-specific affinity map
+map 5jaz_A.NS.map                    # atom-specific affinity map
+map 5jaz_A.OA.map                    # atom-specific affinity map
+map 5jaz_A.OS.map                    # atom-specific affinity map
+map 5jaz_A.SA.map                    # atom-specific affinity map
+map 5jaz_A.S.map                     # atom-specific affinity map
+map 5jaz_A.H.map                     # atom-specific affinity map
+map 5jaz_A.HD.map                    # atom-specific affinity map
+elecmap 5jaz_A.e.map                 # electrostatic potential map
+dsolvmap 5jaz_A.d.map              # desolvation potential map
+dielectric -0.1465                   # <0, AD4 distance-dep.diel;>0, constant

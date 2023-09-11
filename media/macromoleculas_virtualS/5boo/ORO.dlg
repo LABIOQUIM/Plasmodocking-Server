@@ -1,0 +1,1159 @@
+AutoDock-GPU version: v1.5-release
+
+**********************************************************
+**    AutoDock-GPU AUTODOCKTOOLS-COMPATIBLE DLG FILE    **
+**********************************************************
+
+
+    DOCKING PARAMETERS
+    ________________________
+
+
+Ligand file:                               ORO.pdbqt
+Grid fld file:                             5boo_A.maps.fld
+
+Random seed:                               1691725324, 4209
+Number of runs:                            20
+Number of energy evaluations:              1132076
+Number of generations:                     42000
+Size of population:                        150
+Rate of crossover:                         80.000000%
+Tournament selection probability limit:    60.000000%
+Rate of mutation:                          2.000000%
+Maximal allowed delta movement:            +/- 6.000000A
+Maximal allowed delta angle:               +/- 90.000000
+
+Rate of local search:                      100.000000%
+Maximal number of local search iterations: 300
+Rho lower bound:                           0.010000
+Spread of local search delta movement:     2.000000A
+Spread of local search delta angle:        74.999999
+Limit of consecutive successes/failures:   4
+
+Handle symmetry during clustering:         YES
+RMSD tolerance:                            2.000000A
+
+Program call in command line was:          /home/eduardo/AutoDock-GPU-develop/bin/autodock_gpu_128wi --ffile 5boo_A.maps.fld --lfile ORO.pdbqt 
+
+
+    GRID PARAMETERS
+    ________________________
+
+
+Receptor name:                             5boo_A
+Number of grid points (x, y, z):           47, 49, 51
+Grid center (x, y, z):                     52.883000, -21.422000, -15.396000A
+Grid size (x, y, z):                       17.250000, 18.000000, 18.750000A
+Grid spacing:                              0.375000A
+
+
+    LIGAND PARAMETERS
+    ________________________
+
+
+Ligand name:                               ORO
+Number of atoms:                           13
+Number of rotatable bonds:                 1
+Number of atom types:                      5
+
+
+    DUMMY DATA (only for ADT-compatibility)
+    ________________________
+
+
+DPF> outlev 1
+DPF> ga_run 20
+DPF> fld 5boo_A.maps.fld
+DPF> move ORO.pdbqt
+
+
+    COUNTER STATES
+    ________________________
+
+
+Number of energy evaluations performed:    221870
+Number of generations used:                20
+
+
+    INPUT LIGAND PDBQT FILE:
+    ________________________
+
+
+INPUT-LIGAND-PDBQT: REMARK  1 active torsions:
+INPUT-LIGAND-PDBQT: REMARK  status: ('A' for Active; 'I' for Inactive)
+INPUT-LIGAND-PDBQT: REMARK    1  A    between atoms: C6_8  and  C7_9 
+INPUT-LIGAND-PDBQT: ROOT
+INPUT-LIGAND-PDBQT: HETATM    1  N1  ORO A1003     -15.346  -9.418  -7.790  1.00 27.35    -0.303 N 
+INPUT-LIGAND-PDBQT: HETATM    2  C2  ORO A1003     -15.674 -10.448  -6.953  1.00 30.48     0.327 A 
+INPUT-LIGAND-PDBQT: HETATM    3  O2  ORO A1003     -16.082 -11.491  -7.411  1.00 31.30    -0.247 OA
+INPUT-LIGAND-PDBQT: HETATM    4  N3  ORO A1003     -15.542 -10.303  -5.594  1.00 32.11    -0.275 N 
+INPUT-LIGAND-PDBQT: HETATM    5  C4  ORO A1003     -15.093  -9.149  -5.086  1.00 31.31     0.251 A 
+INPUT-LIGAND-PDBQT: HETATM    6  O4  ORO A1003     -14.976  -9.016  -3.896  1.00 31.43    -0.268 OA
+INPUT-LIGAND-PDBQT: HETATM    7  C5  ORO A1003     -14.763  -8.111  -5.931  1.00 28.65     0.111 A 
+INPUT-LIGAND-PDBQT: HETATM    8  C6  ORO A1003     -14.893  -8.256  -7.282  1.00 26.59     0.118 A 
+INPUT-LIGAND-PDBQT: HETATM    9  HN1 ORO A1003     -15.439  -9.523  -8.729  1.00 32.82     0.171 HD
+INPUT-LIGAND-PDBQT: HETATM   10  HN3 ORO A1003     -15.769 -11.016  -5.018  1.00 38.54     0.173 HD
+INPUT-LIGAND-PDBQT: ENDROOT
+INPUT-LIGAND-PDBQT: BRANCH   8  11
+INPUT-LIGAND-PDBQT: HETATM   11  C7  ORO A1003     -14.529  -7.101  -8.207  1.00 26.73     0.227 C 
+INPUT-LIGAND-PDBQT: HETATM   12  O71 ORO A1003     -13.527  -7.185  -8.944  1.00 24.51    -0.643 OA
+INPUT-LIGAND-PDBQT: HETATM   13  O72 ORO A1003     -15.237  -6.063  -8.230  1.00 30.09    -0.643 OA
+INPUT-LIGAND-PDBQT: ENDBRANCH   8  11
+INPUT-LIGAND-PDBQT: TORSDOF 1
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   1 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        1
+DOCKED: USER    Run = 1
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      47.537 -15.526 -23.350 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      48.543 -16.262 -23.911 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      49.248 -15.771 -24.764 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      48.758 -17.558 -23.510 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      47.978 -18.103 -22.569 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      48.161 -19.238 -22.214 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      46.964 -17.359 -22.004 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      46.752 -16.071 -22.402 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      47.393 -14.630 -23.631 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      49.453 -18.064 -23.899 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      45.626 -15.259 -21.775 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      45.407 -14.094 -22.161 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      44.914 -15.761 -20.868 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   2 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        2
+DOCKED: USER    Run = 2
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      45.919 -16.369 -18.377 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      46.635 -15.638 -17.470 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      46.998 -16.148 -16.435 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      46.943 -14.325 -17.731 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      46.540 -13.758 -18.874 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      46.807 -12.609 -19.107 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      45.818 -14.497 -19.787 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      45.513 -15.802 -19.529 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      45.708 -17.276 -18.193 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      47.438 -13.822 -17.103 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      44.711 -16.608 -20.543 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      44.417 -17.796 -20.303 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      44.343 -16.079 -21.622 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   3 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        3
+DOCKED: USER    Run = 3
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      47.507 -14.507 -21.146 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      48.418 -14.873 -20.195 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      48.614 -14.156 -19.239 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      49.113 -16.050 -20.320 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      48.900 -16.842 -21.377 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      49.507 -17.875 -21.492 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      47.981 -16.473 -22.336 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      47.289 -15.303 -22.210 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      47.029 -13.692 -21.055 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      49.742 -16.300 -19.661 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      46.279 -14.901 -23.278 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      45.668 -13.819 -23.182 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      46.058 -15.659 -24.256 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   4 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        4
+DOCKED: USER    Run = 4
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      47.610 -17.229 -21.554 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      48.844 -17.668 -21.161 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      49.418 -18.512 -21.811 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      49.433 -17.155 -20.032 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      48.797 -16.223 -19.312 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      49.309 -15.770 -18.321 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      47.553 -15.781 -19.708 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      46.968 -16.291 -20.831 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      47.206 -17.587 -22.335 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      50.285 -17.460 -19.764 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      45.591 -15.798 -21.259 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      45.039 -16.286 -22.265 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      45.008 -14.901 -20.599 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   5 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        5
+DOCKED: USER    Run = 5
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      47.615 -13.343 -20.232 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      48.673 -13.778 -19.483 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      48.641 -13.678 -18.278 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      49.773 -14.327 -20.095 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      49.811 -14.435 -21.428 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      50.772 -14.915 -21.970 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      48.743 -13.996 -22.182 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      47.650 -13.451 -21.574 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      46.857 -12.963 -19.804 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      50.502 -14.627 -19.576 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      46.477 -12.965 -22.416 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      45.483 -12.453 -21.865 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      46.508 -13.079 -23.667 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   6 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        6
+DOCKED: USER    Run = 6
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      47.872 -17.643 -21.173 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      49.047 -17.849 -20.505 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      50.100 -17.596 -21.045 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      49.037 -18.342 -19.224 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      47.873 -18.624 -18.626 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      47.858 -19.057 -17.504 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      46.689 -18.417 -19.301 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      46.699 -17.925 -20.574 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      47.884 -17.302 -22.059 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      49.850 -18.483 -18.765 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      45.385 -17.703 -21.312 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      45.390 -17.228 -22.465 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      44.294 -17.998 -20.762 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   7 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        7
+DOCKED: USER    Run = 7
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      47.673 -18.354 -21.913 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      49.033 -18.268 -21.801 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      49.737 -19.068 -22.374 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      49.602 -17.278 -21.038 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      48.824 -16.395 -20.402 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      49.318 -15.526 -19.732 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      47.453 -16.482 -20.516 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      46.888 -17.465 -21.275 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      47.284 -19.040 -22.442 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      50.542 -17.222 -20.962 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      45.371 -17.555 -21.392 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      44.851 -18.459 -22.075 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      44.641 -16.720 -20.800 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   8 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        8
+DOCKED: USER    Run = 8
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      45.599 -17.669 -21.040 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      45.863 -17.502 -19.709 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      46.107 -16.399 -19.276 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      45.851 -18.582 -18.862 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      45.583 -19.804 -19.340 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      45.572 -20.754 -18.602 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      45.318 -19.970 -20.682 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      45.329 -18.896 -21.524 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      45.609 -16.919 -21.622 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      46.033 -18.465 -17.943 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      45.038 -19.092 -23.007 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      45.018 -18.109 -23.774 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      44.819 -20.243 -23.461 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   9 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        9
+DOCKED: USER    Run = 9
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      47.316 -16.653 -22.417 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      48.367 -17.502 -22.212 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      49.252 -17.193 -21.446 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      48.424 -18.704 -22.873 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      47.447 -19.045 -23.723 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      47.492 -20.097 -24.306 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      46.387 -18.188 -23.929 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      46.331 -16.993 -23.270 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      47.281 -15.822 -21.957 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      49.151 -19.289 -22.730 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      45.157 -16.051 -23.507 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      45.087 -14.974 -22.885 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      44.258 -16.357 -24.330 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   10 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        10
+DOCKED: USER    Run = 10
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      48.034 -17.316 -21.788 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      49.250 -17.245 -21.168 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      50.158 -16.635 -21.686 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      49.445 -17.863 -19.957 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      48.443 -18.539 -19.384 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      48.608 -19.084 -18.324 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      47.218 -18.611 -20.011 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      47.024 -17.995 -21.214 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      47.904 -16.886 -22.625 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      50.286 -17.812 -19.530 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      45.666 -18.083 -21.900 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      45.477 -17.497 -22.985 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      44.735 -18.745 -21.377 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   11 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        11
+DOCKED: USER    Run = 11
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      46.984 -20.321 -20.506 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      47.986 -19.987 -19.638 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      47.870 -20.233 -18.459 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      49.124 -19.373 -20.100 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      49.253 -19.098 -21.404 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      50.248 -18.560 -21.814 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      48.242 -19.435 -22.278 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      47.111 -20.047 -21.819 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      46.199 -20.745 -20.182 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      49.815 -19.143 -19.499 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      45.998 -20.412 -22.793 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      44.949 -20.938 -22.372 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      46.133 -20.183 -24.021 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   12 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        12
+DOCKED: USER    Run = 12
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      47.584 -16.483 -20.660 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      48.657 -17.119 -20.100 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      49.584 -17.463 -20.796 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      48.685 -17.369 -18.750 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      47.658 -16.991 -17.979 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      47.677 -17.208 -16.796 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      46.577 -16.350 -18.545 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      46.549 -16.101 -19.887 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      47.569 -16.312 -21.594 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      49.427 -17.809 -18.366 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      45.347 -15.395 -20.502 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      45.323 -15.159 -21.726 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      44.379 -15.050 -19.779 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   13 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        13
+DOCKED: USER    Run = 13
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      46.987 -18.663 -20.777 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      48.104 -19.376 -20.439 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      48.096 -20.079 -19.454 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      49.235 -19.296 -21.212 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      49.247 -18.516 -22.300 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      50.235 -18.442 -22.982 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      48.120 -17.798 -22.640 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      46.995 -17.879 -21.871 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      46.207 -18.722 -20.238 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      50.005 -19.789 -20.977 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      45.757 -17.078 -22.254 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      44.717 -17.174 -21.572 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      45.780 -16.318 -23.255 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   14 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        14
+DOCKED: USER    Run = 14
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      48.016 -20.448 -22.154 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      49.242 -20.625 -21.575 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      49.829 -19.678 -21.103 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      49.810 -21.874 -21.528 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      49.164 -22.922 -22.052 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      49.657 -24.019 -22.014 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      47.928 -22.742 -22.636 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      47.363 -21.501 -22.681 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      47.628 -19.582 -22.185 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      50.657 -21.993 -21.127 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      45.998 -21.312 -23.332 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      45.489 -20.176 -23.395 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      45.383 -22.300 -23.807 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   15 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        15
+DOCKED: USER    Run = 15
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      47.496 -14.797 -22.440 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      48.294 -14.300 -21.447 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      48.509 -13.111 -21.384 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      48.851 -15.146 -20.520 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      48.616 -16.462 -20.590 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      49.103 -17.208 -19.782 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      47.812 -16.962 -21.592 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      47.257 -16.120 -22.513 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      47.113 -14.208 -23.079 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      49.402 -14.800 -19.835 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      46.373 -16.684 -23.619 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      45.892 -15.922 -24.481 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      46.127 -17.915 -23.665 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   16 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        16
+DOCKED: USER    Run = 16
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      47.519 -15.411 -23.389 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      48.667 -15.976 -22.907 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      49.585 -15.271 -22.555 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      48.782 -17.342 -22.822 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      47.768 -18.123 -23.214 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      47.863 -19.320 -23.142 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      46.611 -17.551 -23.699 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      46.497 -16.194 -23.783 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      47.445 -14.466 -23.446 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      49.575 -17.730 -22.489 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      45.215 -15.573 -24.325 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      45.115 -14.334 -24.420 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      44.258 -16.306 -24.678 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   17 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        17
+DOCKED: USER    Run = 17
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      48.094 -18.729 -22.601 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      49.090 -19.285 -21.847 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      49.486 -20.400 -22.098 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      49.643 -18.581 -20.806 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      49.205 -17.347 -20.526 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      49.685 -16.726 -19.615 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      48.200 -16.789 -21.287 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      47.651 -17.488 -22.323 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      47.715 -19.220 -23.320 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      50.332 -18.966 -20.287 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      46.539 -16.863 -23.155 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      46.028 -17.504 -24.094 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      46.133 -15.702 -22.896 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   18 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        18
+DOCKED: USER    Run = 18
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      46.319 -15.956 -22.259 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      46.334 -16.805 -21.188 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      46.634 -17.966 -21.343 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      46.008 -16.343 -19.936 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      45.673 -15.059 -19.764 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      45.386 -14.650 -18.670 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      45.658 -14.204 -20.845 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      45.983 -14.663 -22.089 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      46.545 -16.279 -23.123 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      46.019 -16.932 -19.198 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      45.960 -13.710 -23.278 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      46.271 -14.122 -24.413 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      45.626 -12.509 -23.119 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   19 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        19
+DOCKED: USER    Run = 19
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      47.066 -16.124 -19.484 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      48.031 -16.183 -18.518 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      48.143 -17.176 -17.837 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      48.873 -15.117 -18.317 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      48.749 -14.017 -19.068 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      49.484 -13.080 -18.896 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      47.775 -13.958 -20.042 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      46.939 -15.018 -20.242 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      46.485 -16.863 -19.620 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      49.539 -15.160 -17.648 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      45.863 -14.942 -21.320 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      45.085 -15.901 -21.492 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      45.758 -13.915 -22.035 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    FINAL DOCKED STATE:
+    ________________________
+
+
+Run:   20 / 20
+Time taken for this run:   0.011s
+
+DOCKED: MODEL        20
+DOCKED: USER    Run = 20
+DOCKED: USER
+DOCKED: USER    Estimated Free Energy of Binding    =  +0.27 kcal/mol  [=(1)+(2)+(3)-(4)]
+DOCKED: USER
+DOCKED: USER    (1) Final Intermolecular Energy     =  -0.03 kcal/mol
+DOCKED: USER        vdW + Hbond + desolv Energy     =  +0.00 kcal/mol
+DOCKED: USER        Electrostatic Energy            =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Fixed Receptor    =  -0.03 kcal/mol
+DOCKED: USER        Moving Ligand-Moving Receptor   =  +0.00 kcal/mol
+DOCKED: USER    (2) Final Total Internal Energy     =  -0.60 kcal/mol
+DOCKED: USER    (3) Torsional Free Energy           =  +0.30 kcal/mol
+DOCKED: USER    (4) Unbound System's Energy         =  -0.60 kcal/mol
+DOCKED: USER
+DOCKED: USER
+DOCKED: REMARK  1 active torsions:
+DOCKED: REMARK  status: ('A' for Active; 'I' for Inactive)
+DOCKED: REMARK    1  A    between atoms: C6_8  and  C7_9 
+DOCKED: USER                              x       y       z     vdW  Elec       q    Type
+DOCKED: USER                           _______ _______ _______ _____ _____    ______ ____
+DOCKED: ROOT
+DOCKED: HETATM    1  N1  ORO A1003      44.912 -18.409 -20.275 +0.00 -0.01    -0.303 N  
+DOCKED: HETATM    2  C2  ORO A1003      44.727 -17.569 -19.212 +0.00 +0.01    +0.327 A  
+DOCKED: HETATM    3  O2  ORO A1003      44.282 -18.001 -18.173 +0.00 -0.01    -0.247 OA 
+DOCKED: HETATM    4  N3  ORO A1003      45.043 -16.237 -19.320 +0.00 -0.01    -0.275 N  
+DOCKED: HETATM    5  C4  ORO A1003      45.532 -15.758 -20.469 +0.00 +0.01    +0.251 A  
+DOCKED: HETATM    6  O4  ORO A1003      45.810 -14.592 -20.569 +0.00 -0.01    -0.268 OA 
+DOCKED: HETATM    7  C5  ORO A1003      45.718 -16.605 -21.541 +0.00 +0.00    +0.111 A  
+DOCKED: HETATM    8  C6  ORO A1003      45.405 -17.929 -21.433 +0.00 +0.00    +0.118 A  
+DOCKED: HETATM    9  HN1 ORO A1003      44.692 -19.329 -20.196 +0.00 +0.00    +0.171 HD 
+DOCKED: HETATM   10  HN3 ORO A1003      44.914 -15.660 -18.584 +0.00 +0.00    +0.173 HD 
+DOCKED: ENDROOT
+DOCKED: BRANCH   8  11
+DOCKED: HETATM   11  C7  ORO A1003      45.612 -18.856 -22.625 +0.00 +0.01    +0.227 C  
+DOCKED: HETATM   12  O71 ORO A1003      45.353 -20.071 -22.521 +0.00 -0.02    -0.643 OA 
+DOCKED: HETATM   13  O72 ORO A1003      46.042 -18.399 -23.714 +0.00 -0.02    -0.643 OA 
+DOCKED: ENDBRANCH   8  11
+DOCKED: TORSDOF 1
+DOCKED: TER
+DOCKED: ENDMDL
+________________________________________________________________________________
+
+
+    CLUSTERING HISTOGRAM
+    ____________________
+
+
+________________________________________________________________________________
+     |           |     |           |     |
+Clus | Lowest    | Run | Mean      | Num | Histogram
+-ter | Binding   |     | Binding   | in  |
+Rank | Energy    |     | Energy    | Clus|    5    10   15   20   25   30   35
+_____|___________|_____|___________|_____|____:____|____:____|____:____|____:___
+   1 |     +0.27 |   9 |     +0.27 |   4 |####
+   2 |     +0.27 |  11 |     +0.27 |   1 |#
+   3 |     +0.27 |   5 |     +0.27 |   1 |#
+   4 |     +0.27 |  10 |     +0.27 |   4 |####
+   5 |     +0.27 |  12 |     +0.27 |   2 |##
+   6 |     +0.27 |  14 |     +0.27 |   1 |#
+   7 |     +0.27 |  19 |     +0.27 |   2 |##
+   8 |     +0.27 |  15 |     +0.27 |   2 |##
+   9 |     +0.27 |  20 |     +0.27 |   2 |##
+  10 |     +0.27 |  18 |     +0.27 |   1 |#
+_____|___________|_____|___________|_____|______________________________________
+
+
+    RMSD TABLE
+    __________
+
+
+_______________________________________________________________________
+     |      |      |           |         |                 |
+Rank | Sub- | Run  | Binding   | Cluster | Reference       | Grep
+     | Rank |      | Energy    | RMSD    | RMSD            | Pattern
+_____|______|______|___________|_________|_________________|___________
+   1      1      9       +0.27      0.00     64.17           RANKING
+   1      2     17       +0.27      1.89     65.16           RANKING
+   1      3     16       +0.27      1.46     64.35           RANKING
+   1      4      1       +0.27      1.94     64.34           RANKING
+   2      1     11       +0.27      0.00     64.74           RANKING
+   3      1      5       +0.27      0.00     64.45           RANKING
+   4      1     10       +0.27      0.00     64.54           RANKING
+   4      2      6       +0.27      0.91     64.11           RANKING
+   4      3      7       +0.27      1.63     64.48           RANKING
+   4      4     13       +0.27      1.89     64.53           RANKING
+   5      1     12       +0.27      0.00     63.56           RANKING
+   5      2      4       +0.27      1.43     64.23           RANKING
+   6      1     14       +0.27      0.00     65.75           RANKING
+   7      1     19       +0.27      0.00     63.60           RANKING
+   7      2      2       +0.27      1.97     62.00           RANKING
+   8      1     15       +0.27      0.00     64.35           RANKING
+   8      2      3       +0.27      1.58     64.33           RANKING
+   9      1     20       +0.27      0.00     61.88           RANKING
+   9      2      8       +0.27      1.98     62.35           RANKING
+  10      1     18       +0.27      0.00     62.52           RANKING
+
+Run time 0.249 sec
+Idle time 0.592 sec
