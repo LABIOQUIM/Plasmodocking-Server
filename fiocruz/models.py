@@ -36,18 +36,20 @@ class Arquivos_virtaulS(models.Model):
 
     data = models.DateTimeField(auto_now_add=True)  
     
-    resultado_final = models.TextField(blank=True, null=True)
+    resultado_final = models.TextField(default='Sem resultados')
     status = models.BooleanField(default=False)
 
     class Meta:
         db_table = 'Arquivos_virtaulS'  # Especifique o nome da tabela
 
 
+def arquivo_macro(instance, filename):
+    return 'macromoleculas_virtualS/{0}/{1}'.format(instance.rec, filename)
 
 class Macromoleculas_virtaulS(models.Model):
     nome = models.CharField(max_length=200)
     rec = models.CharField(max_length=200)
-    rec_fld = models.FileField(upload_to='macromoleculas_virtualS')
+    rec_fld = models.FileField(upload_to=arquivo_macro)
 
     ligante_original = models.CharField(max_length=200,blank=True, null=True)
     rmsd_redoking = models.CharField(max_length=200,blank=True, null=True)
@@ -60,3 +62,29 @@ class Macromoleculas_virtaulS(models.Model):
     
 class Testes(models.Model):
     nome = models.CharField(max_length=200)
+
+
+
+
+def arquivo(instance, filename):
+    return 'macroTeste/{0}/{1}'.format(instance.rec, filename)
+
+class Macro_Prepare(models.Model):
+    nome = models.CharField(max_length=200)
+    rec = models.CharField(max_length=200)
+
+    recptorpdb = models.FileField(upload_to=arquivo)
+    recptorpdbqt = models.FileField(upload_to=arquivo)
+    ligantepdb = models.FileField(upload_to=arquivo)
+
+    centerX = models.FloatField(null=True)
+    centerY = models.FloatField(null=True)
+    centerZ = models.FloatField(null=True)
+
+    sizeX = models.FloatField(null=True)
+    sizeY = models.FloatField(null=True)
+    sizeZ = models.FloatField(null=True)
+
+    def __str__(self):
+            return self.nome
+    

@@ -20,5 +20,9 @@ urlpatterns = [
     path('api_delete/<int:idItem>/', views.api_delete, name='api_delete'),
     path('api_login/', views.api_login, name='api_login'),
     path('api_download/<int:id>/', views.download_file, name='api_download'),
+    path('api/get_resultado/<int:idItem>/', views.get_resultado, name='get_resultado'),
+
+    path('macro/', views.macro, name='macro'),
+    
 
 ]
