@@ -16,9 +16,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('VS_doking/', views.upload_view, name='upload_view'),
-    path('api_cadastro/', views.api_cadastro, name='api_cadastro'),
+    
     path('api_delete/<int:idItem>/', views.api_delete, name='api_delete'),
-    path('api_login/', views.api_login, name='api_login'),
+    
     path('api_download/<int:id>/', views.download_file, name='api_download'),
     path('api/get_resultado/<int:idItem>/', views.get_resultado, name='get_resultado'),
 

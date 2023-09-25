@@ -9,12 +9,14 @@ from django.urls import reverse
 class UserCustom(models.Model):
     id = models.TextField(primary_key=True, default=uuid.uuid4, editable=False)
     email = models.EmailField(unique=True)
-    firstname = models.CharField(unique=True, max_length=255)
+    name = models.CharField(max_length=255)
     password = models.CharField(max_length=255)
-    name = models.CharField(max_length=255, null=True)
+    username = models.CharField(max_length=255, unique=True)
     active = models.BooleanField(default=False)
-    deleted = models.BooleanField(default=False)
-    role = models.CharField(max_length=50, default='USER')
+    deleted = models.BooleanField(default=False, null=True, blank=True)
+    role = models.CharField(max_length=255, default="USER")
+
+
 
     def __str__(self):
         return self.username
@@ -23,7 +25,7 @@ class UserCustom(models.Model):
         db_table = 'users'  # Especifique o nome da tabela
 
 def ligante_arquivo(instance, filename):
-    return 'uploads3/user_{0}/{1}/{2}/{3}'.format(instance.user.name, instance.nome,"pdb_split", filename)
+    return 'uploads3/user_{0}/{1}/{2}/{3}'.format(instance.user.username, instance.nome,"pdb_split", filename)
 
 class Arquivos_virtaulS(models.Model):
 
