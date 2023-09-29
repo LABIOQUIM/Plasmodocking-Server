@@ -313,6 +313,7 @@ def upload_view(request):
        
         i = 1
         data = []
+        datacsv = []
         for macromolecula in macromoleculas:
             receptor_data = {
             'receptor_name': macromolecula.rec,
@@ -377,8 +378,18 @@ def upload_view(request):
                 'ligante_energia': best_energia,
                 'run': run,
                 }
+
+                data_data = {
+                    'RECEPTOR_NAME': macromolecula.rec,
+                    'LIGANTE_REDOCKING': macromolecula.ligante_original,
+                    'ENERGIA_REDOCKING' : macromolecula.energia_orinal,
+                    'LIGANTE_CID': filename_ligante,
+                    'LIGANTE_MELHOR_ENERGIA': best_energia,
+                    'RUN': run,
+                }
                 receptor_data['ligantes'].append(ligante_data)
 
+                datacsv.append(data_data)
 
                 
             #  
@@ -397,6 +408,7 @@ def upload_view(request):
 
         
         json_data = json.dumps(data, indent=4)  # Serializa os dados em JSON formatado
+        json_dataaa = json.dumps(data, indent=4)  # Serializa os dados em JSON formatado
       
         # Especifique o caminho e nome do arquivo onde você deseja salvar o JSON
         file_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", nome,"teste.json")
@@ -415,6 +427,12 @@ def upload_view(request):
         csv_data = df.to_csv(index=False)
         csv_file_path = os.path.join(file_path, 'dados.csv')
         df.to_csv(csv_file_path, index=False)
+
+        dfdf = pd.DataFrame(datacsv)
+
+        # Use o sep para definir o separador como ';'
+        csv_file_path = os.path.join(file_path, 'dadostab.csv')
+        dfdf.to_csv(csv_file_path, sep=';', index=False)
 
         return JsonResponse({'message': 'Dados recebidos com sucesso!'})
 
