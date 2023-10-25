@@ -247,7 +247,6 @@ def upload_view(request):
         except UserCustom.DoesNotExist:
             return JsonResponse({'message': 'Usuário não encontrado'}, status=404)
         
-        # Verificar se já existe um objeto com o mesmo usuário e nome
         if Arquivos_virtaulS.objects.filter(user=user, nome=nome).exists():
             return JsonResponse({'message': 'Um arquivo com esse nome já existe para esse usuário'}, status=400)
 
@@ -255,34 +254,36 @@ def upload_view(request):
         arquivos_vs = Arquivos_virtaulS(nome=nome, ligante=arquivo, user=user)
         arquivos_vs.save()
 
+        
+
         #---------------------------------------------------------------------
         #caminhos
-        autodockgpu_path = str(settings.BASE_DIR)+"/../../AutoDock-GPU-develop/bin/autodock_gpu_128wi"
-        pythonsh_path = str(settings.BASE_DIR)+"/../../mgltools_x86_64Linux2_1.5.7/bin/pythonsh"
-        prep_ligante_path= str(settings.BASE_DIR)+"/../../mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py"
+        autodockgpu_path = os.path.expanduser("~/AutoDock-GPU-develop/bin/autodock_gpu_128wi")
+        pythonsh_path = os.path.expanduser("~/mgltools_x86_64Linux2_1.5.7/bin/pythonsh")
+        prep_ligante_path= os.path.expanduser("~/mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py")
 
         #---------------------------------------------------------------------
         # criar pastas do usuario 
         
-        dir_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", nome)
+        dir_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", arquivos_vs.nome)
         
         #diretorio para as macromolecula/receptors utilizados
-        direto_macromoleculas = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", nome, "macromoleculas")
+        direto_macromoleculas = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", arquivos_vs.nome, "macromoleculas")
         os.makedirs(direto_macromoleculas)
         
         #direotio para os arquivos .dlgs gerados no processo 
-        direto_dlgs = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", nome, "arquivos_dlgs")
+        direto_dlgs = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", arquivos_vs.nome, "arquivos_dlgs")
         os.makedirs(direto_dlgs)
         
         #diretorio para os arquivos gerados pelo gbest do AutodockGPU
-        direto_gbests = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", nome, "gbest_pdb")
+        direto_gbests = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", arquivos_vs.nome, "gbest_pdb")
         os.makedirs(direto_gbests)
         
         #diretorio para os ligantes seprados do arquivo .sdf
-        direto_ling_split = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", nome, "pdb_split")
+        direto_ling_split = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", arquivos_vs.nome, "pdb_split")
         
         #diretorio para os ligantes ja preparados / ligantes.pdbqt
-        diretorio_ligantes_pdbqt = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", nome, "ligantes_pdbqt")
+        diretorio_ligantes_pdbqt = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", arquivos_vs.nome, "ligantes_pdbqt")
         os.makedirs(diretorio_ligantes_pdbqt)
 
         #---------------------------------------------------------------------
@@ -347,20 +348,15 @@ def upload_view(request):
                 command = [autodockgpu_path, "--ffile", rec_maps_fld_path, "--lfile", dir_ligante_pdbqt, "--gbest", "1", "--resnam", saida]
 
                 executar_comando(command, dir_path)
-            
-                if os.path.exists(f"{dir_path}/{macromolecula.rec}_A.pdb"):
-                    shutil.copy2(f"{dir_path}/{macromolecula.rec}_A.pdb", direto_macromoleculas)
 
-                elif os.path.exists(f"{dir_path}/{macromolecula.rec}_a.pdb"):
-                    shutil.copy2(f"{dir_path}/{macromolecula.rec}_a.pdb", direto_macromoleculas)
-                
-                elif os.path.exists(f"{dir_path}/{macromolecula.rec}_ab.pdb"):
-                    shutil.copy2(f"{dir_path}/{macromolecula.rec}_ab.pdb", direto_macromoleculas)
 
-                elif os.path.exists(f"{dir_path}/{macromolecula.rec}.pdb"):
-                    shutil.copy2(f"{dir_path}/{macromolecula.rec}.pdb", direto_macromoleculas)
 
-                
+                sufixos = ['_A.pdb', '_a.pdb', '_ab.pdb', '_bd.pdb', '.pdb']
+                for sufixo in sufixos:
+                    arquivo_path = os.path.join(dir_path, f"{macromolecula.rec}{sufixo}")
+                    if os.path.exists(arquivo_path):
+                        shutil.copy2(arquivo_path, direto_macromoleculas)
+                        break
 
                 #---------separar os arquivos gbest--------------------
                 diretorio_gbest_ligante_unico = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", nome, "gbest_pdb", filename_ligante)
@@ -408,40 +404,32 @@ def upload_view(request):
         dir_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", nome,"arquivos_dlgs")
         remover_arquivos_xml(dir_path, "*.xml")
         
-        #----------------zip file---------------
-
-        dir_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}")
-        command = ["zip", "-r", nome+"/"+nome+".zip", nome]
-        executar_comando(command, dir_path)
-
+        
 
         
         json_data = json.dumps(data, indent=4)  # Serializa os dados em JSON formatado
-        json_dataaa = json.dumps(data, indent=4)  # Serializa os dados em JSON formatado
       
         # Especifique o caminho e nome do arquivo onde você deseja salvar o JSON
-        file_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", nome,"teste.json")
+        file_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", nome,"dados.json")
         
         with open(file_path, 'w') as json_file:
             json_file.write(json_data)
 
         arquivos_vs.status = True
         arquivos_vs.resultado_final = json_data
-        arquivos_vs.resultadoJson = json_data
         arquivos_vs.save()
 
         file_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", nome)
-
-        df = pd.DataFrame(data)
-        csv_data = df.to_csv(index=False)
-        csv_file_path = os.path.join(file_path, 'dados.csv')
-        df.to_csv(csv_file_path, index=False)
-
         dfdf = pd.DataFrame(datacsv)
-
-        # Use o sep para definir o separador como ';'
         csv_file_path = os.path.join(file_path, 'dadostab.csv')
         dfdf.to_csv(csv_file_path, sep=';', index=False)
+
+        #----------------zip file---------------
+
+        dir_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}")
+        command = ["zip", "-r", nome+"/"+nome+".zip", nome]
+        executar_comando(command, dir_path)
+
 
         return JsonResponse({'message': 'Dados recebidos com sucesso!'})
 

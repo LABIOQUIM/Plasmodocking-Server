@@ -90,7 +90,6 @@ WSGI_APPLICATION = 'djangoAPI.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -101,6 +100,17 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'postgres',  
+#        'USER': 'postgres',
+#        'PASSWORD': 'postgres',
+#        'HOST': '172.18.0.2',  
+#        'PORT': '5432',  
+#    }
+#}
 
 
 # Password validation
@@ -143,3 +153,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Configuração do Celery
+CELERY_BROKER_URL = 'pyamqp://guest@localhost//'
