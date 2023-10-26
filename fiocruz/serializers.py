@@ -3,7 +3,7 @@ from django.urls import path, include
 from rest_framework import routers, serializers, viewsets
 
 from django.contrib.auth.models import User
-from .models import Arquivos_virtaulS, Testes
+from .models import Arquivos_virtaulS
 
 class VS_Serializer(serializers.ModelSerializer):
     class Meta:

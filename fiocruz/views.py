@@ -2,22 +2,19 @@ import glob
 import os
 import shutil
 import subprocess
-from .models import Arquivos_virtaulS, Macromoleculas_virtaulS, Testes, UserCustom, Macro_Prepare
+from .models import Arquivos_virtaulS, Macromoleculas_virtaulS, UserCustom, Macro_Prepare
 from rest_framework import routers, serializers, viewsets
 from django.http import FileResponse, HttpResponse, JsonResponse 
 from django.contrib.auth.models import User
 import json
 from .serializers import VS_Serializer
 import pandas as pd
-
+from .tasks import plasmodocking_SR
 from django.conf import settings
+from django.template.loader import render_to_string
+from django.core.mail import send_mail
 
-from .utils import (
-    extrair_energia_ligacao,
-    converter_sdf_para_pdb,
-    executar_comando,
-    remover_arquivos_xml,
-    listar_arquivos,
+from .util import (
     textfld,
 )
 
@@ -47,8 +44,7 @@ def get_resultado(request, idItem):
             return JsonResponse({'message': 'Item não encontrado'}, status=404)
     else:
         return JsonResponse({'message': 'Método não permitido'}, status=405)
-    
-    
+      
 def api_delete(request, idItem):
     if request.method == 'DELETE':
         try:
@@ -75,15 +71,9 @@ def download_file(request, id):
     # Recupere o objeto Arquivos_virtaulS com base no ID
     file = Arquivos_virtaulS.objects.get(id=id)
 
-  
-
     dir_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{file.user.username}", file.nome)
     zip_path = os.path.join(dir_path, f"{file.nome}.zip")
-    # Suponha que 'arquivo' seja um campo FileField ou similar em seu modelo Arquivos_virtaulS.
-    # Você pode ajustar essa parte de acordo com sua estrutura de modelo.
-    #arquivo = zip_path
-
-    # Configure os cabeçalhos de resposta para iniciar o download do arquivo
+  
     if os.path.exists(zip_path):
         # Retornando o arquivo para download
         response = FileResponse(open(zip_path, 'rb'), content_type='application/zip')
@@ -102,24 +92,18 @@ def processar_comando(command, cwd):
     except Exception as e:
         return False, str(e)
 
-
-
 def macro(request):
     if request.method == 'POST':
         nome = request.POST.get('nome')
         rec = request.POST.get('rec')
-        sizex = request.POST.get('sizex')
-        sizey = request.POST.get('sizey')
-        sizez = request.POST.get('sizez')
-        centerx = request.POST.get('centerx')
-        centery = request.POST.get('centery')
-        centerz = request.POST.get('centerz')
+        gridcenter = request.POST.get('gridcenter')
+        gridsize = request.POST.get('gridsize')
+        
         receptorpdb = request.FILES.get('receptorpdb')
         receptorpdbqt = request.FILES.get('receptorpdbqt')
         ligantepdb = request.FILES.get('ligantepdb')
 
-        macroteste = Macro_Prepare(nome=nome,rec=rec,sizeX=sizex,sizeY=sizey,sizeZ=sizez,
-                                   centerX=centerx,centerY=centery,centerZ=centerz,
+        macroteste = Macro_Prepare(nome=nome,rec=rec,gridsize=gridsize,gridcenter=gridcenter,
                                    recptorpdb= receptorpdb, recptorpdbqt= receptorpdbqt, ligantepdb= ligantepdb)
 
         macroteste.save()
@@ -238,6 +222,7 @@ def macro(request):
 
 def upload_view(request):
     if request.method == 'POST':
+
         nome = request.POST.get('nome')
         arquivo = request.FILES.get('arquivo')
         username = request.POST.get('username')
@@ -250,189 +235,13 @@ def upload_view(request):
         if Arquivos_virtaulS.objects.filter(user=user, nome=nome).exists():
             return JsonResponse({'message': 'Um arquivo com esse nome já existe para esse usuário'}, status=400)
 
-        
         arquivos_vs = Arquivos_virtaulS(nome=nome, ligante=arquivo, user=user)
         arquivos_vs.save()
 
-        
-
         #---------------------------------------------------------------------
-        #caminhos
-        autodockgpu_path = os.path.expanduser("~/AutoDock-GPU-develop/bin/autodock_gpu_128wi")
-        pythonsh_path = os.path.expanduser("~/mgltools_x86_64Linux2_1.5.7/bin/pythonsh")
-        prep_ligante_path= os.path.expanduser("~/mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py")
+        plasmodocking_SR.delay(username,arquivos_vs.id)
 
-        #---------------------------------------------------------------------
-        # criar pastas do usuario 
-        
-        dir_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", arquivos_vs.nome)
-        
-        #diretorio para as macromolecula/receptors utilizados
-        direto_macromoleculas = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", arquivos_vs.nome, "macromoleculas")
-        os.makedirs(direto_macromoleculas)
-        
-        #direotio para os arquivos .dlgs gerados no processo 
-        direto_dlgs = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", arquivos_vs.nome, "arquivos_dlgs")
-        os.makedirs(direto_dlgs)
-        
-        #diretorio para os arquivos gerados pelo gbest do AutodockGPU
-        direto_gbests = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", arquivos_vs.nome, "gbest_pdb")
-        os.makedirs(direto_gbests)
-        
-        #diretorio para os ligantes seprados do arquivo .sdf
-        direto_ling_split = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", arquivos_vs.nome, "pdb_split")
-        
-        #diretorio para os ligantes ja preparados / ligantes.pdbqt
-        diretorio_ligantes_pdbqt = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", arquivos_vs.nome, "ligantes_pdbqt")
-        os.makedirs(diretorio_ligantes_pdbqt)
-
-        #---------------------------------------------------------------------
-        #preparação ligante
-        lig = str(arquivos_vs.ligante)
-        arquivo_sdf = settings.MEDIA_ROOT+lig
-
-        command = ["obabel", "-isdf", arquivo_sdf, "-osdf", "--split"]
-        executar_comando(command, direto_ling_split)
-
-        command = ["rm",arquivo_sdf]
-        executar_comando(command, direto_ling_split)
-
-        converter_sdf_para_pdb(direto_ling_split)
-       
-        remover_arquivos_xml(direto_ling_split, "*.sdf")
-
-        ligantes_pdb =  listar_arquivos(direto_ling_split)
-        print(ligantes_pdb)
-
-        for ligante_pdb in ligantes_pdb:
-           
-            filename_ligante, file_extension2 = ligante_pdb.split(".")
-
-            caminho_ligante_pdb = os.path.join(direto_ling_split,ligante_pdb)
-            
-            saida = os.path.join(dir_path,"ligantes_pdbqt",f"{filename_ligante}.pdbqt")
-            command = [pythonsh_path, prep_ligante_path, "-l", caminho_ligante_pdb, "-o", saida]
-
-            executar_comando(command, direto_ling_split)
-
-            ligantes_pdbqt = listar_arquivos(diretorio_ligantes_pdbqt)
-
-        #---------------------------------------------------------------------
-        #execução do AutodockGPU
-        macromoleculas = Macromoleculas_virtaulS.objects.all()
-       
-        i = 1
-        data = []
-        datacsv = []
-        for macromolecula in macromoleculas:
-            receptor_data = {
-            'receptor_name': macromolecula.rec,
-            'ligante_original': macromolecula.ligante_original,
-            'grid_center': macromolecula.gridcenter,
-            'grid_size': macromolecula.gridsize,
-            'energia_original': macromolecula.energia_orinal,
-            'rmsd_redocking': macromolecula.rmsd_redoking,
-            'ligantes': []  # Lista para armazenar os ligantes associados a este receptor
-        }
-            for ligante_pdbqt in ligantes_pdbqt:
-
-                dir_ligante_pdbqt = os.path.join(diretorio_ligantes_pdbqt, ligante_pdbqt)
-
-                filename_ligante, _ = ligante_pdbqt.split(".")
-                r = str(macromolecula.rec_fld)
-                dir_path = os.path.join(settings.MEDIA_ROOT, "macromoleculas_virtualS", f"{macromolecula.rec}")
-                rec_maps_fld_path = os.path.join(settings.MEDIA_ROOT, r)
-                saida = os.path.join(direto_dlgs, f"{filename_ligante}_{macromolecula.rec}")
-                print(rec_maps_fld_path)
-                
-                command = [autodockgpu_path, "--ffile", rec_maps_fld_path, "--lfile", dir_ligante_pdbqt, "--gbest", "1", "--resnam", saida]
-
-                executar_comando(command, dir_path)
-
-
-
-                sufixos = ['_A.pdb', '_a.pdb', '_ab.pdb', '_bd.pdb', '.pdb']
-                for sufixo in sufixos:
-                    arquivo_path = os.path.join(dir_path, f"{macromolecula.rec}{sufixo}")
-                    if os.path.exists(arquivo_path):
-                        shutil.copy2(arquivo_path, direto_macromoleculas)
-                        break
-
-                #---------separar os arquivos gbest--------------------
-                diretorio_gbest_ligante_unico = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", nome, "gbest_pdb", filename_ligante)
-                os.makedirs(diretorio_gbest_ligante_unico, exist_ok=True)
-                bcaminho = os.path.join(settings.MEDIA_ROOT, "macromoleculas_virtualS", f"{macromolecula.rec}", "best.pdbqt")
-                bsaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdbqt")
-                shutil.move(bcaminho, bsaida)
-
-                #-----------------------------------------------------------
-                #-------------------converter os pdbqr pra pdb--------------
-                csaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdb")
-                command = ["obabel", bsaida, "-O", csaida]
-                executar_comando(command, diretorio_gbest_ligante_unico)
-
-                command = ["rm", bsaida]
-                executar_comando(command, dir_path)
-
-                #-------------------------leitura arquivo--------------------------
-                caminho_arquivo = f"{saida}.dlg"
-
-                best_energia, run= extrair_energia_ligacao(caminho_arquivo)
-                ligante_data = {
-                'ligante_name': filename_ligante,
-                'ligante_energia': best_energia,
-                'run': run,
-                }
-
-                data_data = {
-                    'RECEPTOR_NAME': macromolecula.rec,
-                    'LIGANTE_REDOCKING': macromolecula.ligante_original,
-                    'ENERGIA_REDOCKING' : macromolecula.energia_orinal,
-                    'LIGANTE_CID': filename_ligante,
-                    'LIGANTE_MELHOR_ENERGIA': best_energia,
-                    'RUN': run,
-                }
-                receptor_data['ligantes'].append(ligante_data)
-
-                datacsv.append(data_data)
-
-                
-            #  
-            i= i+1
-            data.append(receptor_data)
-            
-        dir_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", nome,"arquivos_dlgs")
-        remover_arquivos_xml(dir_path, "*.xml")
-        
-        
-
-        
-        json_data = json.dumps(data, indent=4)  # Serializa os dados em JSON formatado
-      
-        # Especifique o caminho e nome do arquivo onde você deseja salvar o JSON
-        file_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", nome,"dados.json")
-        
-        with open(file_path, 'w') as json_file:
-            json_file.write(json_data)
-
-        arquivos_vs.status = True
-        arquivos_vs.resultado_final = json_data
-        arquivos_vs.save()
-
-        file_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}", nome)
-        dfdf = pd.DataFrame(datacsv)
-        csv_file_path = os.path.join(file_path, 'dadostab.csv')
-        dfdf.to_csv(csv_file_path, sep=';', index=False)
-
-        #----------------zip file---------------
-
-        dir_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{username}")
-        command = ["zip", "-r", nome+"/"+nome+".zip", nome]
-        executar_comando(command, dir_path)
-
-
-        return JsonResponse({'message': 'Dados recebidos com sucesso!'})
-
+        return JsonResponse({'message': 'Processo adicionado a fila com sucesso. em breve estará disponivel nos resultados.'})
     return JsonResponse({'message': 'Método não suportado'}, status=405)
 
 #------------------------------------------------------------------------
