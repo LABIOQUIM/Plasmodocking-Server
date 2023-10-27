@@ -226,6 +226,8 @@ def upload_view(request):
         nome = request.POST.get('nome')
         arquivo = request.FILES.get('arquivo')
         username = request.POST.get('username')
+        type = request.POST.get('type')
+        email_user = request.POST.get('email_user')
 
         try:
             user = UserCustom.objects.get(username=username)
@@ -235,11 +237,11 @@ def upload_view(request):
         if Arquivos_virtaulS.objects.filter(user=user, nome=nome).exists():
             return JsonResponse({'message': 'Um arquivo com esse nome já existe para esse usuário'}, status=400)
 
-        arquivos_vs = Arquivos_virtaulS(nome=nome, ligante=arquivo, user=user)
+        arquivos_vs = Arquivos_virtaulS(nome=nome, ligante=arquivo, user=user, type=type)
         arquivos_vs.save()
 
         #---------------------------------------------------------------------
-        plasmodocking_SR.delay(username,arquivos_vs.id)
+        plasmodocking_SR.delay(username,arquivos_vs.id, email_user)
 
         return JsonResponse({'message': 'Processo adicionado a fila com sucesso. em breve estará disponivel nos resultados.'})
     return JsonResponse({'message': 'Método não suportado'}, status=405)

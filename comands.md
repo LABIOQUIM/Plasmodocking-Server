@@ -1,3 +1,12 @@
+#install docker
+sudo apt install docker.io docker-compose
+
+
+#register docekr
+sudo systemctl enable --now docker docker.socket containerd
+
+
+
 #create network docker
 sudo docker network create --driver bridge my-network
 
@@ -11,4 +20,4 @@ sudo docker run --name my-pgadmin-container --network=my-network -p 15432:80 -e 
 
 
 #conteiner rabbitmq 
-sudo docker run -d -p 5672:5672 rabbitmq
+sudo docker run --name my-rabbitmq-container -d -p 5672:5672 rabbitmq

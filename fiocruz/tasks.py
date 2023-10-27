@@ -29,7 +29,7 @@ def add(x, y):
 
 
 @shared_task
-def plasmodocking_SR(username, id_processo):
+def plasmodocking_SR(username, id_processo, email_user):
 
     arquivos_vs = Arquivos_virtaulS.objects.get(id=id_processo) 
     
@@ -86,7 +86,7 @@ def plasmodocking_SR(username, id_processo):
     command = ["zip", "-r", arquivos_vs.nome+"/"+arquivos_vs.nome+".zip", arquivos_vs.nome]
     executar_comando(command, dir_path)
 
-    enviar_email.delay(username,arquivos_vs.nome)
+    enviar_email.delay(username,arquivos_vs.nome,email_user)
 
     
     return "task concluida com sucesso"
@@ -95,7 +95,7 @@ def plasmodocking_SR(username, id_processo):
 from django.core.mail import send_mail
 
 @shared_task
-def enviar_email(usename,processo):
+def enviar_email(usename,processo,email_user):
     context = {
         'subject': 'Processo Plasmodocking concluido.',
         'message': f'ola {usename}, O seu processo plasmodocking {processo} foi concluido com sucesso, resultado já disponivel na pagina de resutados.',
@@ -107,7 +107,7 @@ def enviar_email(usename,processo):
         'Plasmodocking Fiocruz/UNIR',
         'Corpo do E-mail',
         'plasmodockingteste@outlook.com',
-        ['xoxaxi3990@unbiex.com','eduardohernany.pdm@gmail.com'],
+        ['eduardohernany.pdm@gmail.com', email_user],
         html_message=message,  # Use a mensagem HTML renderizada
         )
 

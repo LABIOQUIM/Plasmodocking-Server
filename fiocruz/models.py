@@ -2,7 +2,7 @@ import uuid
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
-
+from datetime import datetime
 
 # Create your models here.
 
@@ -28,10 +28,19 @@ class Arquivos_virtaulS(models.Model):
     nome = models.CharField(max_length=200)
     user = models.ForeignKey(UserCustom, on_delete=models.CASCADE)
     ligante = models.FileField(upload_to=ligante_arquivo,blank=True, null=True)
-    data = models.DateTimeField(auto_now_add=True)  
+    data = models.DateTimeField(auto_now_add=True)
     resultado_final = models.TextField(default='Sem resultados')
     status = models.BooleanField(default=False)
     type = models.TextField(default="Com Redocking")
+
+    def formatted_data(self):
+        return self.data.strftime('%H:%M:%S - %d/%m/%Y')
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+    
+    def __str__(self):
+        return self.nome
 
     class Meta:
         db_table = 'Arquivos_virtaulS'  # Especifique o nome da tabela
