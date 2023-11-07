@@ -2,6 +2,8 @@ import glob
 import os
 import shutil
 import subprocess
+import random
+from fiocruz.utils.functions import extrair_menor_rmsd
 from .models import Arquivos_virtaulS, Macromoleculas_virtaulS, UserCustom, Macro_Prepare
 from rest_framework import routers, serializers, viewsets
 from django.http import FileResponse, HttpResponse, JsonResponse 
@@ -9,7 +11,7 @@ from django.contrib.auth.models import User
 import json
 from .serializers import VS_Serializer
 import pandas as pd
-from .tasks import plasmodocking_SR
+from .tasks import plasmodocking_SR, prepare_macro_SemRedocking
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
@@ -66,7 +68,6 @@ def api_delete(request, idItem):
         return JsonResponse({'message': 'Método não permitido'}, status=405)
     
 
-
 def download_file(request, id):
     # Recupere o objeto Arquivos_virtaulS com base no ID
     file = Arquivos_virtaulS.objects.get(id=id)
@@ -81,19 +82,52 @@ def download_file(request, id):
         return response
     else:
         return HttpResponse("O arquivo 2 não foi encontrado.")
+    
+def generate_unique_id():
+    while True:
+        new_id = random.randint(1, 1000000)  # Escolha o intervalo apropriado para os IDs
+        if not Macromoleculas_virtaulS.objects.filter(id=new_id).exists():
+            return new_id
+        
+def macro_save_ComRedocking(request):
 
-def processar_comando(command, cwd):
-    try:
-        process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=cwd)
-        stdout, stderr = process.communicate()
-        if process.returncode != 0:
-            return False, stderr.decode()
-        return True, None
-    except Exception as e:
-        return False, str(e)
+    if request.method == 'POST':
+        processo_name = request.POST.get('processo_name')
+        nome = request.POST.get('nome')
+        rec = request.POST.get('rec')
+        gridcenter = request.POST.get('gridcenter')
+        gridsize = request.POST.get('gridsize')
+
+        ligante_redocking = request.POST.get('ligante_redocking')
+        rmsd_redocking = request.POST.get('rmsd_redocking')
+        energia_redocking = request.POST.get('energia_redocking')
+        fld_name = request.POST.get('fld_name')
+        
+        dir = os.path.join("macromoleculas", "comRedocking", rec, fld_name)
+
+        unique_id = generate_unique_id()
+        macromolecula = Macromoleculas_virtaulS(id=unique_id,nome=nome, rec=rec, gridcenter=gridcenter,
+                                       gridsize=gridsize, rmsd_redoking=rmsd_redocking,
+                                       energia_orinal=energia_redocking, ligante_original=ligante_redocking,
+                                       rec_fld=dir)
+        macromolecula.save()
+
+        dir_processo = os.path.join(settings.MEDIA_ROOT, "macroTeste", processo_name, rec)
+        dir_macro = os.path.join(settings.MEDIA_ROOT, "macromoleculas", "comRedocking")
+        shutil.copytree(dir_processo, os.path.join(dir_macro, rec))
+
+
+        
+        
+
+        
+        return JsonResponse({'message': 'Dados recebidos com sucesso!'})
+
+    return JsonResponse({'message': 'Método não suportado'}, status=405)
 
 def macro(request):
     if request.method == 'POST':
+        processo_name = request.POST.get('processo_name')
         nome = request.POST.get('nome')
         rec = request.POST.get('rec')
         gridcenter = request.POST.get('gridcenter')
@@ -103,117 +137,25 @@ def macro(request):
         receptorpdbqt = request.FILES.get('receptorpdbqt')
         ligantepdb = request.FILES.get('ligantepdb')
 
-        macroteste = Macro_Prepare(nome=nome,rec=rec,gridsize=gridsize,gridcenter=gridcenter,
+        macroteste = Macro_Prepare(processo_name=processo_name, nome=nome,rec=rec,gridsize=gridsize,gridcenter=gridcenter,
                                    recptorpdb= receptorpdb, recptorpdbqt= receptorpdbqt, ligantepdb= ligantepdb)
 
         macroteste.save()
-        #---------------------------------------------------------------------
-        #caminhos
-        autodockgpu_path = str(settings.BASE_DIR)+"/../../AutoDock-GPU-develop/bin/autodock_gpu_128wi"
-        pythonsh_path = str(settings.BASE_DIR)+"/../../mgltools_x86_64Linux2_1.5.7/bin/pythonsh"
-        prep_ligante_path= str(settings.BASE_DIR)+"/../../mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py"
-        prep_gpf_path= str(settings.BASE_DIR)+"/../../mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_gpf4.py"
-        autogrid_path= "/home/eduardo/x86_64Linux2/autogrid4"
 
-        #---------------------------------------------------
-        #-------------preparação gpf------------------------
-        g = 'gridcenter={0},{1},{2}'.format(macroteste.centerX,macroteste.centerY,macroteste.centerZ)
-        n = 'npts={0},{1},{2}'.format(macroteste.sizeX,macroteste.sizeY,macroteste.sizeZ)
+        fld_text, fld_name = prepare_macro_SemRedocking(id_processo=macroteste.id)
 
-        dir_path = os.path.join(settings.MEDIA_ROOT, "macroTeste", f"{rec}")
-        r = str(macroteste.recptorpdbqt)
-        l = str(macroteste.ligantepdb)
-        ligante = os.path.join(settings.MEDIA_ROOT, l)
-        receptor = os.path.join(settings.MEDIA_ROOT, r)
+        filename_receptor, file_extension2 = ligantepdb.name.split(".")
 
-        lt1 = "ligand_types=C,A,N,NA,NS,OA,OS,SA,S,H,HD"
-        lt2 = "ligand_types=HS,P,Br,BR,Ca,CA,Cl,CL,F,Fe,FE"
-        lt3 = "ligand_types=I,Mg,MG,Mn,MN,Zn,ZN,He,Li,Be"
-        lt4 = "ligand_types=B,Ne,Na,Al,Si,K,Sc,Ti,V,Co"
-        lt5 = "ligand_types=Ni,Cu,Ga,Ge,As,Se,Kr,Rb,Sr,Y"
-        lt6 = "ligand_types=Zr,Nb,Cr,Tc,Ru,Rh,Pd,Ag,Cd,In"
-        lt7 = "ligand_types=Sn,Sb,Te,Xe,Cs,Ba,La,Ce,Pr,Nd"
-        lt8 = "ligand_types=Pm,Sm,Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb"
-        lt9 = "ligand_types=Lu,Hf,Ta,W,Re,Os,Ir,Pt,Au,Hg"
-        lt10 = "ligand_types=Tl,Pb,Bi,Po,At,Rn,Fr,Ra,Ac,Th"
-        lt11 = "ligand_types=Pa,U,Np,Pu,Am,Cm,Bk,Cf,E,Fm"
+        filename_ligante, file_extension2 = macroteste.ligantepdb.name.split(".")
+        caminho_arquivo = os.path.join(settings.MEDIA_ROOT, f"{filename_ligante}.dlg")
 
-        comandos = []
-
-        for i in range(1, 12):
-            lt = f'{lt1 if i == 1 else lt2 if i == 2 else lt3 if i == 3 else lt4 if i == 4 else lt5 if i == 5 else lt6 if i == 6 else lt7 if i == 7 else lt8 if i == 8 else lt9 if i == 9 else lt10 if i == 10 else lt11  }'
-            saida = os.path.join(settings.MEDIA_ROOT, "macroTeste", f"{rec}", f'gridbox{i}.gpf')
-            comando = [
-                pythonsh_path, prep_gpf_path, "-r", receptor, "-o", saida, "-p", g, "-p", n, "-p", lt
-            ]
-            comandos.append(comando)
-
-        for comando in comandos:
-            success, error_msg = processar_comando(comando, dir_path)
-            if not success:
-                return HttpResponse(f"Ocorreu um erro: {error_msg}")
-            
+        m_rmsd, energia_menor_rmsd = extrair_menor_rmsd(caminho_arquivo)
         
-        comando = [pythonsh_path, prep_ligante_path, "-l", ligante]
-        success, error_msg = processar_comando(comando, dir_path)
-        if not success:
-            return HttpResponse(f"Ocorreu um erro: {error_msg}")
-            
-        #for filename in glob.glob("*.gpf"):
-        for i in range(1, 12):
-            saida = os.path.join(settings.MEDIA_ROOT, "macroTeste", f"{rec}", f'gridbox{i}.gpf')
-            saidaaa = f'gridbox{i}.gpf'
-  
-            sed_command = f"sed -i '1i\\parameter_file /home/eduardo/x86_64Linux2/AD4_parameters.dat' {saida}"
-            subprocess.run(sed_command, shell=True, check=True)
-
-            autogrid_command = f"/home/eduardo/x86_64Linux2/autogrid4 -p {saidaaa} -l gridbox.glg"
-            #autogrid_command = f"/home/eduardo/x86_64Linux2/autogrid4 -p {full_path} -l {output_glg}"
-            subprocess.run(autogrid_command, shell=True, check=True, cwd=dir_path)
-
-            sed_command = f"sed -i '/# component label for variable 1/,$d' *.maps.fld"
-            subprocess.run(sed_command, shell=True, check=True)
-        
-
-        file_path = f'/home/eduardo/plasmodocking/media/macroTeste/{rec}/{rec}_a.maps.fld'  # Substitua pelo caminho do seu arquivo
-        line_number = 23
-
-        # Ler o conteúdo do arquivo
-        with open(file_path, 'r') as file:
-            lines = file.readlines()
-
-        # Verificar se o arquivo tem pelo menos 23 linhas
-        if len(lines) >= line_number:
-            # Manter as primeiras 23 linhas e descartar o restante
-            new_lines = lines[:line_number]
-
-            # Escrever as linhas de volta para o arquivo
-            with open(file_path, 'w') as file:
-                file.writelines(new_lines)
-
-            print(f"Linhas abaixo da linha {line_number} foram removidas.")
-        else:
-            print(f"O arquivo tem menos de {line_number} linhas, nada foi removido.")
-
-        filename_ligante, file_extension2 = receptorpdb.name.split(".")
-
-        texto = textfld()
-        
-        # Substituindo todas as ocorrências de 'macro' por 'receptor'
-        novo_texto = texto.replace("macro", filename_ligante)
-
-        # Imprimindo o texto resultante
-        with open(file_path, "a") as arquivo:
-            # Escrevendo o novo texto no arquivo
-            arquivo.write(novo_texto)
-
-        # Fechando o arquivo
-        arquivo.close()
-
-        g = '{0},{1},{2}'.format(macroteste.centerX,macroteste.centerY,macroteste.centerZ)
-        n = '{0},{1},{2}'.format(macroteste.sizeX,macroteste.sizeY,macroteste.sizeZ)
-
-        return JsonResponse({'message': 'Dados recebidos com sucesso!', 'gridcenter': g, 'gridsize': n})
+        return JsonResponse({'message': 'Dados recebidos com sucesso!', 'fld_name':fld_name,
+                             'gridcenter': gridcenter, 'gridsize': gridsize,'nome': nome,
+                             'rec': rec, 'ligante_redocking': filename_receptor,'rmsd_redocking': m_rmsd,
+                             'energia_redocking': energia_menor_rmsd, 'arquivo_fld': fld_text
+                             })
 
     return JsonResponse({'message': 'Método não suportado'}, status=405)
 

@@ -39,6 +39,27 @@ def extrair_energia_ligacao(caminho_arquivo):
         return "None"
 
 
+#função para extrair o menor rmsd e sua energia da preparação da macromolecula
+def extrair_menor_rmsd(caminho_arquivo):
+    menor_rmsd = float('inf')  # Inicialize com um valor infinito positivo
+    energia_rmsd = None  # Inicialize como None
+
+    with open(caminho_arquivo, 'r') as arquivo:
+        for linha in arquivo:
+            if 'RANKING' in linha:
+                dados = linha.split()
+                if len(dados) >= 6:
+                    binding_energy = float(dados[5])
+                    if binding_energy < menor_rmsd:
+                        menor_rmsd = binding_energy
+                        energia_rmsd = dados[3]
+
+    if energia_rmsd is not None:
+        return menor_rmsd, energia_rmsd
+    else:
+        return None
+
+
 def converter_sdf_para_pdb(diretorio_sdf):
     arquivos_sdf = glob.glob(os.path.join(diretorio_sdf, "*.sdf"))
     if not arquivos_sdf:

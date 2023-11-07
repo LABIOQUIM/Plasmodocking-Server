@@ -9,6 +9,7 @@ from .functions import (
     executar_comando,
     remover_arquivos_xml,
     listar_arquivos,
+    extrair_menor_rmsd,
 )
 
 
@@ -118,6 +119,11 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,direto
         caminho_arquivo = f"{saida}.dlg"
 
         best_energia, run = extrair_energia_ligacao(caminho_arquivo)
+
+        m_rmsd, menor_dados3 = extrair_menor_rmsd(caminho_arquivo)
+        
+        if m_rmsd != None:
+            print(f"{caminho_arquivo} : rmsd {m_rmsd} | energia {menor_dados3}")
 
         ligante_data = {
             'ligante_name': filename_ligante,

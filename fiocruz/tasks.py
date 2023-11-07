@@ -5,8 +5,9 @@ import os
 from tqdm import tqdm
 from celery import shared_task
 from django.conf import settings
-from fiocruz.models import Arquivos_virtaulS, Macromoleculas_virtaulS
+from fiocruz.models import Arquivos_virtaulS, Macromoleculas_virtaulS, Macro_Prepare
 from django.core.mail import send_mail
+
 from django.template.loader import render_to_string
 from .utils.functions import (
     executar_comando,
@@ -20,6 +21,13 @@ from .utils.plasmodocking_run import (
     preparar_dados_receptor,
 )
 
+from .utils.macro_prepare_semRedocking import (
+    preparacao_gpf,
+    run_autogrid,
+    modifcar_fld,
+    run_autodock,
+)
+
 
 @shared_task
 def add(x, y):
@@ -27,7 +35,7 @@ def add(x, y):
 
 
 
-
+#Processo principal plamodocking com redocking
 @shared_task
 def plasmodocking_SR(username, id_processo, email_user):
 
@@ -92,8 +100,7 @@ def plasmodocking_SR(username, id_processo, email_user):
     return "task concluida com sucesso"
 
 
-from django.core.mail import send_mail
-
+#Processo de envio de email
 @shared_task
 def enviar_email(usename,processo,email_user):
     context = {
@@ -113,3 +120,20 @@ def enviar_email(usename,processo,email_user):
 
 
     return "Email enviado com sucesso."
+
+
+#Processo de preparação de macromolecula com redocking
+@shared_task
+def prepare_macro_SemRedocking(id_processo):
+
+    macroPrepare = Macro_Prepare.objects.get(id=id_processo) 
+
+    preparacao_gpf(macroPrepare)
+
+    run_autogrid(macroPrepare)
+    
+    fld_text, fld_name = modifcar_fld(macroPrepare)
+    
+    run_autodock(macroPrepare)
+
+    return fld_text, fld_name

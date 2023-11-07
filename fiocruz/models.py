@@ -84,9 +84,10 @@ class Macromoleculas_Sem_Redocking(models.Model):
 
 
 def arquivo(instance, filename):
-    return 'macroTeste/{0}/{1}'.format(instance.rec, filename)
+    return 'macroTeste/{0}/{1}/{2}'.format(instance.processo_name,instance.rec, filename)
 
 class Macro_Prepare(models.Model):
+    processo_name = models.CharField(max_length=200, null=True)
     nome = models.CharField(max_length=200)
     rec = models.CharField(max_length=200)
 
