@@ -21,13 +21,18 @@ from .utils.plasmodocking_run import (
     preparar_dados_receptor,
 )
 
-from .utils.macro_prepare_semRedocking import (
-    preparacao_gpf,
-    run_autogrid,
-    modifcar_fld,
-    run_autodock,
+from .utils.macro_prepare_comRedocking import (
+    preparacao_gpf as preparacao_gpf_CR,
+    run_autogrid as run_autogrid_CR,
+    modifcar_fld as modifcar_fld_CR,
+    run_autodock as run_autodock_CR,
 )
 
+from .utils.macro_prepare_semRedocking import (
+    preparacao_gpf as preparacao_gpf_SR,
+    run_autogrid as run_autogrid_SR,
+    modifcar_fld as modifcar_fld_SR,
+)
 
 @shared_task
 def add(x, y):
@@ -128,12 +133,26 @@ def prepare_macro_SemRedocking(id_processo):
 
     macroPrepare = Macro_Prepare.objects.get(id=id_processo) 
 
-    preparacao_gpf(macroPrepare)
+    preparacao_gpf_SR(macroPrepare)
 
-    run_autogrid(macroPrepare)
+    run_autogrid_SR(macroPrepare)
     
-    fld_text, fld_name = modifcar_fld(macroPrepare)
+    fld_text, fld_name = modifcar_fld_SR(macroPrepare)
+
+    return fld_text, fld_name
+
+
+@shared_task
+def prepare_macro_ComRedocking(id_processo):
+
+    macroPrepare = Macro_Prepare.objects.get(id=id_processo) 
+
+    preparacao_gpf_CR(macroPrepare)
+
+    run_autogrid_CR(macroPrepare)
     
-    run_autodock(macroPrepare)
+    fld_text, fld_name = modifcar_fld_CR(macroPrepare)
+    
+    run_autodock_CR(macroPrepare)
 
     return fld_text, fld_name

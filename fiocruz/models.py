@@ -20,6 +20,7 @@ class UserCustom(models.Model):
         return self.username
     class Meta:
         db_table = 'users'  # Especifique o nome da tabela
+        
 
 def ligante_arquivo(instance, filename):
     return 'plasmodocking/user_{0}/{1}/{2}/{3}'.format(instance.user.username, instance.nome,"pdb_split", filename)
@@ -92,8 +93,8 @@ class Macro_Prepare(models.Model):
     rec = models.CharField(max_length=200)
 
     recptorpdb = models.FileField(upload_to=arquivo)
-    recptorpdbqt = models.FileField(upload_to=arquivo)
-    ligantepdb = models.FileField(upload_to=arquivo)
+    recptorpdbqt = models.FileField(upload_to=arquivo, null=True)
+    ligantepdb = models.FileField(upload_to=arquivo, null=True)
 
     gridsize = models.CharField(max_length=200,blank=True, null=True)
     gridcenter = models.CharField(max_length=200,blank=True, null=True)

@@ -23,8 +23,9 @@ urlpatterns = [
     path('api/get_resultado/<int:idItem>/', views.get_resultado, name='get_resultado'),
 
     path('macro/', views.macro, name='macro'),
-    path('macro_ComRedocking_save/', views.macro_save_ComRedocking, name='macro_save'),
-
+    path('macro_SR/', views.macro_SR, name='macro_SR'),
+    path('macro_ComRedocking_save/', views.macro_save_ComRedocking, name='macro_save_CR'),
+    path('macro_SemRedocking_save/', views.macro_save_SemRedocking, name='macro_save_SR'),
     
 
 ]

@@ -15,11 +15,32 @@ from ..util import (
     textfld,
 )
 
+#função para extrair o menor rmsd e sua energia da preparação da macromolecula
+def extrair_menor_rmsd(caminho_arquivo):
+    menor_rmsd = float('inf')  # Inicialize com um valor infinito positivo
+    energia_rmsd = None  # Inicialize como None
+
+    with open(caminho_arquivo, 'r') as arquivo:
+        for linha in arquivo:
+            if 'RANKING' in linha:
+                dados = linha.split()
+                if len(dados) >= 6:
+                    binding_energy = float(dados[5])
+                    if binding_energy < menor_rmsd:
+                        menor_rmsd = binding_energy
+                        energia_rmsd = dados[3]
+
+    if energia_rmsd is not None:
+        return menor_rmsd, energia_rmsd
+    else:
+        return None
+    
+
 
 def preparacao_gpf(macroPrepare):
     pythonsh_path = os.path.expanduser("~/mgltools_x86_64Linux2_1.5.7/bin/pythonsh")
     prep_gpf_path= os.path.expanduser("~/mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_gpf4.py")
-    prep_recptor_path= os.path.expanduser("~/mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_receptor4.py")
+    prep_ligante_path= os.path.expanduser("~/mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py")
 #-------------preparação gpf------------------------
     centergrid = 'gridcenter={0}'.format(macroPrepare.gridcenter)
     sizegrid = 'npts={0}'.format(macroPrepare.gridsize)
@@ -27,15 +48,8 @@ def preparacao_gpf(macroPrepare):
     dir_path = os.path.join(settings.MEDIA_ROOT, "macroTeste", macroPrepare.processo_name, f"{macroPrepare.rec}")
 
     
-
-    receptor = os.path.join(settings.MEDIA_ROOT, str(macroPrepare.recptorpdb))
-    #preparar o receptor
-    comando = [pythonsh_path, prep_recptor_path, "-r", receptor]
-    receptorpdbqt = os.path.join(settings.MEDIA_ROOT, "macroTeste", macroPrepare.processo_name, f"{macroPrepare.rec}", f"{macroPrepare.rec}_a.pdbqt")
-
-    success, error_msg = processar_comando(comando, dir_path)
-    if not success:
-        return HttpResponse(f"Ocorreu um erro: {error_msg}")
+    ligante = os.path.join(settings.MEDIA_ROOT, str(macroPrepare.ligantepdb))
+    receptor = os.path.join(settings.MEDIA_ROOT, str(macroPrepare.recptorpdbqt))
 
     lt1 = "ligand_types=C,A,N,NA,NS,OA,OS,SA,S,H,HD"
     lt2 = "ligand_types=HS,P,Br,BR,Ca,CA,Cl,CL,F,Fe,FE"
@@ -56,7 +70,7 @@ def preparacao_gpf(macroPrepare):
         saida = os.path.join(dir_path, f'gridbox{i}.gpf')
 
         comando = [
-            pythonsh_path, prep_gpf_path, "-r", receptorpdbqt, "-o", saida, "-p", centergrid, "-p", sizegrid, "-p", lt
+            pythonsh_path, prep_gpf_path, "-r", receptor, "-o", saida, "-p", centergrid, "-p", sizegrid, "-p", lt
         ]
         comandos.append(comando)
 
@@ -65,7 +79,11 @@ def preparacao_gpf(macroPrepare):
         if not success:
             return HttpResponse(f"Ocorreu um erro: {error_msg}")
     
-    
+    #preparar o ligante
+    comando = [pythonsh_path, prep_ligante_path, "-l", ligante]
+    success, error_msg = processar_comando(comando, dir_path)
+    if not success:
+        return HttpResponse(f"Ocorreu um erro: {error_msg}")
 
 
 
@@ -129,6 +147,26 @@ def modifcar_fld(macroPrepare):
     arquivo.close()
 
     return novo_texto, f"{parts[-1]}.maps.fld"
+
+def run_autodock(macroPrepare):
+    dir_path = os.path.join(settings.MEDIA_ROOT, "macroTeste", macroPrepare.processo_name, macroPrepare.rec)
+    autodockgpu_path = os.path.expanduser("~/AutoDock-GPU-develop/bin/autodock_gpu_128wi")
+
+    filename_receptor, file_extension2 = macroPrepare.recptorpdb.name.split(".")
+    filename_ligante, file_extension2 = macroPrepare.ligantepdb.name.split(".")
+
+    fld_path = os.path.join(settings.MEDIA_ROOT, f"{filename_receptor}.maps.fld")
+    ligante_dir= os.path.join(settings.MEDIA_ROOT, f"{filename_ligante}.pdbqt")
+    print(fld_path)
+    print(ligante_dir)
+    saida = os.path.join(dir_path, f"{filename_ligante}")
+    
+    command = [autodockgpu_path, "--ffile", fld_path, "--lfile", ligante_dir]
+    print("docking..........................")
+    processar_comando(command, dir_path)
+
+
+
 
 
 def processar_comando(command, cwd):
