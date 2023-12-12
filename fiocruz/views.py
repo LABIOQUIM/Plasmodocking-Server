@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 import json
 from .serializers import VS_Serializer
 import pandas as pd
-from .tasks import plasmodocking_SR, prepare_macro_SemRedocking, prepare_macro_ComRedocking
+from .tasks import plasmodocking_SR, prepare_macro_SemRedocking, prepare_macro_ComRedocking,plasmodocking_CR
 from django.conf import settings
 from django.template.loader import render_to_string
 from django.core.mail import send_mail
@@ -53,7 +53,7 @@ def api_delete(request, idItem):
             arq = Arquivos_virtaulS.objects.get(id=idItem)
             arq.delete()
 
-            dir_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{arq.user.username}", arq.nome)
+            dir_path = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{arq.user.username}", arq.nome)
             if os.path.exists(dir_path):
                 try:
                     shutil.rmtree(dir_path)
@@ -236,7 +236,10 @@ def upload_view(request):
         arquivos_vs.save()
 
         #---------------------------------------------------------------------
-        plasmodocking_SR.delay(username,arquivos_vs.id, email_user)
+        if type == "Com Redocking":
+            plasmodocking_CR.delay(username,arquivos_vs.id, email_user)
+        else: 
+            plasmodocking_SR.delay(username,arquivos_vs.id, email_user)
 
         return JsonResponse({'message': 'Processo adicionado a fila com sucesso. em breve estará disponivel nos resultados.'})
     return JsonResponse({'message': 'Método não suportado'}, status=405)
