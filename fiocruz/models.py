@@ -3,8 +3,12 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import datetime
-
+from django.contrib.auth.hashers import make_password, check_password
+from django.utils.translation import gettext_lazy as _
 # Create your models here.
+from django.utils import timezone
+
+
 
 class UserCustom(models.Model):
     id = models.TextField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -13,13 +17,28 @@ class UserCustom(models.Model):
     password = models.CharField(max_length=255)
     username = models.CharField(max_length=255, unique=True)
     active = models.BooleanField(default=False)
-    deleted = models.BooleanField(default=False, null=True, blank=True)
-    role = models.CharField(max_length=255, default="USER")
+    deleted = models.BooleanField(default=False)
+    role = models.CharField(
+        max_length=255, 
+        default="USER",
+        choices=[('USER', 'User'), ('ADMIN', 'Admin')]      # Exemplo de escolhas restritas
+    )
+    created_at = models.DateTimeField(auto_now_add=True)    # Data de criação
+    updated_at = models.DateTimeField(auto_now=True)        # Data de última modificação
 
     def __str__(self):
         return self.username
+
+    def set_password(self, raw_password):
+        self.password = make_password(raw_password)
+
+    def check_password(self, raw_password):
+        return check_password(raw_password, self.password)
+
     class Meta:
-        db_table = 'users'  # Especifique o nome da tabela
+        db_table = 'users'  # Nome da tabela
+        
+#--------------------------------------------------------------------------------------------
         
 
 def ligante_arquivo(instance, filename):

@@ -1,25 +1,69 @@
-import glob
+from django.contrib.auth import authenticate
 import os
 import shutil
 import subprocess
 import random
 from fiocruz.utils.functions import extrair_menor_rmsd
 from .models import Arquivos_virtaulS, Macromoleculas_virtaulS, UserCustom, Macro_Prepare, Macromoleculas_Sem_Redocking
-from rest_framework import routers, serializers, viewsets
+from rest_framework import viewsets, generics
 from django.http import FileResponse, HttpResponse, JsonResponse 
 from django.contrib.auth.models import User
-import json
-from .serializers import VS_Serializer
-import pandas as pd
+from .serializers import VS_Serializer, UserCustomSerializer
 from .tasks import plasmodocking_SR, prepare_macro_SemRedocking, prepare_macro_ComRedocking,plasmodocking_CR
 from django.conf import settings
-from django.template.loader import render_to_string
-from django.core.mail import send_mail
+from rest_framework.views import APIView
+from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.response import Response
+from rest_framework import status
+from rest_framework.permissions import IsAuthenticated
 
 from .util import (
     textfld,
 )
 
+class CreateUserView(generics.CreateAPIView):
+    queryset = UserCustom.objects.all()
+    serializer_class = UserCustomSerializer
+
+#-----------------------------------------------------------------------------------------------------------------
+
+class AuthenticateUser(APIView):
+    def post(self, request):
+        email = request.data.get('email')
+        password = request.data.get('password')
+        try:
+            # Buscar o usuário pelo e-mail
+            user = UserCustom.objects.get(email=email)
+            
+            # Verificar se a senha está correta
+            if user.check_password(password):
+                # Se a senha estiver correta, gerar token de acesso
+                refresh = RefreshToken.for_user(user)
+                return Response({
+                    'refresh': str(refresh),
+                    'access': str(refresh.access_token),
+                    'user': UserCustomSerializer(user).data
+                })
+            else:
+                # Senha incorreta
+                return Response({'error': 'Invalid Credentials. Password invalid'}, status=status.HTTP_401_UNAUTHORIZED)
+        except UserCustom.DoesNotExist:
+            # Usuário não encontrado
+            return Response({'error': 'Invalid Credentials. User not found'}, status=status.HTTP_401_UNAUTHORIZED)
+
+
+class GetUserDetails(APIView):
+    def get(self, request):
+        email = request.query_params.get('email')
+        user = UserCustom.objects.filter(email=email).first()
+        print(email)
+
+        if user:
+            return Response(UserCustomSerializer(user).data)
+        else:
+            return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
+
+#-----------------------------------------------------------------------------------------------------------------
 class VS_ViewSet(viewsets.ModelViewSet):
     #queryset = Arquivos_virtaulS.objects.all()
     #queryset = Arquivos_virtaulS.objects.filter(status=False)  # Filtrar por status igual a false
@@ -72,7 +116,7 @@ def download_file(request, id):
     # Recupere o objeto Arquivos_virtaulS com base no ID
     file = Arquivos_virtaulS.objects.get(id=id)
 
-    dir_path = os.path.join(settings.MEDIA_ROOT, "uploads3", f"user_{file.user.username}", file.nome)
+    dir_path = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{file.user.username}", file.nome)
     zip_path = os.path.join(dir_path, f"{file.nome}.zip")
   
     if os.path.exists(zip_path):

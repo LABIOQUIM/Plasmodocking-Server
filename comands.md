@@ -22,3 +22,8 @@ sudo docker run --name my-pgadmin-container --network=my-network -p 15432:80 -e 
 
 #conteiner rabbitmq 
 sudo docker run --name my-rabbitmq-container -d -p 5672:5672 rabbitmq
+
+
+
+#install requiriments
+pip install -r requirements.txt

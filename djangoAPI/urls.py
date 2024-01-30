@@ -27,5 +27,8 @@ urlpatterns = [
     path('macro_ComRedocking_save/', views.macro_save_ComRedocking, name='macro_save_CR'),
     path('macro_SemRedocking_save/', views.macro_save_SemRedocking, name='macro_save_SR'),
     
+    path('api/create-user/', views.CreateUserView.as_view(), name='create-user'),
+    path('api/authenticate', views.AuthenticateUser.as_view(), name='authenticate'),
+    path('api/user', views.GetUserDetails.as_view(), name='get_user_details'),
 
 ]

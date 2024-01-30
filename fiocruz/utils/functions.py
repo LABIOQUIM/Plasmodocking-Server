@@ -38,7 +38,6 @@ def extrair_energia_ligacao(caminho_arquivo):
     else:
         return "None"
 
-
 #função para extrair o menor rmsd e sua energia da preparação da macromolecula
 def extrair_menor_rmsd(caminho_arquivo):
     menor_rmsd = float('inf')  # Inicialize com um valor infinito positivo
@@ -77,7 +76,6 @@ def executar_comando(command, dir_path):
     if process.returncode != 0:
         return HttpResponse(f"Ocorreu um erro: {stderr.decode()}")
 
-    
     return True 
 
 
