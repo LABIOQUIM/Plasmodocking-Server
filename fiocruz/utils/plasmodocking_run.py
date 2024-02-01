@@ -85,7 +85,6 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,direto
     for ligante_pdbqt in ligantes_pdbqt:
         dir_ligante_pdbqt = os.path.join(diretorio_ligantes_pdbqt, ligante_pdbqt)
         filename_ligante, _ = os.path.splitext(ligante_pdbqt)
-
         r = str(macromolecula.rec_fld)
         dir_path = os.path.join(settings.MEDIA_ROOT, "macromoleculas","comRedocking", f"{macromolecula.rec}")
         rec_maps_fld_path = os.path.join(settings.MEDIA_ROOT, r)
@@ -122,8 +121,7 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,direto
 
         m_rmsd, menor_dados3 = extrair_menor_rmsd(caminho_arquivo)
         
-        if m_rmsd != None:
-            print(f"{caminho_arquivo} : rmsd {m_rmsd} | energia {menor_dados3}")
+        
 
         ligante_data = {
             'ligante_name': filename_ligante,

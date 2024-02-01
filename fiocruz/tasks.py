@@ -102,7 +102,7 @@ def plasmodocking_SR(username, id_processo, email_user):
     command = ["zip", "-r", arquivos_vs.nome+"/"+arquivos_vs.nome+".zip", arquivos_vs.nome]
     executar_comando(command, dir_path)
 
-    enviar_email.delay(username,arquivos_vs.nome,email_user)
+    #enviar_email.delay(username,arquivos_vs.nome,email_user)
 
     
     return "task concluida com sucesso"
@@ -127,6 +127,7 @@ def plasmodocking_CR(username, id_processo, email_user):
     data, tabela_final = [], []
     with tqdm(total=len(macromoleculas), desc=f'Plasmodocking usuario {username} processo {arquivos_vs.nome}') as pbar:
         for macromolecula in macromoleculas:
+            print("Macromolecula: "+macromolecula)
             receptor_data, data_data = preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,diretorio_ligantes_pdbqt,diretorio_macromoleculas,username,arquivos_vs.nome)
             data.append(receptor_data)
             tabela_final.extend(data_data)
@@ -150,7 +151,7 @@ def plasmodocking_CR(username, id_processo, email_user):
     dir_path = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}")
     command = ["zip", "-r", arquivos_vs.nome+"/"+arquivos_vs.nome+".zip", arquivos_vs.nome]
     executar_comando(command, dir_path)
-    enviar_email.delay(username,arquivos_vs.nome,email_user)
+    ##enviar_email.delay(username,arquivos_vs.nome,email_user)
     return "task concluida com sucesso"
 
 
