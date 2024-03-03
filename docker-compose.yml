@@ -1,34 +1,14 @@
-version: '3'
+version: '3.8'
+
 services:
-  my-postgres-container:
-    image: postgres
-    container_name: my-postgres-container
-    networks:
-      - my-network
-    ports:
-      - "15433:5432"
+  autodockgpu:
+    image: autodockgpu_image
+    build: .
+    runtime: nvidia
     environment:
-      POSTGRES_PASSWORD: postgres
+      - NVIDIA_VISIBLE_DEVICES=all
+    command: >
+      /home/autodockgpu/AutoDock-GPU/bin/autodock_gpu_128wi
+    volumes:
+      - ./data:/data
 
-  my-pgadmin-container:
-    image: dpage/pgadmin4
-    container_name: my-pgadmin-container
-    networks:
-      - my-network
-    ports:
-      - "15432:80"
-    environment:
-      PGADMIN_DEFAULT_EMAIL: postgres@gmail.com
-      PGADMIN_DEFAULT_PASSWORD: postgres
-
-  my-rabbitmq-container:
-    image: rabbitmq
-    container_name: my-rabbitmq-container
-    ports:
-      - "5672:5672"
-    networks:
-      - my-network
-
-networks:
-  my-network:
-    driver: bridge
