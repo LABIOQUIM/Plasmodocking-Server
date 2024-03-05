@@ -118,10 +118,10 @@ WSGI_APPLICATION = 'djangoAPI.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('POSTGRES_DB', 'nome_do_seu_banco'),
-        'USER': os.getenv('POSTGRES_USER', 'seu_usuario'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'sua_senha'),
-        'HOST': 'db',  # Nome do serviço no docker-compose.yml
+        'NAME': config("POSTGRES_DB"),
+        'USER': config("POSTGRES_USER"),
+        'PASSWORD': config("POSTGRES_PASSWORD"),
+        'HOST': 'db',  
         'PORT': '5432',
     }
 }
@@ -181,7 +181,12 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Configuração do Celery
-CELERY_BROKER_URL = 'pyamqp://guest@rabbitmq//'
+# Configuração do Celery
+user_rabbitmq= config("RABBITMQ_DEFAULT_USER")
+password_rabbitmq=config("RABBITMQ_DEFAULT_PASS")
+CELERY_BROKER_URL = 'amqp://'+user_rabbitmq+':'+password_rabbitmq+'@rabbitmq:5672/'
+
+CELERY_WORKER_CONCURRENCY = 1
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

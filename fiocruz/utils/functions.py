@@ -74,7 +74,6 @@ def executar_comando(command, dir_path):
 
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=dir_path)
     stdout, stderr = process.communicate()
-    print(stdout)
 
     if process.returncode != 0:
         return HttpResponse(f"Ocorreu um erro: {stderr.decode()}")

@@ -2,28 +2,29 @@ version: '3.8'
 
 services:
   db:
-    image: postgres:13
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
     environment:
-      POSTGRES_DB: nome_do_seu_banco
-      POSTGRES_USER: seu_usuario
-      POSTGRES_PASSWORD: sua_senha
+      POSTGRES_DB: "${POSTGRES_DB}"
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
 
   pgadmin:
     image: dpage/pgadmin4
     ports:
       - "15432:80"
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@example.com
-      PGADMIN_DEFAULT_PASSWORD: admin
+      PGADMIN_DEFAULT_EMAIL: "${PGADMIN_DEFAULT_EMAIL}"
+      PGADMIN_DEFAULT_PASSWORD: "${PGADMIN_DEFAULT_PASSWORD}"
     depends_on:
       - db
 
   django:
     build: .
     command: >
-      sh -c "python manage.py migrate &&
+      sh -c "env
+            python manage.py migrate &&
             python manage.py collectstatic --noinput &&
             python manage.py runserver 0.0.0.0:8000"
     volumes:
@@ -32,7 +33,9 @@ services:
     ports:
       - "8000:8000"
     environment:
-      DATABASE_URL: postgresql://seu_usuario:sua_senha@db/nome_do_seu_banco
+      POSTGRES_DB: "${POSTGRES_DB}"
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
     depends_on:
       - db
 
@@ -43,6 +46,10 @@ services:
       - "5672:5672"
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: "${RABBITMQ_DEFAULT_USER}"  # Defina essa variável no seu arquivo .env
+      RABBITMQ_DEFAULT_PASS: "${RABBITMQ_DEFAULT_PASS}"  # Defina essa variável no seu arquivo .env
+
 
   celery:
     build:
@@ -58,7 +65,7 @@ services:
       - DJANGO_SETTINGS_MODULE=djangoAPI.settings
       - NVIDIA_VISIBLE_DEVICES=all
     command: >
-      sh -c "celery -A djangoAPI worker --loglevel=info"
+      sh -c "celery -A djangoAPI worker --loglevel=info" --concurrency=1
     deploy:
       resources:
         reservations:
