@@ -41,13 +41,14 @@ def criar_diretorios(username, nome):
 
 def preparar_ligantes(arquivos_vs, diretorio_lig_split,diretorio_ligantes_pdbqt):
     #caminhos
-    pythonsh_path = os.path.expanduser("~/mgltools_x86_64Linux2_1.5.7/bin/pythonsh")
-    prep_ligante_path= os.path.expanduser("~/mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py")
+    pythonsh_path = os.path.expanduser("/home/autodockgpu/mgltools_x86_64Linux2_1.5.7/bin/pythonsh")
+    prep_ligante_path= os.path.expanduser("/home/autodockgpu/mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py")
+    obabel_path= os.path.expanduser("/usr/bin/obabel")
 
     #processo
     arquivo_sdf = os.path.join(settings.MEDIA_ROOT, str(arquivos_vs.ligante))
 
-    command = ["obabel", "-isdf", arquivo_sdf, "-osdf", "--split"]
+    command = [obabel_path, "-isdf", arquivo_sdf, "-osdf", "--split"]
     executar_comando(command, diretorio_lig_split)
 
     command = ["rm",arquivo_sdf]
@@ -68,7 +69,8 @@ def preparar_ligantes(arquivos_vs, diretorio_lig_split,diretorio_ligantes_pdbqt)
 
 
 def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,diretorio_ligantes_pdbqt,diretorio_macromoleculas,username,nome):
-    autodockgpu_path = os.path.expanduser("~/AutoDock-GPU-develop/bin/autodock_gpu_128wi")
+    autodockgpu_path = os.path.expanduser("/home/autodockgpu/AutoDock-GPU/bin/autodock_gpu_128wi")
+    obabel_path= os.path.expanduser("/usr/bin/obabel")
     
     receptor_data = {
         'receptor_name': macromolecula.rec,
@@ -102,7 +104,7 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,direto
         shutil.move(bcaminho, bsaida)
 
         csaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdb")
-        command = ["obabel", bsaida, "-O", csaida]
+        command = [obabel_path, bsaida, "-O", csaida]
         executar_comando(command, diretorio_gbest_ligante_unico)
 
         command = ["rm", bsaida]

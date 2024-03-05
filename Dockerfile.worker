@@ -1,0 +1,54 @@
+# Base Image
+FROM nvidia/cuda:12.2.0-devel-ubuntu22.04 as base
+WORKDIR /home/autodockgpu
+
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+
+# Install necessary packages
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    git \
+    wget \
+    python3-pip \
+    openbabel \
+    zip
+
+# Clone AutoDock-GPU from GitHub
+RUN git clone https://github.com/ccsb-scripps/AutoDock-GPU.git
+
+# Build stage for AutoDock-GPU
+WORKDIR /home/autodockgpu/AutoDock-GPU
+
+# Set CUDA PATHS
+ENV GPU_INCLUDE_PATH /usr/local/cuda/include
+ENV GPU_LIBRARY_PATH /usr/local/cuda/lib64
+
+# Compile AutoDock-GPU with CUDA support
+RUN make DEVICE=CUDA NUMWI=128
+
+# Download and Install MGLTools
+WORKDIR /home/autodockgpu
+
+# Copia o arquivo MGLTools para o contêiner
+COPY mgltools_x86_64Linux2_1.5.7.tar.gz /home/autodockgpu/
+
+# Descompacta e instala
+RUN tar -xvzf mgltools_x86_64Linux2_1.5.7.tar.gz && \
+    cd mgltools_x86_64Linux2_1.5.7 && \
+    ./install.sh
+
+# Setting up environment variables for MGLTools
+ENV PATH="/home/autodockgpu/mgltools_x86_64Linux2_1.5.7/bin:${PATH}"
+
+ENV LD_LIBRARY_PATH="/home/autodockgpu/mgltools_x86_64Linux2_1.5.7/lib:${LD_LIBRARY_PATH}"
+
+# Runner stage for setting up the environment with Python dependencies
+FROM base as requirements_install
+WORKDIR /var/www/server
+COPY ./requirements.txt .
+RUN pip install -r requirements.txt
+
+# Final stage for the application
+FROM requirements_install as runner
+COPY . .

@@ -107,8 +107,8 @@ TEMPLATES = [
 ]
 
 # settings.py
-MEDIA_URL = '/../media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, '../media/')
+MEDIA_URL = './media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 WSGI_APPLICATION = 'djangoAPI.wsgi.application'
 
@@ -118,13 +118,14 @@ WSGI_APPLICATION = 'djangoAPI.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'fiocruzpibiti',
-        'USER': 'postgres',
-        'PASSWORD': 'sql123',
-        'HOST': 'localhost',
+        'NAME': os.getenv('POSTGRES_DB', 'nome_do_seu_banco'),
+        'USER': os.getenv('POSTGRES_USER', 'seu_usuario'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD', 'sua_senha'),
+        'HOST': 'db',  # Nome do serviço no docker-compose.yml
         'PORT': '5432',
     }
 }
+
 
 #DATABASES = {
 #    'default': {
@@ -180,7 +181,7 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Configuração do Celery
-CELERY_BROKER_URL = 'pyamqp://guest@localhost//'
+CELERY_BROKER_URL = 'pyamqp://guest@rabbitmq//'
 
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

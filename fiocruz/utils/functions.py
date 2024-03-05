@@ -60,11 +60,13 @@ def extrair_menor_rmsd(caminho_arquivo):
 
 
 def converter_sdf_para_pdb(diretorio_sdf):
+    obabel_path= os.path.expanduser("/usr/bin/obabel")
+
     arquivos_sdf = glob.glob(os.path.join(diretorio_sdf, "*.sdf"))
     if not arquivos_sdf:
         return False
 
-    comando = ["obabel", "-isdf"] + arquivos_sdf + ["-opdb", "-O*.pdb"]
+    comando = [obabel_path, "-isdf"] + arquivos_sdf + ["-opdb", "-O*.pdb"]
     executar_comando(comando, diretorio_sdf)
     return True
 
@@ -72,6 +74,7 @@ def executar_comando(command, dir_path):
 
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=dir_path)
     stdout, stderr = process.communicate()
+    print(stdout)
 
     if process.returncode != 0:
         return HttpResponse(f"Ocorreu um erro: {stderr.decode()}")

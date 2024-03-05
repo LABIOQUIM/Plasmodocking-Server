@@ -1,14 +1,71 @@
 version: '3.8'
 
 services:
-  autodockgpu:
-    image: autodockgpu_image
-    build: .
-    runtime: nvidia
+  db:
+    image: postgres:13
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     environment:
+      POSTGRES_DB: nome_do_seu_banco
+      POSTGRES_USER: seu_usuario
+      POSTGRES_PASSWORD: sua_senha
+
+  pgadmin:
+    image: dpage/pgadmin4
+    ports:
+      - "15432:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    depends_on:
+      - db
+
+  django:
+    build: .
+    command: >
+      sh -c "python manage.py migrate &&
+            python manage.py collectstatic --noinput &&
+            python manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - .:/var/www/server
+      - user_data:/var/www/Plasmodocking
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://seu_usuario:sua_senha@db/nome_do_seu_banco
+    depends_on:
+      - db
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "15672:15672"  # Web management interface
+      - "5672:5672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
+  celery:
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
+    volumes:
+      - .:/var/www/server
+      - user_data:/var/www/Plasmodocking
+    depends_on:
+      - django
+      - rabbitmq
+    environment:
+      - DJANGO_SETTINGS_MODULE=djangoAPI.settings
       - NVIDIA_VISIBLE_DEVICES=all
     command: >
-      /home/autodockgpu/AutoDock-GPU/bin/autodock_gpu_128wi
-    volumes:
-      - ./data:/data
+      sh -c "celery -A djangoAPI worker --loglevel=info"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: ["gpu"]
 
+volumes:
+  postgres_data:
+  rabbitmq_data:
+  user_data:

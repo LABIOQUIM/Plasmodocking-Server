@@ -127,7 +127,7 @@ def plasmodocking_CR(username, id_processo, email_user):
     data, tabela_final = [], []
     with tqdm(total=len(macromoleculas), desc=f'Plasmodocking usuario {username} processo {arquivos_vs.nome}') as pbar:
         for macromolecula in macromoleculas:
-            print("Macromolecula: "+macromolecula)
+            print("Macromolecula: "+macromolecula.rec)
             receptor_data, data_data = preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,diretorio_ligantes_pdbqt,diretorio_macromoleculas,username,arquivos_vs.nome)
             data.append(receptor_data)
             tabela_final.extend(data_data)
