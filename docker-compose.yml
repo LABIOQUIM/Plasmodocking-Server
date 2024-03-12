@@ -9,6 +9,8 @@ services:
       POSTGRES_DB: "${POSTGRES_DB}"
       POSTGRES_USER: "${POSTGRES_USER}"
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    volumes:
+      - database:/var/lib/postgresql/data
 
   pgadmin:
     image: dpage/pgadmin4
@@ -42,14 +44,13 @@ services:
   rabbitmq:
     image: rabbitmq:3-management
     ports:
-      - "15672:15672"  # Web management interface
+      - "15672:15672"  # Web interface
       - "5672:5672"
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
     environment:
-      RABBITMQ_DEFAULT_USER: "${RABBITMQ_DEFAULT_USER}"  # Defina essa variável no seu arquivo .env
-      RABBITMQ_DEFAULT_PASS: "${RABBITMQ_DEFAULT_PASS}"  # Defina essa variável no seu arquivo .env
-
+      RABBITMQ_DEFAULT_USER: "${RABBITMQ_DEFAULT_USER}"
+      RABBITMQ_DEFAULT_PASS: "${RABBITMQ_DEFAULT_PASS}"
 
   celery:
     build:
@@ -73,6 +74,19 @@ services:
             - capabilities: ["gpu"]
 
 volumes:
-  postgres_data:
+  database:
+    driver_opts:
+      type: "nfs"
+      o: "nfsvers=4,addr=localhost,nolock,soft,rw"
+      device: ":/mnt/nfs/database"
   rabbitmq_data:
+    driver_opts:
+      type: "nfs"
+      o: "nfsvers=4,addr=localhost,nolock,soft,rw"
+      device: ":/mnt/nfs/rabbitmq_data"
   user_data:
+    driver_opts:
+      type: "nfs"
+      o: "nfsvers=4,addr=localhost,nolock,soft,rw"
+      device: ":/mnt/nfs/user_data"
+

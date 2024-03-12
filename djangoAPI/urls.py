@@ -30,5 +30,4 @@ urlpatterns = [
     path('back/create-user/', views.CreateUserView.as_view(), name='create-user'),
     path('back/authenticate', views.AuthenticateUser.as_view(), name='authenticate'),
     path('back/user', views.GetUserDetails.as_view(), name='get_user_details'),
-
 ]

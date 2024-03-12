@@ -256,9 +256,6 @@ def macro_SR(request):
 
     return JsonResponse({'message': 'Método não suportado'}, status=405)
 
-
-
-
 def upload_view(request):
     if request.method == 'POST':
 

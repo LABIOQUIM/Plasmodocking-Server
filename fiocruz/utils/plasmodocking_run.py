@@ -66,8 +66,6 @@ def preparar_ligantes(arquivos_vs, diretorio_lig_split,diretorio_ligantes_pdbqt)
         command = [pythonsh_path, prep_ligante_path, "-l", caminho_ligante_pdb, "-o", saida]
         executar_comando(command, diretorio_lig_split)
 
-
-
 def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,diretorio_ligantes_pdbqt,diretorio_macromoleculas,username,nome):
     autodockgpu_path = os.path.expanduser("/home/autodockgpu/AutoDock-GPU/bin/autodock_gpu_128wi")
     obabel_path= os.path.expanduser("/usr/bin/obabel")
@@ -86,13 +84,13 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,direto
 
     for ligante_pdbqt in ligantes_pdbqt:
         dir_ligante_pdbqt = os.path.join(diretorio_ligantes_pdbqt, ligante_pdbqt)
+        print(ligante_pdbqt+" : " + macromolecula.rec)
         filename_ligante, _ = os.path.splitext(ligante_pdbqt)
         r = str(macromolecula.rec_fld)
         dir_path = os.path.join(settings.MEDIA_ROOT, "macromoleculas","comRedocking", f"{macromolecula.rec}")
         rec_maps_fld_path = os.path.join(settings.MEDIA_ROOT, r)
         saida = os.path.join(diretorio_dlgs, f"{filename_ligante}_{macromolecula.rec}")
         
-
         command = [autodockgpu_path, "--ffile", rec_maps_fld_path, "--lfile", dir_ligante_pdbqt, "--gbest", "1", "--resnam", saida]
         executar_comando(command, dir_path)
         
@@ -122,8 +120,6 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,direto
         best_energia, run = extrair_energia_ligacao(caminho_arquivo)
 
         m_rmsd, menor_dados3 = extrair_menor_rmsd(caminho_arquivo)
-        
-        
 
         ligante_data = {
             'ligante_name': filename_ligante,

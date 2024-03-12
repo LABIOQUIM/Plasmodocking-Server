@@ -12,8 +12,6 @@ import pandas as pd
 
 from django.conf import settings
 
-
-
 def extrair_energia_ligacao(caminho_arquivo):
     # Variável para armazenar a energia de ligação
     binding_energy = None
@@ -58,7 +56,6 @@ def extrair_menor_rmsd(caminho_arquivo):
     else:
         return None
 
-
 def converter_sdf_para_pdb(diretorio_sdf):
     obabel_path= os.path.expanduser("/usr/bin/obabel")
 
@@ -71,7 +68,6 @@ def converter_sdf_para_pdb(diretorio_sdf):
     return True
 
 def executar_comando(command, dir_path):
-
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=dir_path)
     stdout, stderr = process.communicate()
 
