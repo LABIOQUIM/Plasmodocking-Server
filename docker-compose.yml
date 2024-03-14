@@ -4,7 +4,7 @@ services:
   db:
     image: postgres:15-alpine
     ports:
-      - "5432:5432"
+      - "5434:5432"
     environment:
       POSTGRES_DB: "${POSTGRES_DB}"
       POSTGRES_USER: "${POSTGRES_USER}"
@@ -15,7 +15,7 @@ services:
   pgadmin:
     image: dpage/pgadmin4
     ports:
-      - "15432:80"
+      - "8080:80"
     environment:
       PGADMIN_DEFAULT_EMAIL: "${PGADMIN_DEFAULT_EMAIL}"
       PGADMIN_DEFAULT_PASSWORD: "${PGADMIN_DEFAULT_PASSWORD}"
@@ -75,18 +75,6 @@ services:
 
 volumes:
   database:
-    driver_opts:
-      type: "nfs"
-      o: "nfsvers=4,addr=localhost,nolock,soft,rw"
-      device: ":/mnt/nfs/database"
   rabbitmq_data:
-    driver_opts:
-      type: "nfs"
-      o: "nfsvers=4,addr=localhost,nolock,soft,rw"
-      device: ":/mnt/nfs/rabbitmq_data"
   user_data:
-    driver_opts:
-      type: "nfs"
-      o: "nfsvers=4,addr=localhost,nolock,soft,rw"
-      device: ":/mnt/nfs/user_data"
 

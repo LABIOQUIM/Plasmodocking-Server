@@ -28,13 +28,15 @@ WORKDIR /home/autodockgpu/AutoDock-GPU
 ENV GPU_INCLUDE_PATH /usr/local/cuda/include
 ENV GPU_LIBRARY_PATH /usr/local/cuda/lib64
 
-RUN make DEVICE=CUDA NUMWI=128
+RUN make DEVICE=CUDA NUMWI=128 TARGETS="80"
 
 FROM autodockbuild as mglinstall
 
 WORKDIR /home/autodockgpu
 
-COPY mgltools_x86_64Linux2_1.5.7.tar.gz /home/autodockgpu/
+RUN wget https://ccsb.scripps.edu/mgltools/download/491/
+
+RUN mv index.html mgltools_x86_64Linux2_1.5.7.tar.gz
 
 RUN tar -xvzf mgltools_x86_64Linux2_1.5.7.tar.gz && \
     cd mgltools_x86_64Linux2_1.5.7 && \

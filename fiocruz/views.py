@@ -279,6 +279,7 @@ def upload_view(request):
 
         #---------------------------------------------------------------------
         # Iniciando a task baseado no tipo de processamento e se redocking é True ou False
+        print(redocking)
         if redocking:
             plasmodocking_CR.delay(username, arquivos_vs.id, email_user)
         else: 
