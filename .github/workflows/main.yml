@@ -13,5 +13,8 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
+    - name: set macromoleculas
+      run: cp /home/cebio/plasmodocking/media/macromoleculas ./
+      
     - name: Run conteiner
       run: docker compose up -d --build
