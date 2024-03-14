@@ -1,14 +1,6 @@
-import glob
 import os
-import shutil
 import subprocess
-from ..models import Arquivos_virtaulS, Macromoleculas_virtaulS, UserCustom, Macro_Prepare
-from rest_framework import routers, serializers, viewsets
-from django.http import FileResponse, HttpResponse, JsonResponse 
-from django.contrib.auth.models import User
-import json
-from ..serializers import VS_Serializer
-import pandas as pd
+from django.http import  HttpResponse
 from django.conf import settings
 
 from ..util import (

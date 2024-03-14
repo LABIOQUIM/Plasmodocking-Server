@@ -3,15 +3,15 @@ from django.urls import path, include
 from rest_framework import routers, serializers, viewsets
 
 from django.contrib.auth.models import User
-from .models import Arquivos_virtaulS, UserCustom
+from .models import Process_Plasmodocking, UserCustom
 
 class VS_Serializer(serializers.ModelSerializer):
     # Adicione um campo de método para a data formatada
     formatted_data = serializers.SerializerMethodField()
 
     class Meta:
-        model = Arquivos_virtaulS
-        fields = ['id', 'nome', 'user', 'ligante', 'data', 'resultado_final', 'status','type', 'formatted_data']
+        model = Process_Plasmodocking
+        fields = ['id', 'nome', 'user', 'ligante', 'data', 'redocking', 'status','type', 'formatted_data','resultado_final']
 
     def get_formatted_data(self, obj):
         # Formate a data como desejado

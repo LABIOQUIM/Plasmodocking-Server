@@ -44,26 +44,35 @@ class UserCustom(models.Model):
 def ligante_arquivo(instance, filename):
     return 'plasmodocking/user_{0}/{1}/{2}/{3}'.format(instance.user.username, instance.nome,"pdb_split", filename)
 
-class Arquivos_virtaulS(models.Model):
+class Process_Plasmodocking(models.Model):
+    TYPE_CHOICES = [
+        ("vivax", "Vivax"),
+        ("falciparum", "Falciparum"),
+    ]
+    STATUS_CHOICES = [
+        ("em fila", "Em fila"),
+        ("processando", "Processando"),
+        ("concluido", "Concluído"),
+        ("error", "Erro"),
+    ]
+    
     nome = models.CharField(max_length=200)
     user = models.ForeignKey(UserCustom, on_delete=models.CASCADE)
-    ligante = models.FileField(upload_to=ligante_arquivo,blank=True, null=True)
+    ligante = models.FileField(upload_to=ligante_arquivo, blank=True, null=True)
     data = models.DateTimeField(auto_now_add=True)
     resultado_final = models.TextField(default='Sem resultados')
-    status = models.BooleanField(default=False)
-    type = models.TextField(default="Com Redocking")
-
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="em fila")
+    type = models.CharField(max_length=10, choices=TYPE_CHOICES, default="Falciparum")
+    redocking = models.BooleanField(default=True)
+    
     def formatted_data(self):
         return self.data.strftime('%H:%M:%S - %d/%m/%Y')
-
-    def save(self, *args, **kwargs):
-        super().save(*args, **kwargs)
     
     def __str__(self):
-        return self.nome
+        return f"{self.nome} - {self.get_type_display()}"
 
     class Meta:
-        db_table = 'Arquivos_virtaulS'  # Especifique o nome da tabela
+        db_table = 'process_plasmodocking'
 
 #Macromoleculas Com Redocking
 def arquivo_macro(instance, filename):

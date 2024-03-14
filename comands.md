@@ -23,3 +23,12 @@ sudo docker run --name my-rabbitmq-container -d -p 5672:5672 rabbitmq
 
 #install requiriments
 pip install -r requirements.txt
+
+#docker compose 2
+https://docs.docker.com/compose/install/linux/#install-the-plugin-manually
+
+#docker up
+docker compose up -d --build
+
+#docker logs 
+docker compose logs django -f

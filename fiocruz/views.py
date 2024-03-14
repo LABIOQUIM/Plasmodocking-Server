@@ -4,10 +4,9 @@ import shutil
 import subprocess
 import random
 from fiocruz.utils.functions import extrair_menor_rmsd
-from .models import Arquivos_virtaulS, Macromoleculas_virtaulS, UserCustom, Macro_Prepare, Macromoleculas_Sem_Redocking
+from .models import Process_Plasmodocking, Macromoleculas_virtaulS, UserCustom, Macro_Prepare, Macromoleculas_Sem_Redocking
 from rest_framework import viewsets, generics
 from django.http import FileResponse, HttpResponse, JsonResponse 
-from django.contrib.auth.models import User
 from .serializers import VS_Serializer, UserCustomSerializer
 from .tasks import plasmodocking_SR, prepare_macro_SemRedocking, prepare_macro_ComRedocking,plasmodocking_CR
 from django.conf import settings
@@ -15,7 +14,7 @@ from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.response import Response
 from rest_framework import status
-from rest_framework.permissions import IsAuthenticated
+from django.shortcuts import render
 
 from .util import (
     textfld,
@@ -65,28 +64,28 @@ class GetUserDetails(APIView):
 
 #-----------------------------------------------------------------------------------------------------------------
 class VS_ViewSet(viewsets.ModelViewSet):
-    #queryset = Arquivos_virtaulS.objects.all()
-    #queryset = Arquivos_virtaulS.objects.filter(status=False)  # Filtrar por status igual a false
+    #queryset = Process_Plasmodocking.objects.all()
+    #queryset = Process_Plasmodocking.objects.filter(status=False)  # Filtrar por status igual a false
     serializer_class = VS_Serializer
 
     
     def get_queryset(self):
         username = self.request.query_params.get('username')
         user = UserCustom.objects.get(username=username)
-        queryset = Arquivos_virtaulS.objects.filter(user=user)
+        queryset = Process_Plasmodocking.objects.filter(user=user)
         return queryset
     
 
 def get_resultado(request, idItem):
     if request.method == 'GET':
         try:
-            arq = Arquivos_virtaulS.objects.get(id=idItem)
+            arq = Process_Plasmodocking.objects.get(id=idItem)
 
             # Use o serializer para serializar o objeto
             serializer = VS_Serializer(arq)
 
             return JsonResponse({'dados': serializer.data})
-        except Arquivos_virtaulS.DoesNotExist:
+        except Process_Plasmodocking.DoesNotExist:
             return JsonResponse({'message': 'Item não encontrado'}, status=404)
     else:
         return JsonResponse({'message': 'Método não permitido'}, status=405)
@@ -94,7 +93,7 @@ def get_resultado(request, idItem):
 def api_delete(request, idItem):
     if request.method == 'DELETE':
         try:
-            arq = Arquivos_virtaulS.objects.get(id=idItem)
+            arq = Process_Plasmodocking.objects.get(id=idItem)
             arq.delete()
 
             dir_path = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{arq.user.username}", arq.nome)
@@ -106,15 +105,15 @@ def api_delete(request, idItem):
                     return JsonResponse(f"Ocorreu um erro ao excluir o diretório: {e.stderr}")
 
             return JsonResponse({'message': 'Arquivo apagado com sucesso!'})
-        except Arquivos_virtaulS.DoesNotExist:
+        except Process_Plasmodocking.DoesNotExist:
             return JsonResponse({'message': 'Item não encontrado'}, status=404)
     else:
         return JsonResponse({'message': 'Método não permitido'}, status=405)
     
 
 def download_file(request, id):
-    # Recupere o objeto Arquivos_virtaulS com base no ID
-    file = Arquivos_virtaulS.objects.get(id=id)
+    # Recupere o objeto Process_Plasmodocking com base no ID
+    file = Process_Plasmodocking.objects.get(id=id)
 
     dir_path = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{file.user.username}", file.nome)
     zip_path = os.path.join(dir_path, f"{file.nome}.zip")
@@ -256,13 +255,15 @@ def macro_SR(request):
 
     return JsonResponse({'message': 'Método não suportado'}, status=405)
 
+#------------------------------------------------------------------------
 def upload_view(request):
     if request.method == 'POST':
 
         nome = request.POST.get('nome')
         arquivo = request.FILES.get('arquivo')
         username = request.POST.get('username')
-        type = request.POST.get('type')
+        type = request.POST.get('type')  # Assumindo que isso vem corretamente como "vivax" ou "falciparum"
+        redocking = request.POST.get('redocking') == 'true'  # Isso captura se "redocking" foi marcado como 'true'
         email_user = request.POST.get('email_user')
 
         try:
@@ -270,19 +271,32 @@ def upload_view(request):
         except UserCustom.DoesNotExist:
             return JsonResponse({'message': 'Usuário não encontrado'}, status=404)
         
-        if Arquivos_virtaulS.objects.filter(user=user, nome=nome).exists():
+        if Process_Plasmodocking.objects.filter(user=user, nome=nome).exists():
             return JsonResponse({'message': 'Um arquivo com esse nome já existe para esse usuário'}, status=400)
 
-        arquivos_vs = Arquivos_virtaulS(nome=nome, ligante=arquivo, user=user, type=type)
+        arquivos_vs = Process_Plasmodocking(nome=nome, ligante=arquivo, user=user, type=type, redocking=redocking, status="em fila")
         arquivos_vs.save()
 
         #---------------------------------------------------------------------
-        if type == "Com Redocking":
-            plasmodocking_CR.delay(username,arquivos_vs.id, email_user)
+        # Iniciando a task baseado no tipo de processamento e se redocking é True ou False
+        if redocking:
+            plasmodocking_CR.delay(username, arquivos_vs.id, email_user)
         else: 
-            plasmodocking_SR.delay(username,arquivos_vs.id, email_user)
+            plasmodocking_SR.delay(username, arquivos_vs.id, email_user)
 
         return JsonResponse({'message': 'Processo adicionado a fila com sucesso. em breve estará disponivel nos resultados.'})
-    return JsonResponse({'message': 'Método não suportado'}, status=405)
+    else:
+        return JsonResponse({'message': 'Método não suportado'}, status=405)
+    
 
-#------------------------------------------------------------------------
+
+def view3d(request, username, nome_process, receptor_name, ligante_code):
+    receptor_url = f"{settings.MEDIA_URL}plasmodocking/user_{username}/{nome_process}/macromoleculas/{receptor_name}_A.pdb"
+    ligante_url = f"{settings.MEDIA_URL}plasmodocking/user_{username}/{nome_process}/gbest_pdb/{ligante_code}/{ligante_code}_{receptor_name}.pdb"
+    
+    context = {
+        'receptor_url': receptor_url,
+        'ligante_url': ligante_url
+    }
+    return render(request, 'view3d.html', context)
+

@@ -5,7 +5,7 @@ import os
 from tqdm import tqdm
 from celery import shared_task
 from django.conf import settings
-from fiocruz.models import Arquivos_virtaulS, Macromoleculas_virtaulS, Macro_Prepare, Macromoleculas_Sem_Redocking
+from fiocruz.models import Process_Plasmodocking, Macromoleculas_virtaulS, Macro_Prepare, Macromoleculas_Sem_Redocking
 from django.core.mail import send_mail
 
 from django.template.loader import render_to_string
@@ -47,7 +47,10 @@ def add(x, y):
 #Processo principal plamodocking sem redocking
 @shared_task
 def plasmodocking_SR(username, id_processo, email_user):
-    arquivos_vs = Arquivos_virtaulS.objects.get(id=id_processo) 
+    arquivos_vs = Process_Plasmodocking.objects.get(id=id_processo) 
+    arquivos_vs.status = "processando"
+    arquivos_vs.save()
+
     #---------------------------------------------------------------------
     # criar pastas do usuario 
     dir_path = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}", arquivos_vs.nome)
@@ -85,7 +88,7 @@ def plasmodocking_SR(username, id_processo, email_user):
     with open(file_path, 'w') as json_file:
         json_file.write(json_data)
 
-    arquivos_vs.status = True
+    arquivos_vs.status = "concluido"
     arquivos_vs.resultado_final = json_data
     arquivos_vs.save()
 
@@ -107,7 +110,9 @@ def plasmodocking_SR(username, id_processo, email_user):
 #Processo principal plamodocking com redocking
 @shared_task
 def plasmodocking_CR(username, id_processo, email_user):
-    arquivos_vs = Arquivos_virtaulS.objects.get(id=id_processo) 
+    arquivos_vs = Process_Plasmodocking.objects.get(id=id_processo) 
+    arquivos_vs.status = "processando"
+    arquivos_vs.save()
 
     #---------------------------------------------------------------------
     # criar pastas do usuario 
@@ -144,7 +149,7 @@ def plasmodocking_CR(username, id_processo, email_user):
     with open(file_path, 'w') as json_file:
         json_file.write(json_data)
 
-    arquivos_vs.status = True
+    arquivos_vs.status = "concluido"
     arquivos_vs.resultado_final = json_data
     arquivos_vs.save()
 
