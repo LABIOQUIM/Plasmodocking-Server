@@ -9,8 +9,8 @@ router = routers.DefaultRouter()
 router.register(r'back/VS_doking2', views.VS_ViewSet, basename='admin')
 
 urlpatterns = [
-    path('back/', include(router.urls)),
-    path('back/admin/', admin.site.urls),
+    path('', include(router.urls)),
+    path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('back/VS_doking/', views.upload_view, name='upload_view'),
     path('back/api_delete/<int:idItem>/', views.api_delete, name='api_delete'),
