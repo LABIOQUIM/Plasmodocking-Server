@@ -24,7 +24,7 @@ O Celery é um sistema de fila de tarefas distribuídas, usado para processar as
 
 ## Início Rápido
 
-Para iniciar o processo de PlasmoDocking, você precisa ter um arquivo `.sdf` contendo os ligantes de interesse. O sistema automatizado irá processar este arquivo através de várias etapas para identificar as melhores energias de ligação com os receptores disponíveis.
+Para iniciar o processo de PlasmoDocking, você precisa ter um arquivo `.sdf` contendo os ligantes de interesse (atualmente é permitido no maximo 10 ligantes no `.sdf` para o processo). O sistema automatizado irá processar este arquivo através de várias etapas para identificar as melhores energias de ligação com os receptores disponíveis.
 
 ## Utilização das Ferramentas
 
@@ -85,6 +85,8 @@ Todos os receptores disponíveis no banco de dados (aproximadamente 39) são sel
 ### 7. Execução do Docking
 
 Para cada par ligante-receptor, o AutoDock-GPU é utilizado para executar o docking, explorando conformações e calculando energias de ligação.
+
+**Exemplo:** Um arquivo `.sdf` com 10 ligantes enviado para o processo. Cada ligante será executado o processo para cada receptor. Ao total neste exemplo serão excutados 390 processos de docagem molecular com o AutodockGPU com o parametro de --nrun 50 (cada processo de docagem molecular é executado 50 vezes).
 
 ### 8. Análise dos Resultados
 
