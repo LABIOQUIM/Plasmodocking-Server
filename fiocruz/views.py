@@ -289,14 +289,35 @@ def upload_view(request):
         return JsonResponse({'message': 'Método não suportado'}, status=405)
     
 
-
 def view3d(request, username, nome_process, receptor_name, ligante_code):
-    receptor_url = f"{settings.MEDIA_URL}plasmodocking/user_{username}/{nome_process}/macromoleculas/{receptor_name}_A.pdb"
-    ligante_url = f"{settings.MEDIA_URL}plasmodocking/user_{username}/{nome_process}/gbest_pdb/{ligante_code}/{ligante_code}_{receptor_name}.pdb"
+    dir_path_receptor = os.path.join(settings.MEDIA_ROOT, f"plasmodocking/user_{username}/{nome_process}/macromoleculas")
+    dir_path_ligante = os.path.join(settings.MEDIA_ROOT, f"plasmodocking/user_{username}/{nome_process}/gbest_pdb/{ligante_code}")
+    
+    # Tentativas de sufixos para o arquivo do receptor
+    sufixos_receptor = ['_A.pdb', '_a.pdb', '_ab.pdb', '_bd.pdb', '.pdb']
+    receptor_path = None
+    for sufixo in sufixos_receptor:
+        temp_path = os.path.join(dir_path_receptor, f"{receptor_name}{sufixo}")
+        if os.path.exists(temp_path):
+            receptor_path = temp_path
+            break
+            
+    # Se nenhum arquivo for encontrado, handle o caso conforme necessário
+    if receptor_path is None:
+        raise FileNotFoundError(f"Arquivo do receptor {receptor_name} não encontrado.")
+    
+    # Para o ligante, a lógica permanece a mesma
+    ligante_path = os.path.join(dir_path_ligante, f"{ligante_code}_{receptor_name}.pdb")
+    if not os.path.exists(ligante_path):
+        raise FileNotFoundError(f"Arquivo do ligante {ligante_code} não encontrado.")
+    
+    with open(receptor_path, 'r') as file:
+        receptor_data = file.read()
+    with open(ligante_path, 'r') as file:
+        ligante_data = file.read()
     
     context = {
-        'receptor_url': receptor_url,
-        'ligante_url': ligante_url
+        'receptor_data': receptor_data,
+        'ligante_data': ligante_data
     }
-    return render(request, 'view3d.html', context)
-
+    return render(request, 'view3d.html', context)  

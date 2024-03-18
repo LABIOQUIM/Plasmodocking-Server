@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
     <meta charset="UTF-8">
     <title>NGL Example</title>
     <style>
         html, body { width: 100%; height: 100%; overflow: hidden; margin: 0; padding: 0; }
         #viewport { width: 100%; height: 100%; }
+        .controls { position: absolute; top: 10px; left: 10px; z-index: 100; background: rgba(255, 255, 255, 0.8); padding: 10px; }
     </style>
     <script src="//cdn.rawgit.com/arose/ngl/v2.0.0-dev.32/dist/ngl.js"></script>
 </head>
 <body>
 
 <div id="viewport"></div>
+<div class="controls">
+    <input type="checkbox" id="showReceptor" checked> Show Receptor<br>
+    <input type="checkbox" id="showLigante" checked> Show Ligante<br>
+    <input type="checkbox" id="showGridBox" checked> Show GridBox
+</div>
 
 <script>
+
+    document.getElementById("showReceptor").addEventListener("change", function(e) {
+        receptorComp.setVisibility(e.target.checked);
+    });
+    
+    document.getElementById("showLigante").addEventListener("change", function(e) {
+        liganteComp.setVisibility(e.target.checked);
+    });
+    
+    document.getElementById("showGridBox").addEventListener("change", function(e) {
+        shapeComp.setVisibility(e.target.checked);
+    });
+
 NGL.DatasourceRegistry.add(
     "data", new NGL.StaticDatasource("//cdn.rawgit.com/arose/ngl/v2.0.0-dev.32/data/")
 );
@@ -21,16 +39,69 @@ NGL.DatasourceRegistry.add(
 var stage = new NGL.Stage("viewport");
 window.addEventListener("resize", function(event){ stage.handleResize(); }, false);
 
-// Exemplo ajustado para usar URLs
-stage.loadFile("{{ receptor_url }}").then(function(o) {
-    o.addRepresentation("cartoon", { color: "chainid" })
-    o.autoView()
-})
+// Cria um Blob a partir da string do receptor
+var receptorBlob = new Blob([`{{ receptor_data|safe }}`], {type: "text/plain"});
+var receptorBlobUrl = URL.createObjectURL(receptorBlob);
+console.log("teste")
+console.log(receptorBlobUrl)
+console.log(receptorBlob)
 
-stage.loadFile("{{ ligante_url }}").then(function(o) {
-    o.addRepresentation("ball+stick")
-    o.autoView()
-})
+// Cria um Blob a partir da string do ligante
+var liganteBlob = new Blob([`{{ ligante_data|safe }}`], {type: "text/plain"});
+var liganteBlobUrl = URL.createObjectURL(liganteBlob);
+var receptorComp, liganteComp;
+// Carrega o receptor
+stage.loadFile(receptorBlobUrl, {ext: "pdb"}).then(function(o) {
+    receptorComp = o;
+    o.addRepresentation("cartoon", { color: "chainid" });
+    o.autoView();
+});
+
+// Carrega o ligante
+stage.loadFile(liganteBlobUrl, {ext: "pdb"}).then(function(o) {
+    liganteComp = o;
+    o.addRepresentation("ball+stick");
+    o.autoView();
+});
+
+// Parâmetros do grid box
+var npts = [33, 38, 36]; // Número de pontos na grade em xyz
+var spacing = 0.375; // Espaçamento (A)
+var gridcenter = [1.088, 13.459, 18.841]; // Centro da grade
+
+// Calcular o tamanho do grid box com base no espaçamento e no número de pontos
+var gridSize = npts.map(function(npt) { return (npt - 1) * spacing; });
+
+// Shape object para representar o grid box
+var shape = new NGL.Shape("shape");
+
+// Calcula os eixos de altura e profundidade para orientar o box
+// Aqui estamos assumindo uma orientação padrão, você pode ajustar conforme necessário
+var heightAxis = [0, 38, 0]; // Eixo Y como altura
+var depthAxis = [0, 0, 36]; // Eixo Z como profundidade
+
+function addGridBox() {
+    var boxBuffer = new NGL.BoxBuffer({
+        position: new Float32Array(gridcenter), // Centro do grid box
+        color: new Float32Array([1, 0, 0]), // Cor vermelha para o box
+        size: new Float32Array([33]), // Este atributo não é necessário para o BoxBuffer e será removido
+        height: gridSize[1], // Usando o tamanho calculado para a altura
+        depth: gridSize[2], // Usando o tamanho calculado para a profundidade
+        width: gridSize[0], // Usando o tamanho calculado para a largura
+        heightAxis: new Float32Array(heightAxis), // Orientação da altura
+        depthAxis: new Float32Array(depthAxis) // Orientação da profundidade
+    });
+    shape.addBuffer(boxBuffer);
+}
+
+// Adiciona o grid box ao shape
+addGridBox();
+
+// Adiciona o shape ao componente da stage e configura a representação
+var shapeComp = stage.addComponentFromObject(shape);
+shapeComp.addRepresentation("buffer", { wireframe: true });
+shapeComp.autoView();
+
 </script>
 
 </body>
