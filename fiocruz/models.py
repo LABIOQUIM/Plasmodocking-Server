@@ -62,7 +62,7 @@ class Process_Plasmodocking(models.Model):
     data = models.DateTimeField(auto_now_add=True)
     resultado_final = models.TextField(default='Sem resultados')
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="em fila")
-    type = models.CharField(max_length=10, choices=TYPE_CHOICES, default="Falciparum")
+    type = models.CharField(max_length=20, choices=TYPE_CHOICES, default="Falciparum")
     redocking = models.BooleanField(default=True)
     
     def formatted_data(self):
