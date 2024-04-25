@@ -32,3 +32,6 @@ docker compose up -d --build
 
 #docker logs 
 docker compose logs django -f
+
+#docker console conteiner x
+docker exec -it name-conteiner /bin/bash

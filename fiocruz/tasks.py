@@ -63,7 +63,14 @@ def plasmodocking_SR(username, id_processo, email_user):
     
     #---------------------------------------------------------------------
     #execução do AutodockGPU
-    macromoleculas = Macromoleculas_Sem_Redocking.objects.all()
+    if arquivos_vs.type == 'falciparum' :
+        macromoleculas = Macromoleculas_virtaulS.objects.all()
+
+        print("Macromoleculas Falciparum sem redocking")
+    else:    
+        macromoleculas = Macromoleculas_virtaulS.objects.all()
+
+        print("Macromoleculas Vivax sem redocking")
     
     data, tabela_final = [], []
 
@@ -126,7 +133,15 @@ def plasmodocking_CR(username, id_processo, email_user):
 
     #---------------------------------------------------------------------
     #execução do AutodockGPU
-    macromoleculas = Macromoleculas_virtaulS.objects.all()
+    if arquivos_vs.type == 'falciparum' :
+        macromoleculas = Macromoleculas_virtaulS.objects.all()
+
+        print("Macromoleculas Falciparum com redocking")
+    else:    
+        macromoleculas = Macromoleculas_virtaulS.objects.all()
+
+        print("Macromoleculas Vivax com redocking")
+
     data, tabela_final = [], []
 
     with tqdm(total=len(macromoleculas), desc=f'Plasmodocking usuario {username} processo {arquivos_vs.nome}') as pbar:

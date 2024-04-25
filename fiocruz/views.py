@@ -280,9 +280,18 @@ def upload_view(request):
         #---------------------------------------------------------------------
         # Iniciando a task baseado no tipo de processamento e se redocking é True ou False
         print(redocking)
-        if redocking:
+        print(type)
+
+        # Inicia o processo de docking baseado no tipo e na necessidade de redocking
+        if type == 'falciparum' and redocking:
             plasmodocking_CR.delay(username, arquivos_vs.id, email_user)
-        else: 
+        elif type == 'falciparum' and not redocking:
+            plasmodocking_SR.delay(username, arquivos_vs.id, email_user)
+        elif type == 'vivax' and redocking:
+            print("Vivax com redocking")
+            plasmodocking_CR.delay(username, arquivos_vs.id, email_user)
+        elif type == 'vivax' and not redocking:
+            print("Vivax sem redocking")
             plasmodocking_SR.delay(username, arquivos_vs.id, email_user)
 
         return JsonResponse({'message': 'Processo adicionado a fila com sucesso. em breve estará disponivel nos resultados.'})

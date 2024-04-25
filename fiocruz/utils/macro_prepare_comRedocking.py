@@ -26,8 +26,6 @@ def extrair_menor_rmsd(caminho_arquivo):
         return menor_rmsd, energia_rmsd
     else:
         return None
-    
-
 
 def preparacao_gpf(macroPrepare):
     pythonsh_path = os.path.expanduser("~/mgltools_x86_64Linux2_1.5.7/bin/pythonsh")
@@ -77,8 +75,6 @@ def preparacao_gpf(macroPrepare):
     if not success:
         return HttpResponse(f"Ocorreu um erro: {error_msg}")
 
-
-
 def run_autogrid(macroPrepare):
     dir_path = os.path.join(settings.MEDIA_ROOT, "macroTeste", macroPrepare.processo_name, f"{macroPrepare.rec}")
     autogrid_path=  os.path.expanduser("~/x86_64Linux2/autogrid4")
@@ -102,8 +98,6 @@ def modifcar_fld(macroPrepare):
     filename_receptor, file_extension2 = macroPrepare.recptorpdb.name.split(".")
 
     parts = filename_receptor.split("/")
-    
-    
     
     file_path = f'{settings.MEDIA_ROOT}/{filename_receptor}.maps.fld'  # Substitua pelo caminho do seu arquivo
     line_number = 23
@@ -156,10 +150,6 @@ def run_autodock(macroPrepare):
     command = [autodockgpu_path, "--ffile", fld_path, "--lfile", ligante_dir]
     print("docking..........................")
     processar_comando(command, dir_path)
-
-
-
-
 
 def processar_comando(command, cwd):
     try:

@@ -28,7 +28,7 @@ WORKDIR /home/autodockgpu/AutoDock-GPU
 ENV GPU_INCLUDE_PATH /usr/local/cuda/include
 ENV GPU_LIBRARY_PATH /usr/local/cuda/lib64
 
-RUN make DEVICE=CUDA NUMWI=128 TARGETS="80"
+RUN make DEVICE=CUDA NUMWI=128
 
 FROM autodockbuild as mglinstall
 
@@ -46,7 +46,18 @@ ENV PATH="/home/autodockgpu/mgltools_x86_64Linux2_1.5.7/bin:${PATH}"
 
 ENV LD_LIBRARY_PATH="/home/autodockgpu/mgltools_x86_64Linux2_1.5.7/lib:${LD_LIBRARY_PATH}"
 
-FROM mglinstall as requirements_install
+FROM mglinstall as autodocksuiteinstall
+
+WORKDIR /home/autodockgpu
+
+RUN wget https://autodock.scripps.edu/wp-content/uploads/sites/56/2021/10/autodocksuite-4.2.6-x86_64Linux2.tar
+
+RUN tar -xvf autodocksuite-4.2.6-x86_64Linux2.tar
+
+#COPY config.txt /home/autodockgpu/config.txt
+
+
+FROM autodocksuiteinstall as requirements_install
 
 WORKDIR /var/www/server
 COPY ./requirements.txt .
