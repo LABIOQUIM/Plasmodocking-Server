@@ -39,7 +39,7 @@ def criar_diretorios(username, nome):
 
     return diretorio_macromoleculas,diretorio_dlgs,diretorio_gbests,diretorio_lig_split,diretorio_ligantes_pdbqt
 
-def preparar_ligantes(arquivos_vs, diretorio_lig_split,diretorio_ligantes_pdbqt):
+def preparar_ligantes(arquivos_vs, diretorio_lig_split, diretorio_ligantes_pdbqt):
     #caminhos
     pythonsh_path = os.path.expanduser("/home/autodockgpu/mgltools_x86_64Linux2_1.5.7/bin/pythonsh")
     prep_ligante_path= os.path.expanduser("/home/autodockgpu/mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py")
@@ -66,7 +66,7 @@ def preparar_ligantes(arquivos_vs, diretorio_lig_split,diretorio_ligantes_pdbqt)
         command = [pythonsh_path, prep_ligante_path, "-l", caminho_ligante_pdb, "-o", saida]
         executar_comando(command, diretorio_lig_split)
 
-def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,diretorio_ligantes_pdbqt,diretorio_macromoleculas,username,nome):
+def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,diretorio_ligantes_pdbqt,diretorio_macromoleculas,username,nome, type):
     autodockgpu_path = os.path.expanduser("/home/autodockgpu/AutoDock-GPU/bin/autodock_gpu_128wi")
     obabel_path= os.path.expanduser("/usr/bin/obabel")
     
@@ -87,7 +87,13 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,direto
         print(ligante_pdbqt+" : " + macromolecula.rec)
         filename_ligante, _ = os.path.splitext(ligante_pdbqt)
         r = str(macromolecula.rec_fld)
-        dir_path = os.path.join(settings.MEDIA_ROOT, "macromoleculas","comRedocking", f"{macromolecula.rec}")
+
+        if type == 'falciparum' :
+            dir_path = os.path.join(settings.MEDIA_ROOT, "macromoleculas","comRedocking", f"{macromolecula.rec}")
+        else:    
+            dir_path = os.path.join(settings.MEDIA_ROOT, "macromoleculas","vivax","comRedocking", f"{macromolecula.rec}")
+
+        print(dir_path)
         rec_maps_fld_path = os.path.join(settings.MEDIA_ROOT, r)
         saida = os.path.join(diretorio_dlgs, f"{filename_ligante}_{macromolecula.rec}")
         
@@ -97,7 +103,12 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,direto
         diretorio_gbest_ligante_unico = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}", nome, "gbest_pdb", filename_ligante)
         os.makedirs(diretorio_gbest_ligante_unico, exist_ok=True)
 
-        bcaminho = os.path.join(settings.MEDIA_ROOT, "macromoleculas","comRedocking", f"{macromolecula.rec}", "best.pdbqt")
+        if type == 'falciparum' :
+            bcaminho = os.path.join(settings.MEDIA_ROOT, "macromoleculas","comRedocking", f"{macromolecula.rec}", "best.pdbqt")
+        else:    
+            bcaminho = os.path.join(settings.MEDIA_ROOT, "macromoleculas","vivax","comRedocking", f"{macromolecula.rec}", "best.pdbqt")
+
+
         bsaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdbqt")
         shutil.move(bcaminho, bsaida)
 
@@ -108,7 +119,7 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,direto
         command = ["rm", bsaida]
         executar_comando(command, dir_path)
 
-        sufixos = ['_A.pdb', '_a.pdb', '_ab.pdb', '_bd.pdb', '.pdb']
+        sufixos = ['_A.pdb', '_a.pdb', '_ab.pdb', '_bd.pdb', '.pdb', '_macro', '_oficial', '_MACRO_COFATOR']
         for sufixo in sufixos:
             arquivo_path = os.path.join(dir_path, f"{macromolecula.rec}{sufixo}")
             if os.path.exists(arquivo_path):

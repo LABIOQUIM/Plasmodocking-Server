@@ -91,6 +91,8 @@ class Macromoleculas_virtaulS(models.Model):
 
     def __str__(self):
             return self.nome
+    
+
 
 
 #Macromoleculas Sem redocking
@@ -110,8 +112,6 @@ class Macromoleculas_Sem_Redocking(models.Model):
     class Meta:
         db_table = 'Macromoleculas_Sem_Redocking'
 
-
-
 def arquivo(instance, filename):
     return 'macroTeste/{0}/{1}/{2}'.format(instance.processo_name,instance.rec, filename)
 
@@ -125,10 +125,22 @@ class Macro_Prepare(models.Model):
     ligantepdb = models.FileField(upload_to=arquivo, null=True)
 
     gridsize = models.CharField(max_length=200,blank=True, null=True)
-    gridcenter = models.CharField(max_length=200,blank=True, null=True)
-
-    
+    gridcenter = models.CharField(max_length=200,blank=True, null=True)  
 
     def __str__(self):
             return self.nome
-    
+
+#Vivax Macromoleculas
+class Macromoleculas_Vivax_CR(models.Model):
+    nome = models.CharField(max_length=200)
+    rec = models.CharField(max_length=200)
+    rec_fld = models.FileField(upload_to=arquivo_macro)
+
+    ligante_original = models.CharField(max_length=200,blank=True, null=True)
+    rmsd_redoking = models.CharField(max_length=200,blank=True, null=True)
+    energia_orinal = models.CharField(max_length=200,blank=True, null=True)
+    gridsize = models.CharField(max_length=200,blank=True, null=True)
+    gridcenter = models.CharField(max_length=200,blank=True, null=True)
+
+    def __str__(self):
+            return self.nome

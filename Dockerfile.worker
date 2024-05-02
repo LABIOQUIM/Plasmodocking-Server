@@ -54,13 +54,11 @@ RUN wget https://autodock.scripps.edu/wp-content/uploads/sites/56/2021/10/autodo
 
 RUN tar -xvf autodocksuite-4.2.6-x86_64Linux2.tar
 
-#COPY config.txt /home/autodockgpu/config.txt
-
-
 FROM autodocksuiteinstall as requirements_install
 
 WORKDIR /var/www/server
 COPY ./requirements.txt .
+COPY ./AD4_parameters.dat /home/autodockgpu/x86_64Linux2/
 RUN pip install -r requirements.txt
 
 FROM requirements_install as runner

@@ -212,20 +212,11 @@ def macro(request):
 
         macroteste.save()
 
-        fld_text, fld_name = prepare_macro_ComRedocking(id_processo=macroteste.id)
+        prepare_macro_ComRedocking.delay(id_processo=macroteste.id)
 
-        filename_receptor, file_extension2 = ligantepdb.name.split(".")
-
-        filename_ligante, file_extension2 = macroteste.ligantepdb.name.split(".")
-        caminho_arquivo = os.path.join(settings.MEDIA_ROOT, f"{filename_ligante}.dlg")
-
-        m_rmsd, energia_menor_rmsd = extrair_menor_rmsd(caminho_arquivo)
         
-        return JsonResponse({'message': 'Dados recebidos com sucesso!', 'fld_name':fld_name,
-                             'gridcenter': gridcenter, 'gridsize': gridsize,'nome': nome,
-                             'rec': rec, 'ligante_redocking': filename_receptor,'rmsd_redocking': m_rmsd,
-                             'energia_redocking': energia_menor_rmsd, 'arquivo_fld': fld_text
-                             })
+        
+        return JsonResponse({'message': 'Dados recebidos com sucesso!'})
 
     return JsonResponse({'message': 'Método não suportado'}, status=405)
 

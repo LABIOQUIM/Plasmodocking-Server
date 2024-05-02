@@ -28,18 +28,23 @@ def extrair_menor_rmsd(caminho_arquivo):
         return None
 
 def preparacao_gpf(macroPrepare):
-    pythonsh_path = os.path.expanduser("~/mgltools_x86_64Linux2_1.5.7/bin/pythonsh")
-    prep_gpf_path= os.path.expanduser("~/mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_gpf4.py")
-    prep_ligante_path= os.path.expanduser("~/mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py")
+    pythonsh_path = os.path.expanduser("/home/autodockgpu/mgltools_x86_64Linux2_1.5.7/bin/pythonsh")
+    prep_gpf_path= os.path.expanduser("/home/autodockgpu/mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_gpf4.py")
+    prep_ligante_path= os.path.expanduser("/home/autodockgpu/mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_ligand4.py")
 #-------------preparação gpf------------------------
     centergrid = 'gridcenter={0}'.format(macroPrepare.gridcenter)
     sizegrid = 'npts={0}'.format(macroPrepare.gridsize)
+    print(centergrid)
+    print(sizegrid)
 
     dir_path = os.path.join(settings.MEDIA_ROOT, "macroTeste", macroPrepare.processo_name, f"{macroPrepare.rec}")
 
     
     ligante = os.path.join(settings.MEDIA_ROOT, str(macroPrepare.ligantepdb))
     receptor = os.path.join(settings.MEDIA_ROOT, str(macroPrepare.recptorpdbqt))
+    print(ligante)
+    print(receptor)
+
 
     lt1 = "ligand_types=C,A,N,NA,NS,OA,OS,SA,S,H,HD"
     lt2 = "ligand_types=HS,P,Br,BR,Ca,CA,Cl,CL,F,Fe,FE"
@@ -59,26 +64,34 @@ def preparacao_gpf(macroPrepare):
         lt = f'{lt1 if i == 1 else lt2 if i == 2 else lt3 if i == 3 else lt4 if i == 4 else lt5 if i == 5 else lt6 if i == 6 else lt7 if i == 7 else lt8 if i == 8 else lt9 if i == 9 else lt10 if i == 10 else lt11  }'
         saida = os.path.join(dir_path, f'gridbox{i}.gpf')
 
-        comando = [
-            pythonsh_path, prep_gpf_path, "-r", receptor, "-o", saida, "-p", centergrid, "-p", sizegrid, "-p", lt
-        ]
-        comandos.append(comando)
+        #comando = pythonsh_path, prep_gpf_path, "-r", receptor, "-o", saida, "-p", centergrid, "-p", sizegrid, "-p", lt
+        comando = f"{pythonsh_path} {prep_gpf_path} -r {receptor} -o {saida} -p {centergrid} -p {sizegrid} -p {lt}"
+        success, error_msg = executar_comando(comando, dir_path)
 
+        comandos.append(comando)
+        file_path= os.path.join(dir_path, f'teste.txt')
+        with open(file_path, "a") as arquivo:
+            arquivo.write(comando)
+
+        arquivo.close()
+
+    
     for comando in comandos:
+
         success, error_msg = processar_comando(comando, dir_path)
         if not success:
             return HttpResponse(f"Ocorreu um erro: {error_msg}")
     
     #preparar o ligante
     comando = [pythonsh_path, prep_ligante_path, "-l", ligante]
-    success, error_msg = processar_comando(comando, dir_path)
+    success, error_msg = executar_comando(comando, dir_path)
     if not success:
         return HttpResponse(f"Ocorreu um erro: {error_msg}")
 
 def run_autogrid(macroPrepare):
     dir_path = os.path.join(settings.MEDIA_ROOT, "macroTeste", macroPrepare.processo_name, f"{macroPrepare.rec}")
-    autogrid_path=  os.path.expanduser("~/x86_64Linux2/autogrid4")
-    ad4_parameters_path = os.path.expanduser("~/x86_64Linux2/AD4_parameters.dat")
+    autogrid_path=  os.path.expanduser("/home/autodockgpu/x86_64Linux2/autogrid4")
+    ad4_parameters_path = os.path.expanduser("/home/autodockgpu/x86_64Linux2/AD4_parameters.dat")
 
     #for filename in glob.glob("*.gpf"):
     for i in range(1, 12):
@@ -160,3 +173,12 @@ def processar_comando(command, cwd):
         return True, None
     except Exception as e:
         return False, str(e)
+    
+def executar_comando(command, dir_path):
+    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=dir_path)
+    stdout, stderr = process.communicate()
+
+    if process.returncode != 0:
+        return HttpResponse(f"Ocorreu um erro: {stderr.decode()}")
+
+    return True 
