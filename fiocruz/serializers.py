@@ -33,3 +33,10 @@ class UserCustomSerializer(serializers.ModelSerializer):
         user.set_password(validated_data['password'])
         user.save()
         return user
+    
+class ProcessPlasmodockingSerializer(serializers.ModelSerializer):
+    username = serializers.CharField(write_only=True)
+
+    class Meta:
+        model = Process_Plasmodocking
+        fields = '__all__'

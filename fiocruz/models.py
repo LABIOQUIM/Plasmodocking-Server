@@ -55,7 +55,6 @@ class Process_Plasmodocking(models.Model):
         ("concluido", "Concluído"),
         ("error", "Erro"),
     ]
-    
     nome = models.CharField(max_length=200)
     user = models.ForeignKey(UserCustom, on_delete=models.CASCADE)
     ligante = models.FileField(upload_to=ligante_arquivo, blank=True, null=True)
@@ -64,10 +63,7 @@ class Process_Plasmodocking(models.Model):
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="em fila")
     type = models.CharField(max_length=20, choices=TYPE_CHOICES, default="Falciparum")
     redocking = models.BooleanField(default=True)
-    
-    def formatted_data(self):
-        return self.data.strftime('%H:%M:%S - %d/%m/%Y')
-    
+
     def __str__(self):
         return f"{self.nome} - {self.get_type_display()}"
 
@@ -91,9 +87,6 @@ class Macromoleculas_virtaulS(models.Model):
 
     def __str__(self):
             return self.nome
-    
-
-
 
 #Macromoleculas Sem redocking
 def arquivo_macro_SR(instance, filename):

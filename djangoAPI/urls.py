@@ -7,6 +7,7 @@ from fiocruz import views
 
 router = routers.DefaultRouter()
 router.register(r'back/VS_doking2', views.VS_ViewSet, basename='admin')
+router.register(r'process-plasmodocking', views.ProcessPlasmodockingViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

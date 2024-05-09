@@ -7,7 +7,7 @@ from fiocruz.utils.functions import extrair_menor_rmsd
 from .models import Process_Plasmodocking, Macromoleculas_virtaulS, UserCustom, Macro_Prepare, Macromoleculas_Sem_Redocking
 from rest_framework import viewsets, generics
 from django.http import FileResponse, HttpResponse, JsonResponse 
-from .serializers import VS_Serializer, UserCustomSerializer
+from .serializers import ProcessPlasmodockingSerializer, VS_Serializer, UserCustomSerializer
 from .tasks import plasmodocking_SR, prepare_macro_SemRedocking, prepare_macro_ComRedocking,plasmodocking_CR
 from django.conf import settings
 from rest_framework.views import APIView
@@ -15,7 +15,7 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from rest_framework.response import Response
 from rest_framework import status
 from django.shortcuts import render
-
+from rest_framework.decorators import action
 from .util import (
     textfld,
 )
@@ -322,3 +322,57 @@ def view3d(request, username, nome_process, receptor_name, ligante_code):
         'ligante_data': ligante_data
     }
     return render(request, 'view3d.html', context)  
+
+
+class ProcessPlasmodockingViewSet(viewsets.ModelViewSet):
+    queryset = Process_Plasmodocking.objects.all()
+    serializer_class = ProcessPlasmodockingSerializer
+
+    @action(detail=False, methods=['get'], url_path='by-user')
+    def by_user(self, request):
+        username = request.query_params.get('username', None)
+        if username is not None:
+            user = UserCustom.objects.get(username=username)
+            queryset = Process_Plasmodocking.objects.filter(user=user)
+            serializer = self.get_serializer(queryset, many=True)
+            return Response(serializer.data, status=status.HTTP_200_OK)
+        else:
+            return Response({"detail": "Parâmetro 'username' é necessário."}, status=status.HTTP_400_BAD_REQUEST)
+    
+    def create(self, request, *args, **kwargs):
+        data = request.data
+        username = data.get('username')
+        nome = data.get('nome')
+        arquivo = data.get('ligante')
+        type = data.get('type')
+        redocking = data.get('redocking', True)  # Será passado como booleano
+
+        try:
+            redocking = bool(redocking)
+        except ValueError:
+            return Response({'message': 'Valor inválido para redocking.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            user = UserCustom.objects.get(username=username)
+        except UserCustom.DoesNotExist:
+            return Response({'message': 'Usuário não encontrado'}, status=status.HTTP_404_NOT_FOUND)
+
+        if Process_Plasmodocking.objects.filter(user=user, nome=nome).exists():
+            return Response({'message': 'Um processo com esse nome já existe para este usuário'}, status=status.HTTP_400_BAD_REQUEST)
+
+        email_user = user.email
+
+        arquivos_vs = Process_Plasmodocking(nome=nome, ligante=arquivo, user=user, type=type, redocking=redocking, status="em fila")
+        arquivos_vs.save()
+
+        if type == 'falciparum' and redocking:
+            plasmodocking_CR.delay(username, arquivos_vs.id, email_user)
+        elif type == 'falciparum' and not redocking:
+            plasmodocking_SR.delay(username, arquivos_vs.id, email_user)
+        elif type == 'vivax' and redocking:
+            plasmodocking_CR.delay(username, arquivos_vs.id, email_user)
+        elif type == 'vivax' and not redocking:
+            plasmodocking_SR.delay(username, arquivos_vs.id, email_user)
+
+        serializer = self.get_serializer(arquivos_vs)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
