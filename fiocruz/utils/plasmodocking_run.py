@@ -72,16 +72,19 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,direto
     
     receptor_data = {
         'receptor_name': macromolecula.rec,
+        'molecule_name': macromolecula.nome,
         'ligante_original': macromolecula.ligante_original,
         'grid_center': macromolecula.gridcenter,
         'grid_size': macromolecula.gridsize,
-        'energia_original': macromolecula.energia_orinal,
-        'rmsd_redocking': macromolecula.rmsd_redoking,
+        'energia_original': macromolecula.energia_original,
+        'rmsd_redocking': macromolecula.rmsd_redocking,
         'ligantes': []
     }
+    print(" Nome molecula: " + macromolecula.nome)
+    
 
     data_data = []
-
+    
     for ligante_pdbqt in ligantes_pdbqt:
         dir_ligante_pdbqt = os.path.join(diretorio_ligantes_pdbqt, ligante_pdbqt)
         print(ligante_pdbqt+" : " + macromolecula.rec)
@@ -143,7 +146,7 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,direto
         data_data.append({
             'RECEPTOR_NAME': macromolecula.rec,
             'LIGANTE_REDOCKING': macromolecula.ligante_original,
-            'ENERGIA_REDOCKING': macromolecula.energia_orinal,
+            'ENERGIA_REDOCKING': macromolecula.energia_original,
             'LIGANTE_CID': filename_ligante,
             'LIGANTE_MELHOR_ENERGIA': best_energia,
             'RUN': run,

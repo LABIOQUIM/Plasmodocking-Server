@@ -3,14 +3,14 @@ from django.urls import path, include
 from rest_framework import routers, serializers, viewsets
 
 from django.contrib.auth.models import User
-from .models import Process_Plasmodocking, UserCustom
+from .models import ProcessPlasmodocking, UserCustom
 
 class VS_Serializer(serializers.ModelSerializer):
     # Adicione um campo de método para a data formatada
     formatted_data = serializers.SerializerMethodField()
 
     class Meta:
-        model = Process_Plasmodocking
+        model = ProcessPlasmodocking
         fields = ['id', 'nome', 'user', 'ligante', 'data', 'redocking', 'status','type', 'formatted_data','resultado_final']
 
     def get_formatted_data(self, obj):
@@ -38,5 +38,5 @@ class ProcessPlasmodockingSerializer(serializers.ModelSerializer):
     username = serializers.CharField(write_only=True)
 
     class Meta:
-        model = Process_Plasmodocking
+        model = ProcessPlasmodocking
         fields = '__all__'

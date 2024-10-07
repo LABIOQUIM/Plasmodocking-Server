@@ -4,7 +4,7 @@ import shutil
 import subprocess
 import random
 from fiocruz.utils.functions import extrair_menor_rmsd
-from .models import Process_Plasmodocking, Macromoleculas_virtaulS, UserCustom, Macro_Prepare, Macromoleculas_Sem_Redocking
+from .models import ProcessPlasmodocking, MacromoleculesFalciparumWithRedocking, UserCustom, MacroPrepare, MacromoleculesFalciparumWithoutRedocking
 from rest_framework import viewsets, generics
 from django.http import FileResponse, HttpResponse, JsonResponse 
 from .serializers import ProcessPlasmodockingSerializer, VS_Serializer, UserCustomSerializer
@@ -16,6 +16,7 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.shortcuts import render
 from rest_framework.decorators import action
+from rest_framework.parsers import MultiPartParser, FormParser
 from .util import (
     textfld,
 )
@@ -60,32 +61,18 @@ class GetUserDetails(APIView):
         if user:
             return Response(UserCustomSerializer(user).data)
         else:
-            return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)
-
-#-----------------------------------------------------------------------------------------------------------------
-class VS_ViewSet(viewsets.ModelViewSet):
-    #queryset = Process_Plasmodocking.objects.all()
-    #queryset = Process_Plasmodocking.objects.filter(status=False)  # Filtrar por status igual a false
-    serializer_class = VS_Serializer
-
-    
-    def get_queryset(self):
-        username = self.request.query_params.get('username')
-        user = UserCustom.objects.get(username=username)
-        queryset = Process_Plasmodocking.objects.filter(user=user)
-        return queryset
-    
+            return Response({'error': 'User not found'}, status=status.HTTP_404_NOT_FOUND)    
 
 def get_resultado(request, idItem):
     if request.method == 'GET':
         try:
-            arq = Process_Plasmodocking.objects.get(id=idItem)
+            arq = ProcessPlasmodocking.objects.get(id=idItem)
 
             # Use o serializer para serializar o objeto
             serializer = VS_Serializer(arq)
 
             return JsonResponse({'dados': serializer.data})
-        except Process_Plasmodocking.DoesNotExist:
+        except ProcessPlasmodocking.DoesNotExist:
             return JsonResponse({'message': 'Item não encontrado'}, status=404)
     else:
         return JsonResponse({'message': 'Método não permitido'}, status=405)
@@ -93,7 +80,7 @@ def get_resultado(request, idItem):
 def api_delete(request, idItem):
     if request.method == 'DELETE':
         try:
-            arq = Process_Plasmodocking.objects.get(id=idItem)
+            arq = ProcessPlasmodocking.objects.get(id=idItem)
             arq.delete()
 
             dir_path = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{arq.user.username}", arq.nome)
@@ -105,15 +92,15 @@ def api_delete(request, idItem):
                     return JsonResponse(f"Ocorreu um erro ao excluir o diretório: {e.stderr}")
 
             return JsonResponse({'message': 'Arquivo apagado com sucesso!'})
-        except Process_Plasmodocking.DoesNotExist:
+        except ProcessPlasmodocking.DoesNotExist:
             return JsonResponse({'message': 'Item não encontrado'}, status=404)
     else:
         return JsonResponse({'message': 'Método não permitido'}, status=405)
     
 
 def download_file(request, id):
-    # Recupere o objeto Process_Plasmodocking com base no ID
-    file = Process_Plasmodocking.objects.get(id=id)
+    # Recupere o objeto ProcessPlasmodocking com base no ID
+    file = ProcessPlasmodocking.objects.get(id=id)
 
     dir_path = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{file.user.username}", file.nome)
     zip_path = os.path.join(dir_path, f"{file.nome}.zip")
@@ -129,13 +116,13 @@ def download_file(request, id):
 def generate_unique_id():
     while True:
         new_id = random.randint(1, 1000000)  # Escolha o intervalo apropriado para os IDs
-        if not Macromoleculas_virtaulS.objects.filter(id=new_id).exists():
+        if not MacromoleculesFalciparumWithRedocking.objects.filter(id=new_id).exists():
             return new_id
         
 def generate_unique_id_SR():
     while True:
         new_id = random.randint(1, 1000000)  # Escolha o intervalo apropriado para os IDs
-        if not Macromoleculas_Sem_Redocking.objects.filter(id=new_id).exists():
+        if not MacromoleculesFalciparumWithoutRedocking.objects.filter(id=new_id).exists():
             return new_id
         
 def macro_save_ComRedocking(request):
@@ -155,7 +142,7 @@ def macro_save_ComRedocking(request):
         dir = os.path.join("macromoleculas", "comRedocking", rec, fld_name)
 
         unique_id = generate_unique_id()
-        macromolecula = Macromoleculas_virtaulS(id=unique_id,nome=nome, rec=rec, gridcenter=gridcenter,
+        macromolecula = MacromoleculesFalciparumWithRedocking(id=unique_id,nome=nome, rec=rec, gridcenter=gridcenter,
                                        gridsize=gridsize, rmsd_redoking=rmsd_redocking,
                                        energia_orinal=energia_redocking, ligante_original=ligante_redocking,
                                        rec_fld=dir)
@@ -183,7 +170,7 @@ def macro_save_SemRedocking(request):
         dir = os.path.join("macromoleculas", "semRedocking", rec, fld_name)
 
         unique_id = generate_unique_id_SR()
-        macromolecula = Macromoleculas_Sem_Redocking(id=unique_id,nome=nome, rec=rec, gridcenter=gridcenter,
+        macromolecula = MacromoleculesFalciparumWithoutRedocking(id=unique_id,nome=nome, rec=rec, gridcenter=gridcenter,
                                                 gridsize=gridsize, rec_fld=dir)
         macromolecula.save()
 
@@ -207,7 +194,7 @@ def macro(request):
         receptorpdbqt = request.FILES.get('receptorpdbqt')
         ligantepdb = request.FILES.get('ligantepdb')
 
-        macroteste = Macro_Prepare(processo_name=processo_name, nome=nome,rec=rec,gridsize=gridsize,gridcenter=gridcenter,
+        macroteste = MacroPrepare(processo_name=processo_name, nome=nome,rec=rec,gridsize=gridsize,gridcenter=gridcenter,
                                    recptorpdb= receptorpdb, recptorpdbqt= receptorpdbqt, ligantepdb= ligantepdb)
 
         macroteste.save()
@@ -220,7 +207,6 @@ def macro(request):
 
     return JsonResponse({'message': 'Método não suportado'}, status=405)
 
-
 def macro_SR(request):
     if request.method == 'POST':
         processo_name = request.POST.get('processo_name')
@@ -232,7 +218,7 @@ def macro_SR(request):
         receptorpdb = request.FILES.get('receptorpdb')
         
 
-        macroteste = Macro_Prepare(processo_name=processo_name, nome=nome,rec=rec,gridsize=gridsize,gridcenter=gridcenter,
+        macroteste = MacroPrepare(processo_name=processo_name, nome=nome,rec=rec,gridsize=gridsize,gridcenter=gridcenter,
                                    recptorpdb= receptorpdb)
 
         macroteste.save()
@@ -246,48 +232,7 @@ def macro_SR(request):
 
     return JsonResponse({'message': 'Método não suportado'}, status=405)
 
-#------------------------------------------------------------------------
-def upload_view(request):
-    if request.method == 'POST':
 
-        nome = request.POST.get('nome')
-        arquivo = request.FILES.get('arquivo')
-        username = request.POST.get('username')
-        type = request.POST.get('type')  # Assumindo que isso vem corretamente como "vivax" ou "falciparum"
-        redocking = request.POST.get('redocking') == 'true'  # Isso captura se "redocking" foi marcado como 'true'
-        email_user = request.POST.get('email_user')
-
-        try:
-            user = UserCustom.objects.get(username=username)
-        except UserCustom.DoesNotExist:
-            return JsonResponse({'message': 'Usuário não encontrado'}, status=404)
-        
-        if Process_Plasmodocking.objects.filter(user=user, nome=nome).exists():
-            return JsonResponse({'message': 'Um arquivo com esse nome já existe para esse usuário'}, status=400)
-
-        arquivos_vs = Process_Plasmodocking(nome=nome, ligante=arquivo, user=user, type=type, redocking=redocking, status="em fila")
-        arquivos_vs.save()
-
-        #---------------------------------------------------------------------
-        # Iniciando a task baseado no tipo de processamento e se redocking é True ou False
-        print(redocking)
-        print(type)
-
-        # Inicia o processo de docking baseado no tipo e na necessidade de redocking
-        if type == 'falciparum' and redocking:
-            plasmodocking_CR.delay(username, arquivos_vs.id, email_user)
-        elif type == 'falciparum' and not redocking:
-            plasmodocking_SR.delay(username, arquivos_vs.id, email_user)
-        elif type == 'vivax' and redocking:
-            print("Vivax com redocking")
-            plasmodocking_CR.delay(username, arquivos_vs.id, email_user)
-        elif type == 'vivax' and not redocking:
-            print("Vivax sem redocking")
-            plasmodocking_SR.delay(username, arquivos_vs.id, email_user)
-
-        return JsonResponse({'message': 'Processo adicionado a fila com sucesso. em breve estará disponivel nos resultados.'})
-    else:
-        return JsonResponse({'message': 'Método não suportado'}, status=405)
     
 
 def view3d(request, username, nome_process, receptor_name, ligante_code):
@@ -325,54 +270,67 @@ def view3d(request, username, nome_process, receptor_name, ligante_code):
 
 
 class ProcessPlasmodockingViewSet(viewsets.ModelViewSet):
-    queryset = Process_Plasmodocking.objects.all()
+    queryset = ProcessPlasmodocking.objects.all()
     serializer_class = ProcessPlasmodockingSerializer
+    parser_classes = [MultiPartParser, FormParser]  # Para aceitar arquivos multipart
 
     @action(detail=False, methods=['get'], url_path='by-user')
     def by_user(self, request):
         username = request.query_params.get('username', None)
         if username is not None:
-            user = UserCustom.objects.get(username=username)
-            queryset = Process_Plasmodocking.objects.filter(user=user)
+            try:
+                user = UserCustom.objects.get(username=username)
+            except UserCustom.DoesNotExist:
+                return Response({"message": "Usuário não encontrado"}, status=status.HTTP_404_NOT_FOUND)
+            queryset = ProcessPlasmodocking.objects.filter(user=user)
             serializer = self.get_serializer(queryset, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
         else:
             return Response({"detail": "Parâmetro 'username' é necessário."}, status=status.HTTP_400_BAD_REQUEST)
-    
+
     def create(self, request, *args, **kwargs):
         data = request.data
         username = data.get('username')
         nome = data.get('nome')
-        arquivo = data.get('ligante')
-        type = data.get('type')
+        arquivo = request.FILES.get('arquivo')
+        type = data.get('type')  # Tipo: 'vivax' ou 'falciparum'
         redocking = data.get('redocking', True)  # Será passado como booleano
+        email_user = data.get('email_user')
 
-        try:
-            redocking = bool(redocking)
-        except ValueError:
-            return Response({'message': 'Valor inválido para redocking.'}, status=status.HTTP_400_BAD_REQUEST)
+        # Converter redocking para booleano
+        redocking = True if redocking in ['true', 'True', True] else False
 
+        # Verificar se o usuário existe
         try:
             user = UserCustom.objects.get(username=username)
         except UserCustom.DoesNotExist:
             return Response({'message': 'Usuário não encontrado'}, status=status.HTTP_404_NOT_FOUND)
 
-        if Process_Plasmodocking.objects.filter(user=user, nome=nome).exists():
+        # Verificar se já existe um processo com esse nome para o usuário
+        if ProcessPlasmodocking.objects.filter(user=user, nome=nome).exists():
             return Response({'message': 'Um processo com esse nome já existe para este usuário'}, status=status.HTTP_400_BAD_REQUEST)
 
-        email_user = user.email
-
-        arquivos_vs = Process_Plasmodocking(nome=nome, ligante=arquivo, user=user, type=type, redocking=redocking, status="em fila")
+        # Criar um novo processo
+        arquivos_vs = ProcessPlasmodocking(
+            nome=nome,
+            ligante=arquivo,
+            user=user,
+            type=type,
+            redocking=redocking,
+            status="em fila"
+        )
         arquivos_vs.save()
 
+        # Iniciar o processo de docking dependendo do tipo e do redocking
         if type == 'falciparum' and redocking:
-            plasmodocking_CR.delay(username, arquivos_vs.id, email_user)
+            plasmodocking_CR.delay(username, arquivos_vs.id, user.email)
         elif type == 'falciparum' and not redocking:
-            plasmodocking_SR.delay(username, arquivos_vs.id, email_user)
+            plasmodocking_SR.delay(username, arquivos_vs.id, user.email)
         elif type == 'vivax' and redocking:
-            plasmodocking_CR.delay(username, arquivos_vs.id, email_user)
+            plasmodocking_CR.delay(username, arquivos_vs.id, user.email)
         elif type == 'vivax' and not redocking:
-            plasmodocking_SR.delay(username, arquivos_vs.id, email_user)
+            plasmodocking_SR.delay(username, arquivos_vs.id, user.email)
 
+        # Serializar e retornar a resposta
         serializer = self.get_serializer(arquivos_vs)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
