@@ -42,7 +42,10 @@ INSTALLED_APPS = [
     'rest_framework',
     "corsheaders",
     'fiocruz',
+    'import_export',
 ]
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
