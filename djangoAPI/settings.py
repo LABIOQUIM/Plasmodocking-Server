@@ -166,6 +166,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
@@ -177,8 +179,6 @@ password_rabbitmq=config("RABBITMQ_DEFAULT_PASS")
 CELERY_BROKER_URL = 'amqp://'+user_rabbitmq+':'+password_rabbitmq+'@rabbitmq:5672/'
 
 CELERY_WORKER_CONCURRENCY = 1
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 EMAIL_BACKEND='django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL= "plasmodockingteste@outlook.com"

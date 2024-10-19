@@ -10,7 +10,7 @@ router.register(r'Plasmodocking/back/process-plasmodocking', views.ProcessPlasmo
 
 urlpatterns = [
     path('', include(router.urls)),
-    path('admin/', admin.site.urls),
+    path('Plasmodocking/back/admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('Plasmodocking/back/api_delete/<int:idItem>/', views.api_delete, name='api_delete'),
     path('Plasmodocking/back/api_download/<int:id>/', views.download_file, name='api_download'),
