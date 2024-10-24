@@ -49,8 +49,10 @@ IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "http://localhost:44444",
     "http://192.168.0.103:3000",
-    
+    "https://plasmodocking-a3pkg44l1-eduardohernanys-projects.vercel.app"
+    #http://localhost:44444
     # Outras origens permitidas, se necessário
 ]
 # Adicione isso no seu arquivo settings.py do Django

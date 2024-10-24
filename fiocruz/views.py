@@ -31,9 +31,17 @@ class AuthenticateUser(APIView):
     def post(self, request):
         email = request.data.get('email')
         password = request.data.get('password')
+        print(email)
+        print(password)
         try:
             # Buscar o usuário pelo e-mail
-            user = UserCustom.objects.get(email=email)
+            # user = UserCustom.objects.get(email=email)
+            
+            try:
+                user = UserCustom.objects.get(email=email)
+            except UserCustom.DoesNotExist:
+                return Response({'message': f'Usuário não encontrado: {email}'}, status=status.HTTP_404_NOT_FOUND)
+                
             
             # Verificar se a senha está correta
             if user.check_password(password):
