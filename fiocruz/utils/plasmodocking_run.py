@@ -108,7 +108,7 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,direto
         os.makedirs(diretorio_gbest_ligante_unico, exist_ok=True)
 
         if type == 'falciparum' :
-            bcaminho = os.path.join(settings.MEDIA_ROOT, "macromoleculas","comRedocking", f"{macromolecula.rec}", "best.pdbqt")
+            bcaminho = os.path.join(settings.MEDIA_ROOT, "macromoleculas","comRedocking", f"{macromolecula.rec}", f"{Path(filename_ligante).stem}-best.pdbqt")
         else:    
             bcaminho = os.path.join(settings.MEDIA_ROOT, "macromoleculas","vivax","comRedocking", f"{macromolecula.rec}", "best.pdbqt")
         
