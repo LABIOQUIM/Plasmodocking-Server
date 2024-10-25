@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 import shutil
 
 from django.conf import settings
@@ -106,17 +107,18 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,direto
         diretorio_gbest_ligante_unico = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}", nome, "gbest_pdb", filename_ligante)
         os.makedirs(diretorio_gbest_ligante_unico, exist_ok=True)
 
-        try:
-            
-            if type == 'falciparum' :
-                bcaminho = os.path.join(settings.MEDIA_ROOT, "macromoleculas","comRedocking", f"{macromolecula.rec}", "*best.pdbqt")
-            else:    
-                bcaminho = os.path.join(settings.MEDIA_ROOT, "macromoleculas","vivax","comRedocking", f"{macromolecula.rec}", "best.pdbqt")
-        except Exception as e:
-            print("sem best.pdbqt")
+        if type == 'falciparum' :
+            bcaminho = os.path.join(settings.MEDIA_ROOT, "macromoleculas","comRedocking", f"{macromolecula.rec}", "best.pdbqt")
+        else:    
+            bcaminho = os.path.join(settings.MEDIA_ROOT, "macromoleculas","vivax","comRedocking", f"{macromolecula.rec}", "best.pdbqt")
+        
 
         bsaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdbqt")
-        shutil.move(bcaminho, bsaida)
+        if os.path.exists(bcaminho):
+            shutil.move(bcaminho, bsaida)
+        else:
+            print(f"O arquivo {bcaminho} não foi encontrado.")
+            print(f"======={Path(filename_ligante).stem}")
 
         csaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdb")
         command = [obabel_path, bsaida, "-O", csaida]
