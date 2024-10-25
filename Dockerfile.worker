@@ -29,7 +29,7 @@ ENV GPU_INCLUDE_PATH /usr/local/cuda/include
 ENV GPU_LIBRARY_PATH /usr/local/cuda/lib64
 
 # RUN make DEVICE=CUDA NUMWI=128
-RUN make DEVICE=CUDA NUMWI=128 TARGETS="80"
+RUN make DEVICE=CUDA NUMWI=128
 
 FROM autodockbuild as mglinstall
 
