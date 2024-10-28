@@ -11,6 +11,7 @@ services:
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
     volumes:
       - database:/var/lib/postgresql/data
+    restart: always  # Reinicia automaticamente o contêiner
 
   pgadmin:
     image: dpage/pgadmin4
@@ -21,6 +22,7 @@ services:
       PGADMIN_DEFAULT_PASSWORD: "${PGADMIN_DEFAULT_PASSWORD}"
     depends_on:
       - db
+    restart: always  # Reinicia automaticamente o contêiner
 
   django:
     build: .
@@ -32,6 +34,7 @@ services:
     volumes:
       - .:/var/www/server
       - user_data:/var/www/Plasmodocking
+      - proces_data:/var/www/server/media/plasmodocking
     ports:
       - "8000:8000"
     environment:
@@ -40,6 +43,7 @@ services:
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
     depends_on:
       - db
+    restart: always  # Reinicia automaticamente o contêiner
 
   rabbitmq:
     image: rabbitmq:3-management
@@ -51,6 +55,7 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: "${RABBITMQ_DEFAULT_USER}"
       RABBITMQ_DEFAULT_PASS: "${RABBITMQ_DEFAULT_PASS}"
+    restart: always  # Reinicia automaticamente o contêiner
 
   celery:
     build:
@@ -59,6 +64,7 @@ services:
     volumes:
       - .:/var/www/server
       - user_data:/var/www/Plasmodocking
+      - proces_data:/var/www/server/media/plasmodocking
     depends_on:
       - django
       - rabbitmq
@@ -72,9 +78,10 @@ services:
         reservations:
           devices:
             - capabilities: ["gpu"]
+    restart: always  # Reinicia automaticamente o contêiner
 
 volumes:
   database:
   rabbitmq_data:
   user_data:
-
+  proces_data:
