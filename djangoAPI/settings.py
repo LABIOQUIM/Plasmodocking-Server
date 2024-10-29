@@ -51,7 +51,8 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:44444",
     "http://192.168.0.103:3000",
-    "https://plasmodocking-fe.vercel.app"
+    "https://plasmodocking-fe.vercel.app",
+    "https://plasmodocking-unir.ecotechamazonia.com.br",
     # Outras origens permitidas, se necessário
 ]
 
