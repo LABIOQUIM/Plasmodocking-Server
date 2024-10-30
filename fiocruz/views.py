@@ -329,16 +329,8 @@ class ProcessPlasmodockingViewSet(viewsets.ModelViewSet):
         )
         arquivos_vs.save()
 
-        # Iniciar o processo de docking dependendo do tipo e do redocking
-        if type == 'falciparum' and redocking:
-            plasmodocking_CR.delay(username, arquivos_vs.id, user.email)
-        elif type == 'falciparum' and not redocking:
-            plasmodocking_SR.delay(username, arquivos_vs.id, user.email)
-        elif type == 'vivax' and redocking:
-            plasmodocking_CR.delay(username, arquivos_vs.id, user.email)
-        elif type == 'vivax' and not redocking:
-            plasmodocking_SR.delay(username, arquivos_vs.id, user.email)
-
+        plasmodocking_CR.delay(username, arquivos_vs.id, user.email)
+        
         # Serializar e retornar a resposta
         serializer = self.get_serializer(arquivos_vs)
         return Response(serializer.data, status=status.HTTP_201_CREATED)

@@ -67,66 +67,78 @@ def preparar_ligantes(arquivos_vs, diretorio_lig_split, diretorio_ligantes_pdbqt
         command = [pythonsh_path, prep_ligante_path, "-l", caminho_ligante_pdb, "-o", saida]
         executar_comando(command, diretorio_lig_split)
 
-def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,diretorio_ligantes_pdbqt,diretorio_macromoleculas,username,nome, type):
+def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diretorio_ligantes_pdbqt, diretorio_macromoleculas, username, nome, type, redocking):
     autodockgpu_path = os.path.expanduser("/home/autodockgpu/AutoDock-GPU/bin/autodock_gpu_128wi")
-    obabel_path= os.path.expanduser("/usr/bin/obabel")
+    obabel_path = os.path.expanduser("/usr/bin/obabel")
     
     receptor_data = {
         'receptor_name': macromolecula.rec,
         'molecule_name': macromolecula.nome,
-        'ligante_original': macromolecula.ligante_original,
         'grid_center': macromolecula.gridcenter,
         'grid_size': macromolecula.gridsize,
-        'energia_original': macromolecula.energia_original,
-        'rmsd_redocking': macromolecula.rmsd_redocking,
         'ligantes': []
     }
-    print(" Nome molecula: " + macromolecula.nome)
     
+    # Adiciona dados específicos de redocking, se necessário
+    if redocking:
+        receptor_data.update({
+            'ligante_original': macromolecula.ligante_original,
+            'energia_original': macromolecula.energia_original,
+            'rmsd_redocking': macromolecula.rmsd_redocking
+        })
+    
+    print(" Nome molecula: " + macromolecula.nome)
 
     data_data = []
     
+    # Define o diretório base para macromoléculas conforme o tipo e o redocking
+    def obter_diretorio_macromoleculas(macromolecula, type, redocking):
+        if type == 'falciparum' and redocking:
+            return os.path.join(settings.MEDIA_ROOT, "macromoleculas", "falciparum", "comRedocking", macromolecula.rec)
+        elif type == 'falciparum' and not redocking:
+            return os.path.join(settings.MEDIA_ROOT, "macromoleculas", "falciparum", "semRedocking", macromolecula.rec)
+        elif type == 'vivax' and redocking:
+            return os.path.join(settings.MEDIA_ROOT, "macromoleculas", "vivax", "comRedocking", macromolecula.rec)
+        else:
+            raise ValueError("Tipo e condição de redocking não suportados.")
+    
+    dir_path = obter_diretorio_macromoleculas(macromolecula, type, redocking)
+    print(f"Diretório macromoléculas: {dir_path}")
+    
     for ligante_pdbqt in ligantes_pdbqt:
         dir_ligante_pdbqt = os.path.join(diretorio_ligantes_pdbqt, ligante_pdbqt)
-        print(ligante_pdbqt+" : " + macromolecula.rec)
         filename_ligante, _ = os.path.splitext(ligante_pdbqt)
+
         r = str(macromolecula.rec_fld)
-
-        if type == 'falciparum' :
-            dir_path = os.path.join(settings.MEDIA_ROOT, "macromoleculas","comRedocking", f"{macromolecula.rec}")
-        else:    
-            dir_path = os.path.join(settings.MEDIA_ROOT, "macromoleculas","vivax","comRedocking", f"{macromolecula.rec}")
-
-        print(dir_path)
         rec_maps_fld_path = os.path.join(settings.MEDIA_ROOT, r)
         saida = os.path.join(diretorio_dlgs, f"{filename_ligante}_{macromolecula.rec}")
         
+        # Executa docking com AutoDock-GPU
         command = [autodockgpu_path, "--ffile", rec_maps_fld_path, "--lfile", dir_ligante_pdbqt, "--gbest", "1", "--resnam", saida]
         executar_comando(command, dir_path)
         
+        # Configura caminho para o arquivo de melhor ligação (gbest)
         diretorio_gbest_ligante_unico = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}", nome, "gbest_pdb", filename_ligante)
         os.makedirs(diretorio_gbest_ligante_unico, exist_ok=True)
-
-        if type == 'falciparum' :
-            bcaminho = os.path.join(settings.MEDIA_ROOT, "macromoleculas","comRedocking", f"{macromolecula.rec}", f"{Path(filename_ligante).stem}-best.pdbqt")
-        else:    
-            bcaminho = os.path.join(settings.MEDIA_ROOT, "macromoleculas","vivax","comRedocking", f"{macromolecula.rec}", "best.pdbqt")
         
-
+        bcaminho = os.path.join(dir_path, f"{Path(filename_ligante).stem}-best.pdbqt")
         bsaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdbqt")
+        
+        # Move o arquivo best.pdbqt para o diretório de saída, se existir
         if os.path.exists(bcaminho):
             shutil.move(bcaminho, bsaida)
         else:
             print(f"O arquivo {bcaminho} não foi encontrado.")
-            print(f"======={Path(filename_ligante).stem}")
-
+        
+        # Converte o arquivo .pdbqt para .pdb com Open Babel
         csaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdb")
         command = [obabel_path, bsaida, "-O", csaida]
         executar_comando(command, diretorio_gbest_ligante_unico)
 
-        command = ["rm", bsaida]
-        executar_comando(command, dir_path)
-
+        # Remove o arquivo temporário .pdbqt
+        executar_comando(["rm", bsaida], dir_path)
+        
+        # Copia arquivos de macromoléculas específicos para o diretório de destino
         sufixos = ['_A.pdb', '_a.pdb', '_ab.pdb', '_bd.pdb', '.pdb', '_macro', '_oficial', '_MACRO_COFATOR']
         for sufixo in sufixos:
             arquivo_path = os.path.join(dir_path, f"{macromolecula.rec}{sufixo}")
@@ -134,27 +146,31 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,direto
                 shutil.copy2(arquivo_path, diretorio_macromoleculas)
                 break
         
+        # Extrai a melhor energia de ligação do arquivo .dlg
         caminho_arquivo = f"{saida}.dlg"
-
         best_energia, run = extrair_energia_ligacao(caminho_arquivo)
-
-        m_rmsd, menor_dados3 = extrair_menor_rmsd(caminho_arquivo)
-
+        
         ligante_data = {
             'ligante_name': filename_ligante,
             'ligante_energia': best_energia,
             'run': run,
         }
-
+        
         receptor_data['ligantes'].append(ligante_data)
         
-        data_data.append({
+        # Adiciona dados para CSV
+        csv_data = {
             'RECEPTOR_NAME': macromolecula.rec,
-            'LIGANTE_REDOCKING': macromolecula.ligante_original,
-            'ENERGIA_REDOCKING': macromolecula.energia_original,
             'LIGANTE_CID': filename_ligante,
             'LIGANTE_MELHOR_ENERGIA': best_energia,
             'RUN': run,
-        })
+        }
+        if redocking:
+            csv_data.update({
+                'LIGANTE_REDOCKING': macromolecula.ligante_original,
+                'ENERGIA_REDOCKING': macromolecula.energia_original,
+            })
+        data_data.append(csv_data)
 
     return receptor_data, data_data
+

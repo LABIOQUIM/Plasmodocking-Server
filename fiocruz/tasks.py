@@ -122,40 +122,52 @@ def plasmodocking_SR(username, id_processo, email_user):
 @shared_task
 def plasmodocking_CR(username, id_processo, email_user):
     try:
+        # Recuperar o processo no banco de dados
         arquivos_vs = ProcessPlasmodocking.objects.get(id=id_processo) 
         arquivos_vs.status = "processando"
         arquivos_vs.save()
-        #---------------------------------------------------------------------
-        # criar pastas do usuario 
+
+        # Criar pastas do usuário
         dir_path = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}", arquivos_vs.nome)
-        diretorio_macromoleculas,diretorio_dlgs,diretorio_gbests,diretorio_lig_split,diretorio_ligantes_pdbqt = criar_diretorios(username, arquivos_vs.nome)
-        #---------------------------------------------------------------------
-        #preparação ligante
-        preparar_ligantes(arquivos_vs,diretorio_lig_split,diretorio_ligantes_pdbqt)
+        diretorio_macromoleculas, diretorio_dlgs, diretorio_gbests, diretorio_lig_split, diretorio_ligantes_pdbqt = criar_diretorios(username, arquivos_vs.nome)
+
+        # Preparação dos ligantes
+        preparar_ligantes(arquivos_vs, diretorio_lig_split, diretorio_ligantes_pdbqt)
         ligantes_pdbqt = listar_arquivos(diretorio_ligantes_pdbqt)
-        #---------------------------------------------------------------------
-        #execução do AutodockGPU
+
+        # Separação por tipo e redocking
+        print(f"type: {arquivos_vs.type} | redocking: {arquivos_vs.redocking}")
         
-        if arquivos_vs.type == 'falciparum' :
+        if arquivos_vs.type == 'falciparum' and arquivos_vs.redocking:
             macromoleculas = MacromoleculesFalciparumWithRedocking.objects.all()
             print("Macromoleculas Falciparum com redocking")
-        else:    
+            
+        elif arquivos_vs.type == 'falciparum' and not arquivos_vs.redocking:
+            macromoleculas = MacromoleculesFalciparumWithoutRedocking.objects.all()
+            print("Macromoleculas Falciparum sem redocking")
+            
+        elif arquivos_vs.type == 'vivax' and arquivos_vs.redocking:
             macromoleculas = MacromoleculesVivaxWithRedocking.objects.all()
             print("Macromoleculas Vivax com redocking")
+            
+        # return f"task concluida com sucesso: {arquivos_vs.type} | {arquivos_vs.redocking}"
+    
         data, tabela_final = [], []
+        
         with tqdm(total=len(macromoleculas), desc=f'Plasmodocking usuario {username} processo {arquivos_vs.nome}') as pbar:
             for macromolecula in macromoleculas:
                 print("Macromolecula: "+macromolecula.rec)
-                print("Macromolecula energia original: "+macromolecula.energia_original)
-                receptor_data, data_data = preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs,diretorio_ligantes_pdbqt,
-                diretorio_macromoleculas,username,arquivos_vs.nome,arquivos_vs.type)
+                receptor_data, data_data = preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diretorio_ligantes_pdbqt,
+                diretorio_macromoleculas,username,arquivos_vs.nome,arquivos_vs.type, arquivos_vs.redocking)
                 data.append(receptor_data)
                 tabela_final.extend(data_data)
                 # Atualize a barra de progresso
                 pbar.update(1)
+                
         #fim dos 2 for ligante e receptor    
         remover_arquivos_xml(diretorio_dlgs, "*.xml")
         json_data = json.dumps(data, indent=4) 
+        
         # Especifique o caminho e nome do arquivo onde você deseja salvar o JSON
         file_path = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}", arquivos_vs.nome,"dados.json")
         with open(file_path, 'w') as json_file:
@@ -167,6 +179,7 @@ def plasmodocking_CR(username, id_processo, email_user):
         dfdf = pd.DataFrame(tabela_final)
         csv_file_path = os.path.join(file_path, 'dadostab.csv')
         dfdf.to_csv(csv_file_path, sep=';', index=False)
+        
         #----------------zip file---------------
         dir_path = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}")
         command = ["zip", "-r", arquivos_vs.nome+"/"+arquivos_vs.nome+".zip", arquivos_vs.nome]
