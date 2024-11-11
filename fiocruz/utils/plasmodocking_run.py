@@ -71,21 +71,37 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diret
     autodockgpu_path = os.path.expanduser("/home/autodockgpu/AutoDock-GPU/bin/autodock_gpu_128wi")
     obabel_path = os.path.expanduser("/usr/bin/obabel")
     
+    print('receptor_name:', macromolecula.rec)
+    print('molecule_name:', macromolecula.nome)
+    print('grid_center:', macromolecula.gridcenter)
+    print('grid_size:', macromolecula.gridsize)
+    print('ligante_original:', macromolecula.ligante_original)
+    print('energia_original:', macromolecula.energia_original)
+    print('rmsd_redocking:',macromolecula.rmsd_redocking)
+    
     receptor_data = {
         'receptor_name': macromolecula.rec,
         'molecule_name': macromolecula.nome,
         'grid_center': macromolecula.gridcenter,
         'grid_size': macromolecula.gridsize,
+        'ligante_original': macromolecula.ligante_original,
+        'energia_original': macromolecula.energia_original,
+        'rmsd_redocking': macromolecula.rmsd_redocking,
         'ligantes': []
     }
     
-    # Adiciona dados específicos de redocking, se necessário
-    if redocking:
-        receptor_data.update({
-            'ligante_original': macromolecula.ligante_original,
-            'energia_original': macromolecula.energia_original,
-            'rmsd_redocking': macromolecula.rmsd_redocking
-        })
+    # # Adiciona dados específicos de redocking, se necessário
+    # if redocking:
+    #     receptor_data.update({
+    #         'ligante_original': macromolecula.ligante_original,
+    #         'energia_original': macromolecula.energia_original,
+    #         'rmsd_redocking': macromolecula.rmsd_redocking
+    #     })
+        
+    print("========================")
+    print(receptor_data)
+    print(macromolecula)
+    print("========================")
     
     print(" Nome molecula: " + macromolecula.nome)
 
@@ -165,6 +181,7 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diret
             'LIGANTE_MELHOR_ENERGIA': best_energia,
             'RUN': run,
         }
+        
         if redocking:
             csv_data.update({
                 'LIGANTE_REDOCKING': macromolecula.ligante_original,
