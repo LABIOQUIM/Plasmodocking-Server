@@ -1,3 +1,4 @@
+import glob
 import os
 from pathlib import Path
 import shutil
@@ -116,15 +117,23 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diret
         diretorio_gbest_ligante_unico = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}", nome, "gbest_pdb", filename_ligante)
         os.makedirs(diretorio_gbest_ligante_unico, exist_ok=True)
         
-        bcaminho = os.path.join(dir_path, f"{Path(filename_ligante).stem}-best.pdbqt")
+        bcaminho = os.path.join(dir_path, f"best.pdbqt")
         bsaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdbqt")
         
         # Move o arquivo best.pdbqt para o diretório de saída, se existir
         if os.path.exists(bcaminho):
             shutil.move(bcaminho, bsaida)
+            print(f"O arquivo {bcaminho} foi movido para a pasta de melhores posições.")
         else:
             print(f"O arquivo {bcaminho} não foi encontrado.")
         
+        arquivos_pdbqt = glob.glob(os.path.join(dir_path, "*.pdbqt"))
+
+        if arquivos_pdbqt:
+            print("Arquivos .pdbqt encontrados:")
+            for arquivo in arquivos_pdbqt:
+                print(arquivo)
+                
         # Converte o arquivo .pdbqt para .pdb com Open Babel
         csaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdb")
         command = [obabel_path, bsaida, "-O", csaida]
