@@ -32,9 +32,9 @@ services:
             python manage.py collectstatic --noinput &&
             python manage.py runserver 0.0.0.0:8000"
     volumes:
-      - .:/var/www/server
-      - user_data:/var/www/Plasmodocking
-      - proces_data:/var/www/server/media/plasmodocking
+      - .:/var/www/server:rw
+      - user_data:/var/www/Plasmodocking:rw
+      - proces_data:/var/www/server/media/plasmodocking:rw
     ports:
       - "8000:8000"
     environment:
@@ -62,9 +62,9 @@ services:
       context: .
       dockerfile: Dockerfile.worker
     volumes:
-      - .:/var/www/server
-      - user_data:/var/www/Plasmodocking
-      - proces_data:/var/www/server/media/plasmodocking
+      - .:/var/www/server:rw
+      - user_data:/var/www/Plasmodocking:rw
+      - proces_data:/var/www/server/media/plasmodocking:rw
     depends_on:
       - django
       - rabbitmq

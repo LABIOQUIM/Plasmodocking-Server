@@ -120,6 +120,13 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diret
         bcaminho = os.path.join(dir_path, f"best.pdbqt")
         bsaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdbqt")
         
+        arquivos_pdbqt = glob.glob(os.path.join(dir_path, "*.pdbqt"))
+
+        if arquivos_pdbqt:
+            print("Arquivos .pdbqt encontrados:")
+            for arquivo in arquivos_pdbqt:
+                print(arquivo)
+                
         # Move o arquivo best.pdbqt para o diretório de saída, se existir
         if os.path.exists(bcaminho):
             shutil.move(bcaminho, bsaida)
@@ -127,12 +134,6 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diret
         else:
             print(f"O arquivo {bcaminho} não foi encontrado.")
         
-        arquivos_pdbqt = glob.glob(os.path.join(dir_path, "*.pdbqt"))
-
-        if arquivos_pdbqt:
-            print("Arquivos .pdbqt encontrados:")
-            for arquivo in arquivos_pdbqt:
-                print(arquivo)
                 
         # Converte o arquivo .pdbqt para .pdb com Open Babel
         csaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdb")
