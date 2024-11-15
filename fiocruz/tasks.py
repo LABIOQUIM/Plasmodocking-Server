@@ -12,6 +12,8 @@ from django.core.mail import send_mail
 
 from django.template.loader import render_to_string
 
+import pusher
+
 from fiocruz.util import textfld
 from .utils.functions import (
     executar_comando,
@@ -87,6 +89,9 @@ def plasmodocking_SR(username, id_processo, email_user):
 
             # Atualize a barra de progresso
             pbar.update(1)
+            
+            
+
     #fim dos 2 for ligante e receptor
             
     remover_arquivos_xml(diretorio_dlgs, "*.xml")
@@ -118,15 +123,32 @@ def plasmodocking_SR(username, id_processo, email_user):
     
     return "task concluida com sucesso"
 
+
 #Processo principal plamodocking com redocking
 @shared_task
 def plasmodocking_CR(username, id_processo, email_user):
     try:
+        pusher_client = pusher.Pusher(
+            app_id='1893887',
+            key='3494316859bbb0bb994e',
+            secret='bc72a625817c1b30816b',
+            cluster='sa1',
+            ssl=True
+        )
+        
         # Recuperar o processo no banco de dados
         arquivos_vs = ProcessPlasmodocking.objects.get(id=id_processo) 
         arquivos_vs.status = "processando"
         arquivos_vs.save()
-
+        
+        pusher_client.trigger(username, 'proces', {
+            "type": "chat_message",
+            "proces": f"{arquivos_vs.id}",
+            "status": f"init",
+            "progress": f"0",
+            "message": f"Iniciando proceso {arquivos_vs.nome}..."
+        })
+        
         # Criar pastas do usuário
         dir_path = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}", arquivos_vs.nome)
         diretorio_macromoleculas, diretorio_dlgs, diretorio_gbests, diretorio_lig_split, diretorio_ligantes_pdbqt = criar_diretorios(username, arquivos_vs.nome)
@@ -153,9 +175,14 @@ def plasmodocking_CR(username, id_processo, email_user):
         # return f"task concluida com sucesso: {arquivos_vs.type} | {arquivos_vs.redocking}"
     
         data, tabela_final = [], []
+        total_macromoleculas = len(macromoleculas)
         
         with tqdm(total=len(macromoleculas), desc=f'Plasmodocking usuario {username} processo {arquivos_vs.nome}') as pbar:
-            for macromolecula in macromoleculas:
+            
+            for index, macromolecula in enumerate(macromoleculas):
+                
+                porcentagem = ((index + 1) / total_macromoleculas) * 100
+                
                 print("Macromolecula: "+macromolecula.rec)
                 receptor_data, data_data = preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diretorio_ligantes_pdbqt,
                 diretorio_macromoleculas,username,arquivos_vs.nome,arquivos_vs.type, arquivos_vs.redocking)
@@ -163,6 +190,14 @@ def plasmodocking_CR(username, id_processo, email_user):
                 tabela_final.extend(data_data)
                 # Atualize a barra de progresso
                 pbar.update(1)
+                
+                pusher_client.trigger(username, 'proces', {
+                    "type": "chat_message",
+                    "proces": f"{arquivos_vs.id}",
+                    "status": f"running",
+                    "progress": f"{porcentagem:.2f}",
+                    "message": f"Processando macromolécula {macromolecula.rec} - {macromolecula.nome} "
+                })
                 
         #fim dos 2 for ligante e receptor    
         remover_arquivos_xml(diretorio_dlgs, "*.xml")
@@ -185,12 +220,30 @@ def plasmodocking_CR(username, id_processo, email_user):
         command = ["zip", "-r", arquivos_vs.nome+"/"+arquivos_vs.nome+".zip", arquivos_vs.nome]
         executar_comando(command, dir_path)
         ##enviar_email.delay(username,arquivos_vs.nome,email_user)
+        
+        pusher_client.trigger(username, 'proces', {
+            "type": "chat_message",
+            "proces": f"{arquivos_vs.id}",
+            "status": f"done",
+            "progress": f"100",
+            "message": f"Processo {arquivos_vs.nome} concluído com sucesso"
+        })
+
         return "task concluida com sucesso"
     
     except Exception as e:
         # Em caso de erro, atualizar o status para "error"
         arquivos_vs.status = "error"
         arquivos_vs.save()
+        
+        pusher_client.trigger(username, 'proces', {
+            "type": "chat_message",
+            "proces": f"{arquivos_vs.id}",
+            "status": f"done",
+            "progress": f"0",
+            "message": f"Processo {arquivos_vs.nome} finalizado com erro!"
+        })
+
         print(f"Ocorreu um erro no processo: {str(e)}")
         return f"task falhou: {str(e)}"
 
