@@ -1,8 +1,5 @@
 from __future__ import absolute_import, unicode_literals
-import glob
 import json
-from pathlib import Path
-import shutil
 import subprocess
 import pandas as pd
 import os
@@ -20,7 +17,6 @@ import pusher
 from fiocruz.util import textfld
 from .utils.functions import (
     executar_comando,
-    extrair_energia_ligacao,
     remover_arquivos_xml,
     listar_arquivos,
 )
@@ -107,32 +103,6 @@ def plasmodocking_CR(username, id_processo, email_user):
         data, tabela_final = [], []
         total_macromoleculas = len(macromoleculas)
         
-        # =========================================================================================================================================
-        autodockgpu_path = os.path.expanduser("/home/autodockgpu/AutoDock-GPU/bin/autodock_gpu_128wi")
-        obabel_path = os.path.expanduser("/usr/bin/obabel")
-        # =========================================================================================================================================
-        
-        print('init test')
-        autodock_command = [
-            autodockgpu_path, 
-            '--ffile', str(os.path.join(settings.BASE_DIR, "4h02", "4h02_a.maps.fld")), 
-            '--lfile', str(os.path.join(settings.BASE_DIR, "4h02", "CP6.pdbqt")), 
-            '--gbest', '1',
-            '--nrun', "100"
-        ]
-        
-        executar_comando(autodock_command, os.path.join(settings.BASE_DIR, "4h02"))
-        arquivos_pdbqt = glob.glob(os.path.join(settings.BASE_DIR, "4h02", "*.pdbqt"))
-
-        if arquivos_pdbqt:
-            print(f"Arquivos .pdbqt encontrados em {arquivos_pdbqt}:")
-            for arquivo in arquivos_pdbqt:
-                print(arquivo)
-        print('end test')
-        
-        # =========================================================================================================================================
-        
-        
         with tqdm(total=len(macromoleculas), desc=f'Plasmodocking usuario {username} processo {arquivos_vs.nome}') as pbar:
             
             for index, macromolecula in enumerate(macromoleculas):
@@ -140,151 +110,10 @@ def plasmodocking_CR(username, id_processo, email_user):
                 porcentagem = ((index + 1) / total_macromoleculas) * 100
                 
                 print("Macromolecula: "+macromolecula.rec)
-                receptor_data_oficial = None
-                data_data_oficial = None
-                # =========================================================================================================================================
-                # macromolecula, ligantes_pdbqt, diretorio_dlgs, diretorio_ligantes_pdbqt, diretorio_macromoleculas, username, nome, type, redocking
-                # receptor_data, data_data = preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diretorio_ligantes_pdbqt,
-                # diretorio_macromoleculas,username,arquivos_vs.nome,arquivos_vs.type, arquivos_vs.redocking)
-                
-                
-                # =========================================================================================================================================
-                redocking = arquivos_vs.redocking
-                type = arquivos_vs.type
-                nome= arquivos_vs.nome
-                receptor_data = {
-                    'receptor_name': macromolecula.rec,
-                    'molecule_name': macromolecula.nome,
-                    'grid_center': macromolecula.gridcenter,
-                    'grid_size': macromolecula.gridsize,
-                    'ligante_original': macromolecula.ligante_original,
-                    'energia_original': macromolecula.energia_original,
-                    'rmsd_redocking': macromolecula.rmsd_redocking,
-                    'ligantes': []
-                } 
-
-                print(" Nome molecula: " + macromolecula.nome)
-
-                data_data = []
-                
-                # Define o diretório base para macromoléculas conforme o tipo e o redocking
-                def obter_diretorio_macromoleculas(macromolecula, type, redocking):
-                    if type == 'falciparum' and redocking:
-                        return os.path.join(settings.BASE_DIR, "macromoleculas", "falciparum", "comRedocking", macromolecula.rec)
-                    elif type == 'falciparum' and not redocking:
-                        return os.path.join(settings.BASE_DIR, "macromoleculas", "falciparum", "semRedocking", macromolecula.rec)
-                    elif type == 'vivax' and redocking:
-                        return os.path.join(settings.BASE_DIR, "macromoleculas", "vivax", "comRedocking", macromolecula.rec)
-                    else:
-                        raise ValueError("Tipo e condição de redocking não suportados.")
-                
-                dir_path = obter_diretorio_macromoleculas(macromolecula, type, redocking)
-                print(f"Diretório macromoléculas: {dir_path}")
-                
-                for ligante_pdbqt in ligantes_pdbqt:
-                    dir_ligante_pdbqt = os.path.join(diretorio_ligantes_pdbqt, ligante_pdbqt)
-                    filename_ligante, _ = os.path.splitext(ligante_pdbqt)
-
-                    r = str(macromolecula.rec_fld)
-                    rec_maps_fld_path = os.path.join(settings.BASE_DIR, r)
-                    saida = os.path.join(diretorio_dlgs, f"{filename_ligante}_{macromolecula.rec}")
-                    
-                    # Executa docking com AutoDock-GPU
-                    command = [
-                        autodockgpu_path, 
-                        "--ffile", str(rec_maps_fld_path), 
-                        "--lfile", str(dir_ligante_pdbqt), 
-                        "--gbest", "1", 
-                        "--resnam", saida,
-                        '--nrun', "100"
-                    ]
-                    
-                    executar_comando(command, dir_path)
-                    
-                    arquivos_pdbqt = glob.glob(os.path.join(dir_path, "*.pdbqt"))
-
-                    if arquivos_pdbqt:
-                        print("Arquivos .pdbqt encontrados:")
-                        for arquivo in arquivos_pdbqt:
-                            print(arquivo)
-                
-                    # Configura caminho para o arquivo de melhor ligação (gbest)
-                    diretorio_gbest_ligante_unico = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}", nome, "gbest_pdb", filename_ligante)
-                    os.makedirs(diretorio_gbest_ligante_unico, exist_ok=True)
-                    
-                    #==================================================
-                    # Padrões de arquivos possíveis: "best.pdbqt" ou "<ligante>-best.pdbqt"
-                    padroes_arquivos = [
-                        os.path.join(dir_path, "best.pdbqt"),
-                        os.path.join(dir_path, f"{Path(filename_ligante).stem}-best.pdbqt"),
-                    ]
-
-                    # Procurar pelos arquivos de saída possíveis
-                    arquivo_encontrado = None
-                    for padrao in padroes_arquivos:
-                        if os.path.exists(padrao):
-                            arquivo_encontrado = padrao
-                            break
-
-                    bsaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdbqt")
-
-                    # Move o arquivo de melhor ligação, se encontrado
-                    if arquivo_encontrado:
-                        shutil.move(arquivo_encontrado, bsaida)
-                        print(f"Arquivo {arquivo_encontrado} movido para {bsaida}.")
-                    else:
-                        print("Nenhum arquivo de melhor ligação foi encontrado ('best.pdbqt' ou '<ligante>-best.pdbqt').")
-                    #==================================================
-                    
-                    # Converte o arquivo .pdbqt para .pdb com Open Babel
-                    csaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdb")
-                    command = [obabel_path, bsaida, "-O", csaida]
-                    executar_comando(command, diretorio_gbest_ligante_unico)
-
-                    # Remove o arquivo temporário .pdbqt
-                    executar_comando(["rm", bsaida], dir_path)
-                    
-                    # Copia arquivos de macromoléculas específicos para o diretório de destino
-                    sufixos = ['_A.pdb', '_a.pdb', '_ab.pdb', '_bd.pdb', '.pdb', '_macro', '_oficial', '_MACRO_COFATOR']
-                    for sufixo in sufixos:
-                        arquivo_path = os.path.join(dir_path, f"{macromolecula.rec}{sufixo}")
-                        if os.path.exists(arquivo_path):
-                            shutil.copy2(arquivo_path, diretorio_macromoleculas)
-                            break
-                    
-                    # Extrai a melhor energia de ligação do arquivo .dlg
-                    caminho_arquivo = f"{saida}.dlg"
-                    best_energia, run = extrair_energia_ligacao(caminho_arquivo)
-                    
-                    ligante_data = {
-                        'ligante_name': filename_ligante,
-                        'ligante_energia': best_energia,
-                        'run': run,
-                    }
-                    
-                    receptor_data['ligantes'].append(ligante_data)
-                    
-                    # Adiciona dados para CSV
-                    csv_data = {
-                        'RECEPTOR_NAME': macromolecula.rec,
-                        'LIGANTE_CID': filename_ligante,
-                        'LIGANTE_MELHOR_ENERGIA': best_energia,
-                        'RUN': run,
-                    }
-                    
-                    if redocking:
-                        csv_data.update({
-                            'LIGANTE_REDOCKING': macromolecula.ligante_original,
-                            'ENERGIA_REDOCKING': macromolecula.energia_original,
-                        })
-                    data_data.append(csv_data)
-
-                receptor_data_oficial = receptor_data
-                data_data_oficial = data_data                                              
-                                                                   
-                # =========================================================================================================================================
-                data.append(receptor_data_oficial)
-                tabela_final.extend(data_data_oficial)
+                receptor_data, data_data = preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diretorio_ligantes_pdbqt,
+                diretorio_macromoleculas,username,arquivos_vs.nome,arquivos_vs.type, arquivos_vs.redocking)
+                data.append(receptor_data)
+                tabela_final.extend(data_data)
                 # Atualize a barra de progresso
                 pbar.update(1)
                 

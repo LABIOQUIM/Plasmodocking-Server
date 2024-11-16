@@ -121,6 +121,8 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diret
         padroes_arquivos = [
             os.path.join(dir_path, "best.pdbqt"),
             os.path.join(dir_path, f"{Path(filename_ligante).stem}-best.pdbqt"),
+            os.path.join(diretorio_dlgs, "best.pdbqt"),
+            os.path.join(diretorio_dlgs, f"{Path(filename_ligante).stem}_{macromolecula.rec}-best.pdbqt"),
         ]
 
         # Procurar pelos arquivos de saída possíveis
