@@ -82,6 +82,22 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diret
         'rmsd_redocking': macromolecula.rmsd_redocking,
         'ligantes': []
     } 
+    fld_file_path = os.path.join(diretorio_ligantes_pdbqt, ligante_pdbqt)
+    
+    autodock_command = [
+        autodockgpu_path, 
+        '--ffile', str(os.path.join(settings.BASE_DIR, "4h02", "4h02_a.maps.fld")), 
+        '--lfile', str(os.path.join(settings.BASE_DIR, "4h02", "CP6.pdbqt")), 
+        '--gbest', '1',
+        '--nrun', "100"
+    ]
+    arquivos_pdbqt = glob.glob(os.path.join(settings.BASE_DIR, "4h02", "*.pdbqt"))
+
+    if arquivos_pdbqt:
+        print(f"Arquivos .pdbqt encontrados em {arquivos_pdbqt}:")
+        for arquivo in arquivos_pdbqt:
+            print(arquivo)
+    
 
     print(" Nome molecula: " + macromolecula.nome)
 

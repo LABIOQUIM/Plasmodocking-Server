@@ -67,6 +67,9 @@ def converter_sdf_para_pdb(diretorio_sdf):
     return True
 
 def executar_comando(command, dir_path):
+    print("===========================")
+    print("Ambiente atual:", os.environ)
+    print("===========================")
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=dir_path)
     stdout, stderr = process.communicate()
 
