@@ -1,5 +1,8 @@
 from __future__ import absolute_import, unicode_literals
+import glob
 import json
+from pathlib import Path
+import shutil
 import subprocess
 import pandas as pd
 import os
@@ -17,6 +20,7 @@ import pusher
 from fiocruz.util import textfld
 from .utils.functions import (
     executar_comando,
+    extrair_energia_ligacao,
     remover_arquivos_xml,
     listar_arquivos,
 )
@@ -49,80 +53,6 @@ from .utils.macro_prepare_comRedocking import (
 @shared_task
 def add(x, y):
     return x + y
-
-#Processo principal plamodocking sem redocking
-@shared_task
-def plasmodocking_SR(username, id_processo, email_user):
-    arquivos_vs = ProcessPlasmodocking.objects.get(id=id_processo) 
-    arquivos_vs.status = "processando"
-    arquivos_vs.save()
-
-    #---------------------------------------------------------------------
-    # criar pastas do usuario 
-    dir_path = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}", arquivos_vs.nome)
-    diretorio_macromoleculas,diretorio_dlgs,diretorio_gbests,diretorio_lig_split,diretorio_ligantes_pdbqt = criar_diretorios_SR(username, arquivos_vs.nome)
-    #---------------------------------------------------------------------
-    #preparação ligante
-    preparar_ligantes_SR(arquivos_vs,diretorio_lig_split,diretorio_ligantes_pdbqt)
-
-    ligantes_pdbqt = listar_arquivos(diretorio_ligantes_pdbqt)
-    
-    #---------------------------------------------------------------------
-    #execução do AutodockGPU
-    if arquivos_vs.type == 'falciparum' :
-        macromoleculas = MacromoleculesFalciparumWithRedocking.objects.all()
-
-        print("Macromoleculas Falciparum sem redocking")
-    else:    
-        macromoleculas = MacromoleculesFalciparumWithRedocking.objects.all()
-
-        print("Macromoleculas Vivax sem redocking")
-    
-    data, tabela_final = [], []
-
-    with tqdm(total=len(macromoleculas), desc=f'Plasmodocking usuario {username} processo {arquivos_vs.nome}') as pbar:
-        for macromolecula in macromoleculas:
-            receptor_data, data_data = preparar_dados_receptor_SR(macromolecula, ligantes_pdbqt, diretorio_dlgs,diretorio_ligantes_pdbqt,diretorio_macromoleculas,username,arquivos_vs.nome)
-
-            data.append(receptor_data)
-            tabela_final.extend(data_data)
-
-            # Atualize a barra de progresso
-            pbar.update(1)
-            
-            
-
-    #fim dos 2 for ligante e receptor
-            
-    remover_arquivos_xml(diretorio_dlgs, "*.xml")
-
-    json_data = json.dumps(data, indent=4)  # Serializa os dados em JSON formatado
-    
-    # Especifique o caminho e nome do arquivo onde você deseja salvar o JSON
-    file_path = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}", arquivos_vs.nome,"dados.json")
-    
-    with open(file_path, 'w') as json_file:
-        json_file.write(json_data)
-
-    arquivos_vs.status = "concluido"
-    arquivos_vs.resultado_final = json_data
-    arquivos_vs.save()
-
-    file_path = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}", arquivos_vs.nome)
-    dfdf = pd.DataFrame(tabela_final)
-    csv_file_path = os.path.join(file_path, 'dadostab.csv')
-    dfdf.to_csv(csv_file_path, sep=';', index=False)
-
-    #----------------zip file---------------
-
-    dir_path = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}")
-    command = ["zip", "-r", arquivos_vs.nome+"/"+arquivos_vs.nome+".zip", arquivos_vs.nome]
-    executar_comando(command, dir_path)
-
-    #enviar_email.delay(username,arquivos_vs.nome,email_user)
-    
-    return "task concluida com sucesso"
-
 
 #Processo principal plamodocking com redocking
 @shared_task
@@ -177,6 +107,12 @@ def plasmodocking_CR(username, id_processo, email_user):
         data, tabela_final = [], []
         total_macromoleculas = len(macromoleculas)
         
+        # =========================================================================================================================================
+        autodockgpu_path = os.path.expanduser("/home/autodockgpu/AutoDock-GPU/bin/autodock_gpu_128wi")
+        obabel_path = os.path.expanduser("/usr/bin/obabel")
+        # =========================================================================================================================================
+        
+        
         with tqdm(total=len(macromoleculas), desc=f'Plasmodocking usuario {username} processo {arquivos_vs.nome}') as pbar:
             
             for index, macromolecula in enumerate(macromoleculas):
@@ -184,10 +120,151 @@ def plasmodocking_CR(username, id_processo, email_user):
                 porcentagem = ((index + 1) / total_macromoleculas) * 100
                 
                 print("Macromolecula: "+macromolecula.rec)
-                receptor_data, data_data = preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diretorio_ligantes_pdbqt,
-                diretorio_macromoleculas,username,arquivos_vs.nome,arquivos_vs.type, arquivos_vs.redocking)
-                data.append(receptor_data)
-                tabela_final.extend(data_data)
+                receptor_data_oficial = None
+                data_data_oficial = None
+                # =========================================================================================================================================
+                # macromolecula, ligantes_pdbqt, diretorio_dlgs, diretorio_ligantes_pdbqt, diretorio_macromoleculas, username, nome, type, redocking
+                # receptor_data, data_data = preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diretorio_ligantes_pdbqt,
+                # diretorio_macromoleculas,username,arquivos_vs.nome,arquivos_vs.type, arquivos_vs.redocking)
+                
+                
+                # =========================================================================================================================================
+                redocking = arquivos_vs.redocking
+                type = arquivos_vs.type
+                nome= arquivos_vs.nome
+                receptor_data = {
+                    'receptor_name': macromolecula.rec,
+                    'molecule_name': macromolecula.nome,
+                    'grid_center': macromolecula.gridcenter,
+                    'grid_size': macromolecula.gridsize,
+                    'ligante_original': macromolecula.ligante_original,
+                    'energia_original': macromolecula.energia_original,
+                    'rmsd_redocking': macromolecula.rmsd_redocking,
+                    'ligantes': []
+                } 
+
+                print(" Nome molecula: " + macromolecula.nome)
+
+                data_data = []
+                
+                # Define o diretório base para macromoléculas conforme o tipo e o redocking
+                def obter_diretorio_macromoleculas(macromolecula, type, redocking):
+                    if type == 'falciparum' and redocking:
+                        return os.path.join(settings.MEDIA_ROOT, "macromoleculas", "falciparum", "comRedocking", macromolecula.rec)
+                    elif type == 'falciparum' and not redocking:
+                        return os.path.join(settings.MEDIA_ROOT, "macromoleculas", "falciparum", "semRedocking", macromolecula.rec)
+                    elif type == 'vivax' and redocking:
+                        return os.path.join(settings.MEDIA_ROOT, "macromoleculas", "vivax", "comRedocking", macromolecula.rec)
+                    else:
+                        raise ValueError("Tipo e condição de redocking não suportados.")
+                
+                dir_path = obter_diretorio_macromoleculas(macromolecula, type, redocking)
+                print(f"Diretório macromoléculas: {dir_path}")
+                
+                for ligante_pdbqt in ligantes_pdbqt:
+                    dir_ligante_pdbqt = os.path.join(diretorio_ligantes_pdbqt, ligante_pdbqt)
+                    filename_ligante, _ = os.path.splitext(ligante_pdbqt)
+
+                    r = str(macromolecula.rec_fld)
+                    rec_maps_fld_path = os.path.join(settings.MEDIA_ROOT, r)
+                    saida = os.path.join(diretorio_dlgs, f"{filename_ligante}_{macromolecula.rec}")
+                    
+                    # Executa docking com AutoDock-GPU
+                    command = [
+                        autodockgpu_path, 
+                        "--ffile", rec_maps_fld_path, 
+                        "--lfile", dir_ligante_pdbqt, 
+                        "--gbest", "1", 
+                        "--resnam", saida,
+                        '--nrun', "100"
+                    ]
+                    
+                    executar_comando(command, dir_path)
+                    
+                    arquivos_pdbqt = glob.glob(os.path.join(dir_path, "*.pdbqt"))
+
+                    if arquivos_pdbqt:
+                        print("Arquivos .pdbqt encontrados:")
+                        for arquivo in arquivos_pdbqt:
+                            print(arquivo)
+                
+                    # Configura caminho para o arquivo de melhor ligação (gbest)
+                    diretorio_gbest_ligante_unico = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}", nome, "gbest_pdb", filename_ligante)
+                    os.makedirs(diretorio_gbest_ligante_unico, exist_ok=True)
+                    
+                    #==================================================
+                    # Padrões de arquivos possíveis: "best.pdbqt" ou "<ligante>-best.pdbqt"
+                    padroes_arquivos = [
+                        os.path.join(dir_path, "best.pdbqt"),
+                        os.path.join(dir_path, f"{Path(filename_ligante).stem}-best.pdbqt"),
+                    ]
+
+                    # Procurar pelos arquivos de saída possíveis
+                    arquivo_encontrado = None
+                    for padrao in padroes_arquivos:
+                        if os.path.exists(padrao):
+                            arquivo_encontrado = padrao
+                            break
+
+                    bsaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdbqt")
+
+                    # Move o arquivo de melhor ligação, se encontrado
+                    if arquivo_encontrado:
+                        shutil.move(arquivo_encontrado, bsaida)
+                        print(f"Arquivo {arquivo_encontrado} movido para {bsaida}.")
+                    else:
+                        print("Nenhum arquivo de melhor ligação foi encontrado ('best.pdbqt' ou '<ligante>-best.pdbqt').")
+                    #==================================================
+                    
+                    # Converte o arquivo .pdbqt para .pdb com Open Babel
+                    csaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdb")
+                    command = [obabel_path, bsaida, "-O", csaida]
+                    executar_comando(command, diretorio_gbest_ligante_unico)
+
+                    # Remove o arquivo temporário .pdbqt
+                    executar_comando(["rm", bsaida], dir_path)
+                    
+                    # Copia arquivos de macromoléculas específicos para o diretório de destino
+                    sufixos = ['_A.pdb', '_a.pdb', '_ab.pdb', '_bd.pdb', '.pdb', '_macro', '_oficial', '_MACRO_COFATOR']
+                    for sufixo in sufixos:
+                        arquivo_path = os.path.join(dir_path, f"{macromolecula.rec}{sufixo}")
+                        if os.path.exists(arquivo_path):
+                            shutil.copy2(arquivo_path, diretorio_macromoleculas)
+                            break
+                    
+                    # Extrai a melhor energia de ligação do arquivo .dlg
+                    caminho_arquivo = f"{saida}.dlg"
+                    best_energia, run = extrair_energia_ligacao(caminho_arquivo)
+                    
+                    ligante_data = {
+                        'ligante_name': filename_ligante,
+                        'ligante_energia': best_energia,
+                        'run': run,
+                    }
+                    
+                    receptor_data['ligantes'].append(ligante_data)
+                    
+                    # Adiciona dados para CSV
+                    csv_data = {
+                        'RECEPTOR_NAME': macromolecula.rec,
+                        'LIGANTE_CID': filename_ligante,
+                        'LIGANTE_MELHOR_ENERGIA': best_energia,
+                        'RUN': run,
+                    }
+                    
+                    if redocking:
+                        csv_data.update({
+                            'LIGANTE_REDOCKING': macromolecula.ligante_original,
+                            'ENERGIA_REDOCKING': macromolecula.energia_original,
+                        })
+                    data_data.append(csv_data)
+
+                receptor_data_oficial = receptor_data
+                data_data_oficial = data_data                                              
+                                                                   
+                # =========================================================================================================================================
+                data.append(receptor_data_oficial)
+                tabela_final.extend(data_data_oficial)
                 # Atualize a barra de progresso
                 pbar.update(1)
                 
@@ -247,151 +324,3 @@ def plasmodocking_CR(username, id_processo, email_user):
         print(f"Ocorreu um erro no processo: {str(e)}")
         return f"task falhou: {str(e)}"
 
-#Processo de envio de email
-@shared_task
-def enviar_email(usename,processo,email_user):
-    context = {
-        'subject': 'Processo Plasmodocking concluido.',
-        'message': f'ola {usename}, O seu processo plasmodocking {processo} foi concluido com sucesso, resultado já disponivel na pagina de resutados.',
-        
-    }
-
-    message = render_to_string('template.html', context)
-    send_mail(
-        'Plasmodocking Fiocruz/UNIR',
-        'Corpo do E-mail',
-        'plasmodockingteste@outlook.com',
-        ['eduardohernany.pdm@gmail.com', email_user],
-        html_message=message,  # Use a mensagem HTML renderizada
-        )
-
-
-    return "Email enviado com sucesso."
-
-#Processo de preparação de macromolecula com redocking
-@shared_task
-def prepare_macro_SemRedocking(id_processo):
-
-    macroPrepare = MacroPrepare.objects.get(id=id_processo) 
-
-    print("ok 1")
-
-    preparacao_gpf_SR(macroPrepare)
-
-    print("ok 2")
-
-    #run_autogrid_SR(macroPrepare)
-    
-    #fld_text, fld_name = modifcar_fld_SR(macroPrepare)
-
-    return "fld_text, fld_name"
-
-@shared_task
-def prepare_macro_ComRedocking(id_processo):
-    macroPrepare = MacroPrepare.objects.get(id=id_processo) 
-
-    pythonsh_path = os.path.expanduser("/home/autodockgpu/mgltools_x86_64Linux2_1.5.7/bin/pythonsh")
-    prep_gpf_path = os.path.expanduser("/home/autodockgpu/mgltools_x86_64Linux2_1.5.7/MGLToolsPckgs/AutoDockTools/Utilities24/prepare_gpf4.py")
-    autogrid_path = os.path.expanduser("/home/autodockgpu/x86_64Linux2/autogrid4")
-    ad4_parameters_path = os.path.expanduser("/home/autodockgpu/x86_64Linux2/AD4_parameters.dat")
-
-    centergrid = 'gridcenter={0}'.format(macroPrepare.gridcenter)
-    sizegrid = 'npts={0}'.format(macroPrepare.gridsize)
-    dir_path = os.path.join(settings.MEDIA_ROOT, "macroTeste", macroPrepare.processo_name, f"{macroPrepare.rec}")
-    print(sizegrid)
-    print(centergrid)
-    receptor = os.path.join(settings.MEDIA_ROOT, str(macroPrepare.recptorpdbqt))
-    
-    lt1 = "ligand_types=C,A,N,NA,NS,OA,OS,SA,S,H,HD"
-    lt2 = "ligand_types=HS,P,Br,BR,Ca,CA,Cl,CL,F,Fe,FE"
-    lt3 = "ligand_types=I,Mg,MG,Mn,MN,Zn,ZN,He,Li,Be"
-    lt4 = "ligand_types=B,Ne,Na,Al,Si,K,Sc,Ti,V,Co"
-    lt5 = "ligand_types=Ni,Cu,Ga,Ge,As,Se,Kr,Rb,Sr,Y"
-    lt6 = "ligand_types=Zr,Nb,Cr,Tc,Ru,Rh,Pd,Ag,Cd,In"
-    lt7 = "ligand_types=Sn,Sb,Te,Xe,Cs,Ba,La,Ce,Pr,Nd"
-    lt8 = "ligand_types=Pm,Sm,Eu,Gd,Tb,Dy,Ho,Er,Tm,Yb"
-    lt9 = "ligand_types=Lu,Hf,Ta,W,Re,Os,Ir,Pt,Au,Hg"
-    lt10 = "ligand_types=Tl,Pb,Bi,Po,At,Rn,Fr,Ra,Ac,Th"
-    lt11 = "ligand_types=Pa,U,Np,Pu,Am,Cm,Bk,Cf,E,Fm"
-    
-    for i in range(1, 12):
-        lt = f'{lt1 if i == 1 else lt2 if i == 2 else lt3 if i == 3 else lt4 if i == 4 else lt5 if i == 5 else lt6 if i == 6 else lt7 if i == 7 else lt8 if i == 8 else lt9 if i == 9 else lt10 if i == 10 else lt11  }'
-        saida = os.path.join(dir_path, f'gridbox{i}.gpf')
-
-        comando = [
-            pythonsh_path, prep_gpf_path, "-r", receptor, "-o", saida, "-p", centergrid, "-p", sizegrid, "-p", lt
-        ]
-     # Executando o comando
-        print(comando)
-
-        process = subprocess.Popen(comando, stdout=subprocess.PIPE, stderr=subprocess.PIPE, cwd=dir_path)
-        stdout, stderr = process.communicate()
-        
-        if process.returncode != 0:
-            print(f"Erro: {stderr.decode()}")
-        else:
-            print(f"Sucesso: {stdout.decode()}")
-        
-        # Escrevendo no arquivo de log
-        file_path = os.path.join(dir_path, 'teste.txt')
-        with open(file_path, "a") as arquivo:
-            arquivo.write(" ".join(comando) + "\n")
-    
-    print("ok 1")
-
-    for i in range(1, 12):
-        dir_path = os.path.join(settings.MEDIA_ROOT, "macroTeste", macroPrepare.processo_name, f"{macroPrepare.rec}")
-        gpf_dir = os.path.join(dir_path, f'gridbox{i}.gpf')
-
-        sed_command = f"sed -i '1i\\parameter_file {os.path.abspath(ad4_parameters_path)}' {gpf_dir}"
-        print(sed_command)
-        subprocess.run(sed_command, shell=True, check=True)
-
-        autogrid_command = f"{autogrid_path} -p gridbox{i}.gpf -l gridbox.glg"
-        print(autogrid_command)
-        subprocess.run(autogrid_command, shell=True, check=True, cwd=dir_path)
-
-    print("ok 2")
-
-    dir_path = os.path.join(settings.MEDIA_ROOT, "macroTeste", macroPrepare.processo_name, f"{macroPrepare.rec}")
-
-    filename_receptor, file_extension2 = macroPrepare.recptorpdb.name.split(".")
-
-    parts = filename_receptor.split("/")
-    
-    file_path = f'{settings.MEDIA_ROOT}/{filename_receptor}.maps.fld'  # Substitua pelo caminho do seu arquivo
-    line_number = 23
-
-    # Ler o conteúdo do arquivo
-    with open(file_path, 'r') as file:
-        lines = file.readlines()
-
-    # Verificar se o arquivo tem pelo menos 23 linhas
-    if len(lines) >= line_number:
-        # Manter as primeiras 23 linhas e descartar o restante
-        new_lines = lines[:line_number]
-
-        # Escrever as linhas de volta para o arquivo
-        with open(file_path, 'w') as file:
-            file.writelines(new_lines)
-
-        print(f"Linhas abaixo da linha {line_number} foram removidas.")
-    else:
-        print(f"O arquivo tem menos de {line_number} linhas, nada foi removido.")
-
-    texto = textfld()
-    
-    # Substituindo todas as ocorrências de 'macro' por 'receptor'
-    novo_texto = texto.replace("kakakakaka", parts[-1])
-
-    # Imprimindo o texto resultante
-    with open(file_path, "a") as arquivo:
-        # Escrevendo o novo texto no arquivo
-        arquivo.write(novo_texto)
-
-    # Fechando o arquivo
-    arquivo.close()
-
-    print("ok 3")
-
-    return "fld_text, fld_name"

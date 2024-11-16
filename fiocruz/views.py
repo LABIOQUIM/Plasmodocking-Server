@@ -3,12 +3,12 @@ import os
 import shutil
 import subprocess
 import random
-from fiocruz.utils.functions import extrair_menor_rmsd
+
 from .models import ProcessPlasmodocking, MacromoleculesFalciparumWithRedocking, UserCustom, MacroPrepare, MacromoleculesFalciparumWithoutRedocking
 from rest_framework import viewsets, generics
 from django.http import FileResponse, HttpResponse, JsonResponse 
 from .serializers import ProcessPlasmodockingSerializer, VS_Serializer, UserCustomSerializer
-from .tasks import plasmodocking_SR, prepare_macro_SemRedocking, prepare_macro_ComRedocking,plasmodocking_CR
+from .tasks import plasmodocking_CR
 from django.conf import settings
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -17,9 +17,7 @@ from rest_framework import status
 from django.shortcuts import render
 from rest_framework.decorators import action
 from rest_framework.parsers import MultiPartParser, FormParser
-from .util import (
-    textfld,
-)
+
 
 class CreateUserView(generics.CreateAPIView):
     queryset = UserCustom.objects.all()
@@ -133,116 +131,6 @@ def generate_unique_id_SR():
         if not MacromoleculesFalciparumWithoutRedocking.objects.filter(id=new_id).exists():
             return new_id
         
-def macro_save_ComRedocking(request):
-
-    if request.method == 'POST':
-        processo_name = request.POST.get('processo_name')
-        nome = request.POST.get('nome')
-        rec = request.POST.get('rec')
-        gridcenter = request.POST.get('gridcenter')
-        gridsize = request.POST.get('gridsize')
-
-        ligante_redocking = request.POST.get('ligante_redocking')
-        rmsd_redocking = request.POST.get('rmsd_redocking')
-        energia_redocking = request.POST.get('energia_redocking')
-        fld_name = request.POST.get('fld_name')
-        
-        dir = os.path.join("macromoleculas", "comRedocking", rec, fld_name)
-
-        unique_id = generate_unique_id()
-        macromolecula = MacromoleculesFalciparumWithRedocking(id=unique_id,nome=nome, rec=rec, gridcenter=gridcenter,
-                                       gridsize=gridsize, rmsd_redoking=rmsd_redocking,
-                                       energia_orinal=energia_redocking, ligante_original=ligante_redocking,
-                                       rec_fld=dir)
-        macromolecula.save()
-
-        dir_processo = os.path.join(settings.MEDIA_ROOT, "macroTeste", processo_name, rec)
-        dir_macro = os.path.join(settings.MEDIA_ROOT, "macromoleculas", "comRedocking")
-        shutil.copytree(dir_processo, os.path.join(dir_macro, rec))
-
-        return JsonResponse({'message': 'Dados recebidos com sucesso!'})
-
-    return JsonResponse({'message': 'Método não suportado'}, status=405)
-
-def macro_save_SemRedocking(request):
-
-    if request.method == 'POST':
-        processo_name = request.POST.get('processo_name')
-        nome = request.POST.get('nome')
-        rec = request.POST.get('rec')
-        gridcenter = request.POST.get('gridcenter')
-        gridsize = request.POST.get('gridsize')
-
-        fld_name = request.POST.get('fld_name')
-        
-        dir = os.path.join("macromoleculas", "semRedocking", rec, fld_name)
-
-        unique_id = generate_unique_id_SR()
-        macromolecula = MacromoleculesFalciparumWithoutRedocking(id=unique_id,nome=nome, rec=rec, gridcenter=gridcenter,
-                                                gridsize=gridsize, rec_fld=dir)
-        macromolecula.save()
-
-        dir_processo = os.path.join(settings.MEDIA_ROOT, "macroTeste", processo_name, rec)
-        dir_macro = os.path.join(settings.MEDIA_ROOT, "macromoleculas", "semRedocking")
-        shutil.copytree(dir_processo, os.path.join(dir_macro, rec))
-
-        return JsonResponse({'message': 'Macromolecula sem redocking salva com sucesso!'})
-
-    return JsonResponse({'message': 'Método não suportado'}, status=405)
-
-def macro(request):
-    if request.method == 'POST':
-        processo_name = request.POST.get('processo_name')
-        nome = request.POST.get('nome')
-        rec = request.POST.get('rec')
-        gridcenter = request.POST.get('gridcenter')
-        gridsize = request.POST.get('gridsize')
-        
-        receptorpdb = request.FILES.get('receptorpdb')
-        receptorpdbqt = request.FILES.get('receptorpdbqt')
-        ligantepdb = request.FILES.get('ligantepdb')
-
-        macroteste = MacroPrepare(processo_name=processo_name, nome=nome,rec=rec,gridsize=gridsize,gridcenter=gridcenter,
-                                   recptorpdb= receptorpdb, recptorpdbqt= receptorpdbqt, ligantepdb= ligantepdb)
-
-        macroteste.save()
-
-        prepare_macro_ComRedocking.delay(id_processo=macroteste.id)
-
-        
-        
-        return JsonResponse({'message': 'Dados recebidos com sucesso!'})
-
-    return JsonResponse({'message': 'Método não suportado'}, status=405)
-
-def macro_SR(request):
-    if request.method == 'POST':
-        processo_name = request.POST.get('processo_name')
-        nome = request.POST.get('nome')
-        rec = request.POST.get('rec')
-        gridcenter = request.POST.get('gridcenter')
-        gridsize = request.POST.get('gridsize')
-        
-        receptorpdb = request.FILES.get('receptorpdb')
-        
-
-        macroteste = MacroPrepare(processo_name=processo_name, nome=nome,rec=rec,gridsize=gridsize,gridcenter=gridcenter,
-                                   recptorpdb= receptorpdb)
-
-        macroteste.save()
-
-        fld_text, fld_name = prepare_macro_SemRedocking(id_processo=macroteste.id)
-        
-        return JsonResponse({'message': 'Dados recebidos com sucesso!', 'fld_name':fld_name,
-                             'gridcenter': gridcenter, 'gridsize': gridsize,'nome': nome,
-                             'rec': rec, 'arquivo_fld': fld_text
-                             })
-
-    return JsonResponse({'message': 'Método não suportado'}, status=405)
-
-
-    
-
 def view3d(request, username, nome_process, receptor_name, ligante_code):
     dir_path_receptor = os.path.join(settings.MEDIA_ROOT, f"plasmodocking/user_{username}/{nome_process}/macromoleculas")
     dir_path_ligante = os.path.join(settings.MEDIA_ROOT, f"plasmodocking/user_{username}/{nome_process}/gbest_pdb/{ligante_code}")

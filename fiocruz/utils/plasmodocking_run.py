@@ -1,4 +1,3 @@
-import glob
 import os
 from pathlib import Path
 import shutil
@@ -82,24 +81,6 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diret
         'rmsd_redocking': macromolecula.rmsd_redocking,
         'ligantes': []
     } 
-    print('init test')
-    autodock_command = [
-        autodockgpu_path, 
-        '--ffile', str(os.path.join(settings.BASE_DIR, "4h02", "4h02_a.maps.fld")), 
-        '--lfile', str(os.path.join(settings.BASE_DIR, "4h02", "CP6.pdbqt")), 
-        '--gbest', '1',
-        '--nrun', "100"
-    ]
-    
-    executar_comando(autodock_command, os.path.join(settings.BASE_DIR, "4h02"))
-    arquivos_pdbqt = glob.glob(os.path.join(settings.BASE_DIR, "4h02", "*.pdbqt"))
-
-    if arquivos_pdbqt:
-        print(f"Arquivos .pdbqt encontrados em {arquivos_pdbqt}:")
-        for arquivo in arquivos_pdbqt:
-            print(arquivo)
-    print('end test')
-    
 
     print(" Nome molecula: " + macromolecula.nome)
 
@@ -135,24 +116,30 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diret
         diretorio_gbest_ligante_unico = os.path.join(settings.MEDIA_ROOT, "plasmodocking", f"user_{username}", nome, "gbest_pdb", filename_ligante)
         os.makedirs(diretorio_gbest_ligante_unico, exist_ok=True)
         
-        bcaminho = os.path.join(dir_path, f"best.pdbqt")
-        bsaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdbqt")
-        
-        arquivos_pdbqt = glob.glob(os.path.join(dir_path, "*.pdbqt"))
+        #==================================================
+        # Padrões de arquivos possíveis: "best.pdbqt" ou "<ligante>-best.pdbqt"
+        padroes_arquivos = [
+            os.path.join(dir_path, "best.pdbqt"),
+            os.path.join(dir_path, f"{Path(filename_ligante).stem}-best.pdbqt"),
+        ]
 
-        if arquivos_pdbqt:
-            print("Arquivos .pdbqt encontrados:")
-            for arquivo in arquivos_pdbqt:
-                print(arquivo)
-                
-        # Move o arquivo best.pdbqt para o diretório de saída, se existir
-        if os.path.exists(bcaminho):
-            shutil.move(bcaminho, bsaida)
-            print(f"O arquivo {bcaminho} foi movido para a pasta de melhores posições.")
+        # Procurar pelos arquivos de saída possíveis
+        arquivo_encontrado = None
+        for padrao in padroes_arquivos:
+            if os.path.exists(padrao):
+                arquivo_encontrado = padrao
+                break
+
+        bsaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdbqt")
+
+        # Move o arquivo de melhor ligação, se encontrado
+        if arquivo_encontrado:
+            shutil.move(arquivo_encontrado, bsaida)
+            print(f"Arquivo {arquivo_encontrado} movido para {bsaida}.")
         else:
-            print(f"O arquivo {bcaminho} não foi encontrado.")
+            print("Nenhum arquivo de melhor ligação foi encontrado ('best.pdbqt' ou '<ligante>-best.pdbqt').")
+        #==================================================
         
-                
         # Converte o arquivo .pdbqt para .pdb com Open Babel
         csaida = os.path.join(diretorio_gbest_ligante_unico, f"{filename_ligante}_{macromolecula.rec}.pdb")
         command = [obabel_path, bsaida, "-O", csaida]
@@ -197,4 +184,3 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diret
         data_data.append(csv_data)
 
     return receptor_data, data_data
-
