@@ -112,6 +112,26 @@ def plasmodocking_CR(username, id_processo, email_user):
         obabel_path = os.path.expanduser("/usr/bin/obabel")
         # =========================================================================================================================================
         
+        print('init test')
+        autodock_command = [
+            autodockgpu_path, 
+            '--ffile', str(os.path.join(settings.BASE_DIR, "4h02", "4h02_a.maps.fld")), 
+            '--lfile', str(os.path.join(settings.BASE_DIR, "4h02", "CP6.pdbqt")), 
+            '--gbest', '1',
+            '--nrun', "100"
+        ]
+        
+        executar_comando(autodock_command, os.path.join(settings.BASE_DIR, "4h02"))
+        arquivos_pdbqt = glob.glob(os.path.join(settings.BASE_DIR, "4h02", "*.pdbqt"))
+
+        if arquivos_pdbqt:
+            print(f"Arquivos .pdbqt encontrados em {arquivos_pdbqt}:")
+            for arquivo in arquivos_pdbqt:
+                print(arquivo)
+        print('end test')
+        
+        # =========================================================================================================================================
+        
         
         with tqdm(total=len(macromoleculas), desc=f'Plasmodocking usuario {username} processo {arquivos_vs.nome}') as pbar:
             
@@ -150,11 +170,11 @@ def plasmodocking_CR(username, id_processo, email_user):
                 # Define o diretório base para macromoléculas conforme o tipo e o redocking
                 def obter_diretorio_macromoleculas(macromolecula, type, redocking):
                     if type == 'falciparum' and redocking:
-                        return os.path.join(settings.MEDIA_ROOT, "macromoleculas", "falciparum", "comRedocking", macromolecula.rec)
+                        return os.path.join(settings.BASE_DIR, "macromoleculas", "falciparum", "comRedocking", macromolecula.rec)
                     elif type == 'falciparum' and not redocking:
-                        return os.path.join(settings.MEDIA_ROOT, "macromoleculas", "falciparum", "semRedocking", macromolecula.rec)
+                        return os.path.join(settings.BASE_DIR, "macromoleculas", "falciparum", "semRedocking", macromolecula.rec)
                     elif type == 'vivax' and redocking:
-                        return os.path.join(settings.MEDIA_ROOT, "macromoleculas", "vivax", "comRedocking", macromolecula.rec)
+                        return os.path.join(settings.BASE_DIR, "macromoleculas", "vivax", "comRedocking", macromolecula.rec)
                     else:
                         raise ValueError("Tipo e condição de redocking não suportados.")
                 
@@ -166,14 +186,14 @@ def plasmodocking_CR(username, id_processo, email_user):
                     filename_ligante, _ = os.path.splitext(ligante_pdbqt)
 
                     r = str(macromolecula.rec_fld)
-                    rec_maps_fld_path = os.path.join(settings.MEDIA_ROOT, r)
+                    rec_maps_fld_path = os.path.join(settings.BASE_DIR, r)
                     saida = os.path.join(diretorio_dlgs, f"{filename_ligante}_{macromolecula.rec}")
                     
                     # Executa docking com AutoDock-GPU
                     command = [
                         autodockgpu_path, 
-                        "--ffile", rec_maps_fld_path, 
-                        "--lfile", dir_ligante_pdbqt, 
+                        "--ffile", str(rec_maps_fld_path), 
+                        "--lfile", str(dir_ligante_pdbqt), 
                         "--gbest", "1", 
                         "--resnam", saida,
                         '--nrun', "100"
