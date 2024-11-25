@@ -11,7 +11,7 @@ services:
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
     volumes:
       - database:/var/lib/postgresql/data
-    restart: always  # Reinicia automaticamente o contêiner
+    restart: always # Reinicia automaticamente o contêiner
 
   pgadmin:
     image: dpage/pgadmin4
@@ -22,7 +22,7 @@ services:
       PGADMIN_DEFAULT_PASSWORD: "${PGADMIN_DEFAULT_PASSWORD}"
     depends_on:
       - db
-    restart: always  # Reinicia automaticamente o contêiner
+    restart: always # Reinicia automaticamente o contêiner
 
   django:
     build: .
@@ -32,10 +32,9 @@ services:
             python manage.py collectstatic --noinput &&
             python manage.py runserver 0.0.0.0:8000"
     volumes:
-      - .:/var/www/server:rw
-      - user_data:/var/www/Plasmodocking:rw
-      - ./media/macromoleculas/:/var/www/server/media/macromoleculas/:rw
-      - proces_data:/var/www/server/media/plasmodocking:rw
+      - .:/var/www/server
+      - user_data:/var/www/Plasmodocking
+      - proces_data:/var/www/server/media/plasmodocking
     ports:
       - "8000:8000"
     environment:
@@ -44,29 +43,28 @@ services:
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
     depends_on:
       - db
-    restart: always  # Reinicia automaticamente o contêiner
+    restart: always # Reinicia automaticamente o contêiner
 
   rabbitmq:
     image: rabbitmq:3-management
     ports:
-      - "15672:15672"  # Web interface
+      - "15672:15672" # Web interface
       - "5672:5672"
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
     environment:
       RABBITMQ_DEFAULT_USER: "${RABBITMQ_DEFAULT_USER}"
       RABBITMQ_DEFAULT_PASS: "${RABBITMQ_DEFAULT_PASS}"
-    restart: always  # Reinicia automaticamente o contêiner
+    restart: always # Reinicia automaticamente o contêiner
 
   celery:
     build:
       context: .
       dockerfile: Dockerfile.worker
     volumes:
-      - .:/var/www/server:rw
-      - ./media/macromoleculas/:/var/www/server/media/macromoleculas/:rw
-      - user_data:/var/www/Plasmodocking:rw
-      - proces_data:/var/www/server/media/plasmodocking:rw
+      - .:/var/www/server
+      - user_data:/var/www/Plasmodocking
+      - proces_data:/var/www/server/media/plasmodocking
     depends_on:
       - django
       - rabbitmq
@@ -79,8 +77,8 @@ services:
       resources:
         reservations:
           devices:
-            - capabilities: ["gpu"]
-    restart: always  # Reinicia automaticamente o contêiner
+            - capabilities: [ "gpu" ]
+    restart: always # Reinicia automaticamente o contêiner
 
 volumes:
   database:
