@@ -110,6 +110,7 @@ def preparar_dados_receptor(macromolecula, ligantes_pdbqt, diretorio_dlgs, diret
         
         # Executa docking com AutoDock-GPU
         command = [autodockgpu_path, "--ffile", rec_maps_fld_path, "--lfile", dir_ligante_pdbqt, "--gbest", "1", "--resnam", saida]
+        print(f"Command run autodock: {command}")
         executar_comando(command, dir_path)
         
         # Configura caminho para o arquivo de melhor ligação (gbest)
